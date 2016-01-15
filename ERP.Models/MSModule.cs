@@ -20,7 +20,7 @@ namespace ERP.Models
             this.MSRight = new HashSet<MSRight>();
         }
     
-        public int ModuleId { get; set; }
+        public string ModuleId { get; set; }
         public string ModuleName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

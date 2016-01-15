@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 
-namespace ERP.Repository.Base
+namespace ERP.Repository
 {
     public abstract class Repository<T, Tld> : IUnitOfWorkRepository where T : class,IAggregateRoot
     {

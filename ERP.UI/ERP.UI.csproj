@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>9fd402b1-b9d2-4552-884f-5128bdd1d325</ProjectGuid>
+    <ProjectGuid>{689A231A-3896-4EDD-BD95-1B8CC63DE28B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ERP.UI</RootNamespace>

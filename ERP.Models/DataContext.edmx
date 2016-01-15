@@ -4,31 +4,31 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DataContext.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="DataContextStoreContainer">
-    <EntitySet Name="MSUserSet" EntityType="DataContext.Store.MSUserSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="MSModuleSet" EntityType="DataContext.Store.MSModuleSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="MSFuncSet" EntityType="DataContext.Store.MSFuncSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="MSRightSet" EntityType="DataContext.Store.MSRightSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="MSRoleSet" EntityType="DataContext.Store.MSRoleSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="MSRightMSRole" EntityType="DataContext.Store.MSRightMSRole" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="MSModuleMSRight" Association="DataContext.Store.MSModuleMSRight">
+    <Schema Namespace="ERP.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ERPModelsStoreContainer">
+    <EntitySet Name="MSUserSet" EntityType="ERP.Models.Store.MSUserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSModuleSet" EntityType="ERP.Models.Store.MSModuleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSFuncSet" EntityType="ERP.Models.Store.MSFuncSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSRightSet" EntityType="ERP.Models.Store.MSRightSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSRoleSet" EntityType="ERP.Models.Store.MSRoleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSRightMSRole" EntityType="ERP.Models.Store.MSRightMSRole" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="MSModuleMSRight" Association="ERP.Models.Store.MSModuleMSRight">
       <End Role="MSModule" EntitySet="MSModuleSet" />
       <End Role="MSRight" EntitySet="MSRightSet" />
     </AssociationSet>
-    <AssociationSet Name="MSFuncMSRight" Association="DataContext.Store.MSFuncMSRight">
+    <AssociationSet Name="MSFuncMSRight" Association="ERP.Models.Store.MSFuncMSRight">
       <End Role="MSFunc" EntitySet="MSFuncSet" />
       <End Role="MSRight" EntitySet="MSRightSet" />
     </AssociationSet>
-    <AssociationSet Name="FK_MSRightMSRole_MSRight" Association="DataContext.Store.FK_MSRightMSRole_MSRight">
+    <AssociationSet Name="FK_MSRightMSRole_MSRight" Association="ERP.Models.Store.FK_MSRightMSRole_MSRight">
       <End Role="MSRight" EntitySet="MSRightSet" />
       <End Role="MSRightMSRole" EntitySet="MSRightMSRole" />
     </AssociationSet>
-    <AssociationSet Name="FK_MSRightMSRole_MSRole" Association="DataContext.Store.FK_MSRightMSRole_MSRole">
+    <AssociationSet Name="FK_MSRightMSRole_MSRole" Association="ERP.Models.Store.FK_MSRightMSRole_MSRole">
       <End Role="MSRole" EntitySet="MSRoleSet" />
       <End Role="MSRightMSRole" EntitySet="MSRightMSRole" />
     </AssociationSet>
-    <AssociationSet Name="MSRoleMSUser" Association="DataContext.Store.MSRoleMSUser">
+    <AssociationSet Name="MSRoleMSUser" Association="ERP.Models.Store.MSRoleMSUser">
       <End Role="MSRole" EntitySet="MSRoleSet" />
       <End Role="MSUser" EntitySet="MSUserSet" />
     </AssociationSet>
@@ -46,14 +46,14 @@
     <Key>
       <PropertyRef Name="ModuleId" />
     </Key>
-    <Property Name="ModuleId" Type="int" Nullable="false" />
+    <Property Name="ModuleId" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ModuleName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="MSFuncSet">
     <Key>
       <PropertyRef Name="FuncId" />
     </Key>
-    <Property Name="FuncId" Type="int" Nullable="false" />
+    <Property Name="FuncId" Type="nvarchar(max)" Nullable="false" />
     <Property Name="FuncName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="MSRightSet">
@@ -61,8 +61,8 @@
       <PropertyRef Name="RightId" />
     </Key>
     <Property Name="RightId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="MSModule_ModuleId" Type="int" Nullable="false" />
-    <Property Name="MSFunc_FuncId" Type="int" Nullable="false" />
+    <Property Name="MSModule_ModuleId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MSFunc_FuncId" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="MSRoleSet">
     <Key>
@@ -80,8 +80,8 @@
     <Property Name="MSRole_RoleId" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
   <Association Name="MSModuleMSRight">
-    <End Role="MSModule" Type="DataContext.Store.MSModuleSet" Multiplicity="1" />
-    <End Role="MSRight" Type="DataContext.Store.MSRightSet" Multiplicity="*" />
+    <End Role="MSModule" Type="ERP.Models.Store.MSModuleSet" Multiplicity="1" />
+    <End Role="MSRight" Type="ERP.Models.Store.MSRightSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MSModule">
         <PropertyRef Name="ModuleId" />
@@ -92,8 +92,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="MSFuncMSRight">
-    <End Role="MSFunc" Type="DataContext.Store.MSFuncSet" Multiplicity="1" />
-    <End Role="MSRight" Type="DataContext.Store.MSRightSet" Multiplicity="*" />
+    <End Role="MSFunc" Type="ERP.Models.Store.MSFuncSet" Multiplicity="1" />
+    <End Role="MSRight" Type="ERP.Models.Store.MSRightSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MSFunc">
         <PropertyRef Name="FuncId" />
@@ -104,8 +104,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="MSRoleMSUser">
-    <End Role="MSRole" Type="DataContext.Store.MSRoleSet" Multiplicity="1" />
-    <End Role="MSUser" Type="DataContext.Store.MSUserSet" Multiplicity="*" />
+    <End Role="MSRole" Type="ERP.Models.Store.MSRoleSet" Multiplicity="1" />
+    <End Role="MSUser" Type="ERP.Models.Store.MSUserSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MSRole">
         <PropertyRef Name="RoleId" />
@@ -116,8 +116,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_MSRightMSRole_MSRight">
-    <End Role="MSRight" Type="DataContext.Store.MSRightSet" Multiplicity="1" />
-    <End Role="MSRightMSRole" Type="DataContext.Store.MSRightMSRole" Multiplicity="*" />
+    <End Role="MSRight" Type="ERP.Models.Store.MSRightSet" Multiplicity="1" />
+    <End Role="MSRightMSRole" Type="ERP.Models.Store.MSRightMSRole" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MSRight">
         <PropertyRef Name="RightId" />
@@ -128,8 +128,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_MSRightMSRole_MSRole">
-    <End Role="MSRightMSRole" Type="DataContext.Store.MSRightMSRole" Multiplicity="*" />
-    <End Role="MSRole" Type="DataContext.Store.MSRoleSet" Multiplicity="1" />
+    <End Role="MSRightMSRole" Type="ERP.Models.Store.MSRightMSRole" Multiplicity="*" />
+    <End Role="MSRole" Type="ERP.Models.Store.MSRoleSet" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="MSRole">
         <PropertyRef Name="RoleId" />
@@ -179,7 +179,7 @@
           <Key>
             <PropertyRef Name="ModuleId" />
           </Key>
-          <Property Name="ModuleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="ModuleId" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="ModuleName" Type="String" Nullable="false" />
           <NavigationProperty Name="MSRight" Relationship="ERP.Models.MSModuleMSRight" FromRole="MSModule" ToRole="MSRight" />
         </EntityType>
@@ -187,7 +187,7 @@
           <Key>
             <PropertyRef Name="FuncId" />
           </Key>
-          <Property Name="FuncId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="FuncId" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="FuncName" Type="String" Nullable="false" />
           <NavigationProperty Name="MSRight" Relationship="ERP.Models.MSFuncMSRight" FromRole="MSFunc" ToRole="MSRight" />
         </EntityType>
@@ -230,7 +230,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DataContextStoreContainer" CdmEntityContainer="DataContext">
+  <EntityContainerMapping StorageEntityContainer="ERPModelsStoreContainer" CdmEntityContainer="DataContext">
     <EntitySetMapping Name="MSUserSet">
       <EntityTypeMapping TypeName="IsTypeOf(ERP.Models.MSUser)">
         <MappingFragment StoreEntitySet="MSUserSet">
