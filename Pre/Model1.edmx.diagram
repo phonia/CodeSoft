@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="41a050bee9914f30957e0e8c4cc2f3ee" Name="Diagram1">
+        <EntityTypeShape EntityType="SMALLERPModel.BSAccount" Width="1.5" PointX="11.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.BSBom" Width="1.5" PointX="5.25" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.BSCost" Width="1.5" PointX="19.5" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.BSCostType" Width="1.5" PointX="17.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.BSCustomer" Width="1.5" PointX="9" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.BSDepartment" Width="1.5" PointX="11.25" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.BSEmployee" Width="1.5" PointX="13.5" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.BSInven" Width="1.5" PointX="3" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.BSInvenType" Width="1.5" PointX="0.75" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.BSStore" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.BSSupplier" Width="1.5" PointX="6" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.CUAfterService" Width="1.5" PointX="18.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.CUChance" Width="1.5" PointX="6" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.CUCredit" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.CUGrade" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.CURelRecord" Width="1.5" PointX="11.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.CUSellChance" Width="1.5" PointX="8.25" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.CUState" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.CUTrade" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.dtproperty" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.FIDeposit" Width="1.5" PointX="15.75" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.FIPurCost" Width="1.5" PointX="18.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.FISelCost" Width="1.5" PointX="21.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.INBaseType" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.INCheckFlag" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.INEduLevel" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.INModule" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.INRelManner" Width="1.5" PointX="9" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.INRight" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.INSex" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.PRInStore" Width="1.5" PointX="5.25" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.PRPlan" Width="1.5" PointX="5.25" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.PRProduce" Width="1.5" PointX="13.5" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.PRProduceItem" Width="1.5" PointX="15.75" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.PUInStore" Width="1.5" PointX="8.25" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.PUOrder" Width="1.5" PointX="8.25" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.PUPay" Width="1.5" PointX="13.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.SEGather" Width="1.5" PointX="16.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.SEOrder" Width="1.5" PointX="11.25" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.SEOutStore" Width="1.5" PointX="11.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.STCheck" Width="1.5" PointX="11.25" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.STGetMaterial" Width="1.5" PointX="18.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.STLoss" Width="1.5" PointX="5.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.STStock" Width="1.5" PointX="5.25" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.SYAssignRight" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.SYOperator" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.sysdiagram" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.INAccSubject" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMALLERPModel.V_BomStruct" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="SMALLERPModel.FK_FIDeposit_BSAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_FIDeposit_BSAccount1" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_FIPurCost_BSAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_FISelCost_BSAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PUPay_BSAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SEGather_BSAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_BSBom_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_BSBom_BSInven1" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_BSCost_BSCostType" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_FIPurCost_BSCost" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_FISelCost_BSCost" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_CUAfterService_BSCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_CURelRecord_BSCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_CUSellChance_BSCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SEGather_BSCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SEOrder_BSCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SEOutStore_BSCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRProduce_BSDepartment" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_TABLE1_BSDepartment" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_CUAfterService_BSEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_FIDeposit_BSEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_FIPurCost_BSEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_FISelCost_BSEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_BSInven_BSInvenType" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_CUSellChance_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRInStore_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRPlan_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRProduce_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRProduceItem_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PUInStore_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PUOrder_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SEOrder_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SEOutStore_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STCheck_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STGetMaterial_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STInvenStock_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STLoss_BSInven" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRInStore_BSStore" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PUInStore_BSStore" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SEOutStore_BSStore" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STCheck_BSStore" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STGetMaterial_BSStore" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STInvenStock_BSStore" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STLoss_BSStore" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PUBill_BSSupplier" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PUInStore_BSSupplier" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PUPay_BSSupplier" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_CUSellChance_CUChance" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_CURelRecord_INRelManner" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_FIDeposit_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_FIPurCost_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_FISelCost_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SYModuleRight_INModule" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SYModuleRight_INRight" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRInStore_PRProduce" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRInStore_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRPlan_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRProduce_PRPlan" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRProduce_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PRProduceItem_PRProduce" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STGetMaterial_PRProduce" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PUInStore_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PUPay_PUInStore" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PUOrder_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_PUPay_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SEGather_SEOutStore" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SEGather_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SEOrder_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_SEOutStore_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STCheck_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STGetMaterial_SYOperator" ManuallyRouted="false" />
+        <AssociationConnector Association="SMALLERPModel.FK_STLoss_SYOperator" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
