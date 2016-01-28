@@ -13,4 +13,8 @@ namespace ERP.Models
             if (String.IsNullOrWhiteSpace(this.RoleName)) AddBrokenRule(new BusinessRule() {Propery="RoleName",Rule="角色名不能为空" });
         }
     }
+
+    public interface IMSRoleRepository : IRepository<MSRole,System.Guid>
+    {
+    }
 }

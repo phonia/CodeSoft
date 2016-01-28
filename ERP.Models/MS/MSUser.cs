@@ -17,4 +17,9 @@ namespace ERP.Models
         public void Register()
         { }
     }
+
+    public interface IMSUserRepository : IRepository<MSUser,System.Guid>
+    {
+        //void UpdateUserRole(System.Guid userId, System.Guid roleId);
+    }
 }

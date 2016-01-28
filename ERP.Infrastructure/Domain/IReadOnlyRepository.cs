@@ -5,8 +5,10 @@ using System.Text;
 
 namespace ERP.Infrastructure
 {
-    public interface IReadOnlyRepository<T> where T:IAggregateRoot
+    public interface IReadOnlyRepository<T,Tld> where T:IAggregateRoot
     {
+        IUnitOfWork UnitOfWork { get; set; }
         IQueryable<T> GetAll();
+        T GetByKey(Tld key);
     }
 }

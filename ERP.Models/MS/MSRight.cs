@@ -13,4 +13,9 @@ namespace ERP.Models
 
         }
     }
+
+    public interface IMSRightRepository : IReadOnlyRepository<MSRight,System.Guid>
+    {
+ 
+    }
 }

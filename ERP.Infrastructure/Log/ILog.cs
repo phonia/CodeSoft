@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ERP.Infrastructure.Log
+namespace ERP.Infrastructure
 {
     public interface ILog
     {
-        void WriteLog();
+        void WriteLog(String message);
     }
 }

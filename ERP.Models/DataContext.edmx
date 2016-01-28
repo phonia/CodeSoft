@@ -11,6 +11,8 @@
     <EntitySet Name="MSFuncSet" EntityType="ERP.Models.Store.MSFuncSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="MSRightSet" EntityType="ERP.Models.Store.MSRightSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="MSRoleSet" EntityType="ERP.Models.Store.MSRoleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DepartmentSet" EntityType="ERP.Models.Store.DepartmentSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeSet" EntityType="ERP.Models.Store.EmployeeSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="MSRightMSRole" EntityType="ERP.Models.Store.MSRightMSRole" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="MSModuleMSRight" Association="ERP.Models.Store.MSModuleMSRight">
       <End Role="MSModule" EntitySet="MSModuleSet" />
@@ -32,6 +34,10 @@
       <End Role="MSRole" EntitySet="MSRoleSet" />
       <End Role="MSUser" EntitySet="MSUserSet" />
     </AssociationSet>
+    <AssociationSet Name="DepartmentEmployee" Association="ERP.Models.Store.DepartmentEmployee">
+      <End Role="Department" EntitySet="DepartmentSet" />
+      <End Role="Employee" EntitySet="EmployeeSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="MSUserSet">
     <Key>
@@ -46,14 +52,14 @@
     <Key>
       <PropertyRef Name="ModuleId" />
     </Key>
-    <Property Name="ModuleId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ModuleId" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="ModuleName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="MSFuncSet">
     <Key>
       <PropertyRef Name="FuncId" />
     </Key>
-    <Property Name="FuncId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FuncId" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="FuncName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="MSRightSet">
@@ -61,8 +67,8 @@
       <PropertyRef Name="RightId" />
     </Key>
     <Property Name="RightId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="MSModule_ModuleId" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MSFunc_FuncId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MSModule_ModuleId" Type="nvarchar" MaxLength="50" Nullable="true" />
+    <Property Name="MSFunc_FuncId" Type="nvarchar" MaxLength="50" Nullable="true" />
   </EntityType>
   <EntityType Name="MSRoleSet">
     <Key>
@@ -70,6 +76,23 @@
     </Key>
     <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="RoleName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DepartmentSet">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeSet">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sex" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Department_DepartmentId" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="MSRightMSRole">
     <Key>
@@ -80,7 +103,7 @@
     <Property Name="MSRole_RoleId" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
   <Association Name="MSModuleMSRight">
-    <End Role="MSModule" Type="ERP.Models.Store.MSModuleSet" Multiplicity="1" />
+    <End Role="MSModule" Type="ERP.Models.Store.MSModuleSet" Multiplicity="0..1" />
     <End Role="MSRight" Type="ERP.Models.Store.MSRightSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MSModule">
@@ -92,7 +115,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="MSFuncMSRight">
-    <End Role="MSFunc" Type="ERP.Models.Store.MSFuncSet" Multiplicity="1" />
+    <End Role="MSFunc" Type="ERP.Models.Store.MSFuncSet" Multiplicity="0..1" />
     <End Role="MSRight" Type="ERP.Models.Store.MSRightSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MSFunc">
@@ -112,6 +135,18 @@
       </Principal>
       <Dependent Role="MSUser">
         <PropertyRef Name="MSRole_RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartmentEmployee">
+    <End Role="Department" Type="ERP.Models.Store.DepartmentSet" Multiplicity="0..1" />
+    <End Role="Employee" Type="ERP.Models.Store.EmployeeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Department_DepartmentId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -165,6 +200,12 @@
             <End Role="MSRole" EntitySet="MSRoleSet" />
             <End Role="MSUser" EntitySet="MSUserSet" />
           </AssociationSet>
+          <EntitySet Name="DepartmentSet" EntityType="ERP.Models.Department" />
+          <EntitySet Name="EmployeeSet" EntityType="ERP.Models.Employee" />
+          <AssociationSet Name="DepartmentEmployee" Association="ERP.Models.DepartmentEmployee">
+            <End EntitySet="DepartmentSet" Role="Department" />
+            <End EntitySet="EmployeeSet" Role="Employee" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="MSUser">
           <Key>
@@ -179,7 +220,7 @@
           <Key>
             <PropertyRef Name="ModuleId" />
           </Key>
-          <Property Name="ModuleId" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="ModuleId" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="50" />
           <Property Name="ModuleName" Type="String" Nullable="false" />
           <NavigationProperty Name="MSRight" Relationship="ERP.Models.MSModuleMSRight" FromRole="MSModule" ToRole="MSRight" />
         </EntityType>
@@ -187,7 +228,7 @@
           <Key>
             <PropertyRef Name="FuncId" />
           </Key>
-          <Property Name="FuncId" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="FuncId" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="50" />
           <Property Name="FuncName" Type="String" Nullable="false" />
           <NavigationProperty Name="MSRight" Relationship="ERP.Models.MSFuncMSRight" FromRole="MSFunc" ToRole="MSRight" />
         </EntityType>
@@ -201,11 +242,11 @@
           <NavigationProperty Name="MSRole" Relationship="ERP.Models.MSRightMSRole" FromRole="MSRight" ToRole="MSRole" />
         </EntityType>
         <Association Name="MSModuleMSRight">
-          <End Type="ERP.Models.MSModule" Role="MSModule" Multiplicity="1" />
+          <End Type="ERP.Models.MSModule" Role="MSModule" Multiplicity="0..1" />
           <End Type="ERP.Models.MSRight" Role="MSRight" Multiplicity="*" />
         </Association>
         <Association Name="MSFuncMSRight">
-          <End Type="ERP.Models.MSFunc" Role="MSFunc" Multiplicity="1" />
+          <End Type="ERP.Models.MSFunc" Role="MSFunc" Multiplicity="0..1" />
           <End Type="ERP.Models.MSRight" Role="MSRight" Multiplicity="*" />
         </Association>
         <EntityType Name="MSRole">
@@ -223,8 +264,36 @@
         </Association>
         <Association Name="MSRoleMSUser">
           <End Type="ERP.Models.MSRole" Role="MSRole" Multiplicity="1" />
-          <End Type="ERP.Models.MSUser" Role="MSUser" Multiplicity="*" />
+          <End Type="ERP.Models.MSUser" Role="MSUser" Multiplicity="*" >
+          </End>
         </Association>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="ERP.Models.DepartmentEmployee" FromRole="Department" ToRole="Employee" />
+          <Property Name="DepartmentName" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Sex" Type="ERP.Models.Sex" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="ERP.Models.DepartmentEmployee" FromRole="Employee" ToRole="Department" />
+        </EntityType>
+        <Association Name="DepartmentEmployee">
+          <End Type="ERP.Models.Department" Multiplicity="0..1" Role="Department" />
+          <End Type="ERP.Models.Employee" Multiplicity="*" Role="Employee" />
+        </Association>
+        <EnumType Name="Sex">
+          <Member Name="男" />
+          <Member Name="女" />
+          <Member Name="未知" />
+        </EnumType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -271,6 +340,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ERP.Models.Department)">
+        <MappingFragment StoreEntitySet="DepartmentSet">
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ERP.Models.Employee)">
+        <MappingFragment StoreEntitySet="EmployeeSet">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="MSModuleMSRight" TypeName="ERP.Models.MSModuleMSRight" StoreEntitySet="MSRightSet">
       <EndProperty Name="MSModule">
         <ScalarProperty Name="ModuleId" ColumnName="MSModule_ModuleId" />
@@ -278,6 +365,7 @@
       <EndProperty Name="MSRight">
         <ScalarProperty Name="RightId" ColumnName="RightId" />
       </EndProperty>
+      <Condition ColumnName="MSModule_ModuleId" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="MSFuncMSRight" TypeName="ERP.Models.MSFuncMSRight" StoreEntitySet="MSRightSet">
       <EndProperty Name="MSFunc">
@@ -286,6 +374,7 @@
       <EndProperty Name="MSRight">
         <ScalarProperty Name="RightId" ColumnName="RightId" />
       </EndProperty>
+      <Condition ColumnName="MSFunc_FuncId" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="MSRightMSRole" TypeName="ERP.Models.MSRightMSRole" StoreEntitySet="MSRightMSRole">
       <EndProperty Name="MSRight">
@@ -302,6 +391,15 @@
       <EndProperty Name="MSUser">
         <ScalarProperty Name="UserId" ColumnName="UserId" />
       </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DepartmentEmployee" TypeName="ERP.Models.DepartmentEmployee" StoreEntitySet="EmployeeSet">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="DepartmentId" ColumnName="Department_DepartmentId" />
+      </EndProperty>
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+      </EndProperty>
+      <Condition ColumnName="Department_DepartmentId" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>

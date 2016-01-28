@@ -7,7 +7,7 @@ namespace ERP.Infrastructure
 {
     public interface IUnitOfWorkRepository
     {
-        void PersitAdd(IAggregateRoot enity);
+        void PersistAdd(IAggregateRoot enity);
         void PersistRemove(IAggregateRoot entity);
         void PersistSave(IAggregateRoot entity);
     }

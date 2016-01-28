@@ -1,0 +1,539 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ERP.Repository.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:ERP.Repository.Fakes.ShimDataBaseHelper">
+            <summary>ERP.Repository.DataBaseHelper 的填充码类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimDataBaseHelper.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimDataBaseHelper.#ctor(ERP.Repository.DataBaseHelper)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimDataBaseHelper.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimDataBaseHelper.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper.Constructor">
+            <summary>设置 DataBaseHelper.DataBaseHelper() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper.InintDataBase">
+            <summary>设置 DataBaseHelper.InintDataBase() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__12MSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__12(MSFunc it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__13MSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__13(MSModule it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__14MSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__14(MSFunc it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__15MSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__15(MSModule it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__16MSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__16(MSFunc it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__17MSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__17(MSModule it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__18MSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__18(MSFunc it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__19MSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__19(MSModule it) 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimDataBaseHelper.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimDepartmentUnitOfWorkRepository">
+            <summary>ERP.Repository.DepartmentUnitOfWorkRepository 的填充码类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimDepartmentUnitOfWorkRepository.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimDepartmentUnitOfWorkRepository.#ctor(ERP.Repository.DepartmentUnitOfWorkRepository)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimDepartmentUnitOfWorkRepository.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimDepartmentUnitOfWorkRepository.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimDepartmentUnitOfWorkRepository.Bind(ERP.Infrastructure.IReadOnlyRepository{ERP.Models.Department,System.Guid})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimDepartmentUnitOfWorkRepository.Bind(ERP.Infrastructure.IRepository{ERP.Models.Department,System.Guid})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimDepartmentUnitOfWorkRepository.Bind(ERP.Models.IDepartmentRepository)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDepartmentUnitOfWorkRepository.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDepartmentUnitOfWorkRepository.Constructor">
+            <summary>设置 DepartmentUnitOfWorkRepository.DepartmentUnitOfWorkRepository() 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimDepartmentUnitOfWorkRepository.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimEFRepository`2">
+            <summary>ERP.Repository.EFRepository`2 的填充码类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFRepository`2.#ctor(ERP.Repository.EFRepository{`0,`1})">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFRepository`2.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFRepository`2.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFRepository`2.Bind(ERP.Infrastructure.IReadOnlyRepository{`0,`1})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFRepository`2.Bind(ERP.Infrastructure.IRepository{`0,`1})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.AddT0">
+            <summary>设置 EFRepository`2.Add(!0 entity) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.Constructor">
+            <summary>设置 EFRepository`2.EFRepository`2() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.GetAll">
+            <summary>设置 EFRepository`2.GetAll() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.GetByKeyT1">
+            <summary>设置 EFRepository`2.GetByKey(!1 key) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.RemoveT0">
+            <summary>设置 EFRepository`2.Remove(!0 entity) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.RemoveT1">
+            <summary>设置 EFRepository`2.Remove(!1 t) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.SaveT0">
+            <summary>设置 EFRepository`2.Save(!0 entity) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.UnitOfWorkGet">
+            <summary>设置 EFRepository`2.get_UnitOfWork() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.UnitOfWorkSetIUnitOfWork">
+            <summary>设置 EFRepository`2.set_UnitOfWork(IUnitOfWork value) 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimEFRepository`2.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.AllInstances.AddT0">
+            <summary>设置 EFRepository`2.Add(!0 entity) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.AllInstances.GetAll">
+            <summary>设置 EFRepository`2.GetAll() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.AllInstances.GetByKeyT1">
+            <summary>设置 EFRepository`2.GetByKey(!1 key) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.AllInstances.RemoveT0">
+            <summary>设置 EFRepository`2.Remove(!0 entity) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.AllInstances.RemoveT1">
+            <summary>设置 EFRepository`2.Remove(!1 t) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.AllInstances.SaveT0">
+            <summary>设置 EFRepository`2.Save(!0 entity) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.AllInstances.UnitOfWorkGet">
+            <summary>设置 EFRepository`2.get_UnitOfWork() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFRepository`2.AllInstances.UnitOfWorkSetIUnitOfWork">
+            <summary>设置 EFRepository`2.set_UnitOfWork(IUnitOfWork value) 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimEFUnitOfWork">
+            <summary>ERP.Repository.EFUnitOfWork 的填充码类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFUnitOfWork.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFUnitOfWork.#ctor(ERP.Repository.EFUnitOfWork)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFUnitOfWork.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFUnitOfWork.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFUnitOfWork.Bind(ERP.Infrastructure.IUnitOfWork)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFUnitOfWork.Bind(ERP.Repository.IEFUnitOfWork)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEFUnitOfWork.Bind(System.IDisposable)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFUnitOfWork.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFUnitOfWork.Commit">
+            <summary>设置 EFUnitOfWork.Commit() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFUnitOfWork.Constructor">
+            <summary>设置 EFUnitOfWork.EFUnitOfWork() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFUnitOfWork.DbContextGet">
+            <summary>设置 EFUnitOfWork.get_DbContext() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFUnitOfWork.Dispose">
+            <summary>设置 EFUnitOfWork.Dispose() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFUnitOfWork.RollBack">
+            <summary>设置 EFUnitOfWork.RollBack() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFUnitOfWork._RollBackb__0DbEntityEntry">
+            <summary>设置 EFUnitOfWork.&lt;RollBack&gt;b__0(DbEntityEntry it) 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimEFUnitOfWork.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFUnitOfWork.AllInstances.Commit">
+            <summary>设置 EFUnitOfWork.Commit() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFUnitOfWork.AllInstances.DbContextGet">
+            <summary>设置 EFUnitOfWork.get_DbContext() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFUnitOfWork.AllInstances.Dispose">
+            <summary>设置 EFUnitOfWork.Dispose() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEFUnitOfWork.AllInstances.RollBack">
+            <summary>设置 EFUnitOfWork.RollBack() 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository">
+            <summary>ERP.Repository.EmployeeUnitOfWorkRepository 的填充码类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository.#ctor(ERP.Repository.EmployeeUnitOfWorkRepository)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository.Bind(ERP.Infrastructure.IReadOnlyRepository{ERP.Models.Employee,System.Guid})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository.Bind(ERP.Infrastructure.IRepository{ERP.Models.Employee,System.Guid})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository.Bind(ERP.Models.IEmployeeRepository)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository.Constructor">
+            <summary>设置 EmployeeUnitOfWorkRepository.EmployeeUnitOfWorkRepository() 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository">
+            <summary>ERP.Repository.MSRightUnitOfWorkRepository 的填充码类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository.#ctor(ERP.Repository.MSRightUnitOfWorkRepository)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository.Bind(ERP.Infrastructure.IReadOnlyRepository{ERP.Models.MSRight,System.Guid})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository.Bind(ERP.Infrastructure.IRepository{ERP.Models.MSRight,System.Guid})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository.Bind(ERP.Models.IMSRightRepository)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository.Constructor">
+            <summary>设置 MSRightUnitOfWorkRepository.MSRightUnitOfWorkRepository() 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimMSRoleUnitOfWorkRepository">
+            <summary>ERP.Repository.MSRoleUnitOfWorkRepository 的填充码类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRoleUnitOfWorkRepository.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRoleUnitOfWorkRepository.#ctor(ERP.Repository.MSRoleUnitOfWorkRepository)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRoleUnitOfWorkRepository.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRoleUnitOfWorkRepository.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRoleUnitOfWorkRepository.Bind(ERP.Infrastructure.IReadOnlyRepository{ERP.Models.MSRole,System.Guid})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRoleUnitOfWorkRepository.Bind(ERP.Infrastructure.IRepository{ERP.Models.MSRole,System.Guid})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSRoleUnitOfWorkRepository.Bind(ERP.Models.IMSRoleRepository)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSRoleUnitOfWorkRepository.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSRoleUnitOfWorkRepository.Constructor">
+            <summary>设置 MSRoleUnitOfWorkRepository.MSRoleUnitOfWorkRepository() 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimMSRoleUnitOfWorkRepository.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository">
+            <summary>ERP.Repository.MSUserUnitOfWorkRepository 的填充码类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.#ctor(ERP.Repository.MSUserUnitOfWorkRepository)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.Bind(ERP.Infrastructure.IReadOnlyRepository{ERP.Models.MSUser,System.Guid})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.Bind(ERP.Infrastructure.IRepository{ERP.Models.MSUser,System.Guid})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.Bind(ERP.Models.IMSUserRepository)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.Constructor">
+            <summary>设置 MSUserUnitOfWorkRepository.MSUserUnitOfWorkRepository() 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.UpdateUserRoleGuidGuid">
+            <summary>设置 MSUserUnitOfWorkRepository.UpdateUserRole(Guid userId, Guid roleId) 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSUserUnitOfWorkRepository.AllInstances.UpdateUserRoleGuidGuid">
+            <summary>设置 MSUserUnitOfWorkRepository.UpdateUserRole(Guid userId, Guid roleId) 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.StubDataBaseHelper">
+            <summary>ERP.Repository.DataBaseHelper 的存根类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubDataBaseHelper.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubDataBaseHelper.InitializeStub">
+            <summary>初始化 type StubDataBaseHelper 的新实例</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubDataBaseHelper.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubDataBaseHelper.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubDataBaseHelper.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.StubDepartmentUnitOfWorkRepository">
+            <summary>ERP.Repository.DepartmentUnitOfWorkRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubDepartmentUnitOfWorkRepository.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubDepartmentUnitOfWorkRepository.InitializeStub">
+            <summary>初始化 type StubDepartmentUnitOfWorkRepository 的新实例</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubDepartmentUnitOfWorkRepository.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubDepartmentUnitOfWorkRepository.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubDepartmentUnitOfWorkRepository.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.StubEFRepository`2">
+            <summary>ERP.Repository.EFRepository`2 的存根类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubEFRepository`2.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubEFRepository`2.InitializeStub">
+            <summary>初始化 type StubEFRepository 的新实例</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubEFRepository`2.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubEFRepository`2.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubEFRepository`2.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.StubEFUnitOfWork">
+            <summary>ERP.Repository.EFUnitOfWork 的存根类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubEFUnitOfWork.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubEFUnitOfWork.InitializeStub">
+            <summary>初始化 type StubEFUnitOfWork 的新实例</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubEFUnitOfWork.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubEFUnitOfWork.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubEFUnitOfWork.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.StubEmployeeUnitOfWorkRepository">
+            <summary>ERP.Repository.EmployeeUnitOfWorkRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubEmployeeUnitOfWorkRepository.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubEmployeeUnitOfWorkRepository.InitializeStub">
+            <summary>初始化 type StubEmployeeUnitOfWorkRepository 的新实例</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubEmployeeUnitOfWorkRepository.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubEmployeeUnitOfWorkRepository.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubEmployeeUnitOfWorkRepository.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.StubIEFUnitOfWork">
+            <summary>ERP.Repository.IEFUnitOfWork 的存根类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubIEFUnitOfWork.#ctor">
+            <summary>初始化 type StubIEFUnitOfWork 的新实例</summary>
+        </member>
+        <member name="F:ERP.Repository.Fakes.StubIEFUnitOfWork.Commit">
+            <summary>设置 IUnitOfWork.Commit() 的 stub</summary>
+        </member>
+        <member name="F:ERP.Repository.Fakes.StubIEFUnitOfWork.DbContextGet">
+            <summary>设置 IEFUnitOfWork.get_DbContext() 的 stub</summary>
+        </member>
+        <member name="F:ERP.Repository.Fakes.StubIEFUnitOfWork.Dispose">
+            <summary>设置 IDisposable.Dispose() 的 stub</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubIEFUnitOfWork.erpi::ERP#Infrastructure#IUnitOfWork#Commit">
+            <summary>设置 IUnitOfWork.Commit() 的 存根</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubIEFUnitOfWork.erpi::ERP#Infrastructure#IUnitOfWork#RollBack">
+            <summary>设置 IUnitOfWork.RollBack() 的 存根</summary>
+        </member>
+        <member name="F:ERP.Repository.Fakes.StubIEFUnitOfWork.RollBack">
+            <summary>设置 IUnitOfWork.RollBack() 的 stub</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubIEFUnitOfWork.global::System#IDisposable#Dispose">
+            <summary>设置 IDisposable.Dispose() 的 存根</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubIEFUnitOfWork.erpr::ERP#Repository#IEFUnitOfWork#DbContext">
+            <summary>设置 IEFUnitOfWork.get_DbContext() 的 stub</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.StubMSRightUnitOfWorkRepository">
+            <summary>ERP.Repository.MSRightUnitOfWorkRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubMSRightUnitOfWorkRepository.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubMSRightUnitOfWorkRepository.InitializeStub">
+            <summary>初始化 type StubMSRightUnitOfWorkRepository 的新实例</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSRightUnitOfWorkRepository.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSRightUnitOfWorkRepository.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSRightUnitOfWorkRepository.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.StubMSRoleUnitOfWorkRepository">
+            <summary>ERP.Repository.MSRoleUnitOfWorkRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubMSRoleUnitOfWorkRepository.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubMSRoleUnitOfWorkRepository.InitializeStub">
+            <summary>初始化 type StubMSRoleUnitOfWorkRepository 的新实例</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSRoleUnitOfWorkRepository.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSRoleUnitOfWorkRepository.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSRoleUnitOfWorkRepository.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.StubMSUserUnitOfWorkRepository">
+            <summary>ERP.Repository.MSUserUnitOfWorkRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubMSUserUnitOfWorkRepository.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubMSUserUnitOfWorkRepository.InitializeStub">
+            <summary>初始化 type StubMSUserUnitOfWorkRepository 的新实例</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSUserUnitOfWorkRepository.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSUserUnitOfWorkRepository.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSUserUnitOfWorkRepository.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+    </members>
+</doc>

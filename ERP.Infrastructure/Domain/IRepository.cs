@@ -5,10 +5,29 @@ using System.Text;
 
 namespace ERP.Infrastructure
 {
-    public interface IRepository<T>:IReadOnlyRepository<T> where T:IAggregateRoot
+    public interface IRepository<TEntity, Tld> : IReadOnlyRepository<TEntity, Tld> where TEntity : IAggregateRoot
     {
-        void Add(T entity);
-        void Remvoe(T entity);
-        void Save(T entity);
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="entity"></param>
+        void Add(TEntity entity);
+        /// <summary>
+        /// 删除聚合
+        /// </summary>
+        /// <param name="entity"></param>
+        void Remove(TEntity entity);
+
+        /// <summary>
+        /// 删除聚合
+        /// </summary>
+        /// <param name="t"></param>
+        void Remove(Tld t);
+
+        /// <summary>
+        /// 修改聚合
+        /// </summary>
+        /// <param name="entity"></param>
+        void Save(TEntity entity);
     }
 }

@@ -37,7 +37,10 @@ namespace ERP.Infrastructure
         public override bool Equals(object obj)
         {
 
-            if (this.GetType() != obj.GetType())
+            if (this.GetType() != obj.GetType()
+                &&!(this.GetType().BaseType==obj.GetType()&&!(obj.GetType()==typeof(object)))
+                &&!(this.GetType()==obj.GetType().BaseType&&!(this.GetType()==typeof(object)))
+                )
                 return false;
 
             PropertyInfo[] properties = this.GetType().GetProperties();

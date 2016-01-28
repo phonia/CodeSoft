@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/15/2016 17:23:04
+-- Date Created: 01/26/2016 16:02:34
 -- Generated from EDMX file: E:\Code\CodeSoft\ERP.Models\DataContext.edmx
 -- --------------------------------------------------
 
@@ -32,6 +32,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_MSRoleMSUser]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[MSUserSet] DROP CONSTRAINT [FK_MSRoleMSUser];
 GO
+IF OBJECT_ID(N'[dbo].[FK_DepartmentEmployee]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[EmployeeSet] DROP CONSTRAINT [FK_DepartmentEmployee];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -52,6 +55,12 @@ GO
 IF OBJECT_ID(N'[dbo].[MSRoleSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[MSRoleSet];
 GO
+IF OBJECT_ID(N'[dbo].[DepartmentSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DepartmentSet];
+GO
+IF OBJECT_ID(N'[dbo].[EmployeeSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[EmployeeSet];
+GO
 IF OBJECT_ID(N'[dbo].[MSRightMSRole]', 'U') IS NOT NULL
     DROP TABLE [dbo].[MSRightMSRole];
 GO
@@ -71,14 +80,14 @@ GO
 
 -- Creating table 'MSModuleSet'
 CREATE TABLE [dbo].[MSModuleSet] (
-    [ModuleId] nvarchar(max)  NOT NULL,
+    [ModuleId] nvarchar(50)  NOT NULL,
     [ModuleName] nvarchar(max)  NOT NULL
 );
 GO
 
 -- Creating table 'MSFuncSet'
 CREATE TABLE [dbo].[MSFuncSet] (
-    [FuncId] nvarchar(max)  NOT NULL,
+    [FuncId] nvarchar(50)  NOT NULL,
     [FuncName] nvarchar(max)  NOT NULL
 );
 GO
@@ -86,8 +95,8 @@ GO
 -- Creating table 'MSRightSet'
 CREATE TABLE [dbo].[MSRightSet] (
     [RightId] uniqueidentifier  NOT NULL,
-    [MSModule_ModuleId] nvarchar(max)  NOT NULL,
-    [MSFunc_FuncId] nvarchar(max)  NOT NULL
+    [MSModule_ModuleId] nvarchar(50)  NULL,
+    [MSFunc_FuncId] nvarchar(50)  NULL
 );
 GO
 
@@ -95,6 +104,23 @@ GO
 CREATE TABLE [dbo].[MSRoleSet] (
     [RoleId] uniqueidentifier  NOT NULL,
     [RoleName] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'DepartmentSet'
+CREATE TABLE [dbo].[DepartmentSet] (
+    [DepartmentId] int IDENTITY(1,1) NOT NULL,
+    [DepartmentName] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'EmployeeSet'
+CREATE TABLE [dbo].[EmployeeSet] (
+    [EmployeeId] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL,
+    [Sex] int  NOT NULL,
+    [Age] int  NOT NULL,
+    [Department_DepartmentId] int  NULL
 );
 GO
 
@@ -137,6 +163,18 @@ GO
 ALTER TABLE [dbo].[MSRoleSet]
 ADD CONSTRAINT [PK_MSRoleSet]
     PRIMARY KEY CLUSTERED ([RoleId] ASC);
+GO
+
+-- Creating primary key on [DepartmentId] in table 'DepartmentSet'
+ALTER TABLE [dbo].[DepartmentSet]
+ADD CONSTRAINT [PK_DepartmentSet]
+    PRIMARY KEY CLUSTERED ([DepartmentId] ASC);
+GO
+
+-- Creating primary key on [EmployeeId] in table 'EmployeeSet'
+ALTER TABLE [dbo].[EmployeeSet]
+ADD CONSTRAINT [PK_EmployeeSet]
+    PRIMARY KEY CLUSTERED ([EmployeeId] ASC);
 GO
 
 -- Creating primary key on [MSRight_RightId], [MSRole_RoleId] in table 'MSRightMSRole'
@@ -216,6 +254,21 @@ GO
 CREATE INDEX [IX_FK_MSRoleMSUser]
 ON [dbo].[MSUserSet]
     ([MSRole_RoleId]);
+GO
+
+-- Creating foreign key on [Department_DepartmentId] in table 'EmployeeSet'
+ALTER TABLE [dbo].[EmployeeSet]
+ADD CONSTRAINT [FK_DepartmentEmployee]
+    FOREIGN KEY ([Department_DepartmentId])
+    REFERENCES [dbo].[DepartmentSet]
+        ([DepartmentId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DepartmentEmployee'
+CREATE INDEX [IX_FK_DepartmentEmployee]
+ON [dbo].[EmployeeSet]
+    ([Department_DepartmentId]);
 GO
 
 -- --------------------------------------------------

@@ -8,66 +8,132 @@ using System.Text;
 
 namespace ERP.Repository
 {
-    public abstract class Repository<T, Tld> : IUnitOfWorkRepository where T : class,IAggregateRoot
+    public abstract class EFRepository<TEntity, Tld> : IRepository<TEntity, Tld> where TEntity : EntityBase, IAggregateRoot
     {
-        private IUnitOfWork _unitOfWork = null;
-        protected DbContext _dbContext = null;
+        //protected IEFUnitOfWork _efUnitOfWork = null;
 
-        public Repository(IUnitOfWork unitOfWork)
+        //public EFRepository() { }
+
+        //public EFRepository(IUnitOfWork efUnitOfWork)
+        //{
+        //    if(efUnitOfWork==null) throw new ArgumentNullException();
+        //    if (!(efUnitOfWork is IEFUnitOfWork)) throw new ArgumentException();
+        //    this._efUnitOfWork = (IEFUnitOfWork)efUnitOfWork;
+        //}
+
+        //public virtual void PersistAdd(IAggregateRoot entity)
+        //{
+        //    if (entity == null) throw new ArgumentNullException();
+        //    _efUnitOfWork.DbContext.Entry<IAggregateRoot>((T)entity).State = EntityState.Added;
+        //}
+
+        //public virtual void PersistRemove(IAggregateRoot entity)
+        //{
+        //    if (entity == null) throw new ArgumentNullException();
+        //    _efUnitOfWork.DbContext.Entry<IAggregateRoot>((T)entity).State = EntityState.Deleted;
+        //}
+
+        //public virtual void PersistSave(IAggregateRoot entity)
+        //{
+        //    if (entity == null) throw new ArgumentNullException();
+        //    _efUnitOfWork.DbContext.Entry<IAggregateRoot>((T)entity).State = EntityState.Modified;
+        //}
+
+        //public virtual void Add(T entity)
+        //{
+        //    if (entity == null) return;
+        //    _efUnitOfWork.RegisterAdd(entity, this);
+        //}
+
+        //public virtual void Remove(T entity)
+        //{
+        //    if (entity == null) return;
+        //    if (_efUnitOfWork.DbContext.Entry<T>(entity).State!=EntityState.Unchanged)
+        //        _efUnitOfWork.DbContext.Set<T>().Attach(entity);
+        //    _efUnitOfWork.RegisterRemove(entity, this);
+        //}
+
+        //public virtual void Save(T entity)
+        //{
+        //    if (entity == null) return;
+        //    _efUnitOfWork.RegisterSave(entity, this);
+        //}
+
+        //public IQueryable<T> GetAll()
+        //{
+        //    return _efUnitOfWork.DbContext.Set<T>() as IQueryable<T>;
+        //}
+
+        //public IUnitOfWork UnitOfWork
+        //{
+        //    get
+        //    {
+        //        return (IUnitOfWork)_efUnitOfWork;
+        //    }
+        //    set
+        //    {
+        //        if (value is IEFUnitOfWork)
+        //            this._efUnitOfWork = (IEFUnitOfWork)value;
+        //        else
+        //            throw new ArgumentException();
+        //    }
+        //}
+
+        protected IEFUnitOfWork _unitOfWork = null;
+
+        public void Add(TEntity entity)
         {
-            this._unitOfWork = unitOfWork;
+            if (entity == null) throw new ArgumentNullException();
+            EntityState state = _unitOfWork.DbContext.Entry<TEntity>(entity).State;
+            if (state == EntityState.Detached)
+                _unitOfWork.DbContext.Entry<TEntity>(entity).State = EntityState.Added;
         }
 
-        public Repository(IUnitOfWork unitOfWork, DbContext dbContex)
+        public void Remove(TEntity entity)
         {
-            this._dbContext = dbContex;
-            this._unitOfWork = unitOfWork;
+            if (entity == null) throw new ArgumentNullException();
+            EntityState state = _unitOfWork.DbContext.Entry<TEntity>(entity).State;
+            if (state == EntityState.Detached)
+                _unitOfWork.DbContext.Set<TEntity>().Attach(entity);
+            _unitOfWork.DbContext.Entry<TEntity>(entity).State = EntityState.Deleted;
         }
 
-        public void Save(T entity)
+        public void Remove(Tld t)
         {
-            _unitOfWork.RegisterSave(this, entity);
+            TEntity entity = _unitOfWork.DbContext.Set<TEntity>().Find(t);
+            if (entity == null) throw new ArgumentNullException();
+            _unitOfWork.DbContext.Entry<TEntity>(entity).State = EntityState.Deleted;
         }
 
-        public void Add(T entity)
+        public void Save(TEntity entity)
         {
-            _unitOfWork.RegisterAdd(this, entity);
+            if (entity == null) throw new ArgumentNullException();
+            _unitOfWork.DbContext.Entry<TEntity>(entity).State = EntityState.Modified;
         }
 
-        public void Remove(T entity)
+        public IUnitOfWork UnitOfWork
         {
-            _unitOfWork.RegisterRemove(this, entity);
-        }
-
-        public virtual void PersistAdd(IAggregateRoot entity)
-        {
-            if (entity == null) throw new Exception("nullable data in PersistAdd of Respository<" + typeof(T).Name + ">");
-            _dbContext.Entry<IAggregateRoot>(entity).State = EntityState.Added;
-            if (_dbContext.SaveChanges() < 1)
+            get
             {
-                throw new Exception("error in PersistAdd of Respository<T>");
+                return (IUnitOfWork)_unitOfWork;
+            }
+            set
+            {
+                if (value is IEFUnitOfWork)
+                    this._unitOfWork = (IEFUnitOfWork)value;
+                else
+                    throw new ArgumentException();
             }
         }
 
-        public virtual void PersistRemvoe(IAggregateRoot entity)
+        public IQueryable<TEntity> GetAll()
         {
-            if (entity == null) throw new Exception("nullable data in PersistDel of Respository<" + typeof(T).Name + ">");
-            _dbContext.Entry<IAggregateRoot>(entity).State = EntityState.Deleted;
-            if (_dbContext.SaveChanges() < 1)
-                throw new Exception("error in PersistDel of Respository<T>");
+            return _unitOfWork.DbContext.Set<TEntity>();
         }
 
-        public virtual void PersistSave(IAggregateRoot entity)
+        public TEntity GetByKey(Tld key)
         {
-            if (entity == null) throw new Exception("nullable data in PersistSave of Respository<" + typeof(T).Name + ">");
-            _dbContext.Entry<IAggregateRoot>(entity).State = EntityState.Modified;
-            if (_dbContext.SaveChanges() < 1)
-                throw new Exception("error in PersistSave of Respository<T>");
-        }
-
-        public virtual IQueryable<T> GetAll()
-        {
-            return _dbContext.Set<T>() as IQueryable<T>;
+            return _unitOfWork.DbContext.Set<TEntity>().Find(key);
         }
     }
 }
