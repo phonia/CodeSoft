@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "RoleManager";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head{
+    <script type="text/javascript">
+        function RoleAdd() {
+            $('#RoleAddWin').window('open');
+            $('#RightOfModuleGrid').datagrid({
+                url: '/MS/GetAllRights',
+                //idField: 'ModuleId',
+                //treeField: 'ModuleName',
+                fitColumns: true,
+                singleSelect:false,
+                frozenColumns: [[
+                    { field: 'ck', checkbox: true }
+                ]],
+                columns: [[
+                    { title: '模块Id', field: 'ModuleId',hidden:true },
+                    { title: '模块名', field: 'ModuleName' },
+                    { title: '权限Id', field: 'FuncId',hidden:true },
+                    { title: '权限', field: 'FuncName' },
+                ]]
+                //,
+                //onBeforeExpand: function (row) {
+                //    if (row != null) {
+                //        var ddd = '/Home/GetGridTreet?i=' + row.Id;
+                //        $('#tt').treegrid('options').url = ddd;
+                //        return true;
+                //    }
+                //}
+            });
+        }
+        function RoldEdit() { }
+        function RoleRemove() { }
+    </script>
+    }
+
+<div style="display:block">
+    <table class="easyui-datagrid" id="grid" title="角色列表"
+    data-options="url:'/MS/LoadRoles',fitColumns:true,singleSelect:true,rownumbers:true,striped:true,loadMsg:'正在加载。。。。',ctrSelect:true,
+        pagination:true,pageSize:10,singleSelect:true,selectOnCheck:true,toolbar:'#toolbar'">   
+    <thead>
+        <tr>
+            <th data-options="field:'RoleId'">角色Id</th>
+            <th data-options="field:'RoleName'">角色名称</th>
+    </thead>
+</table>
+    <div id="toolbar">
+        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="RoleAdd()">添加</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="RoleRemvove()">删除</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onabort="RoleEdit()">编辑</a>
+    </div>
+</div>
+
+<div id="RoleAddWin" class="easyui-window" data-options="modal:true,closed:true" style="width:500px">
+    <form id="RoleAddForm" method="post">
+        <div class="fitem">
+            <div class="fitem" style="padding:5px 5px 5px 5px">
+                <label style="display:inline-block;width:80px;text-align:right">角色名：</label>
+                <input class="easyui-validatebox" required="required" name="RoleName" />
+            </div>
+            <div class="fitem" style="padding:5px 5px 5px 5px">
+@*                <span><label style="display:inline-block;width:80px;text-align:right">权限：</label></span>
+                <span id="RightOfModuleGrid"></span>*@
+                <label style="display:inline-block;width:80px;text-align:right">权限：</label>
+                <div id="RightOfModuleGrid" ></div>
+            </div>
+        </div>
+    </form>
+</div>
+

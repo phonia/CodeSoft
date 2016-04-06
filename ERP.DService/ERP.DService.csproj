@@ -75,6 +75,8 @@
   <ItemGroup>
     <Compile Include="DTO\DepartmentDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\MSDomainDTO.cs" />
+    <Compile Include="DTO\MSModuleDTO.cs" />
     <Compile Include="DTO\MSRightDTO.cs" />
     <Compile Include="DTO\MSRoleDTO.cs" />
     <Compile Include="DTO\MSUserDTO.cs" />

@@ -70,6 +70,8 @@
     <Compile Include="Base\EFUnitOfWork.cs" />
     <Compile Include="MS\DepartmentUnitOfWorkRepository.cs" />
     <Compile Include="MS\EmployeeUnitOfWorkRepository.cs" />
+    <Compile Include="MS\MSDomainRepository.cs" />
+    <Compile Include="MS\MSModuleRepository.cs" />
     <Compile Include="MS\MSRightUnitOfWorkRepository.cs" />
     <Compile Include="MS\MSRoleUnitOfWorkRepository.cs" />
     <Compile Include="MS\MSUserUnitOfWorkRepository.cs" />

@@ -32,6 +32,8 @@ namespace RepositoryUnitOfWork
                 unity.RegisterType<IUnitOfWork, EFUnitOfWork>();
                 unity.RegisterType<IMSRoleRepository, MSRoleUnitOfWorkRepository>();
                 unity.RegisterType<IMSRightRepository, MSRightUnitOfWorkRepository>();
+                unity.RegisterType<IMSDomainRepository, MSDomainRepository>();
+                unity.RegisterType<IMSModuleRepository, MSModuleRepository>();
                 unity.RegisterType<MSUserService>(
                     new Interceptor<VirtualMethodInterceptor>(),
                     new InterceptionBehavior<ValidationInterceptor>()

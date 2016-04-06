@@ -32,5 +32,6 @@ namespace ERP.Models
         public virtual DbSet<MSRole> MSRoleSet { get; set; }
         public virtual DbSet<Department> DepartmentSet { get; set; }
         public virtual DbSet<Employee> EmployeeSet { get; set; }
+        public virtual DbSet<MSDomain> MSDomainSet { get; set; }
     }
 }

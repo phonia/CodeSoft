@@ -86,6 +86,9 @@
     <Compile Include="Employee.cs">
       <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="MSDomain.cs">
+      <DependentUpon>DataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="MSFunc.cs">
       <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
@@ -103,6 +106,7 @@
     </Compile>
     <Compile Include="MS\Department.cs" />
     <Compile Include="MS\Employee.cs" />
+    <Compile Include="MS\MSDomain.cs" />
     <Compile Include="MS\MSFunc.cs" />
     <Compile Include="MS\MSModule.cs" />
     <Compile Include="MS\MSRight.cs" />

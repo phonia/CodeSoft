@@ -36,6 +36,13 @@ namespace ERP.DService
                 .ForMember(d=>d.UserId,opt=>opt.MapFrom(s=>s.UserId))
                 .ForMember(d=>d.UserName,opt=>opt.MapFrom(s=>s.UserName))
                 .ForMember(d=>d.Password,opt=>opt.MapFrom(s=>s.Passworld));
+            Mapper.CreateMap<MSDomain,MSDomainDTO>()
+                .ForMember(d=>d.DomainId,opt=>opt.MapFrom(s=>s.DomainId))
+                .ForMember(d=>d.DomainName,opt=>opt.MapFrom(s=>s.DomainName));
+            Mapper.CreateMap<MSModule, MSModuleDTO>()
+                .ForMember(d=>d.ModuleUrl,opt=>opt.MapFrom(s=>s.ModuleUrl))
+                .ForMember(d => d.ModuleId, opt => opt.MapFrom(s => s.ModuleId))
+                .ForMember(d => d.ModuleName, opt => opt.MapFrom(s => s.ModuleName));
         }
     }
 

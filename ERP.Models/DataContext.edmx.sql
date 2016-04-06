@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/26/2016 16:02:34
+-- Date Created: 03/02/2016 15:52:49
 -- Generated from EDMX file: E:\Code\CodeSoft\ERP.Models\DataContext.edmx
 -- --------------------------------------------------
 
@@ -35,6 +35,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_DepartmentEmployee]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[EmployeeSet] DROP CONSTRAINT [FK_DepartmentEmployee];
 GO
+IF OBJECT_ID(N'[dbo].[FK_MSDomainMSModule]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MSModuleSet] DROP CONSTRAINT [FK_MSDomainMSModule];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -61,6 +64,9 @@ GO
 IF OBJECT_ID(N'[dbo].[EmployeeSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[EmployeeSet];
 GO
+IF OBJECT_ID(N'[dbo].[MSDomainSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MSDomainSet];
+GO
 IF OBJECT_ID(N'[dbo].[MSRightMSRole]', 'U') IS NOT NULL
     DROP TABLE [dbo].[MSRightMSRole];
 GO
@@ -81,7 +87,9 @@ GO
 -- Creating table 'MSModuleSet'
 CREATE TABLE [dbo].[MSModuleSet] (
     [ModuleId] nvarchar(50)  NOT NULL,
-    [ModuleName] nvarchar(max)  NOT NULL
+    [ModuleName] nvarchar(max)  NOT NULL,
+    [ModuleUrl] nvarchar(max)  NOT NULL,
+    [MSDomain_DomainId] nvarchar(50)  NOT NULL
 );
 GO
 
@@ -121,6 +129,13 @@ CREATE TABLE [dbo].[EmployeeSet] (
     [Sex] int  NOT NULL,
     [Age] int  NOT NULL,
     [Department_DepartmentId] int  NULL
+);
+GO
+
+-- Creating table 'MSDomainSet'
+CREATE TABLE [dbo].[MSDomainSet] (
+    [DomainId] nvarchar(50)  NOT NULL,
+    [DomainName] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -175,6 +190,12 @@ GO
 ALTER TABLE [dbo].[EmployeeSet]
 ADD CONSTRAINT [PK_EmployeeSet]
     PRIMARY KEY CLUSTERED ([EmployeeId] ASC);
+GO
+
+-- Creating primary key on [DomainId] in table 'MSDomainSet'
+ALTER TABLE [dbo].[MSDomainSet]
+ADD CONSTRAINT [PK_MSDomainSet]
+    PRIMARY KEY CLUSTERED ([DomainId] ASC);
 GO
 
 -- Creating primary key on [MSRight_RightId], [MSRole_RoleId] in table 'MSRightMSRole'
@@ -269,6 +290,21 @@ GO
 CREATE INDEX [IX_FK_DepartmentEmployee]
 ON [dbo].[EmployeeSet]
     ([Department_DepartmentId]);
+GO
+
+-- Creating foreign key on [MSDomain_DomainId] in table 'MSModuleSet'
+ALTER TABLE [dbo].[MSModuleSet]
+ADD CONSTRAINT [FK_MSDomainMSModule]
+    FOREIGN KEY ([MSDomain_DomainId])
+    REFERENCES [dbo].[MSDomainSet]
+        ([DomainId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MSDomainMSModule'
+CREATE INDEX [IX_FK_MSDomainMSModule]
+ON [dbo].[MSModuleSet]
+    ([MSDomain_DomainId]);
 GO
 
 -- --------------------------------------------------

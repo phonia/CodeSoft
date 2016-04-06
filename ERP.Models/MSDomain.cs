@@ -12,20 +12,18 @@ namespace ERP.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class MSModule
+    public partial class MSDomain
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MSModule()
+        public MSDomain()
         {
-            this.MSRight = new HashSet<MSRight>();
+            this.MSModule = new HashSet<MSModule>();
         }
     
-        public string ModuleId { get; set; }
-        public string ModuleName { get; set; }
-        public string ModuleUrl { get; set; }
+        public string DomainId { get; set; }
+        public string DomainName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MSRight> MSRight { get; set; }
-        public virtual MSDomain MSDomain { get; set; }
+        public virtual ICollection<MSModule> MSModule { get; set; }
     }
 }

@@ -28,29 +28,53 @@
         <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper.InintDataBase">
             <summary>设置 DataBaseHelper.InintDataBase() 的 填充码</summary>
         </member>
-        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__12MSFunc">
-            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__12(MSFunc it) 的 填充码</summary>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__1bMSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__1b(MSFunc it) 的 填充码</summary>
         </member>
-        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__13MSModule">
-            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__13(MSModule it) 的 填充码</summary>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__1cMSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__1c(MSModule it) 的 填充码</summary>
         </member>
-        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__14MSFunc">
-            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__14(MSFunc it) 的 填充码</summary>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__1dMSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__1d(MSFunc it) 的 填充码</summary>
         </member>
-        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__15MSModule">
-            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__15(MSModule it) 的 填充码</summary>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__1eMSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__1e(MSModule it) 的 填充码</summary>
         </member>
-        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__16MSFunc">
-            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__16(MSFunc it) 的 填充码</summary>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__1fMSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__1f(MSFunc it) 的 填充码</summary>
         </member>
-        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__17MSModule">
-            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__17(MSModule it) 的 填充码</summary>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__20MSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__20(MSModule it) 的 填充码</summary>
         </member>
-        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__18MSFunc">
-            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__18(MSFunc it) 的 填充码</summary>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__21MSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__21(MSFunc it) 的 填充码</summary>
         </member>
-        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__19MSModule">
-            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__19(MSModule it) 的 填充码</summary>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__22MSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__22(MSModule it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__23MSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__23(MSFunc it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__24MSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__24(MSModule it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__25MSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__25(MSFunc it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__26MSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__26(MSModule it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__27MSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__27(MSFunc it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__28MSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__28(MSModule it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__29MSFunc">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__29(MSFunc it) 的 填充码</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimDataBaseHelper._InintDataBaseb__2aMSModule">
+            <summary>设置 DataBaseHelper.&lt;InintDataBase&gt;b__2a(MSModule it) 的 填充码</summary>
         </member>
         <member name="T:ERP.Repository.Fakes.ShimDataBaseHelper.AllInstances">
             <summary>为所有实例成员定义填充码</summary>
@@ -254,6 +278,72 @@
             <summary>设置 EmployeeUnitOfWorkRepository.EmployeeUnitOfWorkRepository() 的 填充码</summary>
         </member>
         <member name="T:ERP.Repository.Fakes.ShimEmployeeUnitOfWorkRepository.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimMSDomainRepository">
+            <summary>ERP.Repository.MSDomainRepository 的填充码类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSDomainRepository.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSDomainRepository.#ctor(ERP.Repository.MSDomainRepository)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSDomainRepository.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSDomainRepository.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSDomainRepository.Bind(ERP.Infrastructure.IReadOnlyRepository{ERP.Models.MSDomain,System.String})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSDomainRepository.Bind(ERP.Infrastructure.IRepository{ERP.Models.MSDomain,System.String})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSDomainRepository.Bind(ERP.Models.IMSDomainRepository)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSDomainRepository.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSDomainRepository.Constructor">
+            <summary>设置 MSDomainRepository.MSDomainRepository() 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimMSDomainRepository.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimMSModuleRepository">
+            <summary>ERP.Repository.MSModuleRepository 的填充码类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSModuleRepository.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSModuleRepository.#ctor(ERP.Repository.MSModuleRepository)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSModuleRepository.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSModuleRepository.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSModuleRepository.Bind(ERP.Infrastructure.IReadOnlyRepository{ERP.Models.MSModule,System.String})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSModuleRepository.Bind(ERP.Infrastructure.IRepository{ERP.Models.MSModule,System.String})">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.ShimMSModuleRepository.Bind(ERP.Models.IMSModuleRepository)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSModuleRepository.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.ShimMSModuleRepository.Constructor">
+            <summary>设置 MSModuleRepository.MSModuleRepository() 的 填充码</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.ShimMSModuleRepository.AllInstances">
             <summary>为所有实例成员定义填充码</summary>
         </member>
         <member name="T:ERP.Repository.Fakes.ShimMSRightUnitOfWorkRepository">
@@ -480,6 +570,42 @@
         </member>
         <member name="P:ERP.Repository.Fakes.StubIEFUnitOfWork.erpr::ERP#Repository#IEFUnitOfWork#DbContext">
             <summary>设置 IEFUnitOfWork.get_DbContext() 的 stub</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.StubMSDomainRepository">
+            <summary>ERP.Repository.MSDomainRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubMSDomainRepository.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubMSDomainRepository.InitializeStub">
+            <summary>初始化 type StubMSDomainRepository 的新实例</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSDomainRepository.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSDomainRepository.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSDomainRepository.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="T:ERP.Repository.Fakes.StubMSModuleRepository">
+            <summary>ERP.Repository.MSModuleRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubMSModuleRepository.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERP.Repository.Fakes.StubMSModuleRepository.InitializeStub">
+            <summary>初始化 type StubMSModuleRepository 的新实例</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSModuleRepository.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSModuleRepository.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERP.Repository.Fakes.StubMSModuleRepository.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
         </member>
         <member name="T:ERP.Repository.Fakes.StubMSRightUnitOfWorkRepository">
             <summary>ERP.Repository.MSRightUnitOfWorkRepository 的存根类型</summary>

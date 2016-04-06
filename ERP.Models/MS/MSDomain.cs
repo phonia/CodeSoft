@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ERP.Models
 {
-    public partial class MSFunc:EntityBase,IAggregateRoot
+    public partial class MSDomain:EntityBase,IAggregateRoot
     {
         protected override void Validate()
         {
@@ -14,6 +14,6 @@ namespace ERP.Models
         }
     }
 
-    public interface IMSFuncRepository : IReadOnlyRepository<MSFunc,String>
+    public interface IMSDomainRepository : IReadOnlyRepository<MSDomain, String>
     { }
 }

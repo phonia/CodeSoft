@@ -13,6 +13,7 @@
     <EntitySet Name="MSRoleSet" EntityType="ERP.Models.Store.MSRoleSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DepartmentSet" EntityType="ERP.Models.Store.DepartmentSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="EmployeeSet" EntityType="ERP.Models.Store.EmployeeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MSDomainSet" EntityType="ERP.Models.Store.MSDomainSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="MSRightMSRole" EntityType="ERP.Models.Store.MSRightMSRole" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="MSModuleMSRight" Association="ERP.Models.Store.MSModuleMSRight">
       <End Role="MSModule" EntitySet="MSModuleSet" />
@@ -38,6 +39,10 @@
       <End Role="Department" EntitySet="DepartmentSet" />
       <End Role="Employee" EntitySet="EmployeeSet" />
     </AssociationSet>
+    <AssociationSet Name="MSDomainMSModule" Association="ERP.Models.Store.MSDomainMSModule">
+      <End Role="MSDomain" EntitySet="MSDomainSet" />
+      <End Role="MSModule" EntitySet="MSModuleSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="MSUserSet">
     <Key>
@@ -54,6 +59,8 @@
     </Key>
     <Property Name="ModuleId" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="ModuleName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ModuleUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MSDomain_DomainId" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="MSFuncSet">
     <Key>
@@ -93,6 +100,13 @@
     <Property Name="Sex" Type="int" Nullable="false" />
     <Property Name="Age" Type="int" Nullable="false" />
     <Property Name="Department_DepartmentId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="MSDomainSet">
+    <Key>
+      <PropertyRef Name="DomainId" />
+    </Key>
+    <Property Name="DomainId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DomainName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="MSRightMSRole">
     <Key>
@@ -147,6 +161,18 @@
       </Principal>
       <Dependent Role="Employee">
         <PropertyRef Name="Department_DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MSDomainMSModule">
+    <End Role="MSDomain" Type="ERP.Models.Store.MSDomainSet" Multiplicity="1" />
+    <End Role="MSModule" Type="ERP.Models.Store.MSModuleSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSDomain">
+        <PropertyRef Name="DomainId" />
+      </Principal>
+      <Dependent Role="MSModule">
+        <PropertyRef Name="MSDomain_DomainId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -206,6 +232,11 @@
             <End EntitySet="DepartmentSet" Role="Department" />
             <End EntitySet="EmployeeSet" Role="Employee" />
           </AssociationSet>
+          <EntitySet Name="MSDomainSet" EntityType="ERP.Models.MSDomain" />
+          <AssociationSet Name="MSDomainMSModule" Association="ERP.Models.MSDomainMSModule">
+            <End Role="MSDomain" EntitySet="MSDomainSet" />
+            <End Role="MSModule" EntitySet="MSModuleSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="MSUser">
           <Key>
@@ -223,6 +254,8 @@
           <Property Name="ModuleId" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="50" />
           <Property Name="ModuleName" Type="String" Nullable="false" />
           <NavigationProperty Name="MSRight" Relationship="ERP.Models.MSModuleMSRight" FromRole="MSModule" ToRole="MSRight" />
+          <NavigationProperty Name="MSDomain" Relationship="ERP.Models.MSDomainMSModule" FromRole="MSModule" ToRole="MSDomain" />
+          <Property Name="ModuleUrl" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="MSFunc">
           <Key>
@@ -294,6 +327,18 @@
           <Member Name="女" />
           <Member Name="未知" />
         </EnumType>
+        <EntityType Name="MSDomain">
+          <Key>
+            <PropertyRef Name="DomainId" />
+          </Key>
+          <Property Name="DomainId" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="50" />
+          <Property Name="DomainName" Type="String" Nullable="false" />
+          <NavigationProperty Name="MSModule" Relationship="ERP.Models.MSDomainMSModule" FromRole="MSDomain" ToRole="MSModule" />
+        </EntityType>
+        <Association Name="MSDomainMSModule">
+          <End Type="ERP.Models.MSDomain" Role="MSDomain" Multiplicity="1" />
+          <End Type="ERP.Models.MSModule" Role="MSModule" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -314,6 +359,7 @@
         <MappingFragment StoreEntitySet="MSModuleSet">
           <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
           <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ModuleUrl" ColumnName="ModuleUrl" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -355,6 +401,14 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Sex" ColumnName="Sex" />
           <ScalarProperty Name="Age" ColumnName="Age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSDomainSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ERP.Models.MSDomain)">
+        <MappingFragment StoreEntitySet="MSDomainSet">
+          <ScalarProperty Name="DomainId" ColumnName="DomainId" />
+          <ScalarProperty Name="DomainName" ColumnName="DomainName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -400,6 +454,14 @@
         <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
       </EndProperty>
       <Condition ColumnName="Department_DepartmentId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MSDomainMSModule" TypeName="ERP.Models.MSDomainMSModule" StoreEntitySet="MSModuleSet">
+      <EndProperty Name="MSDomain">
+        <ScalarProperty Name="DomainId" ColumnName="MSDomain_DomainId" />
+      </EndProperty>
+      <EndProperty Name="MSModule">
+        <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+      </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>

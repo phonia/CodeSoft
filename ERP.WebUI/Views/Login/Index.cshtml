@@ -3,32 +3,133 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<script type="text/javascript">
-    function clearForm() {
-        $('ff').form('clear');
+@section Head {
+    <script type="text/javascript">
+        function RegisterUser() {
+            //$(this).linkbutton('submit', {
+            //    url:'/Loing/RegisterUser'
+            //});
+            //$('#fbi').form('submit', {
+            //    url: '/Login/RegisterUser'
+            //});
+            $('#registerUserForm').form('submit', {
+                url:'/Login/RegisterUser',
+                onSubmit: function () { },
+                success: function (data) {
+                    var resutl = eval('(' + data + ')');
+                    if (resutl.Success) {
+                        //$.get('/Home/Index');
+                        location.href = '/Home/Index';
+                    }
+                    else {
+                        alert(resutl.Message);
+                    }
+                }
+            });
+        }
+
+        function ShowRegisterUserWin() {
+            $('#registerUserWin').window('open');
+            $('#roleCombobox').combobox({
+                url: '/Login/GelAllRoles',
+                valueField: 'RoleName',
+                textField: 'RoleName',
+                require: true,
+                editable:false
+            });
+        }
+
+        function Login() {
+            clearWarning();
+            var f = $('#fbi');
+            f.form('submit', {
+                url: '/Login/Login',
+                onSubmit: function () {
+                    // do some check    
+                    // return false to prevent submit;    
+                },
+                success: function (data) {
+                    //$('#lable').text(data);
+                    var resutl = eval('(' + data + ')');
+                    if (resutl.Success)
+                    {
+                        //$.get('/Home/Index');
+                        location.href = '/Home/Index';
+                    }
+                    else
+                    {
+                        alert(resutl.Message);
+                    }
+                }
+            });
+        }
+
+        function clearForm() {
+            clearWarning();
+            var f = $(this);
+            f.form('clear');
+        }
+
+        function clearWarning() {
+            $('#lable').text();
+        }
+    </script>
     }
-</script>
 
 <div style="display:block;width:400px;margin:0 auto;text-align:left;margin-top:200px;">
     <div class="easyui-panel" title="登录界面" style="width:400px">
         <div style="padding:10px 60px 20px 60px">
-            <form id="ff" action="Login" method="post">
+            <form id="fbi"  method="post">
                 <div class="fitem">
-                    <label>用户名:</label>
+                    <label style="display:inline-block;width:80px;text-align:right">用户名:</label>
                     <input id="UserName" name="UserName" class="easyui-validatebox" required="required" value="admin" />
                     <div style="height:20px">
                     </div>
                     <div class="fitem">
-                        <label>密&nbsp;&nbsp;码:</label>
-                        <input id="UserPwd" name="USerPwd" class="easyui-validatebox" required="required" type="password" value="123" />
+                        <label style="display:inline-block;width:80px;text-align:right">密&nbsp;&nbsp;码:</label>
+                        <input id="UserPwd" name="UserPwd" class="easyui-validatebox" required="required" type="password" value="123" />
+                    </div>
+                    <div class="fitem">
+                        <label id="lable" style="color:red">
+                        </label>
                     </div>
                     <div style="height:20px"></div>
                     <div style="text-align:center;padding:5px">
-                        <input class="easyui-linkbutton" type="submit" value="登录" />
-                        <input class="easyui-linkbutton" type="submit" value="清除" onclick="clearForm()" />
+@*                        <input class="easyui-linkbutton" type="submit" value="登录" />
+                        <input class="easyui-linkbutton" type="submit" value="清除" onclick="clearForm()" />*@
+                        <a href="javascript:" class="easyui-linkbutton" onclick="ShowRegisterUserWin()">注册</a>
+                        <a href="javascript:" class="easyui-linkbutton"  onclick="Login()">登录</a>
+                        <a href="javascript:" class="easyui-linkbutton" onclick="clearForm()">清除</a>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<div id="registerUserWin" class="easyui-window" title="用户注册"
+        data-options="iconCls:'icon-save',modal:true,closed:true">
+    <form id="registerUserForm" method="post" style="padding:20px 20px 20px 20px">
+        <div class="fitem">
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">用户名：</label>
+                <input class="easyui-validatebox" required="required" name="userName" />
+                <div style="height:20px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">密  码：</label>
+                <input class="easyui-validatebox" required="required" name="userPwd" />
+                <div style="height:20px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">角色：</label>
+                <input id="roleCombobox" name="roleName" />
+                <div style="height:20px"></div>
+            </div>
+            <div class="fitem" style="text-align:center">
+                <a href="javascript:" class="easyui-linkbutton" onclick="RegisterUser()">注册</a>
+                <a href="javascript:" class="easyui-linkbutton" onclick="clearForm()">清除</a>
+            </div>
+        </div>
+    </form>
+</div>  

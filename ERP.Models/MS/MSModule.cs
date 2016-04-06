@@ -14,6 +14,6 @@ namespace ERP.Models
         }
     }
 
-    //public interface IMSModuleRepository : IReadOnlyRepository<MSModule>
-    //{ }
+    public interface IMSModuleRepository : IReadOnlyRepository<MSModule,String>
+    { }
 }

@@ -14,18 +14,26 @@ namespace ERP.DService
         private IMSRoleRepository _msRoleRepository = null;
         private IUnitOfWork _unitOfWork = null;
         private IMSRightRepository _msRightRepository = null;
+        private IMSModuleRepository _msModuleRepository = null;
+        private IMSDomainRepository _msDomainRepository = null;
 
         [InjectionConstructor]
         public MSUserService(IUnitOfWork unitOfWork,
-            IMSUserRepository msUserRepository, IMSRoleRepository msRoleRepository,IMSRightRepository msRightRepository)
+            IMSUserRepository msUserRepository, IMSRoleRepository msRoleRepository,IMSRightRepository msRightRepository,
+            IMSModuleRepository msModuleRepository,IMSDomainRepository msDomainRepository)
         {
             this._msRoleRepository = msRoleRepository;
             this._msUserRepository = msUserRepository;
             this._msRightRepository = msRightRepository;
+            this._msDomainRepository = msDomainRepository;
+            this._msModuleRepository = msModuleRepository;
+
             this._unitOfWork = unitOfWork;
             this._msUserRepository.UnitOfWork = unitOfWork;
             this._msRoleRepository.UnitOfWork = unitOfWork;
             this._msRightRepository.UnitOfWork = unitOfWork;
+            this._msDomainRepository.UnitOfWork = unitOfWork;
+            this._msModuleRepository.UnitOfWork = unitOfWork;
             
         }
 
@@ -34,7 +42,7 @@ namespace ERP.DService
             msUserDTO.UserId = System.Guid.NewGuid();
             MSUser msUser = msUserDTO.ConverToMSUser(_msRoleRepository);
             if (_msUserRepository.GetAll().Where(it => it.UserName.Equals(msUserDTO.UserName)).FirstOrDefault() != null)
-                throw new Exception("用户名已存在!");
+                throw new DomainException("用户名已存在!");
             _msUserRepository.Add(msUser);
             _unitOfWork.Commit();
         }
@@ -119,12 +127,19 @@ namespace ERP.DService
             return msUser.MapperTo<MSUser, MSUserDTO>();
         }
 
+        public virtual bool Login(string userName, string userPwd)
+        {
+            var list = _msUserRepository.GetAll().Where(it => it.UserName == userName && it.Password == userPwd).ToList();
+            if (list != null && list.Count > 0) return true;
+            return false;
+        }
+
         public virtual void RegiseterRole(MSRoleDTO msRoleDTO,List<System.Guid> rights)
         {
             msRoleDTO.RoleId = System.Guid.NewGuid();
             MSRole msRole = msRoleDTO.ConvertToMSRole(rights,_msRightRepository);
             if (_msRoleRepository.GetAll().Where(it => it.RoleName.Equals(msRoleDTO.RoleName)).FirstOrDefault() != null)
-                throw new Exception("已存在的角色名");
+                throw new DomainException("已存在的角色名");
             _msRoleRepository.Add(msRole);
             _unitOfWork.Commit();
         }
@@ -191,6 +206,38 @@ namespace ERP.DService
                 RightId = it.RightId
             }).ToList();
             return msRight.MapperTo<MSRight, MSRightDTO>().ToList();
+        }
+
+        public List<MSRightDTO> GetRightsOfModule(string moduleId)
+        {
+            var list = _msRightRepository.GetAll().Where(it=>it.MSModule!=null&&it.MSModule.ModuleId==moduleId).Select(it => new
+            {
+                MSFunc = it.MSFunc,
+                MSModule = it.MSModule,
+                RightId = it.RightId
+            }).ToList();
+            List<MSRight> msRight = list.Select(it => new MSRight()
+            {
+                MSFunc = it.MSFunc,
+                MSModule = it.MSModule,
+                RightId = it.RightId
+            }).ToList();
+            return msRight.MapperTo<MSRight, MSRightDTO>().ToList();
+        }
+
+        public List<MSDomainDTO> GetAllDomain()
+        {
+            return _msDomainRepository.GetAll().ToList().MapperTo<MSDomain, MSDomainDTO>().ToList();
+        }
+
+        public List<MSModuleDTO> GetAllModule()
+        {
+            return _msModuleRepository.GetAll().MapperTo<MSModule, MSModuleDTO>().ToList();
+        }
+
+        public List<MSModuleDTO> GetModuleOfDomain(String domainId)
+        {
+            return _msModuleRepository.GetAll().Where(it =>it.MSDomain!=null&& it.MSDomain.DomainId == domainId).ToList().MapperTo<MSModule, MSModuleDTO>().ToList();
         }
     }
 }
