@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="bf79c2d2-223a-4de4-9337-ea4afe9c00e2" name="业务流程" linkedPackageId="bc6af728-f2cb-431d-afd7-969e8edddbff" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="706a834f-6020-4d76-93b6-2f54e9e4dc37">
+      <profileInstance Id="bc4a87fd-5dc6-4f20-a5bc-a34a8544b813" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="5f7eaa63-5ee0-41cf-af35-85bfafa94fdb">
+      <profileInstance Id="80923043-1c24-487b-8b06-d2ce0b06a98f" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="835a37dc-806b-4559-8df1-4db40414a787" name="业务流程" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="5341edaf-1a13-48a9-a028-ccf1945382c1" />
+        <nodes>
+          <initialNode Id="670b2544-2138-419e-9e9f-3ae5d18fe049" name="Initial1" isLeaf="false">
+            <elementDefinition Id="061c31cd-24e4-4c92-b759-2ef5e998c1df" />
+            <flowNodeTargets>
+              <controlFlow Id="fa756335-19d5-4f47-9418-3d4ddceccd70" isLeaf="false">
+                <opaqueActionMoniker Id="dec30981-56aa-4ead-adbe-38060a9cdf7d" LastKnownName="制定订单" />
+                <elementDefinition Id="a743e111-7cc2-4d6b-94cd-908775b91c06" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="dec30981-56aa-4ead-adbe-38060a9cdf7d" name="制定订单" isLeaf="false">
+            <elementDefinition Id="d9bb672a-e1d4-41f8-8799-b9ce4d51cb1b" />
+            <flowNodeTargets>
+              <controlFlow Id="fc3b8580-1db0-4978-be18-6328fffd1583" isLeaf="false">
+                <opaqueActionMoniker Id="4d31292e-acf2-487d-86f1-4c1e079e6ec6" LastKnownName="完成订单" />
+                <elementDefinition Id="8e6eee7d-1e3e-48d7-997a-a5f75aa7e26f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="4d31292e-acf2-487d-86f1-4c1e079e6ec6" name="完成订单" isLeaf="false">
+            <elementDefinition Id="ef6f8753-b839-461f-9948-54c67d5b4e1a" />
+            <flowNodeTargets>
+              <controlFlow Id="8c24ccf5-3e47-4ba1-bbe9-568a246f50ed" isLeaf="false">
+                <opaqueActionMoniker Id="f6aef33a-e9da-41a0-bec5-690e26f27948" LastKnownName="财务报账" />
+                <elementDefinition Id="538c0718-2b32-470f-87ab-936c637cc0cb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f6aef33a-e9da-41a0-bec5-690e26f27948" name="财务报账" isLeaf="false">
+            <elementDefinition Id="8c79ce8f-1561-4709-8085-6e9440185d7c" />
+            <flowNodeTargets>
+              <controlFlow Id="be5b1490-c9c8-4d89-9c48-bb0dcf7a2d19" isLeaf="false">
+                <activityFinalNodeMoniker Id="f626841d-56f6-4ba2-a73b-c3760f0398b3" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="a36b9c76-95e0-4e1c-aca7-450dad6b0412" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="f626841d-56f6-4ba2-a73b-c3760f0398b3" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="b4836e2b-df94-477e-8384-12079e7935c6" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="bc6af728-f2cb-431d-afd7-969e8edddbff" name="GAM">
+    <elementDefinition Id="dec455e4-0d66-43b2-9145-9c0d86494697" />
+    <profileInstances>
+      <packageHasProfileInstances Id="dc04dc2b-2b82-4456-aa1c-7ca41ed44873">
+        <profileInstance Id="7f61cbc5-2718-4c4d-af26-1128f891d481" name="TextTemplateBindings">
+          <elementDefinition Id="df961f07-e74a-4582-9da4-d4bfb1c1527b" />
+        </profileInstance>
+        <elementDefinition Id="61560fbc-aa87-4f56-9403-47f839881709" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

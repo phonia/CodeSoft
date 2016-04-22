@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="1ec2eae1-1714-4b9a-b40c-752e9b88cc38" name="完成订单" linkedPackageId="8f5ac7f5-396d-4fac-8542-a6238a4a90ec" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="254413b2-e5ef-45d3-b4f0-aeb1173c68fc">
+      <elementDefinition Id="8e6a3339-d554-4b01-b69c-60d19c980cbe" />
+      <body>生产部</body>
+    </comment>
+    <comment Id="32946a66-e600-4e50-9f33-3e88d82da48b">
+      <elementDefinition Id="ec69f941-03d7-40d2-9a21-3bfa059675c9" />
+      <body>研发部</body>
+    </comment>
+    <comment Id="2d5c0872-5aeb-4c2c-be6d-7230f4fa7419">
+      <elementDefinition Id="6d181f79-886d-47aa-98ba-17bb20bef533" />
+      <body>采购</body>
+    </comment>
+    <comment Id="d595065e-d449-460d-940b-b12b6104b18f">
+      <elementDefinition Id="ace60034-e979-4431-b8e4-ceec3293bda4" />
+      <body>仓管</body>
+    </comment>
+    <comment Id="9189c71a-3272-454d-86d8-8fe038cf67b6">
+      <elementDefinition Id="5131fbab-2bb2-4788-a16b-d0dcd6796bd6" />
+      <body>工程部</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="95932b4a-366c-48ed-a213-f8bdc037d7c5">
+      <profileInstance Id="31b6e915-dd1b-4901-a084-7e86c1443d68" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1ab6a665-3bde-42f0-8ef2-b99ae7b41233">
+      <profileInstance Id="cf9c07a8-dc26-424b-b65b-0fc6a21154eb" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3a120f4b-5bc8-42ce-b126-ef4dbca250b5">
+      <profileInstance Id="3267f9ab-a94f-4d19-a61c-171cca9f5fad" name="TextTemplateBindings">
+        <elementDefinition Id="df961f07-e74a-4582-9da4-d4bfb1c1527b" />
+      </profileInstance>
+      <elementDefinition Id="61560fbc-aa87-4f56-9403-47f839881709" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="ea6520ca-d4da-43d8-ad15-b97c95af1a80" name="完成订单" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="b2f63c1d-6880-400a-997d-511fc28deeb4" />
+        <nodes>
+          <acceptEventAction Id="eb767367-8903-42f8-a2b7-846aa1458465" name="产品订单" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="496eeb0d-4511-41cd-a8a8-5b77b2840d6d" />
+            <flowNodeTargets>
+              <controlFlow Id="8f05fb2f-9c3b-4899-8805-3508caacce16" guard="是否需要开发" isLeaf="false">
+                <decisionNodeMoniker Id="652d25ae-0d3c-4e89-b726-ef33c11336c6" LastKnownName="Decision1" />
+                <elementDefinition Id="d9feb97c-3d9f-4df1-b9b5-fe241e20bfe3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <decisionNode Id="652d25ae-0d3c-4e89-b726-ef33c11336c6" name="Decision1" isLeaf="false">
+            <elementDefinition Id="0eb85ff6-be1e-4d9f-a0c2-9ddb93f2a4d6" />
+            <flowNodeTargets>
+              <controlFlow Id="c850827b-9100-48ec-b20f-35abf81ce6a2" guard="是" isLeaf="false">
+                <opaqueActionMoniker Id="9fac9411-9b68-4d54-bdd7-fb40be30e4a8" LastKnownName="发送者研发部" />
+                <elementDefinition Id="7d9ab22c-e5bf-4191-8177-82dc89c5c102" />
+              </controlFlow>
+              <controlFlow Id="ea16f005-3e82-4164-bb94-08132efe3300" guard="是否需要生产" isLeaf="false">
+                <decisionNodeMoniker Id="6d5f995f-4a90-4c93-916c-50d237d0ed67" LastKnownName="Decision5" />
+                <elementDefinition Id="a5987eec-8a84-4927-ae62-24d4d127f286" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="9fac9411-9b68-4d54-bdd7-fb40be30e4a8" name="发送者研发部" isLeaf="false">
+            <elementDefinition Id="fb855621-60c8-487b-bad9-a1e754a68942" />
+            <flowNodeTargets>
+              <controlFlow Id="17262356-34d7-4df3-b7e8-e3f8463361b6" isLeaf="false">
+                <joinNodeMoniker Id="534e3d7d-85c2-4618-a244-b324eecef0f3" LastKnownName="Join2" />
+                <elementDefinition Id="a1fac5e9-dcb7-45bd-a538-415e4076c38b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6dd77781-37c1-42a4-a2af-86f77cbc4651" name="按要求设计新产品" isLeaf="false">
+            <elementDefinition Id="34c224e7-0e86-417f-84b7-a5438bd761eb" />
+            <flowNodeTargets>
+              <controlFlow Id="25a5882d-97a6-4798-a4b9-02c90b8f3f5c" guard="是否需要调拨物料" isLeaf="false">
+                <decisionNodeMoniker Id="3d8d2094-5739-4521-b430-938eb0275eb5" LastKnownName="Decision2" />
+                <elementDefinition Id="85b79aa2-e81d-4a67-9f96-09aad342c3dc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="3d8d2094-5739-4521-b430-938eb0275eb5" name="Decision2" isLeaf="false">
+            <elementDefinition Id="72440c49-184d-46e0-b306-4eccfdeb0095" />
+            <flowNodeTargets>
+              <controlFlow Id="44d243c4-b713-4064-8ade-3ac30baf5831" guard="是" isLeaf="false">
+                <opaqueActionMoniker Id="ad089ee2-5193-4272-ba97-a5a7d5a50dd3" LastKnownName="研发物料申请" />
+                <elementDefinition Id="39b71a9e-0d26-4443-b75c-ea66756d664f" />
+              </controlFlow>
+              <controlFlow Id="a64d50f8-36b5-40c4-b219-91e1feeb0ca8" guard="否" isLeaf="false">
+                <joinNodeMoniker Id="c6757056-29e6-4b0c-9e00-c6cb7da2f074" LastKnownName="Join1" />
+                <elementDefinition Id="140346b7-d28c-4a36-9a86-19231ea075b9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="ad089ee2-5193-4272-ba97-a5a7d5a50dd3" name="研发物料申请" isLeaf="false">
+            <elementDefinition Id="c4dfb0b2-3183-454d-befe-f4fe6f066223" />
+            <flowNodeTargets>
+              <controlFlow Id="5606403f-8959-4a81-b06a-5ba1163ecde1" isLeaf="false">
+                <opaqueActionMoniker Id="986a4467-9f60-43e9-b90f-2ed7909ff18a" LastKnownName="查询库存" />
+                <elementDefinition Id="1760712e-a52c-4deb-9397-0059c4ecb6e9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="986a4467-9f60-43e9-b90f-2ed7909ff18a" name="查询库存" isLeaf="false">
+            <elementDefinition Id="7ba9c7cd-7884-4732-817c-9fb7584f9afb" />
+            <flowNodeTargets>
+              <controlFlow Id="46382501-1eac-4448-b110-2d1787c184ae" guard="仓库是否满足申请" isLeaf="false">
+                <decisionNodeMoniker Id="abc3297e-4fee-4740-973e-63f98d04c3d2" LastKnownName="Decision3" />
+                <elementDefinition Id="e1be791f-ed73-4e28-97df-87d09e078056" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="abc3297e-4fee-4740-973e-63f98d04c3d2" name="Decision3" isLeaf="false">
+            <elementDefinition Id="e258a115-44db-4bb1-a224-8b893937ef43" />
+            <flowNodeTargets>
+              <controlFlow Id="2c0d7590-e415-4b61-917a-a4c8fc42c134" guard="否" isLeaf="false">
+                <opaqueActionMoniker Id="5da5738a-1766-40e4-99b0-7e5aa9dae94d" LastKnownName="物料采购申请" />
+                <elementDefinition Id="200343de-773a-4089-b7a2-1defc5bb7376" />
+              </controlFlow>
+              <controlFlow Id="9eed363b-d07c-44bd-b6ca-5aa42211c4df" guard="是" isLeaf="false">
+                <joinNodeMoniker Id="140a7e5f-0c93-4129-977e-c6ffc9950b6d" LastKnownName="Join5" />
+                <elementDefinition Id="56eb2708-43be-4788-bed3-7dc418b41d5d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="620ccd77-3ca7-4000-ac95-83b61de6c6f8" name="调拨物料" isLeaf="false">
+            <elementDefinition Id="8c6cd8ef-0185-4863-8c81-265dbbff3a02" />
+            <flowNodeTargets>
+              <controlFlow Id="197a657b-9d44-452e-acd7-928670222081" isLeaf="false">
+                <opaqueActionMoniker Id="b6ee41bc-e117-419f-b283-9b92647cb109" LastKnownName="接收研发物料" />
+                <elementDefinition Id="6a7881a9-2886-4ca1-a7a7-944db0692e68" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b6ee41bc-e117-419f-b283-9b92647cb109" name="接收研发物料" isLeaf="false">
+            <elementDefinition Id="31b966a8-a4c8-42ab-8466-0d5ed1f59931" />
+            <flowNodeTargets>
+              <controlFlow Id="a8aee377-7208-445c-b7ff-87b634275a9a" isLeaf="false">
+                <joinNodeMoniker Id="c6757056-29e6-4b0c-9e00-c6cb7da2f074" LastKnownName="Join1" />
+                <elementDefinition Id="ce9ba4f3-2c14-46e7-ba49-c714f5b5a51b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="c6757056-29e6-4b0c-9e00-c6cb7da2f074" name="Join1" isLeaf="false">
+            <elementDefinition Id="5d09790b-5582-4371-8651-2418ea622d38" />
+            <flowNodeTargets>
+              <controlFlow Id="5e6763e7-6ccb-4bd6-8d5d-8647f787dd4d" isLeaf="false">
+                <opaqueActionMoniker Id="63cf07fa-a928-4ece-8f52-7b4246951dc8" LastKnownName="实现设计" />
+                <elementDefinition Id="602bc9fc-9ef1-47a0-86e0-5e9cbbd82235" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction Id="63cf07fa-a928-4ece-8f52-7b4246951dc8" name="实现设计" isLeaf="false">
+            <elementDefinition Id="c299d159-dff4-423c-a728-306b3b4ce8dc" />
+            <flowNodeTargets>
+              <controlFlow Id="f01b090f-293a-4e55-abe6-cc23ea42650a" guard="测试产品是否符合要求" isLeaf="false">
+                <decisionNodeMoniker Id="39d1af73-c62e-4a09-8d31-675a8f48a2fe" LastKnownName="Decision4" />
+                <elementDefinition Id="16c91d3e-8f91-4c07-bc94-e3425295c7eb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="39d1af73-c62e-4a09-8d31-675a8f48a2fe" name="Decision4" isLeaf="false">
+            <elementDefinition Id="fe3d9f35-f71b-46ff-95bc-5053a5097e13" />
+            <flowNodeTargets>
+              <controlFlow Id="1a4408cb-18a5-40de-82ab-8abd9098ad4a" guard="是" isLeaf="false">
+                <opaqueActionMoniker Id="30ea422a-3684-4a33-9e36-4e2beb1feed2" LastKnownName="完善研发资料" />
+                <elementDefinition Id="49710f3f-3137-4b9b-89f9-a1d326065b5e" />
+              </controlFlow>
+              <controlFlow Id="65789286-bab6-4814-84a1-e342db639fb1" guard="否" isLeaf="false">
+                <joinNodeMoniker Id="534e3d7d-85c2-4618-a244-b324eecef0f3" LastKnownName="Join2" />
+                <elementDefinition Id="672086c3-a94b-4dac-b931-d49db683ceb8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="30ea422a-3684-4a33-9e36-4e2beb1feed2" name="完善研发资料" isLeaf="false">
+            <elementDefinition Id="4e358400-033b-40f6-9fda-88f532c5737b" />
+            <flowNodeTargets>
+              <controlFlow Id="4d6a9849-4c03-43ff-bb8c-0dc0d7668b96" isLeaf="false">
+                <opaqueActionMoniker Id="77885915-a567-4d2d-822a-c71d2016bacb" LastKnownName="通知生产部" />
+                <elementDefinition Id="89056cf9-4375-4d60-962b-992395b8b6c0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="534e3d7d-85c2-4618-a244-b324eecef0f3" name="Join2" isLeaf="false">
+            <elementDefinition Id="ef4ac1d7-6acd-4ff6-8c9f-c8d60092dc54" />
+            <flowNodeTargets>
+              <controlFlow Id="c0ff3176-6f80-4677-a79a-eb587af6b60c" isLeaf="false">
+                <opaqueActionMoniker Id="6dd77781-37c1-42a4-a2af-86f77cbc4651" LastKnownName="按要求设计新产品" />
+                <elementDefinition Id="1c7674ad-33ff-46cf-a2ff-aa53b6474f74" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction Id="77885915-a567-4d2d-822a-c71d2016bacb" name="通知生产部" isLeaf="false">
+            <elementDefinition Id="95c257cd-2bdb-443c-a6d9-c4a9e8c9699c" />
+            <flowNodeTargets>
+              <controlFlow Id="f511ea66-0dd3-4785-9455-bea598cf6fa8" isLeaf="false">
+                <joinNodeMoniker Id="e8d7533e-e22d-4546-b475-f5c63768c79a" LastKnownName="Join3" />
+                <elementDefinition Id="9dcff897-cf05-4a5a-880c-22dd09d871bb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="6d5f995f-4a90-4c93-916c-50d237d0ed67" name="Decision5" isLeaf="false">
+            <elementDefinition Id="f0dec9ae-8079-4aa1-ae98-78176aa41c9c" />
+            <flowNodeTargets>
+              <controlFlow Id="ae781d91-abeb-4376-b001-86a082bbf703" guard="是" isLeaf="false">
+                <joinNodeMoniker Id="e8d7533e-e22d-4546-b475-f5c63768c79a" LastKnownName="Join3" />
+                <elementDefinition Id="14b3e577-6e14-4933-a068-d3d3b9f579fe" />
+              </controlFlow>
+              <controlFlow Id="6a42915b-c051-43d5-b612-7313e8d56f59" guard="否" isLeaf="false">
+                <joinNodeMoniker Id="baf90cc1-881c-4d14-8f63-f0a3189226bd" LastKnownName="Join4" />
+                <elementDefinition Id="abb6e7f4-85a4-4c23-9eba-665a6525ddd8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <joinNode Id="e8d7533e-e22d-4546-b475-f5c63768c79a" name="Join3" isLeaf="false">
+            <elementDefinition Id="59adbb24-825e-45ed-805f-0ef32d55d535" />
+            <flowNodeTargets>
+              <controlFlow Id="ddf99838-6ee0-4092-bee9-432c83387b1d" isLeaf="false">
+                <opaqueActionMoniker Id="1cccf372-6ace-4148-8f5a-884b5c10a44b" LastKnownName="调拨物料" />
+                <elementDefinition Id="fd9d993e-fe78-4389-9225-ccc8059c2013" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction Id="1cccf372-6ace-4148-8f5a-884b5c10a44b" name="调拨物料" isLeaf="false">
+            <elementDefinition Id="c57c85be-5074-4374-8e98-479c7c562161" />
+            <flowNodeTargets>
+              <controlFlow Id="86d8a942-27e1-42d3-b722-e4ce2e4cc405" isLeaf="false">
+                <opaqueActionMoniker Id="8f5e6555-7db8-4121-a126-3aa60f68483a" LastKnownName="生产测试" />
+                <elementDefinition Id="d14ba0f2-bb12-472b-9ee4-cfe150db62ec" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="8f5e6555-7db8-4121-a126-3aa60f68483a" name="生产测试" isLeaf="false">
+            <elementDefinition Id="ee324239-3e00-4c41-a900-7aa7889e5412" />
+            <flowNodeTargets>
+              <controlFlow Id="93c12635-df43-44f0-9b8f-815ac237269b" isLeaf="false">
+                <opaqueActionMoniker Id="493f3ad9-d0db-4484-87e7-d16d1f171dc9" LastKnownName="产品入库" />
+                <elementDefinition Id="a3a62ddd-32eb-430e-8cbf-94cd534e5133" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="08fa118a-5244-4c87-a90a-749d986a1c37" name="产品出库申请" isLeaf="false">
+            <elementDefinition Id="1573138f-49d5-4b33-91cd-0c37c618f443" />
+            <flowNodeTargets>
+              <controlFlow Id="201cdd8e-01ad-4dc0-a148-ed9e31ca96f2" isLeaf="false">
+                <opaqueActionMoniker Id="0e41efb7-fa1a-4e29-a6ca-dfc3639f95b4" LastKnownName="产品出库" />
+                <elementDefinition Id="9bfc0662-7d5c-4de2-9389-7dc3d4cc83d3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="baf90cc1-881c-4d14-8f63-f0a3189226bd" name="Join4" isLeaf="false">
+            <elementDefinition Id="c619586f-cfee-471a-af43-e7b307331042" />
+            <flowNodeTargets>
+              <controlFlow Id="900aaf7f-5d4c-46c1-a155-e980e8ca41d4" isLeaf="false">
+                <opaqueActionMoniker Id="08fa118a-5244-4c87-a90a-749d986a1c37" LastKnownName="产品出库申请" />
+                <elementDefinition Id="9f820741-712f-41ea-a206-92afb102f7fc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction Id="493f3ad9-d0db-4484-87e7-d16d1f171dc9" name="产品入库" isLeaf="false">
+            <elementDefinition Id="43d87d11-33ff-4d5f-b811-134e0b024993" />
+            <flowNodeTargets>
+              <controlFlow Id="4089bb01-9de7-4974-a666-35a9bac1ab67" isLeaf="false">
+                <opaqueActionMoniker Id="a5f50a4d-4488-4a8d-b6ab-1c2f8f2b601d" LastKnownName="记录产品" />
+                <elementDefinition Id="b6027a3d-b551-4277-88a6-c7a3b6a28d4a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a5f50a4d-4488-4a8d-b6ab-1c2f8f2b601d" name="记录产品" isLeaf="false">
+            <elementDefinition Id="e55105cc-e839-4efd-8ce1-92b31fcfd1fc" />
+            <flowNodeTargets>
+              <controlFlow Id="328ad2a9-5f2a-43b1-a831-ee0814c20d75" isLeaf="false">
+                <opaqueActionMoniker Id="3eafadde-c0e0-47a0-b50f-5ef7585bf204" LastKnownName="确认入库信息" />
+                <elementDefinition Id="5e2f571c-fb28-401d-a1a0-9f1ed30d771d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3eafadde-c0e0-47a0-b50f-5ef7585bf204" name="确认入库信息" isLeaf="false">
+            <elementDefinition Id="f103b86f-203a-4c82-ba69-482be36313be" />
+            <flowNodeTargets>
+              <controlFlow Id="b1c9bcc5-a1bf-4ff6-a950-bf8533454026" isLeaf="false">
+                <joinNodeMoniker Id="baf90cc1-881c-4d14-8f63-f0a3189226bd" LastKnownName="Join4" />
+                <elementDefinition Id="b983bfd9-0933-4588-be2a-70982a218666" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="0e41efb7-fa1a-4e29-a6ca-dfc3639f95b4" name="产品出库" isLeaf="false">
+            <elementDefinition Id="c5578123-d737-4f34-a91e-5b67977a4be0" />
+            <flowNodeTargets>
+              <controlFlow Id="09d1ab5a-2588-4a44-b22b-b8735bdf3964" guard="工程" isLeaf="false">
+                <decisionNodeMoniker Id="cb942a8c-e764-4304-b975-84b9047be776" LastKnownName="Decision6" />
+                <elementDefinition Id="90b5a334-f41e-4558-bf5c-962ff27d7d0c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="cb942a8c-e764-4304-b975-84b9047be776" name="Decision6" isLeaf="false">
+            <elementDefinition Id="1fe9d0a8-4a08-42c8-b6d7-132d951d957f" />
+            <flowNodeTargets>
+              <controlFlow Id="61290117-e82d-41ab-9eb0-0f1b61902ceb" guard="是" isLeaf="false">
+                <opaqueActionMoniker Id="07a8d9fd-693c-4a13-96d1-9f3ca3bd1ccf" LastKnownName="出货单-&gt;工程部" />
+                <elementDefinition Id="7ea22e8b-fbd2-4807-8e66-de27cef9866c" />
+              </controlFlow>
+              <controlFlow Id="5388ab39-d906-40d8-89b0-74014a6e28a4" isLeaf="false">
+                <sendSignalActionMoniker Id="ef9fe8e5-34fa-4030-87a6-bac93adb9fc9" LastKnownName="出货单-&gt;销售员" />
+                <elementDefinition Id="71a0da29-16b7-4041-b044-7104605be345" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="07a8d9fd-693c-4a13-96d1-9f3ca3bd1ccf" name="出货单-&gt;工程部" isLeaf="false">
+            <elementDefinition Id="a1a9db32-134a-4b28-be53-34ebd58996f0" />
+            <flowNodeTargets>
+              <controlFlow Id="11e6e26c-bae8-4d9e-8b82-7e8e3518f0f5" isLeaf="false">
+                <opaqueActionMoniker Id="cab4e2ef-5f85-4a62-bee3-d92b8c9a5644" LastKnownName="确认收货" />
+                <elementDefinition Id="6f352b86-9944-4b99-8a2b-8307e8c0af7d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="cab4e2ef-5f85-4a62-bee3-d92b8c9a5644" name="确认收货" isLeaf="false">
+            <elementDefinition Id="5f605a59-0bfa-4798-a55b-1dede318df0a" />
+            <flowNodeTargets>
+              <controlFlow Id="71aa9da1-e474-4a4a-a248-12a95df4e741" isLeaf="false">
+                <opaqueActionMoniker Id="02452461-b693-4651-bf0d-106cbe37bc0b" LastKnownName="实施工程" />
+                <elementDefinition Id="c36ffdce-5889-4266-803a-e2d4cce4e6a4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="02452461-b693-4651-bf0d-106cbe37bc0b" name="实施工程" isLeaf="false">
+            <elementDefinition Id="ea8db566-c089-4ec5-a234-1769389b29b1" />
+            <flowNodeTargets>
+              <controlFlow Id="b404453c-8e6c-4092-a768-b22c4dcdd69d" isLeaf="false">
+                <sendSignalActionMoniker Id="0b187262-c14c-42c1-bcb7-d1d205e386ef" LastKnownName="通知销售员" />
+                <elementDefinition Id="5bab9ef1-f81d-4c94-b53f-08e5de025bc0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <sendSignalAction Id="ef9fe8e5-34fa-4030-87a6-bac93adb9fc9" name="出货单-&gt;销售员" isLeaf="false">
+            <elementDefinition Id="d1bdaa46-a62b-43a0-84f4-0e7534ff2d59" />
+          </sendSignalAction>
+          <sendSignalAction Id="0b187262-c14c-42c1-bcb7-d1d205e386ef" name="通知销售员" isLeaf="false">
+            <elementDefinition Id="33aae8c5-0a61-4e4b-8c34-c34e603e5fd0" />
+          </sendSignalAction>
+          <opaqueAction Id="5da5738a-1766-40e4-99b0-7e5aa9dae94d" name="物料采购申请" isLeaf="false">
+            <elementDefinition Id="8d78b99e-e270-4253-8c07-7a550c95a965" />
+            <flowNodeTargets>
+              <controlFlow Id="ac84e480-7781-495b-9422-3497e3d5dc85" isLeaf="false">
+                <opaqueActionMoniker Id="48bb612e-bac8-4e38-86b0-542339fa9475" LastKnownName="按要求选择供应商" />
+                <elementDefinition Id="0843bb33-3cc0-4aad-90fd-f91bc7ba64c2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="48bb612e-bac8-4e38-86b0-542339fa9475" name="按要求选择供应商" isLeaf="false">
+            <elementDefinition Id="6ead2072-2985-4e93-a74c-36eaf62c0bd3" />
+            <flowNodeTargets>
+              <controlFlow Id="fa9a636c-8845-4785-90bd-a3a1bd7f786c" isLeaf="false">
+                <opaqueActionMoniker Id="14053f8d-9d3b-40f1-9208-a3b643d41805" LastKnownName="按要求订购物料" />
+                <elementDefinition Id="107601db-cc78-4dbf-9566-f1d67efddc5c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="14053f8d-9d3b-40f1-9208-a3b643d41805" name="按要求订购物料" isLeaf="false">
+            <elementDefinition Id="9b72e07d-a58d-4317-a054-7d84a6739c86" />
+            <flowNodeTargets>
+              <controlFlow Id="2f9a05f4-1bdf-4b90-8cd8-8e2c8f52cf5d" isLeaf="false">
+                <forkNodeMoniker Id="877dc687-67b1-4d5d-b48e-dbbff649c7c7" LastKnownName="Fork1" />
+                <elementDefinition Id="6fb4bdf4-56fe-4139-abff-65749359a4c6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3a8ebae8-dc74-429a-84ff-c62b831b0c52" name="向财务发送费用单" isLeaf="false">
+            <elementDefinition Id="a89e8eea-d26a-4f6f-8362-29fbacdcc3e5" />
+          </opaqueAction>
+          <forkNode Id="877dc687-67b1-4d5d-b48e-dbbff649c7c7" name="Fork1" isLeaf="false">
+            <elementDefinition Id="25161154-bb01-4331-a9c9-586245c590c1" />
+            <flowNodeTargets>
+              <controlFlow Id="154e3b4c-4e0e-4fbd-8380-0dd8dae625cd" isLeaf="false">
+                <opaqueActionMoniker Id="3a8ebae8-dc74-429a-84ff-c62b831b0c52" LastKnownName="向财务发送费用单" />
+                <elementDefinition Id="07ef8927-81c7-4d4a-a54b-d045375b42ce" />
+              </controlFlow>
+              <controlFlow Id="d2c7ac33-14c2-4f71-ae21-4ea7974499ca" isLeaf="false">
+                <opaqueActionMoniker Id="b6872b60-ee7b-4a3b-946b-d7366ed40672" LastKnownName="物料入库申请" />
+                <elementDefinition Id="af0b1e7e-f094-4310-9222-3e4b60f77cbf" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction Id="b6872b60-ee7b-4a3b-946b-d7366ed40672" name="物料入库申请" isLeaf="false">
+            <elementDefinition Id="a1c85e35-1fe0-481b-87f5-8ebfb6c19c86" />
+            <flowNodeTargets>
+              <controlFlow Id="86010623-342f-4294-91aa-85e7ab37cb19" isLeaf="false">
+                <opaqueActionMoniker Id="79ec1144-4bfd-4b97-abbf-093848671ce4" LastKnownName="接收确认物料" />
+                <elementDefinition Id="711a4b2a-0d96-41a9-827a-1bde75651f4b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="79ec1144-4bfd-4b97-abbf-093848671ce4" name="接收确认物料" isLeaf="false">
+            <elementDefinition Id="80b56d19-1fa5-471a-a5ff-4ee4819b9354" />
+            <flowNodeTargets>
+              <controlFlow Id="d7dc2b3d-eae6-4d30-9449-fc1823983c36" isLeaf="false">
+                <joinNodeMoniker Id="140a7e5f-0c93-4129-977e-c6ffc9950b6d" LastKnownName="Join5" />
+                <elementDefinition Id="08b60edd-4673-4e51-a799-e2c8d8e141df" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="140a7e5f-0c93-4129-977e-c6ffc9950b6d" name="Join5" isLeaf="false">
+            <elementDefinition Id="6d11e1d5-17b3-483f-b1be-d4ff69b7e4e2" />
+            <flowNodeTargets>
+              <controlFlow Id="e6934b22-997c-4bcb-9f7c-c8660d6bf2ab" isLeaf="false">
+                <opaqueActionMoniker Id="620ccd77-3ca7-4000-ac95-83b61de6c6f8" LastKnownName="调拨物料" />
+                <elementDefinition Id="d1dea897-28eb-47e9-998f-10949343f79a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="8f5ac7f5-396d-4fac-8542-a6238a4a90ec" name="GAM">
+    <elementDefinition Id="dec455e4-0d66-43b2-9145-9c0d86494697" />
+  </package>
+</activityRootModel>

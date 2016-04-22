@@ -22,16 +22,33 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="WorkFlow\业务流程.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="WorkFlow\业务流程.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>WorkFlow\业务流程.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="WorkFlow\制定订单.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="WorkFlow\制定订单.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>WorkFlow\制定订单.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="WorkFlow\完成订单.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="WorkFlow\完成订单.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>WorkFlow\完成订单.activitydiagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
-    <Content Include="Domian.classdiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Domian.classdiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Domian.classdiagram</DependentUpon>
-    </Content>
     <Content Include="ModelDefinition\GAM.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="Class" />
+    <Folder Include="UseCase" />
+    <Folder Include="WorkFlow" />
   </ItemGroup>
 </Project>
