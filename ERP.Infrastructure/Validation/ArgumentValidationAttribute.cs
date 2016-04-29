@@ -23,7 +23,6 @@ namespace ERP.Infrastructure
 
     public class ValidationInterceptor : IInterceptionBehavior
     {
-
         public IEnumerable<Type> GetRequiredInterfaces()
         {
             return this.GetType().GetInterfaces();

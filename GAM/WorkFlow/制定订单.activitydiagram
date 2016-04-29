@@ -18,26 +18,6 @@
       <body>研发</body>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="fe42feb6-ca4c-4aa6-bfd8-84852ffeded6">
-      <profileInstance Id="01bb89f7-6069-44a9-bb3e-4e2d620dc6f8" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="3f5cb12b-a9df-4737-87f5-527b76166c12">
-      <profileInstance Id="33b65fd7-3338-4f81-9844-533f0939ba46" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="71dbd546-26a6-495f-ad86-51a6e962b73e">
-      <profileInstance Id="f9fff8ac-82a2-4e28-b074-70db97ec56e5" name="TextTemplateBindings">
-        <elementDefinition Id="df961f07-e74a-4582-9da4-d4bfb1c1527b" />
-      </profileInstance>
-      <elementDefinition Id="61560fbc-aa87-4f56-9403-47f839881709" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="027612ca-36d4-4432-ae1e-246fe911e4cf" name="制定订单" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -239,5 +219,25 @@
   </packagedElements>
   <package Id="bea7e9d4-cdc4-425f-b3aa-e657b230fb81" name="GAM">
     <elementDefinition Id="dec455e4-0d66-43b2-9145-9c0d86494697" />
+    <profileInstances>
+      <packageHasProfileInstances Id="fe42feb6-ca4c-4aa6-bfd8-84852ffeded6">
+        <profileInstance Id="01bb89f7-6069-44a9-bb3e-4e2d620dc6f8" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3f5cb12b-a9df-4737-87f5-527b76166c12">
+        <profileInstance Id="33b65fd7-3338-4f81-9844-533f0939ba46" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="71dbd546-26a6-495f-ad86-51a6e962b73e">
+        <profileInstance Id="f9fff8ac-82a2-4e28-b074-70db97ec56e5" name="TextTemplateBindings">
+          <elementDefinition Id="df961f07-e74a-4582-9da4-d4bfb1c1527b" />
+        </profileInstance>
+        <elementDefinition Id="61560fbc-aa87-4f56-9403-47f839881709" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </activityRootModel>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="c00df012-a366-44ab-a99a-238c09e3d76b" name="核定产品需求" linkedPackageId="a6a380c7-a257-4ba8-b4eb-92c49ad7bba7" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="e2266271-3ca3-452a-95be-0a475417b0f1">
+      <elementDefinition Id="2611afc2-3739-4519-8e19-df275ea83ab2" />
+      <body>用例--主流程
+1、生产部人员查看【产品订单】
+2、系统提供【产品类型】、【库存信息】
+3、生产部人员比对信息
+4、产品需要研发进入【流程5】、需要生产进入【流程6】、需要实施工程进入【流程7】
+5、生产部人员将【产品需求】发送给【研发部】——进入【拟定研发计划】用例
+6、【拟定生产计划】用例
+7、生产部人员根据【产品需求】发送给工程部——进入【拟定工程计划】用例
+8、系统收集【研发计划】、【生产计划】、【工程计划】、【产品需求】、【客户信息】生成【产品订单】
+9、生产部人员将【产品订单】发送给销售员
+【库存信息】
+【生产计划】
+【研发计划】
+【工程计划】
+【产品订单】
+用例——替代流
+1、生产部人员产看被驳回的【产品订单】
+2、生产部人员重新比对【产品订单】信息
+3、按照原流程处理</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="eb69231f-aac5-47f7-bcc6-10d53f99e59f">
+      <profileInstance Id="d1cad416-f063-472f-86ab-e6c4d24e11f5" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="b1c52994-be27-4292-ac01-0edb30c2f03b">
+      <profileInstance Id="7c13db3c-c749-4898-81a3-f10dbb20b030" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="af7be887-2db4-4e17-b893-d1ef3741afae">
+      <profileInstance Id="25227257-8746-4acf-b634-586ae12b7285" name="TextTemplateBindings">
+        <elementDefinition Id="df961f07-e74a-4582-9da4-d4bfb1c1527b" />
+      </profileInstance>
+      <elementDefinition Id="61560fbc-aa87-4f56-9403-47f839881709" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <package Id="a6a380c7-a257-4ba8-b4eb-92c49ad7bba7" name="GAM">
+    <elementDefinition Id="dec455e4-0d66-43b2-9145-9c0d86494697" />
+  </package>
+</useCaseModelRoot>

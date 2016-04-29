@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="13567277-9d64-45a7-a7bb-00617fda0e56" name="拟定产品订单" linkedPackageId="c4faf003-10b9-483f-a743-e6ce1fbc148a" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="ae63eb96-cd2c-4195-958e-995eda24fa81">
+      <elementDefinition Id="adedb2a9-69a4-4be0-ae94-4ca68116b5fd" />
+      <body>用例流程--正常流
+1、销售员查询【产品信息】
+2、销售员填写【产品需求】和【客户信息】
+3、系统将表单发送给【生产部】
+【产品信息】
+产品名称、产品类型、版本信息、主要功能、注意事项、单件产品生工工时、【生产流程】、【物料需求】
+【产品需求】
+产品名称、产品类型、功能需求、环境需求、期限、地点、数量、工程需求
+【客户信息】
+客户名称、客户地址、联系人、联系方式、主营业务等</body>
+    </comment>
+  </ownedCommentsInternal>
+  <package Id="c4faf003-10b9-483f-a743-e6ce1fbc148a" name="GAM">
+    <elementDefinition Id="dec455e4-0d66-43b2-9145-9c0d86494697" />
+    <profileInstances>
+      <packageHasProfileInstances Id="cc353538-ee54-4ddd-8ff1-0080bb30f78b">
+        <profileInstance Id="6412cadd-2e7f-44c9-923b-5da2cc7ecffb" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="8556531a-212a-4c6a-a329-035231ec231c">
+        <profileInstance Id="52cf2c83-a72d-4b46-8c64-c044041c6065" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="fa5f39e6-9bdb-488d-ad92-d4381507ed99">
+        <profileInstance Id="4d94bec1-3fe3-4e0c-99a7-04eb055dd00f" name="TextTemplateBindings">
+          <elementDefinition Id="df961f07-e74a-4582-9da4-d4bfb1c1527b" />
+        </profileInstance>
+        <elementDefinition Id="61560fbc-aa87-4f56-9403-47f839881709" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

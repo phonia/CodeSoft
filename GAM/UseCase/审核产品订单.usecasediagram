@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="e9644576-4b7a-426e-a15e-280fe27a511a" name="审核产品订单" linkedPackageId="3e496878-be7e-4a6b-8b03-a5c8a136b19b" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="df16ff16-06ae-4294-903e-ae2bcef07b1c">
+      <elementDefinition Id="006c2f05-c916-462c-9dd1-826be9c47b17" />
+      <body>用例——主流程
+1、确认【产品订单】
+用例——替代流
+1、驳回【产品订单】</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="f41d98c6-4ec3-4d65-970d-83027dd03a19">
+      <profileInstance Id="83ddc2d1-77a5-40c3-95a0-ea29752676d6" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3cd9969d-847c-4ddc-9a76-a8ed63f18c34">
+      <profileInstance Id="e8210e83-7a61-4e63-8013-eff9fbabaf8d" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="fe7e8b10-48c2-48ae-94bb-464971409bb2">
+      <profileInstance Id="f02af53e-6428-4c44-9514-c00cf37b9689" name="TextTemplateBindings">
+        <elementDefinition Id="df961f07-e74a-4582-9da4-d4bfb1c1527b" />
+      </profileInstance>
+      <elementDefinition Id="61560fbc-aa87-4f56-9403-47f839881709" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <package Id="3e496878-be7e-4a6b-8b03-a5c8a136b19b" name="GAM">
+    <elementDefinition Id="dec455e4-0d66-43b2-9145-9c0d86494697" />
+  </package>
+</useCaseModelRoot>

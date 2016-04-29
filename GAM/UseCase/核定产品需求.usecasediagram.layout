@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="核定产品需求">
+  <useCaseModelRootMoniker Id="c00df012-a366-44ab-a99a-238c09e3d76b" />
+  <nestedChildShapes>
+    <commentShape Id="86601b13-7f1a-407a-8707-3faa8053d03a" absoluteBounds="1.25, 1.125, 5.375, 3.25" customColor="251, 247, 200">
+      <commentMoniker Id="e2266271-3ca3-452a-95be-0a475417b0f1" />
+      <relativeChildShapes />
+    </commentShape>
+  </nestedChildShapes>
+</useCaseDiagram>

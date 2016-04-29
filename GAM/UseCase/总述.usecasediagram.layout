@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="总述">
+  <useCaseModelRootMoniker Id="b3d0ffb0-4d77-4c87-bf5c-80c807b7f304" />
+  <nestedChildShapes>
+    <useCaseShape Id="ef8708b6-1f2a-42de-8d91-8f6ba6effcaf" absoluteBounds="0.75, 0.75, 1.875, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="a8e0a7d0-27bc-4062-a3cc-e64dff3ac048" LastKnownName="拟定产品订单" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="efe897f8-eca2-4f4e-8e31-0fdc72c0423f" absoluteBounds="0.625, 2, 1.5, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="8cf0f859-677e-42d9-9626-a8300094613f" LastKnownName="核定产品需求" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseShape Id="6225ec60-1fae-48e7-b2c1-397273b38839" absoluteBounds="3, 1.5, 1.875, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="7aae4b48-009e-469c-84db-361986399efa" LastKnownName="拟定研发计划" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(2.0222608520102 : 2.12370519960777); (3.18090906969522 : 1.89762749859605)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«包括»">
+      <includeMoniker Id="b6fad230-52cf-4a47-a923-a7817227d1b6" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="efe897f8-eca2-4f4e-8e31-0fdc72c0423f" />
+        <useCaseShapeMoniker Id="6225ec60-1fae-48e7-b2c1-397273b38839" />
+      </nodes>
+    </includeConnector>
+    <useCaseShape Id="9c10f0e6-25da-459c-b4b9-e70946f911d2" absoluteBounds="3.375, 2.25, 1.5, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="5f6f4bee-bbe5-4524-ac63-36fefe8118c8" LastKnownName="拟定生产计划" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(2.0985728659283 : 2.31577935144803); (3.4014271340717 : 2.43422064855197)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«包括»">
+      <includeMoniker Id="123d2397-cd82-49c9-9582-0813cfb44dc0" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="efe897f8-eca2-4f4e-8e31-0fdc72c0423f" />
+        <useCaseShapeMoniker Id="9c10f0e6-25da-459c-b4b9-e70946f911d2" />
+      </nodes>
+    </includeConnector>
+    <useCaseShape Id="0d3baf84-eabb-4816-b0e3-a7192de41e83" absoluteBounds="3, 3.125, 1.75, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="2217ca9b-2a08-4d33-b676-4621a6f21f18" LastKnownName="拟定工程计划" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <includeConnector edgePoints="[(1.8214206629693 : 2.45088929833619); (3.40599288041789 : 3.16394679618805)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«包括»">
+      <includeMoniker Id="83eb8e73-754b-4eb7-a3f1-a68c02c0b5d5" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="efe897f8-eca2-4f4e-8e31-0fdc72c0423f" />
+        <useCaseShapeMoniker Id="0d3baf84-eabb-4816-b0e3-a7192de41e83" />
+      </nodes>
+    </includeConnector>
+    <useCaseShape Id="e6640a9e-9ea9-4370-8814-5549bf56fd55" absoluteBounds="0.625, 3.5, 1.375, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="933ae356-5839-475d-aac4-2efd5cb8e1ec" LastKnownName="审核产品订单" />
+      <relativeChildShapes />
+    </useCaseShape>
+  </nestedChildShapes>
+</useCaseDiagram>

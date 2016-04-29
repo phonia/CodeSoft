@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="9bf63892-ff0a-4d6f-b456-ae3abe0296a9" name="预览" linkedPackageId="819b2675-0b7d-41fd-9a34-b1ca7637c043" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a472f7b3-c335-41c5-af17-a4e35b14b31e" name="产品类型" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9988f8ef-68e7-46e8-9620-81783529f267" />
+        <targetEnds>
+          <association Id="4d9a6172-ee6f-4703-8a95-32c84a777d83" isDerived="false" sourceEndRoleName="产品类型" targetEndRoleName="产品类型版本" isLeaf="false" isAbstract="false">
+            <classMoniker Id="94eb1b2c-29cf-48c7-a2af-f1a2dbdf196e" LastKnownName="产品类型版本" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ac12a789-b8ac-4501-88eb-236941b74fb5" name="产品类型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5b36bbec-3af5-407e-9751-854371cccc1c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3465b9aa-9781-4ff9-8d68-1e3ac7124484" name="产品类型版本" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="dd58e13e-8e75-4d4c-873f-1d1e113c7508" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9380c0ec-b3cb-4cc4-baad-b294a9697aad" />
+          </association>
+          <association Id="d784a428-e433-4444-8bf4-924284a09ccf" isDerived="false" sourceEndRoleName="产品类型" targetEndRoleName="产品开发记录" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c3677146-5f09-4603-b2b2-b2572fe825be" LastKnownName="产品开发记录" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="26614baf-7835-451e-b666-c62c6d6e31c0" name="产品类型" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9fdedf8c-d4b1-40d5-aa53-b9f42d854357" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="02988fc6-97fa-4b7e-9355-724a120c09d4" name="产品开发记录" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2380cdf1-c3df-480a-81dc-63246c6996ff" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d7c1147b-d263-4256-b3ce-8ec01c7b143c" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4e18c53e-4963-47a0-838c-b7b03539c335" name="产品订单" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="51ff15a8-79ca-45ab-a869-a890b38a3d0b" />
+        <targetEnds>
+          <association Id="e3681716-1e4e-4a39-93e8-4c20d584e88f" isDerived="false" sourceEndRoleName="产品订单" targetEndRoleName="生产计划" isLeaf="false" isAbstract="false">
+            <classMoniker Id="cd71eb86-25e0-4034-b3f1-a72908c42628" LastKnownName="生产计划" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7421f2eb-716f-4dc8-9bbf-94a41f9f1815" name="产品订单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e5575ff7-ebde-4c09-98d6-aeb86a81ec55" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7dc358a2-4e8b-4eee-9024-82f57265815a" name="生产计划" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="187cfab5-e7a9-466d-b268-28d7e38fa4a2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a2277160-450f-4e8b-91b0-bf7b1ded830c" />
+          </association>
+          <association Id="654f09aa-dc42-458f-82c3-755006172411" isDerived="false" sourceEndRoleName="产品订单" targetEndRoleName="研发计划" isLeaf="false" isAbstract="false">
+            <classMoniker Id="9d88be1d-e2fe-479c-9037-84a0e3f2ce52" LastKnownName="开发计划" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a91827f0-1a7d-4806-8e75-98bc9031344e" name="产品订单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1fd093de-777a-4273-a465-e463ded4c800" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="839d7835-46ac-49da-a76e-059a37d823be" name="研发计划" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="20170431-e2f1-455b-b9d3-87e046a7eec8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="471404a9-e7d6-46dd-80a8-9e9983cac089" />
+          </association>
+          <association Id="e15fdb05-5b5b-4330-8cb6-cc30fed50938" isDerived="false" sourceEndRoleName="产品订单" targetEndRoleName="工程计划" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d1c581a7-12cb-42b1-9419-3894a7adca25" LastKnownName="工程计划" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e921dd6a-bf0d-43c3-991e-f764ceefe6f2" name="产品订单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fd65a228-50e1-4993-8a0a-d7a34bb5ee4a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bd9e4546-7b22-477f-84f3-7e1c5faf400b" name="工程计划" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ba9b68e4-3409-4a55-b0f5-37813a60dce6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="895cab26-cd8d-4c2a-8fc1-4d27e6dace32" />
+          </association>
+          <association Id="fa421268-5510-4686-89dc-b2996843d756" isDerived="false" sourceEndRoleName="产品订单" targetEndRoleName="产品需求" isLeaf="false" isAbstract="false">
+            <classMoniker Id="71697542-3d3e-4cf8-97e1-b2d7da319fab" LastKnownName="客户需求" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2848098f-11ef-41b7-9791-178a977423ad" name="产品订单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="21bdf45e-0ef5-4e61-8ce2-2718d95d7094" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c88cd363-79b0-4b61-8b8d-92bdc3f6357a" name="产品需求" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8daa3022-f8ee-4908-a99c-9a6d08ff1885" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="75e65095-80e1-45c8-b22a-e037c815c5b8" />
+          </association>
+          <association Id="51f6ebe8-60fc-4a5a-afed-1710870333f8" isDerived="false" sourceEndRoleName="产品订单" targetEndRoleName="销售" isLeaf="false" isAbstract="false">
+            <classMoniker Id="978a02c2-93ed-4bb7-bded-8ecb4aac7b55" LastKnownName="销售" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cc5c2c16-4f82-4174-a74a-6ad3906643f2" name="产品订单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9deb67c4-c0ea-4333-bb93-50997891ad65" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e404f72a-0eec-4e3c-b6de-544d803c5557" name="销售" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8d856bd1-cfdd-4ecd-83a9-785870c0f2ff" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="78861e37-5af5-48e0-aa15-4b22ba77cca8" />
+          </association>
+          <association Id="9325c109-c36f-48f5-a344-715b46613e8b" isDerived="false" sourceEndRoleName="产品订单" targetEndRoleName="生产" isLeaf="false" isAbstract="false">
+            <classMoniker Id="021d7f7c-1a08-4a90-abf0-4018cef4489f" LastKnownName="生产" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="150a6102-51c1-4a1f-8091-42aa3e2fd7c7" name="产品订单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3d1fc8cd-0124-4a93-8e11-9d6180b87e99" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5914946c-0858-4ee8-97ff-2d18525259ca" name="生产" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0d53502d-5dae-4ec1-af12-2940b847a7ca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bfde5c75-146c-4988-9115-e68c731b1f35" />
+          </association>
+          <association Id="287b1a07-090e-4700-8d21-7a8f39c4c27f" isDerived="false" sourceEndRoleName="产品订单" targetEndRoleName="开发" isLeaf="false" isAbstract="false">
+            <classMoniker Id="21fb6e52-32f7-47ff-a1fc-4de3e258c173" LastKnownName="开发" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4222566f-9a8c-4293-aaa6-e07a2e22c1b5" name="产品订单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e703fff4-782a-458b-a1d3-445fbb5651bc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dd5de720-1dc3-4227-8c75-be9da12453bf" name="开发" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="da5d9800-cf8c-4041-8420-13009dcc649c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fe3f27c5-9ce9-49c3-bd02-54eb985593ff" />
+          </association>
+          <association Id="3f35ed90-227e-45f4-ab9a-46705dd9b747" isDerived="false" sourceEndRoleName="产品订单" targetEndRoleName="工程" isLeaf="false" isAbstract="false">
+            <classMoniker Id="7814e16e-5a37-4ba9-bc79-07e820db5d79" LastKnownName="工程" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5c426ec1-2d61-4aed-98d5-ff1f5dc0ab55" name="产品订单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fcd6a0ae-8633-4ff3-8872-5d2be1196a05" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="57486232-f016-44b4-b305-54cdb11456fd" name="工程" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a85192a0-88b0-4512-b362-3e230cc9909e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f6d3f09c-045f-4695-8a81-60a9258b000a" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="31ecaf1d-9f1f-42a0-b759-b1f16304d5bc" name="订单状态" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6d385416-a5bd-492d-92f9-93686475f73b" />
+          </property>
+          <property Id="880a1d3d-efb0-4d74-9c71-fd22d2fccdf4" name="产品类型" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0a62e3b5-d331-4c2a-9a6e-70ccc6da3861" />
+          </property>
+          <property Id="c31a69a0-5978-42d5-8a5d-f341ded740a6" name="产品名称" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c5c50da6-0905-43a4-a57b-6c6b9b7ed824" />
+          </property>
+          <property Id="79fe5c2a-e38e-4bef-9fe8-e480b042c241" name="产品版本" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5f8eb4fa-54db-464a-9699-38bb306dd72d" />
+          </property>
+          <property Id="04e6636f-52e1-451d-9962-add80a947f2d" name="数量" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8ecbd332-6922-4f1f-9152-b750682f55c4" />
+          </property>
+          <property Id="14244faf-956c-4c26-b129-29a3c81514f0" name="期限" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="769af4e5-d3e4-4489-a2fd-27d8550bf751" />
+          </property>
+          <property Id="a76376ad-b1c6-4d6d-82ea-e1f15e4622c9" name="开发状态" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4324e089-7c60-480d-87e2-f0b2e53f8ac5" />
+          </property>
+          <property Id="9fd8cd3c-d796-4c39-9b6a-bb65d8933ccc" name="生产状态" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dcef6335-0b8d-4555-bf07-96a6726edb7e" />
+          </property>
+          <property Id="a8f5a3ee-0dd1-4a00-a73e-e6f8c334a6e4" name="工程状态" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0208d244-54e9-441b-be80-f65710e3223f" />
+          </property>
+          <property Id="63aed023-41b1-4348-81b9-e298cc206d54" name="工程地址" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e167d667-ca32-4af1-a4a6-208b26e6a4a2" />
+          </property>
+          <property Id="4d969a2c-a46f-4219-867c-9a020b22fef5" name="保修期限" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f27d82a1-7069-4851-9f00-ebbb878b9fe8" />
+          </property>
+          <property Id="8a8f7b01-982c-44b6-b1b3-f01fac122351" name="产品单价" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f029b1ea-8c00-4dc6-ae16-5d4cdcc1c089" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="cd71eb86-25e0-4034-b3f1-a72908c42628" name="生产计划" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6163d3be-7879-40f4-b1e3-466b2e35654d" />
+        <generalsInternal>
+          <generalization Id="4b4ed383-fb9e-4707-93a0-88cc9b1ec3a6" isSubstitutable="false">
+            <classMoniker Id="daa2321d-170b-4491-91d1-4a7da638e488" LastKnownName="工作计划" />
+            <elementDefinition Id="c83d9956-325c-42d0-91de-ee2e1f7ca309" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9d88be1d-e2fe-479c-9037-84a0e3f2ce52" name="开发计划" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="201439cd-cda8-47ef-8051-43ab7fd1856d" />
+        <generalsInternal>
+          <generalization Id="8df1db56-a4b3-4c8f-b585-1cc372ff8636" isSubstitutable="false">
+            <classMoniker Id="daa2321d-170b-4491-91d1-4a7da638e488" LastKnownName="工作计划" />
+            <elementDefinition Id="e63f4893-232f-4867-8ca0-6cb621eba6b8" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d1c581a7-12cb-42b1-9419-3894a7adca25" name="工程计划" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="44ba393f-9e40-4d8e-9349-6bab2431cdde" />
+        <generalsInternal>
+          <generalization Id="f261d6af-aa5d-47ec-8a20-3d7869445f88" isSubstitutable="false">
+            <classMoniker Id="daa2321d-170b-4491-91d1-4a7da638e488" LastKnownName="工作计划" />
+            <elementDefinition Id="4dfe474b-c0d6-4e0c-bee2-c4e7b471e4fe" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="71697542-3d3e-4cf8-97e1-b2d7da319fab" name="客户需求" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4f7d6058-e475-4d1c-9490-e71736baf53d" />
+        <ownedAttributesInternal>
+          <property Id="00d852bf-6bfe-43ad-bb17-9b47c260537b" name="产品名称" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7e1676ab-bc9c-44e6-ae72-d33b178854c3" />
+          </property>
+          <property Id="4dcd25c0-88f8-490a-8666-07d4b85e58d5" name="功能需求" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a2537a32-f03d-4204-9757-04f611236223" />
+          </property>
+          <property Id="4c8d596e-d67a-443d-a163-32870067e122" name="其他需求" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ef917785-c28e-47c5-b601-cb8f8f9179a7" />
+          </property>
+          <property Id="37ef53b9-158b-4d0d-9879-292e02ad4eb3" name="数量" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a447c8d0-a367-47fd-a600-b3e3a06f43a7" />
+          </property>
+          <property Id="9b8eaf77-18b2-44f4-ab78-64a838e45c32" name="期限" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4bebb29a-b37e-4fc2-954d-b011c52ccd30" />
+          </property>
+          <property Id="ee32030e-42e7-424f-ba9e-9a892507d7e4" name="产品需求状态" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7a78abf4-e9b3-45a8-8ad2-bf2b61ab7091" />
+          </property>
+          <property Id="aea1310b-ffb5-4279-9cd2-0d213f5bfa0a" name="工程地址" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7d78cc47-973c-490c-9e61-75a0916dc112" />
+          </property>
+          <property Id="1b1b022b-9d25-42f1-b147-a24ccf5b9904" name="客户名称" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="31f5ee23-ea89-4763-9613-f0109262d01e" />
+          </property>
+          <property Id="0f6c54b1-4e67-4d0f-a584-a70a78d568c7" name="客户联系人" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b0afc117-07b9-4287-a747-51c2924730c1" />
+          </property>
+          <property Id="057c5974-c62f-412e-9f7c-9896ee1863fd" name="客户联系方式" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4188dfee-e87a-4a8e-8a21-f00240bddd28" />
+          </property>
+          <property Id="8011053a-0983-4854-a635-d03990c12095" name="客户联系地址" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cf338adf-29eb-4170-af95-322f7c5c19cd" />
+          </property>
+          <property Id="f2001dd6-2b72-42e6-86ee-20ebfb52fb64" name="客户主营业务" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="11781147-9aed-4766-bc01-cd14f35bd0cf" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="978a02c2-93ed-4bb7-bded-8ecb4aac7b55" name="销售" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cecdb2da-74bb-46a2-9a16-bbe8005054c9" />
+        <generalsInternal>
+          <generalization Id="2590edd9-bdc3-488d-a85a-6427d09a95d2" isSubstitutable="false">
+            <classMoniker Id="d012ab07-4595-402b-934f-0c3e0a8a7746" LastKnownName="人员" />
+            <elementDefinition Id="a01c9ef4-968e-4251-8f40-0d50ba7797b8" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="ef1e3ed1-fa46-436a-a696-a6d2631170cd" name="发起产品订单" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="618d02fc-01cc-41c3-915e-0dd4716430a2" />
+          </operation>
+          <operation Id="93f4f44c-4f07-4169-8177-7d422fbb00aa" name="查看产品订单" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="52c3c2c3-f619-49e7-be47-79ca010ae17c" />
+          </operation>
+          <operation Id="200a58b0-c68b-4344-bad5-19e1b33852b3" name="确认产品订单" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2cd6d54c-3943-4a28-b848-9370226d2843" />
+          </operation>
+          <operation Id="cf418348-fce3-4323-a0ff-6445e3acd15b" name="驳回产品订单" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="44551bfd-37d5-480d-a556-e36d2c6dcfcb" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="021d7f7c-1a08-4a90-abf0-4018cef4489f" name="生产" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c2fa9d6a-316d-43a4-8dca-3d502421df45" />
+        <generalsInternal>
+          <generalization Id="cc0d2c0f-1e6a-4ca3-a901-18eccdd1296c" isSubstitutable="false">
+            <classMoniker Id="d012ab07-4595-402b-934f-0c3e0a8a7746" LastKnownName="人员" />
+            <elementDefinition Id="02c7eade-75ec-41c2-9158-31f9cbda3582" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="6a36920b-05c6-4ba2-9964-4d9e61fab58c" name="发起开发计划" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="073e05a0-032a-4c5f-be34-460464a8ecd9" />
+          </operation>
+          <operation Id="75a38623-0d87-4d63-9cc4-6ca8eec06730" name="发起生产计划" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4cf33599-ea56-4dde-9a25-5b09d52ce0f1" />
+          </operation>
+          <operation Id="387191e5-94b6-491e-b00e-5ad2fbca7d9e" name="发起工程计划" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0d6665ef-ba4a-4a9c-85e0-b688a43f3fec" />
+          </operation>
+          <operation Id="a10beaaa-6b7e-40a4-bde9-c132eebdf786" name="产看产品订单" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e74c0774-fe12-422a-81ea-45f93bb8bc13" />
+          </operation>
+          <operation Id="fb6bc509-db14-47c9-af84-bfc46171050b" name="发送生产计划" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="56edc80a-54bf-46e1-8468-4f936336532f" />
+          </operation>
+          <operation Id="4a68c58e-c699-4b53-a23f-3bdce5e05eea" name="发送产品订单" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="86d43612-65b6-42c1-a99f-f336fe871531" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="21fb6e52-32f7-47ff-a1fc-4de3e258c173" name="开发" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="810b2162-2633-43d5-b8ee-8aee9bf33544" />
+        <generalsInternal>
+          <generalization Id="044ab790-690d-4993-8fe2-56db1cce903d" isSubstitutable="false">
+            <classMoniker Id="d012ab07-4595-402b-934f-0c3e0a8a7746" LastKnownName="人员" />
+            <elementDefinition Id="4575f1b2-f43d-4d6f-a416-623dfdc331ca" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="c3c6462c-74ea-45be-bc6b-4c79acb2160b" name="发送开发计划" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1449b80b-2ab2-4583-b81e-02f5356eadb8" />
+          </operation>
+          <operation Id="78d4292b-9ed7-42cb-9cb4-7c1cb9ea4743" name="查看产品订单" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="410abd8b-7f01-4d3e-9610-68e8728fccd3" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7814e16e-5a37-4ba9-bc79-07e820db5d79" name="工程" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0256e2f8-afbe-4d5e-b894-13c04e227320" />
+        <generalsInternal>
+          <generalization Id="fde15b21-6eaa-4285-b9fb-5a16cb299b40" isSubstitutable="false">
+            <classMoniker Id="d012ab07-4595-402b-934f-0c3e0a8a7746" LastKnownName="人员" />
+            <elementDefinition Id="0379cb54-94ff-4fe6-8f68-d84bf471e4a2" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="c1867531-78c3-4d19-8acd-b627b2257f16" name="查看产品订单" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dde9d7a7-49a0-4f4c-8652-a4bb151d93f2" />
+          </operation>
+          <operation Id="ddb3a68d-00a9-4026-a40a-9e8933c6832d" name="发送工程计划" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="62de0acc-62b3-429b-825f-f881c832f003" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d012ab07-4595-402b-934f-0c3e0a8a7746" name="人员" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="02d28236-14e0-4af6-a1ba-45ee210ccc19" />
+        <ownedAttributesInternal>
+          <property Id="ef42a853-be9a-4726-954c-241820e49f6f" name="性别" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="aec0f5ce-814b-4901-8db7-1f845ed2bb2f" />
+          </property>
+          <property Id="a5dba06f-3c2a-4a26-85a6-ae30a7167f8b" name="邮箱" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="24ea6456-7fd0-46dd-8eaf-1b40ee94637a" />
+          </property>
+          <property Id="4c3a3945-cdc8-4ffc-b421-c993bc9d087b" name="用户名/姓名" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b35173e6-8ed6-4785-b877-99d239f415b6" />
+          </property>
+          <property Id="7cdcb498-051b-4a03-ad7d-33e7239f2912" name="密码" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="669b70c8-1793-4245-a727-e8f7201516ba" />
+          </property>
+          <property Id="f760a993-b3ce-422c-9b9f-beb6cd6b0c57" name="联系方式" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b3eaa225-321e-4f92-8f00-91fc9d71647c" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="164a88dc-72cf-4c5f-a9cb-36a7ec60d880" name="登录" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b0e9c238-4adf-4552-bb6d-593114381745" />
+          </operation>
+          <operation Id="2cfe1c71-dc3b-41c9-aad1-37a96e982102" name="注销" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="382d840b-ec1a-4fe1-bf00-ffe4e42e3310" />
+          </operation>
+          <operation Id="1591dc65-dace-44af-a159-52aa88e8dd25" name="查询产品类型信息" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="77c6bc8d-e2dd-495c-b5ee-60c9fde68d0f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="daa2321d-170b-4491-91d1-4a7da638e488" name="工作计划" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dd29e305-2a52-4cb7-9036-cc2318d3f235" />
+        <ownedAttributesInternal>
+          <property Id="0f77ffdd-d4fc-4a8c-89ab-94fcab334ade" name="参与者" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6ba28b68-c3b2-4c8f-a2b5-abb375c9f001" />
+          </property>
+          <property Id="ee9a22fe-db8f-490a-ba8b-599e177bbbff" name="期限" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4058e9b9-672e-4f39-bd36-12bd9937e9f9" />
+          </property>
+          <property Id="20c587d8-8e09-4f2c-b83d-d6b38bc6049e" name="详细计划" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6a35d929-07c1-448f-aeba-864645c932a3" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="be31053c-5324-48bc-aa0a-e39bd61fea53" name="库存信息" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="39a34608-4ad1-4806-a5b4-b37f5691dc64" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="802a3cd1-fa71-4d4f-906d-ada029ceecc3" name="系统管理员" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1632d81e-092c-4c75-a14d-b97c670b0849" />
+        <generalsInternal>
+          <generalization Id="191243f7-a720-4564-a670-e844d4c29300" isSubstitutable="false">
+            <classMoniker Id="d012ab07-4595-402b-934f-0c3e0a8a7746" LastKnownName="人员" />
+            <elementDefinition Id="b34ff434-0d66-410b-817a-469cb804b5e1" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ce961c89-db13-4fa1-bd4e-e81dac5c74c9" name="出库单" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2380d017-01b3-4d7a-a4ea-fc977ca837fa" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3232b4f9-6bbc-44b1-97a8-56d5a91b3a42" name="物料采购申请单" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8605229e-6d00-4376-b6a7-4b578ca3eee2" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ebe8bc7b-8ee1-4e57-a325-f7e2f06d9ed2" name="供应商信息" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="312cdb03-dab5-49e2-a1da-a10593e97326" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0471a9c0-c54e-4821-bd82-35a07104e0db" name="采购单" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cd7abd5d-5997-4659-b790-5688b0aaf3d3" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a0ab7e3f-de42-469c-90d0-7bd7a23b6706" name="财务" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8fda0f90-d270-416b-8353-39eed561dc1d" />
+        <generalsInternal>
+          <generalization Id="c691014f-c169-43d5-af74-22c97e461a78" isSubstitutable="false">
+            <classMoniker Id="d012ab07-4595-402b-934f-0c3e0a8a7746" LastKnownName="人员" />
+            <elementDefinition Id="39231ded-b8e2-4efb-a921-88e244793236" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="135adc65-5fd8-4c85-9492-b75228691f6d" name="入库单" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="39d3a2de-19ac-42f6-b846-058b6be26a35" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="94eb1b2c-29cf-48c7-a2af-f1a2dbdf196e" name="产品类型版本" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3e9957d5-0f8c-4d1d-8e2c-77f80fc00827" />
+        <targetEnds>
+          <association Id="9a9d81bd-9569-4c28-ba91-875a3e913cbe" isDerived="false" sourceEndRoleName="产品类型版本" targetEndRoleName="物料需求" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8cd66c31-8ac2-4080-acd5-8a4fa5d4baae" LastKnownName="物料需求" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0e0724c8-883b-4e3e-8a7e-6ee8f32543c3" name="产品类型版本" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0b691398-9834-4683-bc5b-57c318fb5af0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6e8f7ef4-8c55-4778-821f-29f46c449c19" name="物料需求" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="030488de-8da2-4d29-8497-0725ee7dbf88" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6c595b8b-2eb0-42fc-ac8b-3f8598bbd3e8" />
+          </association>
+          <association Id="22fd6415-ccb9-4545-a83f-2f331b32a234" isDerived="false" sourceEndRoleName="产品类型版本" targetEndRoleName="生产流程" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c92aedb0-e4f3-44b1-a109-ebde9f054d90" LastKnownName="生产步骤" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea12e825-5830-42b6-9ecb-b728a92ea5b1" name="产品类型版本" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="37539684-372f-4a28-ac8f-5d367819377e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="86227495-b89a-4559-b695-7476217a5312" name="生产流程" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="693665ff-fa9a-4111-934a-aa6340fa65cc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="26e0274b-df89-45ad-89c2-2c6760098b7d" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c3677146-5f09-4603-b2b2-b2572fe825be" name="产品开发记录" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d2952cef-2320-4e67-9a3c-219f0f9bb36d" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8cd66c31-8ac2-4080-acd5-8a4fa5d4baae" name="物料需求" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6aa78657-2d7f-4dc4-aa87-a3a16e1daa27" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c92aedb0-e4f3-44b1-a109-ebde9f054d90" name="生产步骤" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="66f5fb8d-f49e-47df-8f51-ba44700dbbde" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5fbbfdd2-dd75-41b7-9b0c-f1196c6780de" name="产品信息" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6157b183-1c24-4437-a0df-196f5864c2f4" />
+        <suppliersInternal>
+          <dependency Id="4409e4c7-aad3-4956-a014-9de99fd4d2dd">
+            <classMoniker Id="94eb1b2c-29cf-48c7-a2af-f1a2dbdf196e" LastKnownName="产品类型版本" />
+            <elementDefinition Id="07830fee-23c6-42c8-b113-27d2390f1fe6" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="10c8a3e2-cd90-45c9-a384-4c75e8285da2" name="工程信息" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d91c8921-5cbc-4a8f-bf15-357a15508e86" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="819b2675-0b7d-41fd-9a34-b1ca7637c043" name="GAM">
+    <elementDefinition Id="dec455e4-0d66-43b2-9145-9c0d86494697" />
+    <profileInstances>
+      <packageHasProfileInstances Id="c76e2e3b-fe7a-49e2-a96f-e42cc36dddd6">
+        <profileInstance Id="4f82ba8c-03d5-4908-a28b-79df9b5a223c" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4648e844-bc22-4ab9-8b15-0ce98dc4d5c4">
+        <profileInstance Id="2b61cb29-687e-41ab-8744-b188bb8b33b5" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="554a4b59-6d4f-49e5-b044-9d0cf9a5d332">
+        <profileInstance Id="86fff5db-9060-4155-ab5c-30f18d767b60" name="TextTemplateBindings">
+          <elementDefinition Id="df961f07-e74a-4582-9da4-d4bfb1c1527b" />
+        </profileInstance>
+        <elementDefinition Id="61560fbc-aa87-4f56-9403-47f839881709" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

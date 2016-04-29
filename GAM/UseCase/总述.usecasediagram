@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b3d0ffb0-4d77-4c87-bf5c-80c807b7f304" name="总述" linkedPackageId="66e1cdcc-2a42-4978-8cc2-834afc089335" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="c57da8b2-ef1e-4999-a637-4f2c34eeb380">
+      <profileInstance Id="ad3e1df7-71a4-4d97-80f7-22cb2de8cc0b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="aa0be10e-bf91-4cba-a220-01cc82322e74">
+      <profileInstance Id="ab3efe23-dfe4-46b0-9db8-1b5fa8ab8af2" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="30f24464-50b4-439d-904f-c88a7eabc1f1">
+      <profileInstance Id="25dc61c8-4f99-478d-bcd6-0c3aa421182c" name="TextTemplateBindings">
+        <elementDefinition Id="df961f07-e74a-4582-9da4-d4bfb1c1527b" />
+      </profileInstance>
+      <elementDefinition Id="61560fbc-aa87-4f56-9403-47f839881709" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a8e0a7d0-27bc-4062-a3cc-e64dff3ac048" name="拟定产品订单" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="94f7b7be-74fd-4272-bc6e-49693437e617" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="8cf0f859-677e-42d9-9626-a8300094613f" name="核定产品需求" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3ce34f9f-234a-4ab7-880d-92714ef82de9" />
+        <additions>
+          <include Id="b6fad230-52cf-4a47-a923-a7817227d1b6">
+            <useCaseMoniker Id="7aae4b48-009e-469c-84db-361986399efa" LastKnownName="拟定研发计划" />
+            <elementDefinition Id="4b24ef39-e852-4456-816a-4549503c721e" />
+          </include>
+          <include Id="123d2397-cd82-49c9-9582-0813cfb44dc0">
+            <useCaseMoniker Id="5f6f4bee-bbe5-4524-ac63-36fefe8118c8" LastKnownName="拟定生产计划" />
+            <elementDefinition Id="6908c482-b75a-4bef-b82c-4487dc8d9ccc" />
+          </include>
+          <include Id="83eb8e73-754b-4eb7-a3f1-a68c02c0b5d5">
+            <useCaseMoniker Id="2217ca9b-2a08-4d33-b676-4621a6f21f18" LastKnownName="拟定工程计划" />
+            <elementDefinition Id="3cb31e06-8e73-42b7-880a-8ebcfdd27b5c" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7aae4b48-009e-469c-84db-361986399efa" name="拟定研发计划" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="81b6aad5-0780-4802-b5f1-54eab3551327" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5f6f4bee-bbe5-4524-ac63-36fefe8118c8" name="拟定生产计划" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d6bf85af-7552-4bb7-9d17-c4436fac22ed" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2217ca9b-2a08-4d33-b676-4621a6f21f18" name="拟定工程计划" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="86be1e68-fb71-4947-913f-d46934621776" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="933ae356-5839-475d-aac4-2efd5cb8e1ec" name="审核产品订单" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fca2702a-b0d4-42ca-9b89-02d285c07c90" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="66e1cdcc-2a42-4978-8cc2-834afc089335" name="GAM">
+    <elementDefinition Id="dec455e4-0d66-43b2-9145-9c0d86494697" />
+  </package>
+</useCaseModelRoot>
