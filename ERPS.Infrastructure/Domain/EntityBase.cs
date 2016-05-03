@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Infrastructure
 {
-    public class EntityBase
+    public abstract class EntityBase
     {
         private List<BusinessRule> _broken = new List<BusinessRule>();
 

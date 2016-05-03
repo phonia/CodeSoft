@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Infrastructure
 {
-    public class ArgumentValidationAttribute:Attribute
+    public abstract class ArgumentValidationAttribute:Attribute
     {
         public abstract void Validate(Object value, String argumentName);
     }

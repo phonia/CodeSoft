@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -17,7 +18,12 @@ namespace ERPS.Models
 
     public enum MSRole
     {
-        Developer,Saler
+        [Description("销售员")]
+        SalesMan, 
+        Developer, 
+        WarehouseKeeper,
+        Buyer,
+        SysManager
     }
 
     public enum Sex
