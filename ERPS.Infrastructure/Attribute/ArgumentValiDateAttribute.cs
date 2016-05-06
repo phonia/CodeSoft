@@ -15,7 +15,7 @@ namespace Infrastructure
     {
         public override void Validate(object value, string argumentName)
         {
-            ////throw new NotImplementedException();
+            if (value is Nullable) throw new ArgumentNullException(argumentName, "参数不能为空！");
         }
     }
 }

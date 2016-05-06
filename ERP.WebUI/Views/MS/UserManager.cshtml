@@ -3,4 +3,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>UserManager</h2>
+<div style="display:block">
+    <table class="easyui-datagrid" id="MSUserGrid" title="用户列表"
+        data-options="url:'/MSUser/GetAllMSUser,fitColumns:true,singleSelect:true,rownumbers:true,striped:true,loadMsg:'在在加载'
+        ctrSelect:true,pagination:true,pageSize:10,selectOnCheck:true">
+        <thead>
+            <tr>
+                <th data-options="field:'Name'">用户名</th>
+            </tr>
+        </thead>
+    </table>
+</div>
