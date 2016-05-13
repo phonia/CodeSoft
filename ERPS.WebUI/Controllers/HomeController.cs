@@ -22,6 +22,7 @@ namespace ERPS.WebUI.Controllers
 
         public ActionResult GetMainMenu()
         {
+            Session["MSUserDTO"] = new MSUserDTO() { Name = "hy" };
             return Content(_json.Serialize(new{
                 Success=true,
                Data=new []{

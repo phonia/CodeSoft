@@ -1,4 +1,6 @@
-﻿using Infrastructure;
+﻿using EPRS.Service;
+using Infrastructure;
+using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.InterceptionExtension;
 using System;
 using System.Collections.Generic;

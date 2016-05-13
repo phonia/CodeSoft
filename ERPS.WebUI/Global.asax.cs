@@ -29,5 +29,10 @@ namespace ERPS.WebUI
 
             ControllerBuilder.Current.SetControllerFactory(new UnityControllerFactory());
         }
+
+        void Session_Start(object sender, EventArgs e)
+        {
+            Session["MSUserDTO"] = new MSUserDTO() ;
+        }
     }
 }

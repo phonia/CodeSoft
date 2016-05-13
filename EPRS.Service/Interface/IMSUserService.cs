@@ -1,4 +1,5 @@
 ﻿using ERPS.Models;
+using Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace EPRS.Service
         bool Logout(String name);
         List<MSUserDTO> GetAllMSUser();
         MSUserDTO GetMSUserByName(String name);
+        void RegisterUser(MSUserDTO msUserDTO);
     }
 }

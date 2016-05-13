@@ -15,33 +15,41 @@ namespace ERPS.WebUI.Controllers
 {
     public class UnityControllerFactory:DefaultControllerFactory
     {
-        private IUnityContainer _unityContainer;
+        public UnityBootStrapper _unityBootStrapper = null;
 
         public UnityControllerFactory()
         {
-            _unityContainer = new UnityContainer();
-            Bindings();
+            _unityBootStrapper = new UnityBootStrapper();
+            _unityBootStrapper.Bindings();
         }
 
         protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)
         {
-            return controllerType == null ? null : (IController)_unityContainer.Resolve(controllerType);
+            _unityBootStrapper.UnityContainer.RegisterType<UserPermissonValidateInterceptor>(new InjectionProperty("MSUserDTO", (MSUserDTO)requestContext.HttpContext.Session["MSUserDTO"]));
+            return controllerType == null ? null : (IController)_unityBootStrapper.UnityContainer
+                .Resolve(controllerType);
         }
 
         public override void ReleaseController(IController controller)
         {
-            _unityContainer.Teardown(controller);
+            _unityBootStrapper.UnityContainer.Teardown(controller);
         }
+    }
 
-        void Bindings()
+    public class UnityBootStrapper
+    {
+        public IUnityContainer UnityContainer = new UnityContainer();
+
+        public void Bindings()
         {
-            _unityContainer.AddNewExtension<Interception>();
-            _unityContainer.RegisterType<IMSUserRepository, MSUserRepository>();
-            _unityContainer.RegisterType<IUnitOfWork, EFUnitOfWork>();
+            UnityContainer.AddNewExtension<Interception>();
+            UnityContainer.RegisterType<IMSUserRepository, MSUserRepository>();
+            UnityContainer.RegisterType<IUnitOfWork, EFUnitOfWork>();
             //_unityContainer.RegisterType<IMSUserService, MSUserService>();
-            _unityContainer.RegisterType<IMSUserService, MSUserService>(
+            UnityContainer.RegisterType<IMSUserService, MSUserService>(
                 new Interceptor<InterfaceInterceptor>(),
-                new InterceptionBehavior<ArgumentValidateInterceptor>()
+                new InterceptionBehavior<ArgumentValidateInterceptor>(),
+                new InterceptionBehavior<UserPermissonValidateInterceptor>()
                 );
         }
     }

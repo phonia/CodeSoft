@@ -11,6 +11,7 @@ namespace ERPS.WebUI.Controllers
 {
     public class BaseController:Controller
     {
+
         protected JavaScriptSerializer _json = new JavaScriptSerializer();
 
         protected override void OnException(ExceptionContext filterContext)

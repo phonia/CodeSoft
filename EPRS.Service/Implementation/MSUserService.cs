@@ -46,5 +46,11 @@ namespace EPRS.Service
             if (msUser == null) throw new DomainServiceException("不存在该用户！");
             return msUser.MapperTo<MSUser, MSUserDTO>();
         }
+
+
+        public void RegisterUser(MSUserDTO msUserDTO)
+        {
+
+        }
     }
 }
