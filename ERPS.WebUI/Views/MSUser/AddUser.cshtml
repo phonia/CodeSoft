@@ -1,0 +1,134 @@
+﻿<script type="text/javascript">
+    $(function () {
+        var height = 0;
+        var left = $('#LeftDiv').height();
+        var right = $('#RightDiv').height();
+        height = left > right ? left : right;
+        $("#LeftDiv").css("height", height);
+        $("#RightDiv").css("height", height);
+    });
+
+    var loadImageFile = (function () {
+        var height = $('#LeftDiv').height();
+        var width = $('#LeftDiv').width();
+        $('#imagePreview').css("height", height*3/5);
+        $('#imagePreview').css("width", width*3/5);
+
+        if (window.FileReader) {
+            var oPreviewImg = null, oFReader = new window.FileReader(),
+            rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
+
+            oFReader.onload = function (oFREvent) {
+                if (!oPreviewImg) {
+                    var newPreview = document.getElementById("imagePreview");
+                    oPreviewImg = new Image();
+                    oPreviewImg.style.width = width * 3 / 5 + "px";
+                    oPreviewImg.style.height = height * 3 / 5 + "px";
+                    newPreview.appendChild(oPreviewImg);
+                }
+                oPreviewImg.src = oFREvent.target.result;
+            };
+
+            return function () {
+                var aFiles = document.getElementById("imageInput").files;
+                if (aFiles.length === 0) { return; }
+                if (!rFilter.test(aFiles[0].type)) {
+                    alert("You must select a valid image file!");
+                    oFReader.readAsDataURL(new Blob());
+                    return
+                }
+                oFReader.readAsDataURL(aFiles[0]);
+            }
+
+        }
+        if (navigator.appName === "Microsoft Internet Explorer") {
+            return function () {
+                alert(document.getElementById("imageInput").value);
+                document.getElementById("imagePreview").filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = document.getElementById("imageInput").value;
+            }
+        }
+    })();
+
+    function AddUser() {
+        var f = document.getElementById('imageInput').files[0];
+        $('#AddUserForm').form('submit', {
+            url: '/MSUser/AddUser',
+            //onSubmit: function (data) {
+            //    data["userPhoto"] = f;
+            //},
+            success: function (data) { }
+        });
+    }
+
+    function Cancel() {
+        var pp = parent.$('#FloatWin');
+        pp.empty();
+        pp.window('close');
+    }
+</script> 
+
+<style type="text/css">
+#imagePreview {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
+}
+ .clear {
+        clear:both;
+    }
+</style> 
+
+<form id="AddUserForm" method="post" style="padding:5px 5px 5px 5px">
+    <div class="easyui-panel">
+        <div class="fitem">
+            <div class="fitem">
+                <div id="LeftDiv" class="fitem" style="float:left;width:49%;text-align:center;vertical-align:middle;
+                        border-right: 1px dashed; border-color:black;">
+                    <div style="margin-left:auto;margin-right:auto;margin-top:20%; vertical-align:middle">
+                        <div id="imagePreview" style="vertical-align:middle;margin-left:auto;margin-right:auto"></div>
+                        @*<input id="imageInput" type="file" style="width:100px;margin-top:10px"  name="userPhoto" onchange="loadImageFile();" />*@
+                        <div style="margin-bottom:20px">
+                            <div>File1:</div>
+                            <input id="imageInput" class="easyui-filebox" name="userPhoto" data-options="prompt:'Choose a file...'" style="width:30%">
+                        </div>
+                    </div>
+                </div>
+                <div id="RightDiv" class="fitem" style="float:right;width:49%;text-align:left;">
+                    <div class="fitem" style="margin-left:20px">
+                        <label style="display:inline-block;width:80px;text-align:right">用户名：</label>
+                        <input class="easyui-validatebox" required="required" name="userName" />
+                        <div style="height:20px"></div>
+                    </div>
+                    <div class="fitem" style="margin-left:20px">
+                        <label style="display:inline-block;width:80px;text-align:right">密码：</label>
+                        <input class="easyui-validatebox" required="required" name="userPwd" />
+                        <div style="height:20px"></div>
+                    </div>
+                    <div class="fitem" style="margin-left:20px">
+                        <label style="display:inline-block;width:80px;text-align:right">性别：</label>
+                        <input class="easyui-validatebox" required="required" name="sex" />
+                        <div style="height:20px"></div>
+                    </div>
+                    <div class="fitem" style="margin-left:20px">
+                        <label style="display:inline-block;width:80px;text-align:right">联系电话：</label>
+                        <input class="easyui-validatebox" required="required" name="contactNumber" />
+                        <div style="height:20px"></div>
+                    </div>
+                    <div class="fitem" style="margin-left:20px">
+                        <label style="display:inline-block;width:80px;text-align:right">邮箱：</label>
+                        <input class="easyui-validatebox" required="required" name="email" />
+                        <div style="height:20px"></div>
+                    </div>
+                    <div class="fitem" style="margin-left:20px">
+                        <label style="display:inline-block;width:80px;text-align:right">用户角色：</label>
+                        <input class="easyui-validatebox" required="required" name="userRole" />
+                        <div style="height:20px"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="fitem" style="float:none;text-align:center;padding:5px;margin-top:20px">
+                    <a href="javascript:" class="easyui-linkbutton l-btn l-btn-small" onclick="AddUser()"><span class="l-btn-left"><span class="l-btn-text">注册</span></span></a>
+                    <a href="javascript:" class="easyui-linkbutton l-btn l-btn-small" onclick="Cancel()"><span class="l-btn-left"><span class="l-btn-text">取消</span></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

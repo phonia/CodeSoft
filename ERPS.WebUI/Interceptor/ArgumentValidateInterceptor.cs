@@ -25,14 +25,14 @@ namespace ERPS.WebUI.Interceptor
 
             for (int index = 0; index < parms.Length; index++)
             {
-                var attrs = parms[index].GetCustomAttributes(false);
-                if (attrs == null || attrs.Length <= 0) continue;
-                foreach (var node in attrs)
+                if (parms[index].ParameterType == typeof(System.String))
                 {
-                    if (node is ArgumentValidationAttribute)
-                    {
-                        (node as ArgumentValidationAttribute).Validate(input.Arguments[index], "Class:" + className + ",Method" + input.MethodBase.Name + ",Parameter:" + parms[index].Name);
-                    }
+                    if (input.Inputs[index] == null) throw new DomianValidateException(className+"-"+parms[index].Name+"不能为空");
+                    if (String.IsNullOrWhiteSpace(input.Inputs[index].ToString())) throw new DomianValidateException(className + "-" + parms[index].Name + "不能为空");
+                }
+                if (!parms[index].ParameterType.IsValueType && input.Inputs[index] == null)
+                {
+                    throw new DomianValidateException(className + "-" + parms[index].Name + "不能为空");
                 }
             }
 

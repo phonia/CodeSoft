@@ -162,7 +162,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interceptor\ArgumentValidateInterceptor.cs" />
-    <Compile Include="Interceptor\UserPermissionAttribute.cs" />
     <Compile Include="Interceptor\UserPermissonException.cs" />
     <Compile Include="Interceptor\UserPermissonValidateInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1667,8 +1666,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\MSUser\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\MSUser\AddUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

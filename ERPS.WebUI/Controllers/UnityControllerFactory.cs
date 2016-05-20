@@ -25,7 +25,8 @@ namespace ERPS.WebUI.Controllers
 
         protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)
         {
-            _unityBootStrapper.UnityContainer.RegisterType<UserPermissonValidateInterceptor>(new InjectionProperty("MSUserDTO", (MSUserDTO)requestContext.HttpContext.Session["MSUserDTO"]));
+            _unityBootStrapper.UnityContainer.RegisterType<UserPermissonValidateInterceptor>
+                (new InjectionProperty("MSUserDTO", (MSUserDTO)requestContext.HttpContext.Session["MSUserDTO"]));
             return controllerType == null ? null : (IController)_unityBootStrapper.UnityContainer
                 .Resolve(controllerType);
         }
@@ -45,7 +46,6 @@ namespace ERPS.WebUI.Controllers
             UnityContainer.AddNewExtension<Interception>();
             UnityContainer.RegisterType<IMSUserRepository, MSUserRepository>();
             UnityContainer.RegisterType<IUnitOfWork, EFUnitOfWork>();
-            //_unityContainer.RegisterType<IMSUserService, MSUserService>();
             UnityContainer.RegisterType<IMSUserService, MSUserService>(
                 new Interceptor<InterfaceInterceptor>(),
                 new InterceptionBehavior<ArgumentValidateInterceptor>(),
