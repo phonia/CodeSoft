@@ -14,6 +14,7 @@ namespace EPRS.Service
         public String ContactNumber { get; set; }
         public String Email { get; set; }
         public MSRoleDTO MSRole { get; set; }
+        public String MSImage { get; set; }
     }
     public enum SexDTO
     {

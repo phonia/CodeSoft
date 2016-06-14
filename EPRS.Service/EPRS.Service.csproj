@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attribute\SCache.cs" />
+    <Compile Include="Log\SLog.cs" />
     <Compile Include="Mapper\AutoMapperBootStrapper.cs" />
     <Compile Include="Interface\IMSUserService.cs" />
     <Compile Include="DTO\MSUserDTO.cs" />
@@ -72,9 +74,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Attribute\" />
     <Folder Include="Cache\" />
-    <Folder Include="Log\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

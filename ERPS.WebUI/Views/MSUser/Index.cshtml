@@ -1,28 +1,51 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section Head{
     <script type="text/javascript">
         function AddUser() {
             parent.$('#FloatWin').window({
-                title:'添加用户'
-            });
+                title: '添加用户'
+            }).window('open');
             //使用refresh成功加载PartialView，而使用load加载则会出现样式问题
             //parent.$('#FloatWin').load("/MSUser/AddUser").window('open');
-            parent.$('#FloatWin').window('refresh', '/MSUser/AddUser').window('open');
+            parent.$('#FloatWin').window('refresh', '/MSUser/AddUser');//.window('open');若在此处open则会导致两次加载，故而必须在refresh之前open
         }
         function EditUser() { }
         function RemoveUser() { }
+
+        function MSUserGridDblLickeRow(index, row)
+        {
+            //var url = $(this).attr("rel");
+            //if (!$('#Maintabs').tabs('exists', $(this).text())) {
+            //    $('#Maintabs').tabs('add', {
+            //        title: $(this).text(),
+            //        closable: true,
+            //        fit: true,
+            //        content: '<iframe scrolling="auto" frameborder="0" style="width:100%;height:100%;" src="' + url + '"></iframe>',
+            //    });
+            //
+            if (!parent.$('#Maintabs').tabs('exists', row["Name"] + "详细信息"))
+            {
+                parent.$('#Maintabs').tabs('add', {
+                    title: row["Name"] + "详细信息",
+                    closable: true,
+                    fit: true,
+                    content:'<iframe scrolling="auto" frameborder="0" style="width:100%;height:100%;" src="'+"/MSUser/GetMSUSerInfo?name="+row["Name"]+'"></iframe>'
+                });
+            }
+
+        }
     </script>
     }
 
-<div style="display:block">
+<div region="center">
     <table class="easyui-datagrid" id="MSUserGrid" title="用户列表" 
         data-options="url:'/MSUser/GetAllMSUser',fitColumns:true,singleSelect:true,rownumbers:true,striped:true,
         loadMsg:'正在加载。。。。',ctrSelect:true,
-        pagination:true,pageSize:10,singleSelect:true,selectOnCheck:true,toolbar:'#toolbar'">
+        pagination:true,pageSize:10,singleSelect:true,selectOnCheck:true,toolbar:'#toolbar',onDblClickRow:MSUserGridDblLickeRow">
         <thead>
             <tr>
                 <th data-options="field:'Name'">用户名</th>

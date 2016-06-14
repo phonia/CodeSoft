@@ -15,6 +15,7 @@ namespace ERPS.Models
         public String ContactNumber { get; set; }
         public String Email { get; set; }
         public MSRole MSRole { get; set; }
+        public byte[] MSImage { get; set; }
 
         protected override void Validate()
         {

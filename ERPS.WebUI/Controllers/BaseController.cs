@@ -1,4 +1,6 @@
 ﻿using ERPS.Infrastructure;
+using Infrastructure;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,8 @@ namespace ERPS.WebUI.Controllers
     public class BaseController:Controller
     {
 
-        protected JavaScriptSerializer _json = new JavaScriptSerializer();
+        [Dependency]
+        public ILog Log { get; set; }
 
         protected override void OnException(ExceptionContext filterContext)
         {
@@ -25,21 +28,26 @@ namespace ERPS.WebUI.Controllers
             }
         }
 
-        public ActionResult DomainServiceError()
+        public JsonResult DomainServiceError()
         {
             StringBuilder sb = new StringBuilder();
             sb.Clear();
             ModelState.Keys.Where(it => ModelState[it].Errors.Count > 0).ToList()
                 .ForEach(it => ModelState[it].Errors.ToList().ForEach(node =>
                     sb.Append(node.ErrorMessage + " ")));
-            return Content(
-                _json.Serialize(
-                new { 
-                    Success=false,
-                    Message=sb.ToString()
-                }
-                )
-                , "text/html;charset=UTF-8");
+            return Json(new
+            {
+                Success = false,
+                Message = sb.ToString()
+            }, JsonRequestBehavior.AllowGet);
+            //return Content(
+            //    _json.Serialize(
+            //    new { 
+            //        Success=false,
+            //        Message=sb.ToString()
+            //    }
+            //    )
+            //    , "text/html;charset=UTF-8");
         }
     }
 }

@@ -31,6 +31,7 @@
 
             return function () {
                 var aFiles = document.getElementById("imageInput").files;
+                // var aFiles = $('#imageInput').filebox('getValue');
                 if (aFiles.length === 0) { return; }
                 if (!rFilter.test(aFiles[0].type)) {
                     alert("You must select a valid image file!");
@@ -50,7 +51,7 @@
     })();
 
     function AddUser() {
-        var f = document.getElementById('imageInput').files[0];
+        //var f = document.getElementById('imageInput').files[0];
         $('#AddUserForm').form('submit', {
             url: '/MSUser/AddUser',
             //onSubmit: function (data) {
@@ -76,7 +77,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     }
 </style> 
 
-<form id="AddUserForm" method="post" style="padding:5px 5px 5px 5px">
+<form id="AddUserForm" method="post" style="padding:5px 5px 5px 5px" enctype="multipart/form-data"><!--上传附件必须加上enctype="multipart/form-data"-->
     <div class="easyui-panel">
         <div class="fitem">
             <div class="fitem">
@@ -84,11 +85,10 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
                         border-right: 1px dashed; border-color:black;">
                     <div style="margin-left:auto;margin-right:auto;margin-top:20%; vertical-align:middle">
                         <div id="imagePreview" style="vertical-align:middle;margin-left:auto;margin-right:auto"></div>
-                        @*<input id="imageInput" type="file" style="width:100px;margin-top:10px"  name="userPhoto" onchange="loadImageFile();" />*@
-                        <div style="margin-bottom:20px">
-                            <div>File1:</div>
-                            <input id="imageInput" class="easyui-filebox" name="userPhoto" data-options="prompt:'Choose a file...'" style="width:30%">
-                        </div>
+                        <input id="imageInput" type="file" style="width:100px;margin-top:10px"  name="userPhoto" onchange="loadImageFile();" />
+@*                        <div style="margin-bottom:20px">
+                            <input id="imageInput" class="easyui-filebox" name="userPhoto" data-options="prompt:'Choose a file...',onChange:loadImageFile" style="width:50%">
+                        </div> 无法预览*@
                     </div>
                 </div>
                 <div id="RightDiv" class="fitem" style="float:right;width:49%;text-align:left;">
@@ -99,34 +99,46 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
                     </div>
                     <div class="fitem" style="margin-left:20px">
                         <label style="display:inline-block;width:80px;text-align:right">密码：</label>
-                        <input class="easyui-validatebox" required="required" name="userPwd" />
+                        <input class="easyui-validatebox" required="required" name="userPwd" data-options="type:'password'" />
                         <div style="height:20px"></div>
                     </div>
                     <div class="fitem" style="margin-left:20px">
                         <label style="display:inline-block;width:80px;text-align:right">性别：</label>
-                        <input class="easyui-validatebox" required="required" name="sex" />
+@*                        <input class="easyui-validatebox" required="required" name="sex" />*@
+                        <select class="easyui-combobox" name="sex" data-options="editable:false,panelHeight:'auto'">
+                            <option value="1">男</option>
+                            <option value="2">女</option>
+                            <option value="3">未知</option>
+                        </select>
                         <div style="height:20px"></div>
                     </div>
                     <div class="fitem" style="margin-left:20px">
                         <label style="display:inline-block;width:80px;text-align:right">联系电话：</label>
-                        <input class="easyui-validatebox" required="required" name="contactNumber" />
+                        <input class="easyui-validatebox"  name="contactNumber" data-options="required:true,validType:'mobile'" />
                         <div style="height:20px"></div>
                     </div>
                     <div class="fitem" style="margin-left:20px">
                         <label style="display:inline-block;width:80px;text-align:right">邮箱：</label>
-                        <input class="easyui-validatebox" required="required" name="email" />
+                        <input class="easyui-validatebox" name="email" data-options="required:true,validType:'email'" />
                         <div style="height:20px"></div>
                     </div>
                     <div class="fitem" style="margin-left:20px">
                         <label style="display:inline-block;width:80px;text-align:right">用户角色：</label>
-                        <input class="easyui-validatebox" required="required" name="userRole" />
+@*                        <input class="easyui-validatebox" required="required" name="userRole" />*@
+                        <select class="easyui-combobox" name="sex" data-options="editable:false,panelHeight:'auto'">
+                            <option value="1">销售</option>
+                            <option value="2">开发</option>
+                            <option value="3">仓管</option>
+                            <option value="4">采购</option>
+                            <option value="5">系统</option>
+                        </select>
                         <div style="height:20px"></div>
                     </div>
                 </div>
                 <div class="clear"></div>
                 <div class="fitem" style="float:none;text-align:center;padding:5px;margin-top:20px">
-                    <a href="javascript:" class="easyui-linkbutton l-btn l-btn-small" onclick="AddUser()"><span class="l-btn-left"><span class="l-btn-text">注册</span></span></a>
-                    <a href="javascript:" class="easyui-linkbutton l-btn l-btn-small" onclick="Cancel()"><span class="l-btn-left"><span class="l-btn-text">取消</span></span></a>
+                    <a href="javascript:" class="easyui-linkbutton" onclick="AddUser()">注册</a>
+                    <a href="javascript:" class="easyui-linkbutton" onclick="Cancel()">取消</a>
                 </div>
             </div>
         </div>

@@ -155,6 +155,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CustomJsonResult.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MSUserController.cs" />
     <Compile Include="Controllers\UnityControllerFactory.cs" />
@@ -162,6 +163,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interceptor\ArgumentValidateInterceptor.cs" />
+    <Compile Include="Interceptor\CacheInterceptor.cs" />
     <Compile Include="Interceptor\UserPermissonException.cs" />
     <Compile Include="Interceptor\UserPermissonValidateInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1654,6 +1656,7 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Project\validateboxrules.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1669,6 +1672,7 @@
     <Content Include="Views\MSUser\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\MSUser\AddUser.cshtml" />
+    <Content Include="Views\MSUser\GetMSUSerInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1694,6 +1698,9 @@
       <Project>{c0e341dc-caec-44b1-8c09-3cc801767942}</Project>
       <Name>ERPS.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\ReportTest.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -15,7 +15,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
     @*貌似是用来处理加载partialview 出现的控件无法加载的情况的处理方式，然而并没有什么用处*@
-    @Scripts.Render("~/bundles/jquery-easyui")
+@*    @Scripts.Render("~/bundles/jquery-easyui")*@
     <script src="~/Scripts/jquery-easyui-1.4.4/jquery.min.js" type="text/javascript"></script>
     <script src="~/Scripts/jquery-easyui-1.4.4/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="~/Scripts/jquery-easyui-1.4.4/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
@@ -25,7 +25,7 @@
 
         @RenderSection("Head", required: false) 
 </head>
-<body>
+<body class="easyui-layout" style="overflow: hidden;height:100%; padding:0px;margin:0px;border: medium none" scroll="no">
     @RenderBody()
 
 @*    @Scripts.Render("~/bundles/jquery")*@

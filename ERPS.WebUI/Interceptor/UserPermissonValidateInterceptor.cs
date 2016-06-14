@@ -28,7 +28,12 @@ namespace ERPS.WebUI.Interceptor
             //{
             //    //
             //}
-            return getNext()(input, getNext);
+            if (MSUserDTO.Name.Equals("Admin"))
+            {
+                return getNext()(input, getNext);
+            }
+
+            throw new UserPermissonException("用户" + MSUserDTO.Name + "没有权限！");
         }
 
         public bool WillExecute

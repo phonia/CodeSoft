@@ -64,7 +64,7 @@ namespace ERPS.UnitTest
         [TestMethod]
         public void MSUserTest()
         {
-            MSUser msUser = new MSUser { ContactNumber = "000-000000", Email = "hy@hy.com", MSRole = MSRole.SysManager, Name = "HyRepositoryTest", Pwd = "polan", Sex = Sex.Female };
+            MSUser msUser = new MSUser { ContactNumber = "000-000000", Email = "hy@hy.com", MSRole = MSRole.SysManager, Name = "HyRepositoryTest", Pwd = "polan", Sex = Sex.Female ,MSImage=new byte[10]};
             //增
             try
             {

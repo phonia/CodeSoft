@@ -48,9 +48,12 @@ namespace EPRS.Service
         }
 
 
-        public void RegisterUser(MSUserDTO msUserDTO)
+        public void RegisterUser(MSUserDTO msUserDTO,byte[] data)
         {
-
+            MSUser msUser=msUserDTO.MapperTo<MSUserDTO, MSUser>();
+            msUser.MSImage=data;
+            _msUserRepository.Add(msUser);
+            _unitOfWork.Commit();
         }
     }
 }

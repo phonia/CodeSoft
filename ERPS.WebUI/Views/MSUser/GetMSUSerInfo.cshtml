@@ -1,0 +1,64 @@
+﻿@model EPRS.Service.MSUserDTO
+
+@{
+    ViewBag.Title = "GetMSUSerInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            url:'/MSUser/GetUserInfoImage?name='+@Model.Name,
+            type:'GET',
+            dataType:'
+        });
+    });
+</script>*@
+
+<h2>GetMSUSerInfo</h2>
+
+<fieldset>
+    <legend>MSUserDTO</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pwd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pwd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MSImage)
+    </div>
+@*    <div class="display-field">
+        @Html.DisplayFor(model => model.MSImage)
+    </div>*@
+    <div>
+        <img src="data:image/png;base64,@Model.MSImage"/> 
+    </div>
+</fieldset>
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

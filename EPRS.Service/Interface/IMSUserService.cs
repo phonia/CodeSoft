@@ -13,6 +13,6 @@ namespace EPRS.Service
         bool Logout(String name);
         List<MSUserDTO> GetAllMSUser();
         MSUserDTO GetMSUserByName(String name);
-        void RegisterUser(MSUserDTO msUserDTO);
+        void RegisterUser(MSUserDTO msUserDTO,byte[] data);
     }
 }

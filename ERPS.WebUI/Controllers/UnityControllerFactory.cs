@@ -25,8 +25,11 @@ namespace ERPS.WebUI.Controllers
 
         protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)
         {
-            _unityBootStrapper.UnityContainer.RegisterType<UserPermissonValidateInterceptor>
-                (new InjectionProperty("MSUserDTO", (MSUserDTO)requestContext.HttpContext.Session["MSUserDTO"]));
+            if (requestContext.HttpContext.Session["MSUserDTO"] != null)
+            {
+                _unityBootStrapper.UnityContainer.RegisterType<UserPermissonValidateInterceptor>
+                    (new InjectionProperty("MSUserDTO", (MSUserDTO)requestContext.HttpContext.Session["MSUserDTO"]));
+            }
             return controllerType == null ? null : (IController)_unityBootStrapper.UnityContainer
                 .Resolve(controllerType);
         }

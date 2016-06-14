@@ -17,6 +17,7 @@ namespace EPRS.Service
                 .ForMember(d => d.MSRole, opt => opt.MapFrom(s => (int)s.MSRole))
                 .ForMember(d => d.Name, opt => opt.MapFrom(s => s.Name))
                 .ForMember(d => d.Pwd, opt => opt.MapFrom(s => s.Pwd))
+                .ForMember(d=>d.MSImage,opt=>opt.MapFrom(s=>new byte[1]))
                 .ForMember(d => d.Sex, opt => opt.MapFrom(s => (int)s.Sex));
             Mapper.CreateMap<MSUser, MSUserDTO>()
                 .ForMember(d => d.ContactNumber, opt => opt.MapFrom(s => s.ContactNumber))
@@ -24,6 +25,7 @@ namespace EPRS.Service
                 .ForMember(d => d.MSRole, opt => opt.MapFrom(s => (int)s.MSRole))
                 .ForMember(d => d.Name, opt => opt.MapFrom(s => s.Name))
                 .ForMember(d => d.Pwd, opt => opt.MapFrom(s => s.Pwd))
+                .ForMember(d => d.MSImage, opt => opt.MapFrom(s=>Convert.ToBase64String(s.MSImage)))
                 .ForMember(d => d.Sex, opt => opt.MapFrom(s => (int)s.Sex));
         }
     }

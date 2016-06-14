@@ -18,6 +18,7 @@ namespace EPRS.Repository
             Property(e => e.MSRole).IsRequired().HasColumnType("int");
             Property(e => e.Pwd).IsRequired().HasMaxLength(50);
             Property(e => e.Sex).IsRequired().HasColumnType("int");
+            Property(e => e.MSImage).HasColumnType("varbinary(MAX)");
         }
     }
 }
