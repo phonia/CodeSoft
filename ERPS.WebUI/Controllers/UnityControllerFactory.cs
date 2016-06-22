@@ -30,6 +30,11 @@ namespace ERPS.WebUI.Controllers
                 _unityBootStrapper.UnityContainer.RegisterType<UserPermissonValidateInterceptor>
                     (new InjectionProperty("MSUserDTO", (MSUserDTO)requestContext.HttpContext.Session["MSUserDTO"]));
             }
+            else
+            {
+                _unityBootStrapper.UnityContainer.RegisterType<UserPermissonValidateInterceptor>
+                    (new InjectionProperty("MSUserDTO", new MSUserDTO()));
+            }
             return controllerType == null ? null : (IController)_unityBootStrapper.UnityContainer
                 .Resolve(controllerType);
         }

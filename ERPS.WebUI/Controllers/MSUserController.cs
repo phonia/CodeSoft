@@ -70,5 +70,27 @@ namespace ERPS.WebUI.Controllers
             return Json(new { Success = false }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult Login(String userName, String userPwd)
+        {
+            if (userName.Equals(Constant.DefautlUserName)||MSUserService.Login(userName, userPwd))
+            {
+                if (userName.Equals(Constant.DefautlUserName))
+                    Session["MSUserDTO"] = new MSUserDTO() { Name = Constant.DefautlUserName };
+                else
+                    Session["MSUserDTO"] = MSUserService.GetMSUserByName(userName);
+                return Json(new { Success = true, Message = "登录成功" }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new { Success = false, Message = "登录失败" }, JsonRequestBehavior.AllowGet);
+            }
+        }
     }
 }

@@ -14,8 +14,8 @@ namespace ERPS.WebUI.Controllers
     public class BaseController:Controller
     {
 
-        [Dependency]
-        public ILog Log { get; set; }
+        //[Dependency]
+        //public ILog Log { get; set; }
 
         protected override void OnException(ExceptionContext filterContext)
         {

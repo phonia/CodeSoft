@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <script type="text/javascript">
+        function Login() {
+            clearWarning();
+            var f = $('#fbi');
+            f.form('submit', {
+                url: '/MSUser/Login',
+                onSubmit: function () {
+                    // do some check    
+                    // return false to prevent submit;    
+                },
+                success: function (data) {
+                    //$('#lable').text(data);
+                    var resutl = eval('(' + data + ')');
+                    if (resutl.Success) {
+                        //$.get('/Home/Index');
+                        location.href = '/Home/Index';
+                    }
+                    else {
+                        alert(resutl.Message);
+                    }
+                }
+            });
+        }
+
+        function clearForm() {
+            clearWarning();
+            var f = $(this);
+            f.form('clear');
+        }
+
+        function clearWarning() {
+            $('#lable').text();
+        }
+    </script>
+    }
+
+<div style="display:block;width:400px;margin:0 auto;text-align:left;margin-top:200px;">
+    <div class="easyui-panel" title="登录界面" style="width:400px">
+        <div style="padding:10px 60px 20px 60px">
+            <form id="fbi"  method="post">
+                <div class="fitem">
+                    <label style="display:inline-block;width:80px;text-align:right">用户名:</label>
+                    <input id="UserName" name="userName" class="easyui-validatebox" required="required" value="admin" />
+                    <div style="height:20px">
+                    </div>
+                    <div class="fitem">
+                        <label style="display:inline-block;width:80px;text-align:right">密&nbsp;&nbsp;码:</label>
+                        <input id="UserPwd" name="userPwd" class="easyui-validatebox" required="required" type="password" value="123" />
+                    </div>
+                    <div class="fitem">
+                        <label id="lable" style="color:red">
+                        </label>
+                    </div>
+                    <div style="height:20px"></div>
+                    <div style="text-align:center;padding:5px">
+@*                        <input class="easyui-linkbutton" type="submit" value="登录" />
+                        <input class="easyui-linkbutton" type="submit" value="清除" onclick="clearForm()" />*@
+                        <a href="javascript:" class="easyui-linkbutton" onclick="ShowRegisterUserWin()">注册</a>
+                        <a href="javascript:" class="easyui-linkbutton"  onclick="Login()">登录</a>
+                        <a href="javascript:" class="easyui-linkbutton" onclick="clearForm()">清除</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

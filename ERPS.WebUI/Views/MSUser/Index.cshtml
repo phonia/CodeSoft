@@ -5,6 +5,14 @@
 
 @section Head{
     <script type="text/javascript">
+        //$(function () {
+        //    $('#MSUserGrid').datagrid({
+        //        onLoadSuccess: function (data) {
+        //            alert(data);
+        //        }
+        //    });
+        //})
+
         function AddUser() {
             parent.$('#FloatWin').window({
                 title: '添加用户'
@@ -38,6 +46,16 @@
             }
 
         }
+
+        function OnLoadSuccess(data)
+        {
+            alert(data);
+        }
+
+        function OnLoadError()
+        {
+            alert("error!");
+        }
     </script>
     }
 
@@ -45,7 +63,9 @@
     <table class="easyui-datagrid" id="MSUserGrid" title="用户列表" 
         data-options="url:'/MSUser/GetAllMSUser',fitColumns:true,singleSelect:true,rownumbers:true,striped:true,
         loadMsg:'正在加载。。。。',ctrSelect:true,
-        pagination:true,pageSize:10,singleSelect:true,selectOnCheck:true,toolbar:'#toolbar',onDblClickRow:MSUserGridDblLickeRow">
+        pagination:true,pageSize:10,singleSelect:true,selectOnCheck:true,toolbar:'#toolbar',
+        onDblClickRow:MSUserGridDblLickeRow,onLoadSuccess:OnLoadSuccess,onLoadError:OnLoadError
+        ">
         <thead>
             <tr>
                 <th data-options="field:'Name'">用户名</th>

@@ -32,7 +32,7 @@ namespace ERPS.WebUI
 
         void Session_Start(object sender, EventArgs e)
         {
-            Session["MSUserDTO"] = new MSUserDTO() ;
+            //Session["MSUserDTO"] = new MSUserDTO() ;
         }
     }
 }

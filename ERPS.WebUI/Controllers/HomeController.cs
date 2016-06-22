@@ -22,7 +22,7 @@ namespace ERPS.WebUI.Controllers
 
         public JsonResult GetMainMenu()
         {
-            Session["MSUserDTO"] = new MSUserDTO() { Name = "hy" };
+            //Session["MSUserDTO"] = new MSUserDTO() { Name = "hy" };
             //return Content(_json.Serialize(new{
             //    Success=true,
             //   Data=new []{
