@@ -9,12 +9,23 @@ namespace ERPS.WebUI.Modules
     {
         public void Dispose()
         {
-            throw new NotImplementedException();
+
         }
 
         public void Init(HttpApplication context)
         {
-            throw new NotImplementedException();
+            context.PreRequestHandlerExecute += context_PreRequestHandlerExecute;
+        }
+
+        void context_PreRequestHandlerExecute(object sender, EventArgs e)
+        {
+            //HttpApplication httpApplication = (HttpApplication)sender;
+            //if (httpApplication.Session["MSUserDTO"] == null&&!httpApplication.Request.Path.Equals("/MSUser/Login"))
+            //{
+            //    //httpApplication.Response.Redirect("\\/MSUser\\/Login");
+            //    //httpApplication.Response.Redirect("/MSUser/Login");
+            //    httpApplication.Response.Redirect("\\MSUser\\Login");
+            //}
         }
     }
 }

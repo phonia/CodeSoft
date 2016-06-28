@@ -1,0 +1,167 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Xml" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.OleDb" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Xml" #>
+<#@ output extension=".cs" #>
+<#@include file="E:\Code\CodeSoft\ERPS.Models\Model\MultipleOutputHelper.ttinclude"#>
+<#
+            List<EntityExcelRecord> list = new List<EntityExcelRecord>();
+            ArrayList tableList = GetExcelTables(@"E:\Code\模型设计.xls");
+            foreach (var item in tableList)
+            {
+                DataTable table = InputFromExcel(@"E:\Code\模型设计.xls", item.ToString());
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    EntityExcelRecord record = new EntityExcelRecord();
+                    record.ClassName = table.Rows[i]["所属模型"] is DBNull ? String.Empty : table.Rows[i]["所属模型"].ToString();
+                    record.TableName = table.Rows[i]["所属表"] is DBNull ? String.Empty : table.Rows[i]["所属表"].ToString();
+                    record.PropertyName = table.Rows[i]["字段名称"] is DBNull ? String.Empty : table.Rows[i]["字段名称"].ToString();
+                    record.PropertyType = table.Rows[i]["属性类型"] is DBNull ? String.Empty : table.Rows[i]["属性类型"].ToString();
+                    record.FieldType = table.Rows[i]["字段类型"] is DBNull ? String.Empty : table.Rows[i]["字段类型"].ToString();
+                    record.MaxLength = table.Rows[i]["最大长度"] is DBNull ? 0 : Convert.ToInt16(table.Rows[i]["最大长度"]);
+                    record.minLength = table.Rows[i]["最小长度"] is DBNull ? 0 : Convert.ToInt16(table.Rows[i]["最小长度"]);
+                    record.ValueRegion = table.Rows[i]["取值范围"] is DBNull ? String.Empty : table.Rows[i]["取值范围"].ToString();
+                    record.Decimal = table.Rows[i]["小数位数"] is DBNull ? 0 : Convert.ToInt16(table.Rows[i]["小数位数"]);
+                    record.IsKey = table.Rows[i]["主键"] is DBNull ? false : Convert.ToBoolean(table.Rows[i]["主键"]);
+                    record.IsNull = table.Rows[i]["允许空"] is DBNull ? true : Convert.ToBoolean(table.Rows[i]["允许空"]);
+                    record.DefaultValue = table.Rows[i]["默认值"] is DBNull ? String.Empty : table.Rows[i]["默认值"].ToString();
+                    record.DefaultValue = table.Rows[i]["字段说明"] is DBNull ? String.Empty : table.Rows[i]["字段说明"].ToString();
+                    record.RefrenceClassName = table.Rows[i]["参考表"] is DBNull ? String.Empty : table.Rows[i]["参考表"].ToString();
+                    record.RefrencePropertyName = table.Rows[i]["参考字段"] is DBNull ? String.Empty : table.Rows[i]["参考字段"].ToString();
+                    list.Add(record);
+                }
+            }
+
+            foreach (var node in list.Select(it => it.ClassName).Distinct())
+            {
+                if (String.IsNullOrWhiteSpace(node)) continue;
+            }
+#>
+using Infrastructure;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+
+namespace ERPS.Models
+{
+	
+}
+
+
+<#+
+        /// <summary>  
+        /// 获取Excel文件数据表列表  
+        /// </summary>  
+        public  ArrayList GetExcelTables(string ExcelFileName)  
+        {  
+            DataTable dt = new DataTable();  
+            ArrayList TablesList = new ArrayList();  
+            if (File.Exists(ExcelFileName))  
+            {  
+                using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Extended Properties=Excel 8.0;Data Source=" + ExcelFileName))  
+                {  
+                    try  
+                    {  
+                        conn.Open();  
+                        dt = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });  
+                    }  
+                    catch (Exception exp)  
+                    {  
+                        throw exp;  
+                    }  
+  
+                    //获取数据表个数  
+                    int tablecount = dt.Rows.Count;  
+                    for (int i = 0; i < tablecount; i++)  
+                    {  
+                        string tablename = dt.Rows[i][2].ToString().Trim().TrimEnd('$');  
+                        if (TablesList.IndexOf(tablename) < 0)  
+                        {  
+                            TablesList.Add(tablename);  
+                        }  
+                    }  
+                }  
+            }  
+            return TablesList;  
+        }  
+
+
+		        /// <summary>  
+        /// 将Excel文件导出至DataTable(第一行作为表头)  
+        /// </summary>  
+        /// <param name="ExcelFilePath">Excel文件路径</param>  
+        /// <param name="TableName">数据表名，如果数据表名错误，默认为第一个数据表名</param>  
+        public  DataTable InputFromExcel(string ExcelFilePath, string TableName)  
+        {  
+            if (!File.Exists(ExcelFilePath))  
+            {  
+                throw new Exception("Excel文件不存在！");  
+            }  
+  
+            //如果数据表名不存在，则数据表名为Excel文件的第一个数据表  
+            ArrayList TableList = new ArrayList();  
+            TableList = GetExcelTables(ExcelFilePath);  
+  
+            if (TableList.IndexOf(TableName) < 0)  
+            {  
+                TableName = TableList[0].ToString().Trim();  
+            }  
+  
+            DataTable table = new DataTable();  
+            OleDbConnection dbcon = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + ExcelFilePath + ";Extended Properties=Excel 8.0");  
+            OleDbCommand cmd = new OleDbCommand("select * from [" + TableName + "$]", dbcon);  
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);  
+  
+            try  
+            {  
+                if (dbcon.State == ConnectionState.Closed)  
+                {  
+                    dbcon.Open();  
+                }  
+                adapter.Fill(table);  
+            }  
+            catch (Exception exp)  
+            {  
+                throw exp;  
+            }  
+            finally  
+            {  
+                if (dbcon.State == ConnectionState.Open)  
+                {  
+                    dbcon.Close();  
+                }  
+            }  
+            return table;  
+        }  
+
+
+	public class EntityExcelRecord
+    {
+        public String ClassName { get; set; }
+        public String TableName { get; set; }
+        public String PropertyName { get; set; }
+        public String PropertyType { get; set; }
+        public String FieldType { get; set; }
+        public int MaxLength { get; set; }
+        public int minLength { get; set; }
+        public String ValueRegion { get; set; }
+        public int Decimal { get; set; }
+        public bool IsKey { get; set; }
+        public bool IsNull { get; set; }
+        public String DefaultValue { get; set; }
+        public String Description { get; set; }
+        public String RefrenceClassName { get; set; }
+        public String RefrencePropertyName { get; set; }
+    }
+#>
