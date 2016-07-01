@@ -15,16 +15,21 @@ namespace EPRS.Repository
         public DataContext(String connectionStrings) : base(connectionStrings) { }
 
         public DbSet<MSUser> MSUser { get; set; }
+        public DbSet<WebConfig> WebConfig { get; set; }
+        public DbSet<Person> Person { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new MSUserConfiguration());
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DbContext>());
+            modelBuilder.Configurations.Add(new WebConfigConfiguration());
+            modelBuilder.Configurations.Add(new TestConofiguration());
+            modelBuilder.Configurations.Add(new AddressConfiguration());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DataContext>());
         }
 
         public static void InitDataBase()
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DbContext>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DataContext>());
         }
     }
 }

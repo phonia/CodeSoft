@@ -21,4 +21,33 @@ namespace EPRS.Repository
             Property(e => e.MSImage).HasColumnType("varbinary(MAX)");
         }
     }
+
+    public class Person
+    {
+        public String Name { get; set; }
+        public Address Address { get; set; }
+    }
+
+    public class Address
+    {
+        public String First { get; set; }
+        public String Second { get; set; }
+    }
+
+    public class TestConofiguration : EntityTypeConfiguration<Person>
+    {
+        public TestConofiguration()
+        {
+            ToTable("Person");
+            HasKey(e => e.Name);
+        }
+    }
+
+    public class AddressConfiguration : ComplexTypeConfiguration<Address>
+    {
+        public AddressConfiguration()
+        {
+
+        }
+    }
 }

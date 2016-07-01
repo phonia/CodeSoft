@@ -44,71 +44,97 @@
             }
 			foreach (var node in list.Select(it => it.ClassName).Distinct())
             {
-                if (String.IsNullOrWhiteSpace(node)) continue; 
+                if (String.IsNullOrWhiteSpace(node)) continue;
                 //code 
-				manager.StartNewFile(node+".cs"); 
-#>
-using Infrastructure;
+				manager.StartNewFile(node+".cs");
+ #>
+using ERPS.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 
-namespace ERPS.Models
+namespace EPRS.Repository
 {
-    /// <summary>
-    /// <#=node #>表实体类
-    /// </summary>
-	[Serializable]
-    public partial class <#=node #>:EntityBase,IAggregateRoot
+	///<summary>
+	///<#=node #> 实体类映射
+	///</summary>
+	public class <#=node #>Configuration:EntityTypeConfiguration<<#=node #>>
     {
+		public <#=node #>Configuration()
+        {
 <#
-                foreach (var record in list)
-                {
-					if(String.IsNullOrWhiteSpace(record.RefrenceClassName)&&record.ClassName.Equals(node))
-					{
-#>
-		/// <summary>
-		/// <#=record.Description??"" #>
-		/// </summary>
-		public <#=record.PropertyType #> <#=record.PropertyName #> {get;set;}
-
-<#
-					}
-					if(record.ClassName.Equals(node)&&!String.IsNullOrWhiteSpace(record.RefrenceClassName))
-					{
-#>
-		/// <summary>
-		/// <#=record.Description #>
-		/// </summary>
-		<#=record.PropertyType #> <#=record.PropertyName #> {get;set;}
-
-<#
-					}
-                }
 				foreach(var record in list)
 				{
-					if(record.RefrenceClassName.Equals(node))
+					if(record.ClassName.Equals(node)&&String.IsNullOrWhiteSpace(record.RefrenceClassName))
 					{
+                        if (record.IsKey)
+                        {
+                            if(record.IsMultiPK)
+							{
 #>
-		///<summary>
-		///<#=record.Description #>
-		///</summary>
-		public virtual IList<<#=record.ClassName #>> <#=record.ClassName #>{get;set;}
-
+			ToTable("<#=record.TableName #>");
+			HasKey(e=>e.<#=record.PropertyName #>);
 <#
+							}
+							else
+							{}
+                        }
 					}
 				}
+                foreach (var record in list)
+                {
+					if (record.ClassName.Equals(node) && String.IsNullOrWhiteSpace(record.RefrenceClassName))
+                    {
+						if (!String.IsNullOrWhiteSpace(record.PropertyName))
+                        {
+                            //code
 #>
-		protected override void Validate()
-        {
-            throw new NotImplementedException();
-        }
-
+			Property(e =>e.<#=record.PropertyName #>).HasColumnName("<#=record.PropertyName #>")<#
+                        }
+                        if (record.IsNull)
+                        {
+                            //code
+#>.IsRequired()<#
+                        }
+                        if (!String.IsNullOrWhiteSpace(record.FieldType))
+                        {
+                            //code
+#>.HasColumnType("<#=record.FieldType #>")<#
+                        }
+                        if (record.IsIdentity)
+                        {
+                            //code
+#>Property(e =>e.<#=record.PropertyName #>).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)<#
+                        }
+                        if (record.MaxLength != null)
+                        {
+                            //code
+#>.HasMaxLength(<#=record.MaxLength #>)<#
+                        }
+                        if (record.Decimal != null)
+                        {
+                            //code
+                        }
+                        if (!String.IsNullOrWhiteSpace(record.Description))
+                        {
+                            //code
+                        }
+                        if (!String.IsNullOrWhiteSpace(record.DefaultValue))
+                        {
+                            //code
+                        }
+                        if (!String.IsNullOrWhiteSpace(record.ValueRegion))
+                        {
+                            //code
+                        }
+#>;
 <#
-				
+                    }
+                }
 #>
+		}
 	}
 }
 <#

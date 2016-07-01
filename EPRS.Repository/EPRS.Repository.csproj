@@ -48,6 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ModeCongiguration.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeCongiguration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\WebConfig.cs">
+      <DependentUpon>ModeCongiguration.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\DataContex.cs" />
     <Compile Include="EF\EFUnitOfWork.cs" />
     <Compile Include="EF\IEFUnitOfWork.cs" />
@@ -68,9 +76,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Configuration\ModeCongiguration.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModeCongiguration.cs</LastGenOutput>
+    </None>
+    <None Include="Configuration\MultipleOutputHelper.ttinclude" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
