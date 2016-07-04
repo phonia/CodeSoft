@@ -23,31 +23,42 @@
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
                     EntityExcelRecord record = new EntityExcelRecord();
-                    record.ClassName = table.Rows[i]["所属模型"] is DBNull ? String.Empty : table.Rows[i]["所属模型"].ToString();
+                    record.ClassName = table.Rows[i]["类型名"] is DBNull ? String.Empty : table.Rows[i]["类型名"].ToString();
+                    record.BaseClass = table.Rows[i]["基类"] is DBNull ? String.Empty : table.Rows[i]["基类"].ToString();
+                    record.MappingClass = table.Rows[i]["映射类型"] is DBNull ? String.Empty : table.Rows[i]["映射类型"].ToString();
                     record.TableName = table.Rows[i]["所属表"] is DBNull ? String.Empty : table.Rows[i]["所属表"].ToString();
                     record.PropertyName = table.Rows[i]["字段名称"] is DBNull ? String.Empty : table.Rows[i]["字段名称"].ToString();
                     record.PropertyType = table.Rows[i]["属性类型"] is DBNull ? String.Empty : table.Rows[i]["属性类型"].ToString();
                     record.FieldType = table.Rows[i]["字段类型"] is DBNull ? String.Empty : table.Rows[i]["字段类型"].ToString();
                     record.MaxLength = table.Rows[i]["最大长度"] is DBNull ? null : (int?)Convert.ToInt16(table.Rows[i]["最大长度"]);
-                    record.ValueRegion = table.Rows[i]["取值范围"] is DBNull ? String.Empty : table.Rows[i]["取值范围"].ToString();
                     record.Decimal = table.Rows[i]["小数位数"] is DBNull ? null : (int?)Convert.ToInt16(table.Rows[i]["小数位数"]);
                     record.IsKey = table.Rows[i]["主键"] is DBNull ? false : true;
-                    record.IsMultiPK=table.Rows[i]["复合主键"] is DBNull?false:true;
+                    record.IsMultiPK=table.Rows[i]["复合主键"] is DBNull?false:true; 
                     record.IsNull = table.Rows[i]["允许空"] is DBNull ? true : false;
                     record.IsIdentity=table.Rows[i]["自增长"] is DBNull?false:true;
                     record.DefaultValue = table.Rows[i]["默认值"] is DBNull ? String.Empty : table.Rows[i]["默认值"].ToString();
                     record.Description = table.Rows[i]["字段说明"] is DBNull ? String.Empty : table.Rows[i]["字段说明"].ToString();
-                    record.RefrenceClassName = table.Rows[i]["参考表"] is DBNull ? String.Empty : table.Rows[i]["参考表"].ToString();
-                    record.RefrencePropertyName = table.Rows[i]["参考字段"] is DBNull ? String.Empty : table.Rows[i]["参考字段"].ToString();
+                    record.RefrenceClassName = table.Rows[i]["参考类型"] is DBNull ? String.Empty : table.Rows[i]["参考类型"].ToString();
+                    record.RefrencePropertyName = table.Rows[i]["参考属性"] is DBNull ? String.Empty : table.Rows[i]["参考属性"].ToString();
+                    record.RefrenceRelation = table.Rows[i]["类型关系"] is DBNull ? String.Empty : table.Rows[i]["类型关系"].ToString();
                     list.Add(record);
                 }
             }
-			foreach (var node in list.Select(it => it.ClassName).Distinct())
+
+			//Entity.tt
+            foreach (var node in list)
             {
-                if (String.IsNullOrWhiteSpace(node)) continue; 
-                //code 
-				manager.StartNewFile(node+".cs"); 
-#>
+                if (String.IsNullOrWhiteSpace(node.MappingClass)) continue;
+                //code
+				manager.StartNewFile(node.ClassName+".cs"); 
+		#>
+#region
+/***********************************************
+ * 
+ * 
+ * ********************************************/
+#endregion
+
 using Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -57,58 +68,118 @@ using System.Text;
 
 namespace ERPS.Models
 {
+<#
+                if (String.IsNullOrWhiteSpace(node.BaseClass))
+                {
+                    //code inherit from object
+#>
     /// <summary>
-    /// <#=node #>表实体类
+    /// <#=node.ClassName #>表实体类
     /// </summary>
 	[Serializable]
-    public partial class <#=node #>:EntityBase,IAggregateRoot
+    public partial class <#=node.ClassName #>:EntityBase,IAggregateRoot
     {
 <#
+                }
+                else
+                {
+                    //code inherit from node.BaseClass
+#>
+    /// <summary>
+    /// <#=node.ClassName #>表实体类
+    /// </summary>
+	[Serializable]
+    public partial class <#=node.ClassName #>:<#=node.BaseClass #>,IAggregateRoot
+    {
+
+<#
+                }
+
                 foreach (var record in list)
                 {
-					if(String.IsNullOrWhiteSpace(record.RefrenceClassName)&&record.ClassName.Equals(node))
-					{
+                    if (record.ClassName.Equals(node.ClassName)
+                        && String.IsNullOrWhiteSpace(record.MappingClass)
+						&&String.IsNullOrWhiteSpace(record.RefrenceClassName))
+                    {
+                        //code primitive property
 #>
 		/// <summary>
 		/// <#=record.Description??"" #>
 		/// </summary>
 		public <#=record.PropertyType #> <#=record.PropertyName #> {get;set;}
-
+		 
 <#
-					}
-					if(record.ClassName.Equals(node)&&!String.IsNullOrWhiteSpace(record.RefrenceClassName))
-					{
-#>
-		/// <summary>
-		/// <#=record.Description #>
-		/// </summary>
-		<#=record.PropertyType #> <#=record.PropertyName #> {get;set;}
+                    }
 
-<#
-					}
-                }
-				foreach(var record in list)
-				{
-					if(record.RefrenceClassName.Equals(node))
-					{
+                    if (record.ClassName.Equals(node.ClassName)
+                        && String.IsNullOrWhiteSpace(record.MappingClass)
+                        && !String.IsNullOrWhiteSpace(record.RefrenceClassName))
+                    {
+                        //code self-navigation property
+                        if (String.IsNullOrWhiteSpace(record.RefrencePropertyName))
+                        {
 #>
 		///<summary>
 		///<#=record.Description #>
 		///</summary>
-		public virtual IList<<#=record.ClassName #>> <#=record.ClassName #>{get;set;}
+		public virtual IList<<#=record.PropertyType #>> <#=record.PropertyName #>s{get;set;}
 
-<#
-					}
-				}
+<#  
+						}
+                        else
+                        {
 #>
+		/// <summary>
+		/// <#=record.Description??"" #>
+		/// </summary>
+		public <#=record.PropertyType #> <#=record.PropertyName #> {get;set;}
+		 
+<# 
+						}
+                    }
+                }
+
+				foreach(var record in list)
+				{
+					if (!String.IsNullOrWhiteSpace(record.RefrenceClassName)
+						&&!String.IsNullOrWhiteSpace(record.RefrencePropertyName)
+                        &&record.RefrenceClassName.Equals(node.ClassName)
+                        && String.IsNullOrWhiteSpace(record.MappingClass))
+                    {
+                        //code navigation proper
+						if (record.RefrenceRelation.Equals("*"))
+                        {
+#>
+		///<summary>
+		///<#=record.Description #>
+		///</summary>
+		public virtual IList<<#=record.ClassName #>> <#=record.ClassName #>s{get;set;}
+
+<# 
+						}
+                        if (record.RefrenceRelation.Equals("N"))
+                        {
+#>
+		///<summary>
+		///<#=record.Description #>
+		///</summary>
+		public virtual IList<<#=record.ClassName #>> <#=record.ClassName #>s{get;set;}
+
+<# 
+						}
+                        if (record.RefrenceRelation.Equals("1"))
+                        {}
+                        if (record.RefrenceRelation.Equals("0..1"))
+                        { }
+                    }
+				}
+
+#>
+
 		protected override void Validate()
         {
             throw new NotImplementedException();
         }
-
-<#
-				
-#>
 	}
 }
 <#
@@ -206,15 +277,16 @@ namespace ERPS.Models
         }  
 
 
-	public class EntityExcelRecord
+    public class EntityExcelRecord
     {
         public String ClassName { get; set; }
+        public String BaseClass { get; set; }
+        public String MappingClass { get; set; }
         public String TableName { get; set; }
         public String PropertyName { get; set; }
         public String PropertyType { get; set; }
         public String FieldType { get; set; }
         public int? MaxLength { get; set; }
-        public String ValueRegion { get; set; }
         public int? Decimal { get; set; }
         public bool IsKey { get; set; }
         public bool IsMultiPK { get; set; }
@@ -224,5 +296,6 @@ namespace ERPS.Models
         public String Description { get; set; }
         public String RefrenceClassName { get; set; }
         public String RefrencePropertyName { get; set; }
+        public String RefrenceRelation { get; set; }
     }
 #>

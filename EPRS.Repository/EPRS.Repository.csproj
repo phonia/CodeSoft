@@ -48,9 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\MenuInfo.cs">
+      <DependentUpon>ModeCongiguration.tt</DependentUpon>
+    </Compile>
     <Compile Include="Configuration\ModeCongiguration.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>ModeCongiguration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\PagePowerSign.cs">
       <DependentUpon>ModeCongiguration.tt</DependentUpon>
     </Compile>
     <Compile Include="Configuration\WebConfig.cs">

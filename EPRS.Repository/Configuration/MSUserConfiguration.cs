@@ -26,6 +26,14 @@ namespace EPRS.Repository
     {
         public String Name { get; set; }
         public Address Address { get; set; }
+        public IList<Tel> Tel { get; set; }
+    }
+
+    public class Tel
+    {
+        public String Number { get; set; }
+        public byte[] RowVersion { get; set; }
+        public Person Person { get; set; }
     }
 
     public class Address
@@ -40,6 +48,15 @@ namespace EPRS.Repository
         {
             ToTable("Person");
             HasKey(e => e.Name);
+        }
+    }
+
+    public class TelConfiguration : EntityTypeConfiguration<Tel>
+    {
+        public TelConfiguration() {
+            ToTable("Tel");
+            HasKey(e => e.Number);
+            Property(e => e.RowVersion).IsRowVersion();
         }
     }
 

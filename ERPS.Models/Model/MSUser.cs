@@ -1,4 +1,10 @@
-﻿using Infrastructure;
+﻿#region
+/***********************************************
+ * 
+ * 
+ * ********************************************/
+#endregion
+using Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

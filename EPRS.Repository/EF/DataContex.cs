@@ -16,14 +16,15 @@ namespace EPRS.Repository
 
         public DbSet<MSUser> MSUser { get; set; }
         public DbSet<WebConfig> WebConfig { get; set; }
-        public DbSet<Person> Person { get; set; }
+        public DbSet<MenuInfo> MenuInfo { get; set; }
+        public DbSet<PagePowerSign> PagePowerSign { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new MSUserConfiguration());
             modelBuilder.Configurations.Add(new WebConfigConfiguration());
-            modelBuilder.Configurations.Add(new TestConofiguration());
-            modelBuilder.Configurations.Add(new AddressConfiguration());
+            modelBuilder.Configurations.Add(new MenuInfoConfiguration());
+            modelBuilder.Configurations.Add(new PagePowerSignConfiguration());
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DataContext>());
         }
 
