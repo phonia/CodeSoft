@@ -194,7 +194,7 @@ namespace ERPS.Models
         /// <summary>  
         /// 获取Excel文件数据表列表  
         /// </summary>  
-        public  ArrayList GetExcelTables(string ExcelFileName)  
+        public  ArrayList GetExcelTables(string ExcelFileName)
         {  
             DataTable dt = new DataTable();  
             ArrayList TablesList = new ArrayList();  

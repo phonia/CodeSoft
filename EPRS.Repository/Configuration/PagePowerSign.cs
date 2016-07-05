@@ -20,7 +20,7 @@ namespace EPRS.Repository
 			Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
 			Property(e =>e.CName).HasColumnName("CName").HasMaxLength(50).HasColumnType("nvarchar").IsRequired();
 			Property(e =>e.EName).HasColumnName("EName").HasMaxLength(50).HasColumnType("nvarchar").IsRequired();
-            HasRequired(e=>e.MenuInfo).WithMany(e=>e.PagePowerSigns);
+            HasOptional(e=>e.MenuInfo).WithMany(e=>e.PagePowerSigns);
 		}
 	}
 }

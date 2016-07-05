@@ -29,6 +29,8 @@ namespace ERPS.WebUI
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             ControllerBuilder.Current.SetControllerFactory(new UnityControllerFactory());
+
+            //初始化数据库
         }
 
         void Session_Start(object sender, EventArgs e)

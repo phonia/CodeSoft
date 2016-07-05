@@ -45,11 +45,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Department.cs">
+      <DependentUpon>CreateModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Education.cs" />
+    <Compile Include="Model\ErrorLog.cs">
+      <DependentUpon>CreateModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\MenuInfo.cs">
       <DependentUpon>CreateModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\MSUser.cs" />
+    <Compile Include="Model\OnLineInfo.cs">
+      <DependentUpon>CreateModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\PagePowerSign.cs">
+      <DependentUpon>CreateModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PersonInfo.cs">
+      <DependentUpon>CreateModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Position.cs">
+      <DependentUpon>CreateModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SUser.cs">
+      <DependentUpon>CreateModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserLog.cs">
       <DependentUpon>CreateModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\WebConfig.cs">

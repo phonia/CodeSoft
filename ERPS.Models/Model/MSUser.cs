@@ -1,4 +1,4 @@
-﻿#region
+#region
 /***********************************************
  * 
  * 
@@ -40,6 +40,6 @@ namespace ERPS.Models
 
     public enum Sex
     {
-        Male,Female,Unknown
+        Male, Female, Unknown
     }
 }

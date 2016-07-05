@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\Department.cs">
+      <DependentUpon>ModeCongiguration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\ErrorLog.cs">
+      <DependentUpon>ModeCongiguration.tt</DependentUpon>
+    </Compile>
     <Compile Include="Configuration\MenuInfo.cs">
       <DependentUpon>ModeCongiguration.tt</DependentUpon>
     </Compile>
@@ -56,7 +62,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeCongiguration.tt</DependentUpon>
     </Compile>
+    <Compile Include="Configuration\OnLineInfo.cs">
+      <DependentUpon>ModeCongiguration.tt</DependentUpon>
+    </Compile>
     <Compile Include="Configuration\PagePowerSign.cs">
+      <DependentUpon>ModeCongiguration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\PersonInfo.cs">
+      <DependentUpon>ModeCongiguration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\Position.cs">
+      <DependentUpon>ModeCongiguration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\SUser.cs">
+      <DependentUpon>ModeCongiguration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\UserLog.cs">
       <DependentUpon>ModeCongiguration.tt</DependentUpon>
     </Compile>
     <Compile Include="Configuration\WebConfig.cs">

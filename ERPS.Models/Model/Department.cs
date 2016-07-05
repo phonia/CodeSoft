@@ -15,10 +15,10 @@ using System.Text;
 namespace ERPS.Models
 {
     /// <summary>
-    /// MenuInfo表实体类
+    /// Department表实体类
     /// </summary>
 	[Serializable]
-    public partial class MenuInfo:EntityBase,IAggregateRoot
+    public partial class Department:EntityBase,IAggregateRoot
     {
 		/// <summary>
 		/// 主键Id
@@ -26,14 +26,19 @@ namespace ERPS.Models
 		public int Id {get;set;}
 		 
 		/// <summary>
-		/// 菜单名称或各个页面功能名称
+		/// 部门ID，内容为001001001，即每低一级部门，编码增加三位小数
+		/// </summary>
+		public String Code {get;set;}
+		 
+		/// <summary>
+		/// 部门名称
 		/// </summary>
 		public String Name {get;set;}
 		 
 		/// <summary>
-		/// 各页面URL（主菜单与分类菜单没有URL）
+		/// 备注
 		/// </summary>
-		public String Url {get;set;}
+		public String Notes {get;set;}
 		 
 		/// <summary>
 		/// 排序
@@ -46,34 +51,19 @@ namespace ERPS.Models
 		public int Depth {get;set;}
 		 
 		/// <summary>
-		/// 该菜单是否在菜单栏显示，0=不显示，1=显示
+		/// 修改时间
 		/// </summary>
-		public bool IsDisplay {get;set;}
-		 
-		/// <summary>
-		/// 是否是菜单还是页面
-		/// </summary>
-		public bool IsMenu {get;set;}
-		 
-		/// <summary>
-		/// 
-		/// </summary>
-		public MenuInfo Parent {get;set;}
+		public DateTime UpdateDate {get;set;}
 		 
 		///<summary>
-		///
+		///用户所属部门
 		///</summary>
-		public virtual IList<MenuInfo> MenuInfos{get;set;}
-
-		///<summary>
-		///所属页面
-		///</summary>
-		public virtual IList<PagePowerSign> PagePowerSigns{get;set;}
+		public virtual IList<SUser> SUsers{get;set;}
 
 		///<summary>
 		///
 		///</summary>
-		public virtual IList<UserLog> UserLogs{get;set;}
+		public virtual IList<Position> Positions{get;set;}
 
 
 		protected override void Validate()

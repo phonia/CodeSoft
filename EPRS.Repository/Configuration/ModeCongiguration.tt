@@ -34,7 +34,7 @@
                     record.Decimal = table.Rows[i]["小数位数"] is DBNull ? null : (int?)Convert.ToInt16(table.Rows[i]["小数位数"]);
                     record.IsKey = table.Rows[i]["主键"] is DBNull ? false : true;
                     record.IsMultiPK=table.Rows[i]["复合主键"] is DBNull?false:true;
-                    record.IsNull = table.Rows[i]["允许空"] is DBNull ? true : false;
+                    record.IsNull = table.Rows[i]["允许空"] is DBNull ? false : true;
                     record.IsIdentity=table.Rows[i]["自增长"] is DBNull?false:true;
                     record.DefaultValue = table.Rows[i]["默认值"] is DBNull ? String.Empty : table.Rows[i]["默认值"].ToString();
                     record.Description = table.Rows[i]["字段说明"] is DBNull ? String.Empty : table.Rows[i]["字段说明"].ToString();
@@ -113,16 +113,34 @@ namespace EPRS.Repository
                     if (String.IsNullOrWhiteSpace(record.MappingClass)
                         && record.ClassName.Equals(node.ClassName)
                         && String.IsNullOrWhiteSpace(record.BaseClass)
-                        && !String.IsNullOrWhiteSpace(record.TableName)
+						&&!String.IsNullOrWhiteSpace(record.FieldType)
                         &&String.IsNullOrWhiteSpace(record.RefrencePropertyName)
                         &&String.IsNullOrWhiteSpace(record.RefrenceClassName))
                     {
                         //code
+						if (!String.IsNullOrWhiteSpace(record.TableName))
+                        {
 #>
 			Property(e =>e.<#=record.PropertyName #>).HasColumnName("<#=record.PropertyName #>")<#
+						}
+                        else if (!String.IsNullOrWhiteSpace(node.MappingClass) && node.MappingClass.Equals("ComplexType"))
+                        {
+#>
+			Property(e =>e.<#=record.PropertyName #>)<#
+						}
+                        else
+                            continue;
+
                         if (record.IsIdentity)
                         { 
+							if(record.PropertyType.Equals("DateTime"))
+							{
+#>.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed)<#
+							}
+							else
+							{
 #>.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)<#
+							}
 						}
                         if (record.Decimal > 0)
                         { }
@@ -140,11 +158,11 @@ namespace EPRS.Repository
 						}
                         if (record.IsNull)
                         {
-#>.IsRequired()<#
+#>.IsOptional()<# 
 						}
                         else
                         {
-#>.IsOptional()<# 
+#>.IsRequired()<#
 						}
                         if (record.PropertyName.Equals("RowVersion"))
                         {
@@ -166,7 +184,7 @@ namespace EPRS.Repository
                         if (record.ClassName.Equals(record.RefrenceClassName))
                         {
 #>
-			HasOptional(e => e.<#=record.PropertyName #>).WithMany(e => e.<#=record.ClassName #>s).HasForeignKey(e => e.<#=record.RefrencePropertyName #>);
+			HasOptional(e => e.<#=record.PropertyName #>).WithMany(e => e.<#=record.ClassName #>s);
 <#
                             continue;
                         }

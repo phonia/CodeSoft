@@ -9,22 +9,21 @@ using System.Text;
 namespace EPRS.Repository
 {
 	///<summary>
-	///MenuInfo 实体类映射
+	///Department 实体类映射
 	///</summary>
-	public class MenuInfoConfiguration:EntityTypeConfiguration<MenuInfo>
+	public class DepartmentConfiguration:EntityTypeConfiguration<Department>
     {
-		public MenuInfoConfiguration()
+		public DepartmentConfiguration()
         {
-			ToTable("MenuInfo");
+			ToTable("Department");
 			HasKey(e=>e.Id);
 			Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
+			Property(e =>e.Code).HasColumnName("Code").HasMaxLength(50).HasColumnType("nvarchar").IsRequired();
 			Property(e =>e.Name).HasColumnName("Name").HasMaxLength(50).HasColumnType("nvarchar").IsRequired();
-			Property(e =>e.Url).HasColumnName("Url").HasMaxLength(250).HasColumnType("nvarchar").IsRequired();
+			Property(e =>e.Notes).HasColumnName("Notes").HasMaxLength(250).HasColumnType("nvarchar").IsOptional();
 			Property(e =>e.Sort).HasColumnName("Sort").HasColumnType("int").IsRequired();
 			Property(e =>e.Depth).HasColumnName("Depth").HasColumnType("int").IsRequired();
-			Property(e =>e.IsDisplay).HasColumnName("IsDisplay").HasColumnType("bit").IsRequired();
-			Property(e =>e.IsMenu).HasColumnName("IsMenu").HasColumnType("bit").IsRequired();
-			HasOptional(e => e.Parent).WithMany(e => e.MenuInfos);
+			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed).HasColumnType("DateTime").IsRequired();
 		}
 	}
 }

@@ -15,28 +15,38 @@ using System.Text;
 namespace ERPS.Models
 {
     /// <summary>
-    /// PagePowerSign表实体类
+    /// UserLog表实体类
     /// </summary>
 	[Serializable]
-    public partial class PagePowerSign:EntityBase,IAggregateRoot
+    public partial class UserLog:EntityBase,IAggregateRoot
     {
 		/// <summary>
-		/// 
+		/// 主键Id
 		/// </summary>
 		public int Id {get;set;}
 		 
 		/// <summary>
-		/// 权限名称，如：浏览、添加、修改、删除、报表、查询、调动/分配、设置等(名称可以自由定，但建议取有意义的名称)
+		/// 操作时间
 		/// </summary>
-		public String CName {get;set;}
+		public DateTime AddDate {get;set;}
 		 
 		/// <summary>
-		/// 权限英文名称，除了在英文版权限设置时显示对应菜单外，还用来在页面程序中区分页面不同位置所调用的权限(在检测页面权限时使用)
+		/// 登陆IP
 		/// </summary>
-		public String EName {get;set;}
+		public String Ip {get;set;}
 		 
 		/// <summary>
-		/// 所属页面
+		/// 操作内容
+		/// </summary>
+		public String Notes {get;set;}
+		 
+		/// <summary>
+		/// 
+		/// </summary>
+		public SUser SUser {get;set;}
+		 
+		/// <summary>
+		/// 
 		/// </summary>
 		public MenuInfo MenuInfo {get;set;}
 		 

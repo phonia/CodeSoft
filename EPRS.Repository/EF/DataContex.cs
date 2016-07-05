@@ -18,6 +18,8 @@ namespace EPRS.Repository
         public DbSet<WebConfig> WebConfig { get; set; }
         public DbSet<MenuInfo> MenuInfo { get; set; }
         public DbSet<PagePowerSign> PagePowerSign { get; set; }
+        public DbSet<SUser> User { get; set; }
+        //public DbSet<PersonInfo> PersonInfo { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -25,6 +27,8 @@ namespace EPRS.Repository
             modelBuilder.Configurations.Add(new WebConfigConfiguration());
             modelBuilder.Configurations.Add(new MenuInfoConfiguration());
             modelBuilder.Configurations.Add(new PagePowerSignConfiguration());
+            modelBuilder.Configurations.Add(new SUserConfiguration());
+            modelBuilder.Configurations.Add(new PersonInfoConfiguration());
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DataContext>());
         }
 
