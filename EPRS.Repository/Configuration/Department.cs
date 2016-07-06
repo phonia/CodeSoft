@@ -23,7 +23,7 @@ namespace EPRS.Repository
 			Property(e =>e.Notes).HasColumnName("Notes").HasMaxLength(250).HasColumnType("nvarchar").IsOptional();
 			Property(e =>e.Sort).HasColumnName("Sort").HasColumnType("int").IsRequired();
 			Property(e =>e.Depth).HasColumnName("Depth").HasColumnType("int").IsRequired();
-			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed).HasColumnType("DateTime").IsRequired();
+			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasColumnType("DateTime").IsRequired();
 		}
 	}
 }

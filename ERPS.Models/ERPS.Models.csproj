@@ -39,7 +39,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRepository\Department.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepository\ErrorLog.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
     <Compile Include="IRepository\IMSUserRepository.cs" />
+    <Compile Include="IRepository\IRepository.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepository\MenuInfo.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepository\PagePowerSign.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepository\Position.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepository\SUser.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepository\UserLog.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepository\WebConfig.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\CreateModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,6 +97,7 @@
     <Compile Include="Model\Position.cs">
       <DependentUpon>CreateModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Sex.cs" />
     <Compile Include="Model\SUser.cs">
       <DependentUpon>CreateModel.tt</DependentUpon>
     </Compile>
@@ -87,6 +117,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Domain.cd" />
+    <None Include="IRepository\IRepository.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IRepository.cs</LastGenOutput>
+    </None>
+    <None Include="IRepository\MultipleOutputHelper.ttinclude" />
     <None Include="Model\CreateModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CreateModel.cs</LastGenOutput>

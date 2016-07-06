@@ -15,49 +15,19 @@
 <#@include file="E:\Code\CodeSoft\ERPS.Models\Model\MultipleOutputHelper.ttinclude"#>
 <#
 			var manager = Manager.Create(Host, GenerationEnvironment); 
-            List<EntityExcelRecord> list = new List<EntityExcelRecord>();
-            ArrayList tableList = GetExcelTables(@"E:\Code\模型设计.xls");
-            foreach (var item in tableList)
-            {
-                DataTable table = InputFromExcel(@"E:\Code\模型设计.xls", item.ToString());
-                for (int i = 0; i < table.Rows.Count; i++)
-                {
-                    EntityExcelRecord record = new EntityExcelRecord();
-                    record.ClassName = table.Rows[i]["类型名"] is DBNull ? String.Empty : table.Rows[i]["类型名"].ToString();
-                    record.BaseClass = table.Rows[i]["基类"] is DBNull ? String.Empty : table.Rows[i]["基类"].ToString();
-                    record.MappingClass = table.Rows[i]["映射类型"] is DBNull ? String.Empty : table.Rows[i]["映射类型"].ToString();
-                    record.TableName = table.Rows[i]["所属表"] is DBNull ? String.Empty : table.Rows[i]["所属表"].ToString();
-                    record.PropertyName = table.Rows[i]["字段名称"] is DBNull ? String.Empty : table.Rows[i]["字段名称"].ToString();
-                    record.PropertyType = table.Rows[i]["属性类型"] is DBNull ? String.Empty : table.Rows[i]["属性类型"].ToString();
-                    record.FieldType = table.Rows[i]["字段类型"] is DBNull ? String.Empty : table.Rows[i]["字段类型"].ToString();
-                    record.MaxLength = table.Rows[i]["最大长度"] is DBNull ? null : (int?)Convert.ToInt16(table.Rows[i]["最大长度"]);
-                    record.Decimal = table.Rows[i]["小数位数"] is DBNull ? null : (int?)Convert.ToInt16(table.Rows[i]["小数位数"]);
-                    record.IsKey = table.Rows[i]["主键"] is DBNull ? false : true;
-                    record.IsMultiPK=table.Rows[i]["复合主键"] is DBNull?false:true; 
-                    record.IsNull = table.Rows[i]["允许空"] is DBNull ? true : false;
-                    record.IsIdentity=table.Rows[i]["自增长"] is DBNull?false:true;
-                    record.DefaultValue = table.Rows[i]["默认值"] is DBNull ? String.Empty : table.Rows[i]["默认值"].ToString();
-                    record.Description = table.Rows[i]["字段说明"] is DBNull ? String.Empty : table.Rows[i]["字段说明"].ToString();
-                    record.RefrenceClassName = table.Rows[i]["参考类型"] is DBNull ? String.Empty : table.Rows[i]["参考类型"].ToString();
-                    record.RefrencePropertyName = table.Rows[i]["参考属性"] is DBNull ? String.Empty : table.Rows[i]["参考属性"].ToString();
-                    record.RefrenceRelation = table.Rows[i]["类型关系"] is DBNull ? String.Empty : table.Rows[i]["类型关系"].ToString();
-                    list.Add(record);
-                }
-            }
-
-			//Entity.tt
+			var list=GetAllRecordFromExcel("");
             foreach (var node in list)
             {
                 if (String.IsNullOrWhiteSpace(node.MappingClass)) continue;
-                //code
-				manager.StartNewFile(node.ClassName+".cs"); 
-		#>
-#region
+              manager.StartNewFile(node.ClassName+".cs"); 
+
+ #>
 /***********************************************
- * 
- * 
- * ********************************************/
-#endregion
+* auto-generated code from T4
+* 
+* ********************************************/
+
+
 
 using Infrastructure;
 using System;
@@ -71,12 +41,11 @@ namespace ERPS.Models
 <#
                 if (String.IsNullOrWhiteSpace(node.BaseClass))
                 {
-                    //code inherit from object
 #>
     /// <summary>
-    /// <#=node.ClassName #>表实体类
+    /// <#=node.ClassName #> 实体类
     /// </summary>
-	[Serializable]
+    [Serializable]
     public partial class <#=node.ClassName #>:EntityBase,IAggregateRoot
     {
 <#
@@ -88,29 +57,28 @@ namespace ERPS.Models
     /// <summary>
     /// <#=node.ClassName #>表实体类
     /// </summary>
-	[Serializable]
+    [Serializable]
     public partial class <#=node.ClassName #>:<#=node.BaseClass #>,IAggregateRoot
     {
-
 <#
+
                 }
 
                 foreach (var record in list)
                 {
+
                     if (record.ClassName.Equals(node.ClassName)
                         && String.IsNullOrWhiteSpace(record.MappingClass)
-						&&String.IsNullOrWhiteSpace(record.RefrenceClassName))
+                        && String.IsNullOrWhiteSpace(record.RefrenceClassName))
                     {
-                        //code primitive property
 #>
-		/// <summary>
-		/// <#=record.Description??"" #>
-		/// </summary>
-		public <#=record.PropertyType #> <#=record.PropertyName #> {get;set;}
-		 
+        /// <summary>
+        /// <#=record.Description??"" #>
+        /// </summary>
+        public <#=record.PropertyType #> <#=record.PropertyName #> {get;set;}
 <#
-                    }
 
+                    }
                     if (record.ClassName.Equals(node.ClassName)
                         && String.IsNullOrWhiteSpace(record.MappingClass)
                         && !String.IsNullOrWhiteSpace(record.RefrenceClassName))
@@ -119,73 +87,67 @@ namespace ERPS.Models
                         if (String.IsNullOrWhiteSpace(record.RefrencePropertyName))
                         {
 #>
-		///<summary>
-		///<#=record.Description #>
-		///</summary>
-		public virtual IList<<#=record.PropertyType #>> <#=record.PropertyName #>s{get;set;}
-
-<#  
-						}
+        ///<summary>
+        ///<#=record.Description #>
+        ///</summary>
+        public virtual IList<<#=record.PropertyType #>> <#=record.PropertyName #>s{get;set;}
+<#
+                        }
                         else
                         {
 #>
-		/// <summary>
-		/// <#=record.Description??"" #>
-		/// </summary>
-		public <#=record.PropertyType #> <#=record.PropertyName #> {get;set;}
-		 
-<# 
-						}
+        /// <summary>
+        /// <#=record.Description??"" #>
+        /// </summary>
+        public <#=record.PropertyType #> <#=record.PropertyName #> {get;set;}
+<#
+                        }
                     }
                 }
 
-				foreach(var record in list)
-				{
-					if (!String.IsNullOrWhiteSpace(record.RefrenceClassName)
-						&&!String.IsNullOrWhiteSpace(record.RefrencePropertyName)
-                        &&record.RefrenceClassName.Equals(node.ClassName)
+                foreach (var record in list)
+                {
+                    if (!String.IsNullOrWhiteSpace(record.RefrenceClassName)
+                        && !String.IsNullOrWhiteSpace(record.RefrencePropertyName)
+                        && record.RefrenceClassName.Equals(node.ClassName)
                         && String.IsNullOrWhiteSpace(record.MappingClass))
                     {
-                        //code navigation proper
-						if (record.RefrenceRelation.Equals("*"))
+                        //code navigation property
+                        if (record.RefrenceRelation.Equals("*"))
                         {
 #>
-		///<summary>
-		///<#=record.Description #>
-		///</summary>
-		public virtual IList<<#=record.ClassName #>> <#=record.ClassName #>s{get;set;}
-
-<# 
-						}
+        ///<summary>
+        ///<#=record.Description #>
+        ///</summary>
+        public virtual IList<<#=record.ClassName #>> <#=record.ClassName #>s{get;set;}
+<#
+                        }
                         if (record.RefrenceRelation.Equals("N"))
                         {
 #>
-		///<summary>
-		///<#=record.Description #>
-		///</summary>
-		public virtual IList<<#=record.ClassName #>> <#=record.ClassName #>s{get;set;}
-
-<# 
-						}
+        ///<summary>
+        ///<#=record.Description #>
+        ///</summary>
+        public virtual IList<<#=record.ClassName #>> <#=record.ClassName #>s{get;set;}
+<#
+                        }
                         if (record.RefrenceRelation.Equals("1"))
-                        {}
+                        { }
                         if (record.RefrenceRelation.Equals("0..1"))
                         { }
                     }
-				}
-
+                }
 #>
-
-		protected override void Validate()
+        protected override void Validate()
         {
             throw new NotImplementedException();
         }
 	}
 }
 <#
-				manager.EndBlock();
+                manager.EndBlock();
             }
-			manager.Process(true);
+            manager.Process(true);
 #>
 
 
@@ -275,6 +237,40 @@ namespace ERPS.Models
             }  
             return table;  
         }  
+
+		public  List<EntityExcelRecord> GetAllRecordFromExcel(String path)
+        {
+            List<EntityExcelRecord> list = new List<EntityExcelRecord>();
+            ArrayList tableList = GetExcelTables(@"E:\Code\模型设计.xls");
+            foreach (var item in tableList)
+            {
+                DataTable table = InputFromExcel(@"E:\Code\模型设计.xls", item.ToString());
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    EntityExcelRecord record = new EntityExcelRecord();
+                    record.ClassName = table.Rows[i]["类型名"] is DBNull ? String.Empty : table.Rows[i]["类型名"].ToString();
+                    record.BaseClass = table.Rows[i]["基类"] is DBNull ? String.Empty : table.Rows[i]["基类"].ToString();
+                    record.MappingClass = table.Rows[i]["映射类型"] is DBNull ? String.Empty : table.Rows[i]["映射类型"].ToString();
+                    record.TableName = table.Rows[i]["所属表"] is DBNull ? String.Empty : table.Rows[i]["所属表"].ToString();
+                    record.PropertyName = table.Rows[i]["字段名称"] is DBNull ? String.Empty : table.Rows[i]["字段名称"].ToString();
+                    record.PropertyType = table.Rows[i]["属性类型"] is DBNull ? String.Empty : table.Rows[i]["属性类型"].ToString();
+                    record.FieldType = table.Rows[i]["字段类型"] is DBNull ? String.Empty : table.Rows[i]["字段类型"].ToString();
+                    record.MaxLength = table.Rows[i]["最大长度"] is DBNull ? null : (int?)Convert.ToInt16(table.Rows[i]["最大长度"]);
+                    record.Decimal = table.Rows[i]["小数位数"] is DBNull ? null : (int?)Convert.ToInt16(table.Rows[i]["小数位数"]);
+                    record.IsKey = table.Rows[i]["主键"] is DBNull ? false : true;
+                    record.IsMultiPK = table.Rows[i]["复合主键"] is DBNull ? false : true;
+                    record.IsNull = table.Rows[i]["允许空"] is DBNull ? false : true;
+                    record.IsIdentity = table.Rows[i]["自增长"] is DBNull ? false : true;
+                    record.DefaultValue = table.Rows[i]["默认值"] is DBNull ? String.Empty : table.Rows[i]["默认值"].ToString();
+                    record.Description = table.Rows[i]["字段说明"] is DBNull ? String.Empty : table.Rows[i]["字段说明"].ToString();
+                    record.RefrenceClassName = table.Rows[i]["参考类型"] is DBNull ? String.Empty : table.Rows[i]["参考类型"].ToString();
+                    record.RefrencePropertyName = table.Rows[i]["参考属性"] is DBNull ? String.Empty : table.Rows[i]["参考属性"].ToString();
+                    record.RefrenceRelation = table.Rows[i]["类型关系"] is DBNull ? String.Empty : table.Rows[i]["类型关系"].ToString();
+                    list.Add(record);
+                }
+            }
+            return list;
+        }
 
 
     public class EntityExcelRecord

@@ -56,6 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attribute\SCache.cs" />
+    <Compile Include="DTO\ModelDTO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
     <Compile Include="Log\SLog.cs" />
     <Compile Include="Mapper\AutoMapperBootStrapper.cs" />
     <Compile Include="Interface\IMSUserService.cs" />
@@ -77,7 +82,14 @@
     <Folder Include="Cache\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DTO\ModelDTO.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelDTO.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

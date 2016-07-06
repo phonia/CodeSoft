@@ -16,13 +16,25 @@ namespace Infrastructure
         /// 删除聚合
         /// </summary>
         /// <param name="entity"></param>
-        void Remove(TEntity entity);
+        void RemoveCascaded(TEntity entity);
+
+        /// <summary>
+        /// 非级联删除
+        /// </summary>
+        /// <param name="entity"></param>
+        void RemoveNonCascaded(TEntity entity);
 
         /// <summary>
         /// 删除聚合
         /// </summary>
         /// <param name="t"></param>
-        void Remove(Tld t);
+        void RemoveCascaded(Tld t);
+
+        /// <summary>
+        /// 非级联删除
+        /// </summary>
+        /// <param name="t"></param>
+        void RemoveNonCascaded(Tld t);
 
         /// <summary>
         /// 修改聚合

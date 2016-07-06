@@ -19,7 +19,7 @@ namespace EPRS.Repository
                 _unitOfWork.DbContext.Entry<TEntity>(entity).State = EntityState.Added;
         }
 
-        public void Remove(TEntity entity)
+        public void RemoveNonCascaded(TEntity entity)
         {
             if (entity == null) throw new ArgumentNullException();
             EntityState state = _unitOfWork.DbContext.Entry<TEntity>(entity).State;
@@ -28,11 +28,21 @@ namespace EPRS.Repository
             _unitOfWork.DbContext.Entry<TEntity>(entity).State = EntityState.Deleted;
         }
 
-        public void Remove(Tld t)
+        public void RemoveNonCascaded(Tld t)
         {
             TEntity entity = _unitOfWork.DbContext.Set<TEntity>().Find(t);
             if (entity == null) throw new ArgumentNullException();
             _unitOfWork.DbContext.Entry<TEntity>(entity).State = EntityState.Deleted;
+        }
+
+        public virtual void RemoveCascaded(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void RemoveCascaded(Tld t)
+        {
+            throw new NotImplementedException();
         }
 
         public void Save(TEntity entity)

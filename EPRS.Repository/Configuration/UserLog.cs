@@ -18,7 +18,7 @@ namespace EPRS.Repository
 			ToTable("UserLog");
 			HasKey(e=>e.Id);
 			Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
-			Property(e =>e.AddDate).HasColumnName("AddDate").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed).HasColumnType("DateTime").IsRequired();
+			Property(e =>e.AddDate).HasColumnName("AddDate").HasColumnType("DateTime").IsRequired();
 			Property(e =>e.Ip).HasColumnName("Ip").HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
 			Property(e =>e.Notes).HasColumnName("Notes").HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
             HasOptional(e=>e.SUser).WithMany(e=>e.UserLogs);

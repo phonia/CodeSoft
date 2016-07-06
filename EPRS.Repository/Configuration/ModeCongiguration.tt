@@ -135,7 +135,6 @@ namespace EPRS.Repository
                         { 
 							if(record.PropertyType.Equals("DateTime"))
 							{
-#>.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed)<#
 							}
 							else
 							{

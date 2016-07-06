@@ -61,48 +61,120 @@ namespace ERPS.UnitTest
         //
         #endregion
 
+        #region AbandonTest
+        //[TestMethod]
+        //public void MSUserTest()
+        //{
+        //    MSUser msUser = new MSUser { ContactNumber = "000-000000", Email = "hy@hy.com", MSRole = MSRole.SysManager, Name = "HyRepositoryTest", Pwd = "polan", Sex = Sex.Female ,MSImage=new byte[10]};
+        //    //增
+        //    try
+        //    {
+        //        using (IEFUnitOfWork unitOfWork = new EFUnitOfWork())
+        //        {
+        //            IMSUserRepository msUserRepository = new MSUserRepository();
+        //            msUserRepository.UnitOfWork = unitOfWork;
+        //            msUserRepository.Add(msUser);
+        //            unitOfWork.Commit();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    { }
+        //    //查
+        //    using (IEFUnitOfWork unitOfWork = new EFUnitOfWork())
+        //    {
+        //        IMSUserRepository msUserRepository = new MSUserRepository();
+        //        msUserRepository.UnitOfWork = unitOfWork;
+        //        Assert.IsTrue(msUserRepository.GetAll().Count() > 0);
+        //    }
+        //    //改
+        //    using (IEFUnitOfWork unitOfWork = new EFUnitOfWork())
+        //    {
+        //        IMSUserRepository msUserRepository = new MSUserRepository();
+        //        msUserRepository.UnitOfWork = unitOfWork;
+        //        msUser.Pwd = "HyRepositoryTest";
+        //        msUserRepository.Save(msUser);
+        //        unitOfWork.Commit();
+        //    }
+        //    //删除
+        //    using (IEFUnitOfWork unitOfWork = new EFUnitOfWork())
+        //    {
+        //        IMSUserRepository msUserRepository = new MSUserRepository();
+        //        msUserRepository.UnitOfWork = unitOfWork;
+        //        msUserRepository.Remove(msUser);
+        //        unitOfWork.Commit();
+        //    }
+
+        //}
+        #endregion
+
         [TestMethod]
-        public void MSUserTest()
+        public void WebConfigRepositoryTest()
         {
-            MSUser msUser = new MSUser { ContactNumber = "000-000000", Email = "hy@hy.com", MSRole = MSRole.SysManager, Name = "HyRepositoryTest", Pwd = "polan", Sex = Sex.Female ,MSImage=new byte[10]};
-            //增
-            try
+            WebConfig webConfig = new WebConfig()
             {
-                using (IEFUnitOfWork unitOfWork = new EFUnitOfWork())
-                {
-                    IMSUserRepository msUserRepository = new MSUserRepository();
-                    msUserRepository.UnitOfWork = unitOfWork;
-                    msUserRepository.Add(msUser);
-                    unitOfWork.Commit();
-                }
-            }
-            catch (Exception ex)
-            { }
-            //查
-            using (IEFUnitOfWork unitOfWork = new EFUnitOfWork())
+                EmailDomain = ".com.cn",
+                EmailPassWord = "polan",
+                EmailSmtp = "smtp@smtp.com",
+                EmailUserName = "hy",
+                LoginLogReserveTime = 1,
+                UseLogReserveTime = 1,
+                WebDomain = "www.bb.com",
+                WebEmail = "www.bb.com",
+                WebName = "bb"
+            };
+
+            using (var unitOfWork = new EFUnitOfWork())
             {
-                IMSUserRepository msUserRepository = new MSUserRepository();
-                msUserRepository.UnitOfWork = unitOfWork;
-                Assert.IsTrue(msUserRepository.GetAll().Count() > 0);
-            }
-            //改
-            using (IEFUnitOfWork unitOfWork = new EFUnitOfWork())
-            {
-                IMSUserRepository msUserRepository = new MSUserRepository();
-                msUserRepository.UnitOfWork = unitOfWork;
-                msUser.Pwd = "HyRepositoryTest";
-                msUserRepository.Save(msUser);
-                unitOfWork.Commit();
-            }
-            //删除
-            using (IEFUnitOfWork unitOfWork = new EFUnitOfWork())
-            {
-                IMSUserRepository msUserRepository = new MSUserRepository();
-                msUserRepository.UnitOfWork = unitOfWork;
-                msUserRepository.Remove(msUser);
+                IWebConfigRepository webConfigRepository = new WebConfigRepository();
+                webConfigRepository.UnitOfWork = unitOfWork;
+                webConfigRepository.Add(webConfig);
                 unitOfWork.Commit();
             }
 
+            using (var unitOfWork = new EFUnitOfWork())
+            {
+                IWebConfigRepository webConfigRepository = new WebConfigRepository();
+                webConfigRepository.UnitOfWork = unitOfWork;
+                webConfig= webConfigRepository.GetAll().Where(it => it.EmailUserName.Equals("hy")).FirstOrDefault();
+                unitOfWork.Commit();
+            }
+            Assert.IsNotNull(webConfig);
+
+            using (var unitOfWork = new EFUnitOfWork())
+            {
+                IWebConfigRepository webConfigRepository = new WebConfigRepository();
+                webConfigRepository.UnitOfWork = unitOfWork;
+                var justwe = webConfigRepository.GetAll().Where(it => it.EmailUserName.Equals("hy")).FirstOrDefault();
+                justwe.WebName = "yy";
+                webConfigRepository.Save(justwe);
+                unitOfWork.Commit();
+            }
+
+            using (var unitOfWork = new EFUnitOfWork())
+            {
+                IWebConfigRepository webConfigRepository = new WebConfigRepository();
+                webConfigRepository.UnitOfWork = unitOfWork;
+                var justwe = webConfigRepository.GetAll().Where(it => it.WebName.Equals("yy")).FirstOrDefault();
+                Assert.IsNotNull(justwe);
+                unitOfWork.Commit();
+            }
+
+            using (var unitOfWork = new EFUnitOfWork())
+            {
+                IWebConfigRepository webConfigRepository = new WebConfigRepository();
+                webConfigRepository.UnitOfWork = unitOfWork;
+                webConfigRepository.RemoveNonCascaded(webConfig.Id);
+                unitOfWork.Commit();
+            }
+
+            using (var unitOfWork = new EFUnitOfWork())
+            {
+                IWebConfigRepository webConfigRepository = new WebConfigRepository();
+                webConfigRepository.UnitOfWork = unitOfWork;
+                var justwe = webConfigRepository.GetAll().Count();
+                Assert.IsTrue(justwe <= 0);
+                unitOfWork.Commit();
+            }
         }
     }
 }

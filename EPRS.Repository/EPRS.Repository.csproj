@@ -83,13 +83,51 @@
     <Compile Include="Configuration\WebConfig.cs">
       <DependentUpon>ModeCongiguration.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\DataContex.cs" />
+    <Compile Include="EF\DataContex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EF\DataContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\EFUnitOfWork.cs" />
     <Compile Include="EF\IEFUnitOfWork.cs" />
     <Compile Include="Configuration\MSUserConfiguration.cs" />
-    <Compile Include="Repository\MSUserRepository.cs" />
+    <Compile Include="Repository\Department.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\ErrorLog.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\MenuInfo.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\MSUserRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repository\PagePowerSign.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Position.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\Repository1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\SUser.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\UserLog.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\WebConfig.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ERPS.Infrastructure\ERPS.Infrastructure.csproj">
@@ -108,7 +146,17 @@
       <LastGenOutput>ModeCongiguration.cs</LastGenOutput>
     </None>
     <None Include="Configuration\MultipleOutputHelper.ttinclude" />
+    <None Include="EF\DataContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataContext.cs</LastGenOutput>
+    </None>
+    <None Include="EF\MultipleOutputHelper.ttinclude" />
     <None Include="packages.config" />
+    <None Include="Repository\MultipleOutputHelper.ttinclude" />
+    <None Include="Repository\Repository.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Repository1.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -18,7 +18,7 @@ namespace EPRS.Repository
 			ToTable("ErrorLog");
 			HasKey(e=>e.Id);
 			Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
-			Property(e =>e.ErrTime).HasColumnName("ErrTime").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed).HasColumnType("DateTime").IsRequired();
+			Property(e =>e.ErrTime).HasColumnName("ErrTime").HasColumnType("DateTime").IsRequired();
 			Property(e =>e.BrowserVersion).HasColumnName("BrowserVersion").HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
 			Property(e =>e.BrowserType).HasColumnName("BrowserType").HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
 			Property(e =>e.Ip).HasColumnName("Ip").HasMaxLength(50).HasColumnType("nvarchar").IsOptional();

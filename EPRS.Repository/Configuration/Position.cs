@@ -19,9 +19,9 @@ namespace EPRS.Repository
 			HasKey(e=>e.Id);
 			Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
 			Property(e =>e.Name).HasColumnName("Name").HasMaxLength(50).HasColumnType("nvarchar").IsRequired();
-			Property(e =>e.PagePower).HasColumnName("PagePower").HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.ControlPower).HasColumnName("ControlPower").HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed).HasColumnType("DateTime").IsRequired();
+			Property(e =>e.PagePower).HasColumnName("PagePower").HasColumnType("nvarchar(MAX)").IsOptional();
+			Property(e =>e.ControlPower).HasColumnName("ControlPower").HasColumnType("nvarchar(MAX)").IsOptional();
+			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasColumnType("DateTime").IsRequired();
             HasOptional(e=>e.Department).WithMany(e=>e.Positions);
 		}
 	}
