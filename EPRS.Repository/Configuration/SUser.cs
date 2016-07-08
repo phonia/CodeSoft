@@ -28,8 +28,7 @@ namespace EPRS.Repository
 			Property(e =>e.IsMultiUser).HasColumnName("IsMultiUser").HasColumnType("bit").IsRequired();
 			Property(e =>e.IsWork).HasColumnName("IsWork").HasColumnType("bit").IsRequired();
 			Property(e =>e.IsEnable).HasColumnName("IsEnable").HasColumnType("bit").IsRequired();
-            HasOptional(e=>e.Department).WithMany(e=>e.SUsers);
-            HasOptional(e=>e.Position).WithMany(e=>e.SUsers);
+            HasRequired(e=>e.Position).WithMany(e=>e.SUsers);
 		}
 	}
 }

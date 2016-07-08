@@ -22,7 +22,7 @@ namespace EPRS.Repository
 			Property(e =>e.PagePower).HasColumnName("PagePower").HasColumnType("nvarchar(MAX)").IsOptional();
 			Property(e =>e.ControlPower).HasColumnName("ControlPower").HasColumnType("nvarchar(MAX)").IsOptional();
 			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasColumnType("DateTime").IsRequired();
-            HasOptional(e=>e.Department).WithMany(e=>e.Positions);
+            HasRequired(e=>e.Department).WithMany(e=>e.Positions);
 		}
 	}
 }

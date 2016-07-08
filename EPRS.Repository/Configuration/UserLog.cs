@@ -21,8 +21,8 @@ namespace EPRS.Repository
 			Property(e =>e.AddDate).HasColumnName("AddDate").HasColumnType("DateTime").IsRequired();
 			Property(e =>e.Ip).HasColumnName("Ip").HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
 			Property(e =>e.Notes).HasColumnName("Notes").HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-            HasOptional(e=>e.SUser).WithMany(e=>e.UserLogs);
-            HasOptional(e=>e.MenuInfo).WithMany(e=>e.UserLogs);
+            HasRequired(e=>e.SUser).WithMany(e=>e.UserLogs);
+            HasRequired(e=>e.MenuInfo).WithMany(e=>e.UserLogs);
 		}
 	}
 }

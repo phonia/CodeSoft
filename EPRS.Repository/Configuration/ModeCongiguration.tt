@@ -200,12 +200,12 @@ namespace EPRS.Repository
                             if (record.IsNull)
                             {
 #>
-            HasRequired(e=>e.<#=record.RefrenceClassName #>)<# 
+            HasOptional(e=>e.<#=record.RefrenceClassName #>)<# 
 							}
                             else
                             {
 #>
-            HasOptional(e=>e.<#=record.RefrenceClassName #>)<#
+            HasRequired(e=>e.<#=record.RefrenceClassName #>)<#
 							}
 
                             //code FK 

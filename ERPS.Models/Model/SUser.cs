@@ -69,10 +69,6 @@ namespace ERPS.Models
         /// </summary>
         public PersonInfo PersonInfo {get;set;}
         /// <summary>
-        /// 用户所属部门
-        /// </summary>
-        public Department Department {get;set;}
-        /// <summary>
         /// 在线信息
         /// </summary>
         public OnLineInfo OnLineInfo {get;set;}

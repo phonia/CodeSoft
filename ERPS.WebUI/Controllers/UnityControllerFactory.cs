@@ -25,16 +25,16 @@ namespace ERPS.WebUI.Controllers
 
         protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)
         {
-            if (requestContext.HttpContext.Session["MSUserDTO"] != null)
-            {
-                _unityBootStrapper.UnityContainer.RegisterType<UserPermissonValidateInterceptor>
-                    (new InjectionProperty("MSUserDTO", (MSUserDTO)requestContext.HttpContext.Session["MSUserDTO"]));
-            }
-            else
-            {
-                _unityBootStrapper.UnityContainer.RegisterType<UserPermissonValidateInterceptor>
-                    (new InjectionProperty("MSUserDTO", new MSUserDTO()));
-            }
+            //if (requestContext.HttpContext.Session["MSUserDTO"] != null)
+            //{
+            //    _unityBootStrapper.UnityContainer.RegisterType<UserPermissonValidateInterceptor>
+            //        (new InjectionProperty("MSUserDTO", (MSUserDTO)requestContext.HttpContext.Session["MSUserDTO"]));
+            //}
+            //else
+            //{
+            //    _unityBootStrapper.UnityContainer.RegisterType<UserPermissonValidateInterceptor>
+            //        (new InjectionProperty("MSUserDTO", new MSUserDTO()));
+            //}
             return controllerType == null ? null : (IController)_unityBootStrapper.UnityContainer
                 .Resolve(controllerType);
         }
@@ -52,13 +52,22 @@ namespace ERPS.WebUI.Controllers
         public void Bindings()
         {
             UnityContainer.AddNewExtension<Interception>();
-            UnityContainer.RegisterType<IMSUserRepository, MSUserRepository>();
+            //UnityContainer.RegisterType<IMSUserRepository, MSUserRepository>();
             UnityContainer.RegisterType<IUnitOfWork, EFUnitOfWork>();
-            UnityContainer.RegisterType<IMSUserService, MSUserService>(
-                new Interceptor<InterfaceInterceptor>(),
-                new InterceptionBehavior<ArgumentValidateInterceptor>(),
-                new InterceptionBehavior<UserPermissonValidateInterceptor>()
-                );
+            UnityContainer.RegisterType<IDepartmentRepository, DepartmentRepository>();
+            UnityContainer.RegisterType<IErrorLogRepository, ErrorLogRepository>();
+            UnityContainer.RegisterType<IMenuInfoRepository, MenuInfoRepository>();
+            UnityContainer.RegisterType<IPagePowerSignRepository, PagePowerSignRepository>();
+            UnityContainer.RegisterType<IPositionRepository, PositionRepository>();
+            UnityContainer.RegisterType<ISUserRepository, SUserRepository>();
+            UnityContainer.RegisterType<IWebConfigRepository, WebConfigRepository>();
+            UnityContainer.RegisterType<IAppInstallService, AppInstall>();
+            UnityContainer.RegisterType<IMenuInfoService, MenuInfoService>();
+            //UnityContainer.RegisterType<IMSUserService, MSUserService>(
+            //    new Interceptor<InterfaceInterceptor>(),
+            //    new InterceptionBehavior<ArgumentValidateInterceptor>(),
+            //    new InterceptionBehavior<UserPermissonValidateInterceptor>()
+            //    );
         }
     }
 }

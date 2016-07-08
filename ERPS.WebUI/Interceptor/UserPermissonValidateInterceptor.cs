@@ -10,7 +10,7 @@ namespace ERPS.WebUI.Interceptor
 {
     public class UserPermissonValidateInterceptor : IInterceptionBehavior
     {
-        public MSUserDTO MSUserDTO { get; set; }
+        //public MSUserDTO MSUserDTO { get; set; }
 
         public IEnumerable<Type> GetRequiredInterfaces()
         {
@@ -31,13 +31,13 @@ namespace ERPS.WebUI.Interceptor
 
             //if (MSUserDTO == null) return getNext()(input, getNext); 
 
-            if ((MSUserDTO!=null&&!String.IsNullOrWhiteSpace(MSUserDTO.Name)&&MSUserDTO.Name.Equals(Constant.DefautlUserName))
-                || (input.MethodBase.DeclaringType.Name.Equals("IMSUserService") && input.MethodBase.Name.Equals("Login")))
-            {
+            //if ((MSUserDTO!=null&&!String.IsNullOrWhiteSpace(MSUserDTO.Name)&&MSUserDTO.Name.Equals(Constant.DefautlUserName))
+            //    || (input.MethodBase.DeclaringType.Name.Equals("IMSUserService") && input.MethodBase.Name.Equals("Login")))
+            //{
                 return getNext()(input, getNext);
-            }
+            //}
 
-            throw new UserPermissonException("用户" + MSUserDTO.Name + "没有权限！");
+            //throw new UserPermissonException("用户" + MSUserDTO.Name + "没有权限！");
         }
 
         public bool WillExecute

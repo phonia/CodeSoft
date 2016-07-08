@@ -18,7 +18,9 @@ namespace EPRS.Repository
     public class DataContext:DbContext,IDisposable
     {
 
-        public DataContext() : base("DataContext") { }
+        public DataContext() : base("DataContext") { 
+			base.Configuration.LazyLoadingEnabled = false;
+		}
 
         public DataContext(String connectionStrings) : base(connectionStrings) { }
         ///<summary>
@@ -63,6 +65,7 @@ namespace EPRS.Repository
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+			//Database.Delete("DataContext");
             modelBuilder.Configurations.Add(new WebConfigConfiguration());
             modelBuilder.Configurations.Add(new MenuInfoConfiguration());
             modelBuilder.Configurations.Add(new PagePowerSignConfiguration());

@@ -49,10 +49,6 @@ namespace ERPS.Models
         /// </summary>
         public DateTime UpdateDate {get;set;}
         ///<summary>
-        ///用户所属部门
-        ///</summary>
-        public virtual IList<SUser> SUsers{get;set;}
-        ///<summary>
         ///
         ///</summary>
         public virtual IList<Position> Positions{get;set;}

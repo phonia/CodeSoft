@@ -60,6 +60,7 @@ namespace ERPS.Models
         ///
         ///</summary>
         public virtual IList<UserLog> UserLogs{get;set;}
+
         protected override void Validate()
         {
             throw new NotImplementedException();
