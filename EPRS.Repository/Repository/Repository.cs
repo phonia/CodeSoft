@@ -75,5 +75,25 @@ namespace EPRS.Repository
         {
             return _unitOfWork.DbContext.Set<TEntity>().Find(key);
         }
+
+        public IQueryable<TEntity> GetAllWithNavigationalProperty(params String[] includes)
+        {
+            if (includes == null)
+                return GetAll();
+            switch (includes.Count())
+            {
+                case 0: return GetAll();
+                case 1: return GetAll().Include(includes[0]);
+                case 2: return GetAll().Include(includes[0]).Include(includes[1]);
+                case 3: return GetAll().Include(includes[0]).Include(includes[1]).Include(includes[2]);
+                case 4: return GetAll().Include(includes[0]).Include(includes[1]).Include(includes[2]).Include(includes[3]);
+                case 5: return GetAll().Include(includes[0]).Include(includes[1]).Include(includes[2]).Include(includes[3]).Include(includes[4]);
+                case 6: return GetAll().Include(includes[0]).Include(includes[1]).Include(includes[2]).Include(includes[3]).Include(includes[4]).Include(includes[5]);
+                case 7: return GetAll().Include(includes[0]).Include(includes[1]).Include(includes[2]).Include(includes[3]).Include(includes[4]).Include(includes[5]).Include(includes[6]);
+                case 8: return GetAll().Include(includes[0]).Include(includes[1]).Include(includes[2]).Include(includes[3]).Include(includes[4]).Include(includes[5]).Include(includes[6]).Include(includes[7]);
+                case 9: return GetAll().Include(includes[0]).Include(includes[1]).Include(includes[2]).Include(includes[3]).Include(includes[4]).Include(includes[5]).Include(includes[6]).Include(includes[7]).Include(includes[8]);
+                default: throw new Exception("too much navigational property!");
+            }
+        }
     }
 }

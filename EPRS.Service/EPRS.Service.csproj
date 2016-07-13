@@ -56,16 +56,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attribute\SCache.cs" />
+    <Compile Include="DTO\DepartmentDTO.cs" />
     <Compile Include="DTO\Menu.cs" />
     <Compile Include="DTO\ModelDTO.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDTO.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\PositionDTO.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Implementation\AppInstall.cs" />
     <Compile Include="Implementation\MenuInfoService.cs" />
     <Compile Include="Interface\IAppInstallService.cs" />
     <Compile Include="Interface\IMenuInfoService.cs" />
+    <Compile Include="Interface\IUserService.cs" />
     <Compile Include="Log\SLog.cs" />
     <Compile Include="Mapper\AutoMapperBootStrapper.cs" />
     <Compile Include="Mapper\MapperHelper.cs" />

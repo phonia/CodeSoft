@@ -12,6 +12,7 @@ namespace Infrastructure
         /// </summary>
         /// <param name="entity"></param>
         void Add(TEntity entity);
+
         /// <summary>
         /// 删除聚合
         /// </summary>
@@ -41,5 +42,12 @@ namespace Infrastructure
         /// </summary>
         /// <param name="entity"></param>
         void Save(TEntity entity);
+
+        /// <summary>
+        /// 获取聚合（包括导航属性）
+        /// </summary>
+        /// <param name="includes">导航属性 Position/Position.Department</param>
+        /// <returns></returns>
+        IQueryable<TEntity> GetAllWithNavigationalProperty(params String[] includes);
     }
 }

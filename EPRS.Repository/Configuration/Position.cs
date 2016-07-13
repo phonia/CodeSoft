@@ -23,6 +23,7 @@ namespace EPRS.Repository
 			Property(e =>e.ControlPower).HasColumnName("ControlPower").HasColumnType("nvarchar(MAX)").IsOptional();
 			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasColumnType("DateTime").IsRequired();
             HasRequired(e=>e.Department).WithMany(e=>e.Positions);
+            HasMany(e => e.SUsers).WithRequired(e => e.Position).Map(e => e.MapKey(""));
 		}
 	}
 }
