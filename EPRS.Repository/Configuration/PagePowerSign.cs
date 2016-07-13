@@ -1,3 +1,8 @@
+/***********************************************
+* auto-generated code from T4
+* 
+* ********************************************/
+
 using ERPS.Models;
 using System;
 using System.Collections.Generic;
@@ -8,18 +13,19 @@ using System.Text;
 
 namespace EPRS.Repository
 {
-	///<summary>
-	///PagePowerSign 实体类映射
-	///</summary>
-	public class PagePowerSignConfiguration:EntityTypeConfiguration<PagePowerSign>
+    ///<summary>
+    ///PagePowerSign 实体类映射
+    ///</summary>
+    public class PagePowerSignConfiguration:EntityTypeConfiguration<PagePowerSign>
     {
-		public PagePowerSignConfiguration()
+        public PagePowerSignConfiguration()
         {
-			ToTable("PagePowerSign");
-			HasKey(e=>e.Id);
+            ToTable("PagePowerSign");
+            HasKey(e=>e.Id);
 			Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
-			Property(e =>e.CName).HasColumnName("CName").HasMaxLength(50).HasColumnType("nvarchar").IsRequired();
-			Property(e =>e.EName).HasColumnName("EName").HasMaxLength(50).HasColumnType("nvarchar").IsRequired();
-		}
-	}
+			Property(e =>e.CName).HasColumnName("CName").HasColumnType("nvarchar").IsRequired();
+			Property(e =>e.EName).HasColumnName("EName").HasColumnType("nvarchar").IsRequired();
+
+        }
+    }
 }

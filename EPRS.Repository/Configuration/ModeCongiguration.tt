@@ -12,44 +12,20 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Xml" #>
 <#@ output extension=".cs" #>
-<#@include file="E:\Code\CodeSoft\ERPS.Models\Model\MultipleOutputHelper.ttinclude"#>
+<#@include file="E:\Code\CodeSoft\ERPS.Infrastructure\T4\MultipleOutputHelper.ttinclude"#>
 <#
+			var properties=GetProperty(@"E:\Code\CodeSoft\数据原典.xls");
+			var navigations=GetNavigation(@"E:\Code\CodeSoft\数据原典.xls");
 			var manager = Manager.Create(Host, GenerationEnvironment); 
-            List<EntityExcelRecord> list = new List<EntityExcelRecord>();
-            ArrayList tableList = GetExcelTables(@"E:\Code\模型设计.xls");
-            foreach (var item in tableList)
+            foreach (var node in properties)
             {
-                DataTable table = InputFromExcel(@"E:\Code\模型设计.xls", item.ToString());
-                for (int i = 0; i < table.Rows.Count; i++)
-                {
-                    EntityExcelRecord record = new EntityExcelRecord();
-                    record.ClassName = table.Rows[i]["类型名"] is DBNull ? String.Empty : table.Rows[i]["类型名"].ToString();
-                    record.BaseClass = table.Rows[i]["基类"] is DBNull ? String.Empty : table.Rows[i]["基类"].ToString();
-                    record.MappingClass = table.Rows[i]["映射类型"] is DBNull ? String.Empty : table.Rows[i]["映射类型"].ToString();
-                    record.TableName = table.Rows[i]["所属表"] is DBNull ? String.Empty : table.Rows[i]["所属表"].ToString();
-                    record.PropertyName = table.Rows[i]["字段名称"] is DBNull ? String.Empty : table.Rows[i]["字段名称"].ToString();
-                    record.PropertyType = table.Rows[i]["属性类型"] is DBNull ? String.Empty : table.Rows[i]["属性类型"].ToString();
-                    record.FieldType = table.Rows[i]["字段类型"] is DBNull ? String.Empty : table.Rows[i]["字段类型"].ToString();
-                    record.MaxLength = table.Rows[i]["最大长度"] is DBNull ? null : (int?)Convert.ToInt16(table.Rows[i]["最大长度"]);
-                    record.Decimal = table.Rows[i]["小数位数"] is DBNull ? null : (int?)Convert.ToInt16(table.Rows[i]["小数位数"]);
-                    record.IsKey = table.Rows[i]["主键"] is DBNull ? false : true;
-                    record.IsMultiPK=table.Rows[i]["复合主键"] is DBNull?false:true;
-                    record.IsNull = table.Rows[i]["允许空"] is DBNull ? false : true;
-                    record.IsIdentity=table.Rows[i]["自增长"] is DBNull?false:true;
-                    record.DefaultValue = table.Rows[i]["默认值"] is DBNull ? String.Empty : table.Rows[i]["默认值"].ToString();
-                    record.Description = table.Rows[i]["字段说明"] is DBNull ? String.Empty : table.Rows[i]["字段说明"].ToString();
-                    record.RefrenceClassName = table.Rows[i]["参考类型"] is DBNull ? String.Empty : table.Rows[i]["参考类型"].ToString();
-                    record.RefrencePropertyName = table.Rows[i]["参考属性"] is DBNull ? String.Empty : table.Rows[i]["参考属性"].ToString();
-                    record.RefrenceRelation = table.Rows[i]["类型关系"] is DBNull ? String.Empty : table.Rows[i]["类型关系"].ToString();
-                    list.Add(record);
-                }
-            }
-            foreach (var node in list)
-            {
-                if (String.IsNullOrWhiteSpace(node.MappingClass)) continue;
-                //code 
-				manager.StartNewFile(node.ClassName+".cs");
-#>
+                if (String.IsNullOrWhiteSpace(node.ClassMapping)||node.ClassMapping.Equals("Enum")) continue;
+                manager.StartNewFile(node.ClassName+".cs");
+#>/***********************************************
+* auto-generated code from T4
+* 
+* ********************************************/
+
 using ERPS.Models;
 using System;
 using System.Collections.Generic;
@@ -60,297 +36,331 @@ using System.Text;
 
 namespace EPRS.Repository
 {
-	///<summary>
-	///<#=node.ClassName #> 实体类映射
-	///</summary>
-	public class <#=node.ClassName #>Configuration:<#=node.MappingClass #>Configuration<<#=node.ClassName #>>
+    ///<summary>
+    ///<#=node.ClassName #> 实体类映射
+    ///</summary>
+    public class <#=node.ClassName #>Configuration:<#=node.ClassMapping #>Configuration<<#=node.ClassName #>>
     {
-		public <#=node.ClassName #>Configuration()
+        public <#=node.ClassName #>Configuration()
         {
 <#
-				int count=0;
-                foreach (var record in list)
+                int count = 0;
+                foreach (var record in properties)
                 {
-                    if (String.IsNullOrWhiteSpace(record.MappingClass)
-                        && record.ClassName.Equals(node.ClassName)
-                        && String.IsNullOrWhiteSpace(record.BaseClass)
-						&&!String.IsNullOrWhiteSpace(record.TableName)
-						&&!record.IsMultiPK
-						&&record.IsKey)
+                    if (String.IsNullOrWhiteSpace(record.ClassMapping)
+                        &&!String.IsNullOrWhiteSpace(record.TableName)
+                        && record.ClassName.Equals(node.ClassName))
                     {
-#>
-			ToTable("<#=record.TableName #>");
-			HasKey(e=>e.<#=record.PropertyName #>);
-<#
-                    }
-					if (String.IsNullOrWhiteSpace(record.MappingClass)
-                        && record.ClassName.Equals(node.ClassName)
-                        && String.IsNullOrWhiteSpace(record.BaseClass)
-						&&!String.IsNullOrWhiteSpace(record.TableName)
-						&&record.IsMultiPK
-						&&record.IsKey)
-						{
-							if(count==0)
-							{
-								count++;
-#>
-			ToTable("<#=record.TableName #>");
-			HasKey(k => new { k.<#=record.PropertyName #><#
-							}
-							else
-							{
-#>, k.<#=record.PropertyName #><#
-							}
-						}
-                }
-				if(count>0)
-				{
-#> });<#
-				}
-                //primitive field
-                foreach (var record in list)
-                {
-                    if (String.IsNullOrWhiteSpace(record.MappingClass)
-                        && record.ClassName.Equals(node.ClassName)
-                        && String.IsNullOrWhiteSpace(record.BaseClass)
-						&&!String.IsNullOrWhiteSpace(record.FieldType)
-                        &&String.IsNullOrWhiteSpace(record.RefrencePropertyName)
-                        &&String.IsNullOrWhiteSpace(record.RefrenceClassName))
-                    {
-                        //code
-						if (!String.IsNullOrWhiteSpace(record.TableName))
+                        if (record.IsMultiKey&&record.IsKey)
                         {
-#>
-			Property(e =>e.<#=record.PropertyName #>).HasColumnName("<#=record.PropertyName #>")<#
-						}
-                        else if (!String.IsNullOrWhiteSpace(node.MappingClass) && node.MappingClass.Equals("ComplexType"))
-                        {
-#>
-			Property(e =>e.<#=record.PropertyName #>)<#
-						}
-                        else
-                            continue;
-
-                        if (record.IsIdentity)
-                        { 
-							if(record.PropertyType.Equals("DateTime"))
-							{
-							}
-							else
-							{
-#>.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)<#
-							}
-						}
-                        if (record.Decimal > 0)
-                        { }
-                        if (!String.IsNullOrWhiteSpace(record.DefaultValue))
-                        { }
-                        if (!String.IsNullOrWhiteSpace(record.Description))
-                        { }
-						if (record.MaxLength > 0)
-						{
-#>.HasMaxLength(<#=record.MaxLength #>)<#
-						}
-                        if (!String.IsNullOrWhiteSpace(record.FieldType))
-                        {
-#>.HasColumnType("<#=record.FieldType #>")<#
-						}
-                        if (record.IsNull)
-                        {
-#>.IsOptional()<# 
-						}
-                        else
-                        {
-#>.IsRequired()<#
-						}
-                        if (record.PropertyName.Equals("RowVersion"))
-                        {
-#>.IsRowVersion()<# 
-						}
-#>;
-<#
-                    }
-                }
-
-                foreach (var record in list)
-                {
-                    if (String.IsNullOrWhiteSpace(record.BaseClass)
-						&& record.ClassName.Equals(node.ClassName)
-                        && String.IsNullOrWhiteSpace(record.MappingClass)
-                        && !String.IsNullOrWhiteSpace(record.RefrenceClassName))
-                    {
-					                            //自连接
-                        if (record.ClassName.Equals(record.RefrenceClassName))
-                        {
-#>
-			HasOptional(e => e.<#=record.PropertyName #>).WithMany(e => e.<#=record.ClassName #>s);
-<#
-                            continue;
-                        }
-                        if (String.IsNullOrWhiteSpace(record.RefrencePropertyName))
-                        {
-                            //code N-N
-#>
-			HasMany(e => e.<#=record.RefrenceClassName #>s).WithMany(e => e.<#=record.ClassName #>s);
-<#
-                        }
-                        else
-                        {
-                            //code self 0/0...1
-                            if (record.IsNull)
+                            if (count <= 0)
                             {
-#>
-            HasOptional(e=>e.<#=record.RefrenceClassName #>)<# 
-							}
+#>, k.<#=record.PropertyName #><#
+                            }
                             else
                             {
 #>
-            HasRequired(e=>e.<#=record.RefrenceClassName #>)<#
-							}
+            ToTable("<#=record.TableName #>");
+            HasKey(k => new { k.<#=record.PropertyName #><#
+                            }
+                            count++;
+                        }
+                        if (!record.IsMultiKey&&record.IsKey)
+                        {
+#>
+            ToTable("<#=record.TableName #>");
+            HasKey(e=>e.<#=record.PropertyName #>);
+<#
+                        }
+                    }
+                }
+                if (count > 0)
+                {
+#> });
+<#
+                }
 
-                            //code FK 
-                            if (record.RefrenceRelation.Equals("*"))
-                            {
-#>.WithMany(e=>e.<#=record.ClassName #>s);
-<# 
-							}
-                            if (record.RefrenceRelation.Equals("N"))
-                            {
-#>.WithMany(e=>e.<#=record.ClassName #>s);
-<#  
-							}
-                            if (record.RefrenceRelation.Equals("1"))
-                            {
-#>.WithRequiredDependent(e=>e.<#=record.ClassName #>);
-<#  
-							}
-                            if (record.RefrenceRelation.Equals("0..1"))
-                            {
-#>.WithOptional(e=>e.<#=record.ClassName #>);
-<# 
-							 }
+                foreach (var record in properties)
+                {
+                    if (String.IsNullOrWhiteSpace(record.ClassMapping)
+                        && record.ClassName.Equals(node.ClassName)
+                        )
+                    {
+#>
+			Property(e =>e.<#=record.PropertyName #>).HasColumnName("<#=record.PropertyName #>")<#
+                        if (record.IsIdentity)
+                        {
+#>.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)<#
+                        }
+                        if (record.pricison > 0)
+                        { }
+                        if (!String.IsNullOrWhiteSpace(record.Description))
+                        { }
+                        if (record.MaxLength > 0)
+                        {
+                            
+                            #>.HasMaxLength(<#=record.MaxLength #>)<#
+                             
+                        }
+                        if (!String.IsNullOrWhiteSpace(record.FieldType))
+                        {
+                            
+                            #>.HasColumnType("<#=record.FieldType #>")<#
+                             
+                        }
+                        if (record.IsNull)
+                        {
+                            
+                            #>.IsOptional()<# 
+                             
+                        }
+                        else
+                        {
+                            
+                            #>.IsRequired()<#
+                             
+                        }
+                        //特殊属性byte[] RowVersion
+                        if (record.PropertyName.Equals("RowVersion"))
+                        {
+                            
+                            #>.IsRowVersion()<# 
+                             
+                        }
+                        
+                        #>;
+<#
+                         
+                    }
+                }
+
+                foreach (var record in navigations)
+                {
+                    if (record.FKClassName.Equals(node.ClassName))
+                    {
+                        if (record.RelationShip.Equals("o"))
+                        {
+
+#>
+            HasOptional(e=>e.<#=record.FKPropertyName #>).WithMany(e=>e.<#=record.MainClassProperty #>).Map(e=>e.MapKey("<#=record.FKPropertyName #>Id"));<#
+    
+                        }
+                        if (record.RelationShip.Equals("l"))
+                        {
+
+#>
+            HasRequired(e=>e.<#=record.FKPropertyName #>).WithMany(e=>e.<#=record.MainClassProperty #>).Map(e=>e.MapKey("<#=record.FKPropertyName #>Id"));<#
+    
+                        }
+                        if (record.RelationShip.Equals("*"))
+                        {
+
+#>
+            HasMany(e => e.<#=record.FKPropertyName #>).WithMany(e=>e.<#=record.MainClassProperty #>);<#
 
                         }
                     }
                 }
+
 #>
-		}
-	}
+
+        }
+    }
 }
 <#
-				manager.EndBlock();
+    
+                manager.EndBlock();
             }
-			manager.Process(true);
+            manager.Process(true);
 #>
 
 
 
 <#+
-        /// <summary>  
+    public class PropertyRecord
+    {
+        public String ClassName { get; set; }
+        public String ClassBase { get; set; }
+        public String ClassMapping { get; set; }
+        public String PropertyName { get; set; }
+        public String PropertyType { get; set; }
+        public String TableName { get; set; }
+        public String FieldType { get; set; }
+        public bool IsKey { get; set; }
+        public bool IsNull { get; set; }
+        public bool IsIdentity { get; set; }
+        public bool IsMultiKey { get; set; }
+        public int MaxLength{get;set;}
+        public int pricison { get; set; }
+        public String Description { get; set; }
+    }
+
+    public class NavigationRecord
+    {
+        public String MainClassName { get; set; }
+        public String MainClassProperty { get; set; }
+        public String FKClassName { get; set; }
+        public String FKPropertyName { get; set; }
+        public String RelationShip { get; set; }
+		public String Description { get; set; }
+    }
+	
+	        /// <summary>  
         /// 获取Excel文件数据表列表  
         /// </summary>  
-        public  ArrayList GetExcelTables(string ExcelFileName)  
-        {  
-            DataTable dt = new DataTable();  
-            ArrayList TablesList = new ArrayList();  
-            if (File.Exists(ExcelFileName))  
-            {  
-                using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Extended Properties=Excel 8.0;Data Source=" + ExcelFileName))  
-                {  
-                    try  
-                    {  
-                        conn.Open();  
-                        dt = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });  
-                    }  
-                    catch (Exception exp)  
-                    {  
-                        throw exp;  
-                    }  
-  
+        public ArrayList GetExcelTables(string ExcelFileName)
+        {
+            DataTable dt = new DataTable();
+            ArrayList TablesList = new ArrayList();
+            if (File.Exists(ExcelFileName))
+            {
+                using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Extended Properties=Excel 8.0;Data Source=" + ExcelFileName))
+                {
+                    try
+                    {
+                        conn.Open();
+                        dt = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+                    }
+                    catch (Exception exp)
+                    {
+                        throw exp;
+                    }
+
                     //获取数据表个数  
-                    int tablecount = dt.Rows.Count;  
-                    for (int i = 0; i < tablecount; i++)  
-                    {  
-                        string tablename = dt.Rows[i][2].ToString().Trim().TrimEnd('$');  
-                        if (TablesList.IndexOf(tablename) < 0)  
-                        {  
-                            TablesList.Add(tablename);  
-                        }  
-                    }  
-                }  
-            }  
-            return TablesList;  
-        }  
+                    int tablecount = dt.Rows.Count;
+                    for (int i = 0; i < tablecount; i++)
+                    {
+                        string tablename = dt.Rows[i][2].ToString().Trim().TrimEnd('$');
+                        if (TablesList.IndexOf(tablename) < 0)
+                        {
+                            TablesList.Add(tablename);
+                        }
+                    }
+                }
+            }
+            return TablesList;
+        }
 
-
-		        /// <summary>  
+        /// <summary>  
         /// 将Excel文件导出至DataTable(第一行作为表头)  
         /// </summary>  
         /// <param name="ExcelFilePath">Excel文件路径</param>  
         /// <param name="TableName">数据表名，如果数据表名错误，默认为第一个数据表名</param>  
-        public  DataTable InputFromExcel(string ExcelFilePath, string TableName)  
-        {  
-            if (!File.Exists(ExcelFilePath))  
-            {  
-                throw new Exception("Excel文件不存在！");  
-            }  
-  
+        public DataTable InputFromExcel(string ExcelFilePath, string TableName)
+        {
+            if (!File.Exists(ExcelFilePath))
+            {
+                throw new Exception("Excel文件不存在！");
+            }
+
             //如果数据表名不存在，则数据表名为Excel文件的第一个数据表  
-            ArrayList TableList = new ArrayList();  
-            TableList = GetExcelTables(ExcelFilePath);  
-  
-            if (TableList.IndexOf(TableName) < 0)  
-            {  
-                TableName = TableList[0].ToString().Trim();  
-            }  
-  
-            DataTable table = new DataTable();  
-            OleDbConnection dbcon = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + ExcelFilePath + ";Extended Properties=Excel 8.0");  
-            OleDbCommand cmd = new OleDbCommand("select * from [" + TableName + "$]", dbcon);  
-            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);  
-  
-            try  
-            {  
-                if (dbcon.State == ConnectionState.Closed)  
-                {  
-                    dbcon.Open();  
-                }  
-                adapter.Fill(table);  
-            }  
-            catch (Exception exp)  
-            {  
-                throw exp;  
-            }  
-            finally  
-            {  
-                if (dbcon.State == ConnectionState.Open)  
-                {  
-                    dbcon.Close();  
-                }  
-            }  
-            return table;  
-        }  
+            ArrayList TableList = new ArrayList();
+            TableList = GetExcelTables(ExcelFilePath);
 
+            if (TableList.IndexOf(TableName) < 0)
+            {
+                TableName = TableList[0].ToString().Trim();
+            }
 
-    public class EntityExcelRecord
-    {
-        public String ClassName { get; set; }
-        public String BaseClass { get; set; }
-        public String MappingClass { get; set; }
-        public String TableName { get; set; }
-        public String PropertyName { get; set; }
-        public String PropertyType { get; set; }
-        public String FieldType { get; set; }
-        public int? MaxLength { get; set; }
-        public int? Decimal { get; set; }
-        public bool IsKey { get; set; }
-        public bool IsMultiPK { get; set; }
-        public bool IsNull { get; set; }
-        public bool IsIdentity { get; set; }
-        public String DefaultValue { get; set; }
-        public String Description { get; set; }
-        public String RefrenceClassName { get; set; }
-        public String RefrencePropertyName { get; set; }
-        public String RefrenceRelation { get; set; }
-    }
-#>
+            DataTable table = new DataTable();
+            OleDbConnection dbcon = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + ExcelFilePath + ";Extended Properties=Excel 8.0");
+            OleDbCommand cmd = new OleDbCommand("select * from [" + TableName + "$]", dbcon);
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+
+            try
+            {
+                if (dbcon.State == ConnectionState.Closed)
+                {
+                    dbcon.Open();
+                }
+                adapter.Fill(table);
+            }
+            catch (Exception exp)
+            {
+                throw exp;
+            }
+            finally
+            {
+                if (dbcon.State == ConnectionState.Open)
+                {
+                    dbcon.Close();
+                }
+            }
+            return table;
+        }
+
+        /// <summary>  
+        /// 获取Excel文件指定数据表的数据列表  
+        /// </summary>  
+        /// <param name="ExcelFileName">Excel文件名</param>  
+        /// <param name="TableName">数据表名</param>  
+        public ArrayList GetExcelTableColumns(string ExcelFileName, string TableName)
+        {
+            DataTable dt = new DataTable();
+            ArrayList ColsList = new ArrayList();
+            if (File.Exists(ExcelFileName))
+            {
+                using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Extended Properties=Excel 8.0;Data Source=" + ExcelFileName))
+                {
+                    conn.Open();
+                    dt = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns, new object[] { null, null, TableName, null });
+
+                    //获取列个数  
+                    int colcount = dt.Rows.Count;
+                    for (int i = 0; i < colcount; i++)
+                    {
+                        string colname = dt.Rows[i]["Column_Name"].ToString().Trim();
+                        ColsList.Add(colname);
+                    }
+                }
+            }
+            return ColsList;
+        }
+
+        public List<PropertyRecord> GetProperty(String path)
+        {
+            List<PropertyRecord> list = new List<PropertyRecord>();
+            DataTable dt = InputFromExcel(path, "Primitive");
+            if (dt == null || dt.Rows.Count <= 0) return list;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                PropertyRecord record = new PropertyRecord();
+                record.ClassBase = dt.Rows[i]["基类"] is DBNull ? String.Empty : dt.Rows[i]["基类"].ToString();
+                record.ClassMapping = dt.Rows[i]["数据模型"] is DBNull ? String.Empty : dt.Rows[i]["数据模型"].ToString();
+                record.ClassName = dt.Rows[i]["类型名称"] is DBNull ? String.Empty : dt.Rows[i]["类型名称"].ToString();
+                record.Description = dt.Rows[i]["字段说明"] is DBNull ? String.Empty : dt.Rows[i]["字段说明"].ToString();
+                record.FieldType = dt.Rows[i]["字段类型"] is DBNull ? String.Empty : dt.Rows[i]["字段类型"].ToString();
+                record.IsIdentity = dt.Rows[i]["是否自增"] is DBNull ? false : true;
+                record.IsKey = dt.Rows[i]["主键"] is DBNull ? false : true;
+                record.IsMultiKey = dt.Rows[i]["复合主键"] is DBNull ? false : true;
+                record.IsNull = dt.Rows[i]["是否为空"] is DBNull ? false : true;
+                record.MaxLength = dt.Rows[i]["最大长度"] is DBNull ? 0 : Convert.ToInt32(dt.Rows[i][""]);
+                record.pricison = dt.Rows[i]["精度"] is DBNull ? 0 : Convert.ToInt32(dt.Rows[i]["精度"]);
+                record.PropertyName = dt.Rows[i]["属性名称"] is DBNull ? String.Empty : dt.Rows[i]["属性名称"].ToString();
+                record.PropertyType = dt.Rows[i]["属性类型"] is DBNull ? String.Empty : dt.Rows[i]["属性类型"].ToString();
+                record.TableName = dt.Rows[i]["数据表名"] is DBNull ? String.Empty : dt.Rows[i]["数据表名"].ToString();
+                list.Add(record);
+            }
+            return list;
+        }
+
+        public List<NavigationRecord> GetNavigation(String path)
+        {
+            List<NavigationRecord> list = new List<NavigationRecord>();
+            DataTable dt = InputFromExcel(path, "Navigtaion");
+            if (dt == null || dt.Rows.Count <= 0) return list;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                NavigationRecord record = new NavigationRecord();
+                record.FKClassName = dt.Rows[i]["外键类型"] is DBNull ? String.Empty : dt.Rows[i]["外键类型"].ToString();
+                record.FKPropertyName = dt.Rows[i]["外键属性"] is DBNull ? String.Empty : dt.Rows[i]["外键属性"].ToString();
+                record.MainClassName = dt.Rows[i]["主键类型"] is DBNull ? String.Empty : dt.Rows[i]["主键类型"].ToString();
+                record.MainClassProperty = dt.Rows[i]["主键属性"] is DBNull ? String.Empty : dt.Rows[i]["主键属性"].ToString();
+                record.RelationShip = dt.Rows[i]["关系"] is DBNull ? String.Empty : dt.Rows[i]["关系"].ToString();
+                record.Description = dt.Rows[i]["说明"] is DBNull ? String.Empty : dt.Rows[i]["说明"].ToString();
+                list.Add(record);
+            }
+            return list;
+        }
+
+	#>

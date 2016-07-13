@@ -1,3 +1,8 @@
+/***********************************************
+* auto-generated code from T4
+* 
+* ********************************************/
+
 using ERPS.Models;
 using System;
 using System.Collections.Generic;
@@ -8,22 +13,23 @@ using System.Text;
 
 namespace EPRS.Repository
 {
-	///<summary>
-	///Department 实体类映射
-	///</summary>
-	public class DepartmentConfiguration:EntityTypeConfiguration<Department>
+    ///<summary>
+    ///Department 实体类映射
+    ///</summary>
+    public class DepartmentConfiguration:EntityTypeConfiguration<Department>
     {
-		public DepartmentConfiguration()
+        public DepartmentConfiguration()
         {
-			ToTable("Department");
-			HasKey(e=>e.Id);
+            ToTable("Department");
+            HasKey(e=>e.Id);
 			Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
-			Property(e =>e.Code).HasColumnName("Code").HasMaxLength(50).HasColumnType("nvarchar").IsRequired();
-			Property(e =>e.Name).HasColumnName("Name").HasMaxLength(50).HasColumnType("nvarchar").IsRequired();
-			Property(e =>e.Notes).HasColumnName("Notes").HasMaxLength(250).HasColumnType("nvarchar").IsOptional();
+			Property(e =>e.Code).HasColumnName("Code").HasColumnType("nvarchar").IsRequired();
+			Property(e =>e.Name).HasColumnName("Name").HasColumnType("nvarchar").IsRequired();
+			Property(e =>e.Notes).HasColumnName("Notes").HasColumnType("nvarchar").IsOptional();
 			Property(e =>e.Sort).HasColumnName("Sort").HasColumnType("int").IsRequired();
 			Property(e =>e.Depth).HasColumnName("Depth").HasColumnType("int").IsRequired();
-			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasColumnType("DateTime").IsRequired();
-		}
-	}
+			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("DateTime").IsRequired();
+
+        }
+    }
 }

@@ -145,7 +145,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModeCongiguration.cs</LastGenOutput>
     </None>
-    <None Include="Configuration\MultipleOutputHelper.ttinclude" />
     <None Include="EF\DataContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DataContext.cs</LastGenOutput>

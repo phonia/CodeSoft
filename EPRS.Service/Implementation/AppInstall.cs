@@ -139,7 +139,7 @@ namespace EPRS.Service
                             Address="",
                             Birthday=DateTime.Now,
                             Content="",
-                            Education=Education.HighSchool,
+                            Education=Education.University,
                             Email="hy@turingit.com",
                             GraduateCollege="",
                             GraduateSpecialty="",

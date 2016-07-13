@@ -77,7 +77,9 @@
     <Compile Include="Model\Department.cs">
       <DependentUpon>CreateModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Education.cs" />
+    <Compile Include="Model\Education.cs">
+      <DependentUpon>CreateModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\ErrorLog.cs">
       <DependentUpon>CreateModel.tt</DependentUpon>
     </Compile>
@@ -97,7 +99,9 @@
     <Compile Include="Model\Position.cs">
       <DependentUpon>CreateModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Sex.cs" />
+    <Compile Include="Model\Sex.cs">
+      <DependentUpon>CreateModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\SUser.cs">
       <DependentUpon>CreateModel.tt</DependentUpon>
     </Compile>

@@ -1,3 +1,8 @@
+/***********************************************
+* auto-generated code from T4
+* 
+* ********************************************/
+
 using ERPS.Models;
 using System;
 using System.Collections.Generic;
@@ -8,29 +13,30 @@ using System.Text;
 
 namespace EPRS.Repository
 {
-	///<summary>
-	///PersonInfo 实体类映射
-	///</summary>
-	public class PersonInfoConfiguration:ComplexTypeConfiguration<PersonInfo>
+    ///<summary>
+    ///PersonInfo 实体类映射
+    ///</summary>
+    public class PersonInfoConfiguration:ComplexTypeConfiguration<PersonInfo>
     {
-		public PersonInfoConfiguration()
+        public PersonInfoConfiguration()
         {
-			Property(e =>e.NName).HasMaxLength(50).HasColumnType("nvarchar").IsRequired();
-			Property(e =>e.PhotoImg).HasColumnType("varbinary(Max)").IsRequired();
-			Property(e =>e.Sex).HasColumnType("int").IsRequired();
-			Property(e =>e.Birthday).HasColumnType("DateTime").IsOptional();
-			Property(e =>e.NativePlace).HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.NationalName).HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.Education).HasColumnType("int").IsOptional();
-			Property(e =>e.GraduateCollege).HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.GraduateSpecialty).HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.Tel).HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.Mobile).HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.Email).HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.Qq).HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.Msn).HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.Address).HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.Content).HasMaxLength(50).HasColumnType("nvarchar").IsOptional();
-		}
-	}
+			Property(e =>e.NName).HasColumnName("NName").HasColumnType("nvarchar").IsRequired();
+			Property(e =>e.PhotoImg).HasColumnName("PhotoImg").HasColumnType("varbinary(Max)").IsRequired();
+			Property(e =>e.Sex).HasColumnName("Sex").HasColumnType("int").IsRequired();
+			Property(e =>e.Birthday).HasColumnName("Birthday").HasColumnType("DateTime").IsOptional();
+			Property(e =>e.NativePlace).HasColumnName("NativePlace").HasColumnType("nvarchar").IsOptional();
+			Property(e =>e.NationalName).HasColumnName("NationalName").HasColumnType("nvarchar").IsOptional();
+			Property(e =>e.Education).HasColumnName("Education").HasColumnType("int").IsOptional();
+			Property(e =>e.GraduateCollege).HasColumnName("GraduateCollege").HasColumnType("nvarchar").IsOptional();
+			Property(e =>e.GraduateSpecialty).HasColumnName("GraduateSpecialty").HasColumnType("nvarchar").IsOptional();
+			Property(e =>e.Tel).HasColumnName("Tel").HasColumnType("nvarchar").IsOptional();
+			Property(e =>e.Mobile).HasColumnName("Mobile").HasColumnType("nvarchar").IsOptional();
+			Property(e =>e.Email).HasColumnName("Email").HasColumnType("nvarchar").IsOptional();
+			Property(e =>e.Qq).HasColumnName("Qq").HasColumnType("nvarchar").IsOptional();
+			Property(e =>e.Msn).HasColumnName("Msn").HasColumnType("nvarchar").IsOptional();
+			Property(e =>e.Address).HasColumnName("Address").HasColumnType("nvarchar").IsOptional();
+			Property(e =>e.Content).HasColumnName("Content").HasColumnType("nvarchar").IsOptional();
+
+        }
+    }
 }

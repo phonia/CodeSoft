@@ -1,3 +1,8 @@
+/***********************************************
+* auto-generated code from T4
+* 
+* ********************************************/
+
 using ERPS.Models;
 using System;
 using System.Collections.Generic;
@@ -8,22 +13,21 @@ using System.Text;
 
 namespace EPRS.Repository
 {
-	///<summary>
-	///Position 实体类映射
-	///</summary>
-	public class PositionConfiguration:EntityTypeConfiguration<Position>
+    ///<summary>
+    ///Position 实体类映射
+    ///</summary>
+    public class PositionConfiguration:EntityTypeConfiguration<Position>
     {
-		public PositionConfiguration()
+        public PositionConfiguration()
         {
-			ToTable("Position");
-			HasKey(e=>e.Id);
+            ToTable("Position");
+            HasKey(e=>e.Id);
 			Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
-			Property(e =>e.Name).HasColumnName("Name").HasMaxLength(50).HasColumnType("nvarchar").IsRequired();
+			Property(e =>e.Name).HasColumnName("Name").HasColumnType("nvarchar").IsRequired();
 			Property(e =>e.PagePower).HasColumnName("PagePower").HasColumnType("nvarchar(MAX)").IsOptional();
 			Property(e =>e.ControlPower).HasColumnName("ControlPower").HasColumnType("nvarchar(MAX)").IsOptional();
-			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasColumnType("DateTime").IsRequired();
-            HasRequired(e=>e.Department).WithMany(e=>e.Positions);
-            HasMany(e => e.SUsers).WithRequired(e => e.Position).Map(e => e.MapKey(""));
-		}
-	}
+			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("DateTime").IsRequired();
+            HasRequired(e=>e.Department).WithMany(e=>e.Positions).Map(e=>e.MapKey("DepartmentId"));
+        }
+    }
 }
