@@ -109,12 +109,12 @@ namespace EPRS.Service
                         Name = "超级管理员",
                         Notes = "后台管理",
                         Sort = 0,
-                        UpdateDate = DateTime.Now
+                        UpdateDate=DateTime.Now
                     };
 
                     var suser = new SUser()
                     {
-                        CreateTime = DateTime.Now,
+                        CreateTime = DateTime.Today,
                         IsEnable = true,
                         IsMultiUser = false,
                         IsWork = true,
@@ -122,7 +122,7 @@ namespace EPRS.Service
                         LoginIp = "0",
                         LoginName = "Admin",
                         LoginPass = "Admin",
-                        LoginTime = DateTime.Now,
+                        LoginTime = DateTime.Today,
                         OnLineInfo = new OnLineInfo() 
                         {
                             BrowserName="",
@@ -137,7 +137,7 @@ namespace EPRS.Service
                         },
                         PersonInfo = new PersonInfo() { 
                             Address="",
-                            Birthday=DateTime.Now,
+                            Birthday=DateTime.Today,
                             Content="",
                             Education=Education.University,
                             Email="hy@turingit.com",
@@ -160,7 +160,7 @@ namespace EPRS.Service
                             PagePower="",
                             UpdateDate=DateTime.Now
                         },
-                        UpdateTime=DateTime.Now
+                        UpdateTime=DateTime.Today
                     };
                     _suserRepository.Add(suser);
                 }

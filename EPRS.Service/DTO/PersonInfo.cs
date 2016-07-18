@@ -10,14 +10,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ERPS.Models
+namespace EPRS.Service
 {
     /// <summary>
-    /// 个人信息
-    /// PersonInfo 实体类
+    /// PersonInfo DTO
     /// </summary>
     [Serializable]
-    public partial class PersonInfo:EntityBase,IAggregateRoot
+    public partial class PersonInfoDTO
     {
         /// <summary>
         /// 用户中文名称
@@ -32,7 +31,7 @@ namespace ERPS.Models
         /// <summary>
         /// 性别（0=未知，1=男，2=女）
         /// </summary>
-        public Sex Sex {get;set;}
+        public SexDTO Sex {get;set;}
 
         /// <summary>
         /// 出生日期
@@ -52,7 +51,7 @@ namespace ERPS.Models
         /// <summary>
         /// 个人--学历
         /// </summary>
-        public Education Education {get;set;}
+        public EducationDTO Education {get;set;}
 
         /// <summary>
         /// 毕业学校
@@ -99,9 +98,5 @@ namespace ERPS.Models
         /// </summary>
         public String Content {get;set;}
 
-        protected override void Validate()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

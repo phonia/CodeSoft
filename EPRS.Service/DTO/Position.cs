@@ -10,14 +10,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ERPS.Models
+namespace EPRS.Service
 {
     /// <summary>
-    /// 职务
-    /// Position 实体类
+    /// Position DTO
     /// </summary>
     [Serializable]
-    public partial class Position:EntityBase,IAggregateRoot
+    public partial class PositionDTO
     {
         /// <summary>
         /// 主键Id
@@ -44,19 +43,5 @@ namespace ERPS.Models
         /// </summary>
         public DateTime UpdateDate {get;set;}
 
-        ///<summary>
-        ///用户职务
-        ///</summary>
-        public virtual IList<SUser> Users{get;set;}
-
-        ///<summary>
-        ///部门职务
-        ///</summary>
-        public virtual Department Department{get;set;}
-
-        protected override void Validate()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

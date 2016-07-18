@@ -15,6 +15,7 @@ namespace EPRS.Repository
 {
     ///<summary>
     ///Department 实体类映射
+    ///部门
     ///</summary>
     public class DepartmentConfiguration:EntityTypeConfiguration<Department>
     {
@@ -22,13 +23,13 @@ namespace EPRS.Repository
         {
             ToTable("Department");
             HasKey(e=>e.Id);
-			Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
-			Property(e =>e.Code).HasColumnName("Code").HasColumnType("nvarchar").IsRequired();
-			Property(e =>e.Name).HasColumnName("Name").HasColumnType("nvarchar").IsRequired();
-			Property(e =>e.Notes).HasColumnName("Notes").HasColumnType("nvarchar").IsOptional();
-			Property(e =>e.Sort).HasColumnName("Sort").HasColumnType("int").IsRequired();
-			Property(e =>e.Depth).HasColumnName("Depth").HasColumnType("int").IsRequired();
-			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("DateTime").IsRequired();
+            Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
+            Property(e =>e.Code).HasColumnName("Code").HasColumnType("nvarchar").IsRequired();
+            Property(e =>e.Name).HasColumnName("Name").HasColumnType("nvarchar").IsRequired();
+            Property(e =>e.Notes).HasColumnName("Notes").HasColumnType("nvarchar").IsOptional();
+            Property(e =>e.Sort).HasColumnName("Sort").HasColumnType("int").IsRequired();
+            Property(e =>e.Depth).HasColumnName("Depth").HasColumnType("int").IsRequired();
+            Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasColumnType("DateTime").IsRequired();
 
         }
     }

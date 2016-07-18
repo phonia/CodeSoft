@@ -13,15 +13,15 @@ using System.Text;
 namespace ERPS.Models
 {
     /// <summary>
-    /// 男枚举
+    /// 性别枚举
     /// </summary>
     public enum Sex
     {
-		[Description("女")]
-		Male,
-		[Description("未知")]
-		Female,
-		[Description("")]
-		Unknown
+        [Description("男")]
+        Male,
+        [Description("女")]
+        Female,
+        [Description("未知")]
+        Unknown
     }
 }

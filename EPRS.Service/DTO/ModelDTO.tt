@@ -13,149 +13,112 @@
 <#@ import namespace="System.Xml" #>
 <#@ output extension=".cs" #>
 <#@include file="E:\Code\CodeSoft\ERPS.Infrastructure\T4\MultipleOutputHelper.ttinclude"#>
+<#@include file="E:\Code\CodeSoft\ERPS.Infrastructure\T4\T4CodeFirstHelper.ttinclude"#>
 <#
+			var manager = Manager.Create(Host, GenerationEnvironment);
+			var properties=GetProperty(@"E:\Code\CodeSoft\数据原典.xls");
+			var navigations=GetNavigation(@"E:\Code\CodeSoft\数据原典.xls");
+			foreach (var node in properties)
+            {
+                if (String.IsNullOrWhiteSpace(node.ClassMapping)) continue;
+                manager.StartNewFile(node.ClassName+".cs"); 
+#>/***********************************************
+* auto-generated code from T4
+* 
+* ********************************************/
+
+using Infrastructure;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+
+namespace EPRS.Service
+{
+<#
+                if (node.ClassMapping.Equals("Enum"))
+                {
+#>
+    /// <summary>
+    /// <#=String.IsNullOrWhiteSpace(node.Description)?"":node.Description #>枚举
+    /// </summary>
+    public enum <#=node.ClassName #>DTO
+    {
+<#
+                    int count = 0;
+                    foreach (var record in properties)
+                    {
+                        if (String.IsNullOrWhiteSpace(record.ClassMapping) && record.ClassName.Equals(node.ClassName))
+                        {
+                            if (count != 0)
+                            {
+                                
+#>,
+<#
+                            }
+#>
+        [Description("<#=String.IsNullOrWhiteSpace(record.Description)?"":record.Description #>")]
+        <#=record.PropertyName #><#  
+                            count++;
+                        }
+                    }
 #>
 
-<#+
-        /// <summary>  
-        /// 获取Excel文件数据表列表  
-        /// </summary>  
-        public  ArrayList GetExcelTables(string ExcelFileName)
-        {  
-            DataTable dt = new DataTable();  
-            ArrayList TablesList = new ArrayList();  
-            if (File.Exists(ExcelFileName))  
-            {  
-                using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Extended Properties=Excel 8.0;Data Source=" + ExcelFileName))  
-                {  
-                    try  
-                    {  
-                        conn.Open();  
-                        dt = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });  
-                    }  
-                    catch (Exception exp)  
-                    {  
-                        throw exp;  
-                    }  
-  
-                    //获取数据表个数  
-                    int tablecount = dt.Rows.Count;  
-                    for (int i = 0; i < tablecount; i++)  
-                    {  
-                        string tablename = dt.Rows[i][2].ToString().Trim().TrimEnd('$');  
-                        if (TablesList.IndexOf(tablename) < 0)  
-                        {  
-                            TablesList.Add(tablename);  
-                        }  
-                    }  
-                }  
-            }  
-            return TablesList;  
-        }  
-
-
-		        /// <summary>  
-        /// 将Excel文件导出至DataTable(第一行作为表头)  
-        /// </summary>  
-        /// <param name="ExcelFilePath">Excel文件路径</param>  
-        /// <param name="TableName">数据表名，如果数据表名错误，默认为第一个数据表名</param>  
-        public  DataTable InputFromExcel(string ExcelFilePath, string TableName)  
-        {  
-            if (!File.Exists(ExcelFilePath))  
-            {  
-                throw new Exception("Excel文件不存在！");  
-            }  
-  
-            //如果数据表名不存在，则数据表名为Excel文件的第一个数据表  
-            ArrayList TableList = new ArrayList();  
-            TableList = GetExcelTables(ExcelFilePath);  
-  
-            if (TableList.IndexOf(TableName) < 0)  
-            {  
-                TableName = TableList[0].ToString().Trim();  
-            }  
-  
-            DataTable table = new DataTable();  
-            OleDbConnection dbcon = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + ExcelFilePath + ";Extended Properties=Excel 8.0");  
-            OleDbCommand cmd = new OleDbCommand("select * from [" + TableName + "$]", dbcon);  
-            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);  
-  
-            try  
-            {  
-                if (dbcon.State == ConnectionState.Closed)  
-                {  
-                    dbcon.Open();  
-                }  
-                adapter.Fill(table);  
-            }  
-            catch (Exception exp)  
-            {  
-                throw exp;  
-            }  
-            finally  
-            {  
-                if (dbcon.State == ConnectionState.Open)  
-                {  
-                    dbcon.Close();  
-                }  
-            }  
-            return table;  
-        }  
-
-		public  List<EntityExcelRecord> GetAllRecordFromExcel(String path)
-        {
-            List<EntityExcelRecord> list = new List<EntityExcelRecord>();
-            ArrayList tableList = GetExcelTables(path);
-            foreach (var item in tableList)
-            {
-                DataTable table = InputFromExcel(path, item.ToString());
-                for (int i = 0; i < table.Rows.Count; i++)
-                {
-                    EntityExcelRecord record = new EntityExcelRecord();
-                    record.ClassName = table.Rows[i]["类型名"] is DBNull ? String.Empty : table.Rows[i]["类型名"].ToString();
-                    record.BaseClass = table.Rows[i]["基类"] is DBNull ? String.Empty : table.Rows[i]["基类"].ToString();
-                    record.MappingClass = table.Rows[i]["映射类型"] is DBNull ? String.Empty : table.Rows[i]["映射类型"].ToString();
-                    record.TableName = table.Rows[i]["所属表"] is DBNull ? String.Empty : table.Rows[i]["所属表"].ToString();
-                    record.PropertyName = table.Rows[i]["字段名称"] is DBNull ? String.Empty : table.Rows[i]["字段名称"].ToString();
-                    record.PropertyType = table.Rows[i]["属性类型"] is DBNull ? String.Empty : table.Rows[i]["属性类型"].ToString();
-                    record.FieldType = table.Rows[i]["字段类型"] is DBNull ? String.Empty : table.Rows[i]["字段类型"].ToString();
-                    record.MaxLength = table.Rows[i]["最大长度"] is DBNull ? null : (int?)Convert.ToInt16(table.Rows[i]["最大长度"]);
-                    record.Decimal = table.Rows[i]["小数位数"] is DBNull ? null : (int?)Convert.ToInt16(table.Rows[i]["小数位数"]);
-                    record.IsKey = table.Rows[i]["主键"] is DBNull ? false : true;
-                    record.IsMultiPK = table.Rows[i]["复合主键"] is DBNull ? false : true;
-                    record.IsNull = table.Rows[i]["允许空"] is DBNull ? false : true;
-                    record.IsIdentity = table.Rows[i]["自增长"] is DBNull ? false : true;
-                    record.DefaultValue = table.Rows[i]["默认值"] is DBNull ? String.Empty : table.Rows[i]["默认值"].ToString();
-                    record.Description = table.Rows[i]["字段说明"] is DBNull ? String.Empty : table.Rows[i]["字段说明"].ToString();
-                    record.RefrenceClassName = table.Rows[i]["参考类型"] is DBNull ? String.Empty : table.Rows[i]["参考类型"].ToString();
-                    record.RefrencePropertyName = table.Rows[i]["参考属性"] is DBNull ? String.Empty : table.Rows[i]["参考属性"].ToString();
-                    record.RefrenceRelation = table.Rows[i]["类型关系"] is DBNull ? String.Empty : table.Rows[i]["类型关系"].ToString();
-                    list.Add(record);
-                }
-            }
-            return list;
-        }
-
-
-    public class EntityExcelRecord
-    {
-        public String ClassName { get; set; }
-        public String BaseClass { get; set; }
-        public String MappingClass { get; set; }
-        public String TableName { get; set; }
-        public String PropertyName { get; set; }
-        public String PropertyType { get; set; }
-        public String FieldType { get; set; }
-        public int? MaxLength { get; set; }
-        public int? Decimal { get; set; }
-        public bool IsKey { get; set; }
-        public bool IsMultiPK { get; set; }
-        public bool IsNull { get; set; }
-        public bool IsIdentity { get; set; }
-        public String DefaultValue { get; set; }
-        public String Description { get; set; }
-        public String RefrenceClassName { get; set; }
-        public String RefrencePropertyName { get; set; }
-        public String RefrenceRelation { get; set; }
     }
+}
+<#
+                    manager.EndBlock();
+                    continue;
+                }
+                //根据实体的基类写入表头
+                if (String.IsNullOrWhiteSpace(node.ClassBase))
+                {
+#>
+    /// <summary>
+    /// <#=node.ClassName #> DTO
+    /// </summary>
+    [Serializable]
+    public partial class <#=node.ClassName #>DTO
+    {
+<#
+                }
+                else
+                {
+                    //code inherit from node.BaseClass
+#>
+    /// <summary>
+    /// <#=node.ClassName #>DTO
+    /// </summary>
+    [Serializable]
+    public partial class <#=node.ClassName #>DTO:<#=node.ClassBase #>DTO
+    {
+<#
+
+                }
+
+                //循环写入类型属性
+                foreach (var record in properties)
+                {
+                    //具有相同的类型名称、类型的映射基类为空的记录为类型的基本属性
+                    if (record.ClassName.Equals(node.ClassName)
+                        && String.IsNullOrWhiteSpace(record.ClassMapping))
+                    {
+#>
+        /// <summary>
+        /// <#=String.IsNullOrWhiteSpace(record.Description)?"":record.Description #>
+        /// </summary>
+        public <#=String.IsNullOrWhiteSpace(record.FieldType)?record.PropertyType+"DTO":record.PropertyType #> <#=record.PropertyName #> {get;set;}
+
+<#
+
+                    }
+                }
+#>
+    }
+}
+<#
+				manager.EndBlock();
+            }
+            manager.Process(true);
 #>

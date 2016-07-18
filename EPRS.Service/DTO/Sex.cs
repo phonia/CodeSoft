@@ -10,19 +10,17 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ERPS.Models
+namespace EPRS.Service
 {
     /// <summary>
-    /// 学历枚举
+    /// 性别枚举
     /// </summary>
-    public enum Education
+    public enum SexDTO
     {
-        [Description("中学")]
-        MiddleSchool,
-        [Description("大学")]
-        University,
-        [Description("大专")]
-        VUniversity ,
+        [Description("男")]
+        Male,
+        [Description("女")]
+        Female,
         [Description("未知")]
         Unknown
     }

@@ -76,6 +76,11 @@ namespace EPRS.Repository
             return _unitOfWork.DbContext.Set<TEntity>().Find(key);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="includes">字符串参数不超过八个</param>
+        /// <returns></returns>
         public IQueryable<TEntity> GetAllWithNavigationalProperty(params String[] includes)
         {
             if (includes == null)

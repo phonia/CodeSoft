@@ -10,12 +10,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ERPS.Models
+namespace EPRS.Service
 {
     /// <summary>
     /// 学历枚举
     /// </summary>
-    public enum Education
+    public enum EducationDTO
     {
         [Description("中学")]
         MiddleSchool,

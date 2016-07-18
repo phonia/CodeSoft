@@ -125,7 +125,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IRepository.cs</LastGenOutput>
     </None>
-    <None Include="IRepository\MultipleOutputHelper.ttinclude" />
     <None Include="Model\CreateModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CreateModel.cs</LastGenOutput>

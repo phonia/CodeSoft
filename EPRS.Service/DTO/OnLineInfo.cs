@@ -10,14 +10,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ERPS.Models
+namespace EPRS.Service
 {
     /// <summary>
-    /// 在线信息
-    /// OnLineInfo 实体类
+    /// OnLineInfo DTO
     /// </summary>
     [Serializable]
-    public partial class OnLineInfo:EntityBase,IAggregateRoot
+    public partial class OnLineInfoDTO
     {
         /// <summary>
         /// 用户是否在线
@@ -64,9 +63,5 @@ namespace ERPS.Models
         /// </summary>
         public String BrowserVersion {get;set;}
 
-        protected override void Validate()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

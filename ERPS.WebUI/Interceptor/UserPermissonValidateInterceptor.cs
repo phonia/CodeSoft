@@ -19,6 +19,7 @@ namespace ERPS.WebUI.Interceptor
 
         public IMethodReturn Invoke(IMethodInvocation input, GetNextInterceptionBehaviorDelegate getNext)
         {
+            
             //根据调用类名以及方法名判断与用户信息判断是否具有权限
 
             //String className = input.MethodBase.DeclaringType.Name;

@@ -7,28 +7,33 @@ namespace EPRS.Service
 {
     public interface IUserService
     {
-        List<UserDTO> GetUsers();
-        UserDTO GetUserByName();
-        UserDTO GetUserByKey();
-        void GetDepartments();
-        void GetDepartmentByKey();
-        void GetDepartmentByName();
-        void GetPositions();
-        void GetPositionByKey();
-        void GetPositionByName();
+        List<SUserDTO> GetUsers();
+        SUserDTO GetUserByName(String name);
+        SUserDTO GetUserByKey(int id);
+        List<DepartmentDTO> GetDepartments();
+        DepartmentDTO GetDepartmentByKey(int id);
+        DepartmentDTO GetDepartmentByName(String name);
+        List<PositionDTO> GetPositions();
+        PositionDTO GetPositionByKey(int id);
+        PositionDTO GetPositionByName(String name);
 
-        void RegisterUser();
-        void RegisterPosition();
-        void RegisterDepartment();
+        SUserDTO RegisterUser(SUserDTO userDTO);
+        PositionDTO RegisterPosition(PositionDTO positionDTO);
+        DepartmentDTO RegisterDepartment(DepartmentDTO departmentDTO);
 
-        UserDTO UpdateUser();
-        void UpdatePosition();
-        void UpdateDepartment();
+        SUserDTO UpdateUser(SUserDTO userDTO);
+        PositionDTO UpdatePosition(PositionDTO positionDTO);
+        DepartmentDTO UpdateDepartment(DepartmentDTO departmentDTO);
 
-        bool RemoveUser();
-        bool RemovePosition();
-        bool RemoveDepartment();
+        bool RemoveUser(int id);
+        bool RemoveUser(List<int> users);
+        bool RemovePosition(int id);
+        bool RemovePosition(List<int> positions);
+        bool RemoveDepartment(int id);
+        bool RemoveDepartment(List<int> departments);
 
-        UserDTO Login(String loginName, String loginPwd);
+        SUserDTO Login(String loginName, String loginPwd);
+
+        bool Logout(String loginName);
     }
 }

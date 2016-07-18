@@ -15,6 +15,7 @@ namespace EPRS.Repository
 {
     ///<summary>
     ///Position 实体类映射
+    ///职务
     ///</summary>
     public class PositionConfiguration:EntityTypeConfiguration<Position>
     {
@@ -22,12 +23,13 @@ namespace EPRS.Repository
         {
             ToTable("Position");
             HasKey(e=>e.Id);
-			Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
-			Property(e =>e.Name).HasColumnName("Name").HasColumnType("nvarchar").IsRequired();
-			Property(e =>e.PagePower).HasColumnName("PagePower").HasColumnType("nvarchar(MAX)").IsOptional();
-			Property(e =>e.ControlPower).HasColumnName("ControlPower").HasColumnType("nvarchar(MAX)").IsOptional();
-			Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("DateTime").IsRequired();
+            Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
+            Property(e =>e.Name).HasColumnName("Name").HasColumnType("nvarchar").IsRequired();
+            Property(e =>e.PagePower).HasColumnName("PagePower").HasColumnType("nvarchar(MAX)").IsOptional();
+            Property(e =>e.ControlPower).HasColumnName("ControlPower").HasColumnType("nvarchar(MAX)").IsOptional();
+            Property(e =>e.UpdateDate).HasColumnName("UpdateDate").HasColumnType("DateTime").IsRequired();
             HasRequired(e=>e.Department).WithMany(e=>e.Positions).Map(e=>e.MapKey("DepartmentId"));
+
         }
     }
 }

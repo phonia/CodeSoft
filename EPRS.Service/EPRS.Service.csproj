@@ -56,26 +56,67 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attribute\SCache.cs" />
-    <Compile Include="DTO\DepartmentDTO.cs" />
-    <Compile Include="DTO\Menu.cs" />
+    <Compile Include="DTO\Department.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Education.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\ErrorLog.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\MenuInfo.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\ModelDTO.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDTO.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\OnLineInfo.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\PagePowerSign.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\PersonInfo.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Position.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\PositionDTO.cs" />
-    <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="DTO\Sex.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\SUser.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\SUserDTO.cs" />
+    <Compile Include="DTO\UserLog.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\WebConfig.cs">
+      <DependentUpon>ModelDTO.tt</DependentUpon>
+    </Compile>
     <Compile Include="Implementation\AppInstall.cs" />
     <Compile Include="Implementation\MenuInfoService.cs" />
+    <Compile Include="Implementation\UserService.cs" />
     <Compile Include="Interface\IAppInstallService.cs" />
     <Compile Include="Interface\IMenuInfoService.cs" />
     <Compile Include="Interface\IUserService.cs" />
     <Compile Include="Log\SLog.cs" />
-    <Compile Include="Mapper\AutoMapperBootStrapper.cs" />
+    <Compile Include="Mapper\AutoMapper.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoMapper.tt</DependentUpon>
+    </Compile>
     <Compile Include="Mapper\MapperHelper.cs" />
     <Compile Include="Interface\IMSUserService.cs" />
     <Compile Include="DTO\MSUserDTO.cs" />
     <Compile Include="Implementation\MSUserService.cs" />
+    <Compile Include="Mapper\PositionMapper.cs" />
+    <Compile Include="Mapper\UserMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +136,10 @@
     <None Include="DTO\ModelDTO.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelDTO.cs</LastGenOutput>
+    </None>
+    <None Include="Mapper\AutoMapper.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AutoMapper.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

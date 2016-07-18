@@ -1,0 +1,50 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Xml" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.OleDb" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Xml" #>
+<#@include file="E:\Code\CodeSoft\ERPS.Infrastructure\T4\MultipleOutputHelper.ttinclude"#>
+<#@include file="E:\Code\CodeSoft\ERPS.Infrastructure\T4\T4CodeFirstHelper.ttinclude"#>
+<#@ output extension=".cs" #>
+<# var properties=GetProperty(@"E:\Code\CodeSoft\数据原典.xls");
+#>/***********************************************
+ * auto-generated code from T4
+ * 
+ * ********************************************/
+
+using AutoMapper;
+using ERPS.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace EPRS.Service
+{
+    public class AutoMapperBootStrapper
+    {
+        public static void Start()
+        {
+<#
+            foreach (var node in properties)
+            {
+                if (String.IsNullOrWhiteSpace(node.ClassMapping)) continue;
+#>
+            Mapper.CreateMap<<#=node.ClassName #>, <#=node.ClassName #>DTO>();
+			Mapper.CreateMap<<#=node.ClassName #>DTO, <#=node.ClassName #>>();
+<#
+            }
+#>
+        }
+    }
+}
+<#
+#>

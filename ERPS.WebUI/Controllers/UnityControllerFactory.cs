@@ -62,7 +62,17 @@ namespace ERPS.WebUI.Controllers
             UnityContainer.RegisterType<ISUserRepository, SUserRepository>();
             UnityContainer.RegisterType<IWebConfigRepository, WebConfigRepository>();
             UnityContainer.RegisterType<IAppInstallService, AppInstall>();
-            UnityContainer.RegisterType<IMenuInfoService, MenuInfoService>();
+
+            UnityContainer.RegisterType<IMenuInfoService, MenuInfoService>(
+                    new Interceptor<InterfaceInterceptor>(),
+                    new InterceptionBehavior<ArgumentValidateInterceptor>(),
+                    new InterceptionBehavior<UserPermissonValidateInterceptor>()
+                );
+            UnityContainer.RegisterType<IUserService, UserService>(
+                    new Interceptor<InterfaceInterceptor>(),
+                    new InterceptionBehavior<ArgumentValidateInterceptor>(),
+                    new InterceptionBehavior<UserPermissonValidateInterceptor>()
+                );
             //UnityContainer.RegisterType<IMSUserService, MSUserService>(
             //    new Interceptor<InterfaceInterceptor>(),
             //    new InterceptionBehavior<ArgumentValidateInterceptor>(),

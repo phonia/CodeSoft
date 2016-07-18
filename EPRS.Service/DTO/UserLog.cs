@@ -10,14 +10,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ERPS.Models
+namespace EPRS.Service
 {
     /// <summary>
-    /// 用户日志
-    /// UserLog 实体类
+    /// UserLog DTO
     /// </summary>
     [Serializable]
-    public partial class UserLog:EntityBase,IAggregateRoot
+    public partial class UserLogDTO
     {
         /// <summary>
         /// 主键Id
@@ -39,19 +38,5 @@ namespace ERPS.Models
         /// </summary>
         public String Notes {get;set;}
 
-        ///<summary>
-        ///用户日志
-        ///</summary>
-        public virtual SUser User{get;set;}
-
-        ///<summary>
-        ///用户操作菜单
-        ///</summary>
-        public virtual MenuInfo MenuInfo{get;set;}
-
-        protected override void Validate()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

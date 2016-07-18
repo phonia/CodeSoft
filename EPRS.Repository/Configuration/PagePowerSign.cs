@@ -15,6 +15,7 @@ namespace EPRS.Repository
 {
     ///<summary>
     ///PagePowerSign 实体类映射
+    ///页面权限标志表
     ///</summary>
     public class PagePowerSignConfiguration:EntityTypeConfiguration<PagePowerSign>
     {
@@ -22,9 +23,9 @@ namespace EPRS.Repository
         {
             ToTable("PagePowerSign");
             HasKey(e=>e.Id);
-			Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
-			Property(e =>e.CName).HasColumnName("CName").HasColumnType("nvarchar").IsRequired();
-			Property(e =>e.EName).HasColumnName("EName").HasColumnType("nvarchar").IsRequired();
+            Property(e =>e.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnType("int").IsRequired();
+            Property(e =>e.CName).HasColumnName("CName").HasColumnType("nvarchar").IsRequired();
+            Property(e =>e.EName).HasColumnName("EName").HasColumnType("nvarchar").IsRequired();
 
         }
     }

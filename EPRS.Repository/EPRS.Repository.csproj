@@ -149,9 +149,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DataContext.cs</LastGenOutput>
     </None>
-    <None Include="EF\MultipleOutputHelper.ttinclude" />
     <None Include="packages.config" />
-    <None Include="Repository\MultipleOutputHelper.ttinclude" />
     <None Include="Repository\Repository.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Repository1.cs</LastGenOutput>

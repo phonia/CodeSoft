@@ -10,14 +10,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ERPS.Models
+namespace EPRS.Service
 {
     /// <summary>
-    /// 页面权限标志表
-    /// PagePowerSign 实体类
+    /// PagePowerSign DTO
     /// </summary>
     [Serializable]
-    public partial class PagePowerSign:EntityBase,IAggregateRoot
+    public partial class PagePowerSignDTO
     {
         /// <summary>
         /// 主键Id
@@ -34,9 +33,5 @@ namespace ERPS.Models
         /// </summary>
         public String EName {get;set;}
 
-        protected override void Validate()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

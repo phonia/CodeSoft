@@ -17,6 +17,8 @@ namespace ERPS.WebUI.Controllers
         public IAppInstallService _appInstallService { get; set; }
         [Dependency]
         public IMenuInfoService _menuInfoService { get; set; }
+        [Dependency]
+        public IUserService _userService { get; set; }
         //
         // GET: /Home/
         public ActionResult Index()
@@ -27,6 +29,7 @@ namespace ERPS.WebUI.Controllers
 
         public JsonResult GetMenu(String id)
         {
+            List<SUserDTO>　list= _userService.GetUsers();
             List<MenuInfoDTO> menus= _menuInfoService.GetMenu(Convert.ToInt32(id));
             return Json(new
             {

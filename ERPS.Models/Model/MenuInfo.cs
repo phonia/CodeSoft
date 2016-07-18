@@ -13,6 +13,7 @@ using System.Text;
 namespace ERPS.Models
 {
     /// <summary>
+    /// 菜单表
     /// MenuInfo 实体类
     /// </summary>
     [Serializable]

@@ -10,14 +10,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ERPS.Models
+namespace EPRS.Service
 {
     /// <summary>
-    /// 异常日志
-    /// ErrorLog 实体类
+    /// ErrorLog DTO
     /// </summary>
     [Serializable]
-    public partial class ErrorLog:EntityBase,IAggregateRoot
+    public partial class ErrorLogDTO
     {
         /// <summary>
         /// 主键Id
@@ -74,9 +73,5 @@ namespace ERPS.Models
         /// </summary>
         public bool Type {get;set;}
 
-        protected override void Validate()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

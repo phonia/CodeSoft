@@ -10,14 +10,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ERPS.Models
+namespace EPRS.Service
 {
     /// <summary>
-    /// 用户表
-    /// SUser 实体类
+    /// SUser DTO
     /// </summary>
     [Serializable]
-    public partial class SUser:EntityBase,IAggregateRoot
+    public partial class SUserDTO
     {
         /// <summary>
         /// 主键Id
@@ -77,26 +76,12 @@ namespace ERPS.Models
         /// <summary>
         /// 个人信息
         /// </summary>
-        public PersonInfo PersonInfo {get;set;}
+        public PersonInfoDTO PersonInfo {get;set;}
 
         /// <summary>
         /// 在线信息
         /// </summary>
-        public OnLineInfo OnLineInfo {get;set;}
+        public OnLineInfoDTO OnLineInfo {get;set;}
 
-        ///<summary>
-        ///用户职务
-        ///</summary>
-        public virtual Position Position{get;set;}
-
-        ///<summary>
-        ///用户日志
-        ///</summary>
-        public virtual IList<UserLog> UserLogs{get;set;}
-
-        protected override void Validate()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -10,14 +10,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ERPS.Models
+namespace EPRS.Service
 {
     /// <summary>
-    /// 系统基本参数
-    /// WebConfig 实体类
+    /// WebConfig DTO
     /// </summary>
     [Serializable]
-    public partial class WebConfig:EntityBase,IAggregateRoot
+    public partial class WebConfigDTO
     {
         /// <summary>
         /// 主键Id
@@ -69,9 +68,5 @@ namespace ERPS.Models
         /// </summary>
         public String EmailDomain {get;set;}
 
-        protected override void Validate()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
