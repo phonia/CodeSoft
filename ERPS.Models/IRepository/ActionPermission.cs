@@ -12,9 +12,9 @@ using System.Text;
 namespace ERPS.Models
 {
     ///<summary>
-    ///PagePowerSign 仓储接口
+    ///ActionPermission 仓储接口
     ///</summary>
-    public interface IPagePowerSignRepository : IRepository<PagePowerSign,int> 
+    public interface IActionPermissionRepository : IRepository<ActionPermission,int> 
     {
 
     }

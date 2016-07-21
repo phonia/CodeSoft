@@ -69,6 +69,11 @@ namespace ERPS.Models
         ///</summary>
         public virtual IList<UserLog> UserLogs{get;set;}
 
+        ///<summary>
+        ///操作权限
+        ///</summary>
+        public virtual IList<ActionPermission> ActionPermissions{get;set;}
+
         protected override void Validate()
         {
             throw new NotImplementedException();

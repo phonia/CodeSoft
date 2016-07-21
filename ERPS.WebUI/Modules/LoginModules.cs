@@ -19,13 +19,13 @@ namespace ERPS.WebUI.Modules
 
         void context_PreRequestHandlerExecute(object sender, EventArgs e)
         {
-            //HttpApplication httpApplication = (HttpApplication)sender;
-            //if (httpApplication.Session["MSUserDTO"] == null&&!httpApplication.Request.Path.Equals("/MSUser/Login"))
-            //{
-            //    //httpApplication.Response.Redirect("\\/MSUser\\/Login");
-            //    //httpApplication.Response.Redirect("/MSUser/Login");
-            //    httpApplication.Response.Redirect("\\MSUser\\Login");
-            //}
+            HttpApplication httpApplication = (HttpApplication)sender;
+            if (httpApplication.Session["User"] == null && !httpApplication.Request.Path.Equals("/User/Login"))
+            {
+                //httpApplication.Response.Redirect("\\/User\\/Login");
+                //httpApplication.Response.Redirect("/User/Login");
+                httpApplication.Response.Redirect("\\User\\Login");
+            }
         }
     }
 }

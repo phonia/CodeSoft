@@ -35,9 +35,9 @@ namespace EPRS.Repository
         public DbSet<MenuInfo> MenuInfoSets { get; set; }
 
         ///<summary>
-        ///页面权限标志表
+        ///操作权限
         ///</summary>
-        public DbSet<PagePowerSign> PagePowerSignSets { get; set; }
+        public DbSet<ActionPermission> ActionPermissionSets { get; set; }
 
         ///<summary>
         ///用户表
@@ -69,7 +69,7 @@ namespace EPRS.Repository
 			//Database.Delete("DataContext");
             modelBuilder.Configurations.Add(new WebConfigConfiguration());
             modelBuilder.Configurations.Add(new MenuInfoConfiguration());
-            modelBuilder.Configurations.Add(new PagePowerSignConfiguration());
+            modelBuilder.Configurations.Add(new ActionPermissionConfiguration());
             modelBuilder.Configurations.Add(new SUserConfiguration());
             modelBuilder.Configurations.Add(new PersonInfoConfiguration());
             modelBuilder.Configurations.Add(new OnLineInfoConfiguration());

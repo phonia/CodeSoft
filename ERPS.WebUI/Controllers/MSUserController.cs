@@ -17,7 +17,7 @@
 //        // GET: /MSUser/
 
 //        [Dependency]
-//        public IMSUserService MSUserService { get; set; }
+//        public IUserService _userService { get; set; }
 
 //        public ActionResult Index()
 //        {
@@ -30,7 +30,8 @@
 //            //sb.Clear();
 //            //sb.Append(_json.Serialize(MSUserService.GetAllMSUser()));
 //            //return Content(sb.ToString(), "text/html,charset=UTF-8");
-//            return Json(MSUserService.GetAllMSUser(),JsonRequestBehavior.AllowGet);
+//            //return Json(MSUserService.GetAllMSUser(), JsonRequestBehavior.AllowGet);
+//            return null;
 //        }
 
 //        [HttpGet]
@@ -41,7 +42,8 @@
 
 //        public ActionResult GetMSUSerInfo(String name)
 //        {
-//            return View(MSUserService.GetMSUserByName(name));
+//            //return View(MSUserService.GetMSUserByName(name));
+//            return null;
 //        }
 
 //        //public ActionResult GetUserInfoImage(String name)
@@ -50,24 +52,25 @@
 //        //}
 
 //        [HttpPost]
-//        public JsonResult AddUser(object userPhoto,String userName,String userPwd,int sex,String contactNumber,String email,int userRole)
+//        public JsonResult AddUser(object userPhoto, String userName, String userPwd, int sex, String contactNumber, String email, int userRole)
 //        {
-//            MSUserDTO msUserDTO = new MSUserDTO() { Name = userName, Pwd = userPwd, Sex = (SexDTO)sex, ContactNumber = contactNumber, Email = email, MSRole = (MSRoleDTO)userRole };
-//            //var upPhoto = HttpContext.Request.Files.Count;
-//            var upPhoto = HttpContext.Request.Files[0];
-//            if (upPhoto != null)
-//            {
-//                byte[] data = new byte[upPhoto.ContentLength];
-//                using (BinaryReader br = new BinaryReader(upPhoto.InputStream,Encoding.UTF8))
-//                {
-//                    data = br.ReadBytes(upPhoto.ContentLength);
-//                }
-//                MSUserService.RegisterUser(msUserDTO, data);
-//                //return Content(_json.Serialize(new { Success = true }), "text/html,charset=UTF-8");
-//                return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
-//            }
-//            //return Content(_json.Serialize(new { Success = false }), "text/html,charset=UTF-8");
-//            return Json(new { Success = false }, JsonRequestBehavior.AllowGet);
+//            //MSUserDTO msUserDTO = new MSUserDTO() { Name = userName, Pwd = userPwd, Sex = (SexDTO)sex, ContactNumber = contactNumber, Email = email, MSRole = (MSRoleDTO)userRole };
+//            ////var upPhoto = HttpContext.Request.Files.Count;
+//            //var upPhoto = HttpContext.Request.Files[0];
+//            //if (upPhoto != null)
+//            //{
+//            //    byte[] data = new byte[upPhoto.ContentLength];
+//            //    using (BinaryReader br = new BinaryReader(upPhoto.InputStream, Encoding.UTF8))
+//            //    {
+//            //        data = br.ReadBytes(upPhoto.ContentLength);
+//            //    }
+//            //    MSUserService.RegisterUser(msUserDTO, data);
+//            //    //return Content(_json.Serialize(new { Success = true }), "text/html,charset=UTF-8");
+//            //    return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
+//            //}
+//            ////return Content(_json.Serialize(new { Success = false }), "text/html,charset=UTF-8");
+//            //return Json(new { Success = false }, JsonRequestBehavior.AllowGet);
+//            return null;
 //        }
 
 //        [HttpGet]
@@ -79,17 +82,13 @@
 //        [HttpPost]
 //        public JsonResult Login(String userName, String userPwd)
 //        {
-//            if (userName.Equals(Constant.DefautlUserName)||MSUserService.Login(userName, userPwd))
-//            {
-//                if (userName.Equals(Constant.DefautlUserName))
-//                    Session["MSUserDTO"] = new MSUserDTO() { Name = Constant.DefautlUserName };
-//                else
-//                    Session["MSUserDTO"] = MSUserService.GetMSUserByName(userName);
-//                return Json(new { Success = true, Message = "登录成功" }, JsonRequestBehavior.AllowGet);
-//            }
+//            SUserDTO dto = _userService.Login(userName, userPwd);
+//            if (dto == null)
+//                return Json(new { Success = false, Message = "登录失败" }, JsonRequestBehavior.AllowGet);
 //            else
 //            {
-//                return Json(new { Success = false, Message = "登录失败" }, JsonRequestBehavior.AllowGet);
+//                Session["User"] = dto;
+//                return Json(new { Success = true, Message = "登录成功" }, JsonRequestBehavior.AllowGet);
 //            }
 //        }
 //    }

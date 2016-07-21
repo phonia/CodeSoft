@@ -22,8 +22,8 @@ namespace EPRS.Service
 			Mapper.CreateMap<WebConfigDTO, WebConfig>();
             Mapper.CreateMap<MenuInfo, MenuInfoDTO>();
 			Mapper.CreateMap<MenuInfoDTO, MenuInfo>();
-            Mapper.CreateMap<PagePowerSign, PagePowerSignDTO>();
-			Mapper.CreateMap<PagePowerSignDTO, PagePowerSign>();
+            Mapper.CreateMap<ActionPermission, ActionPermissionDTO>();
+			Mapper.CreateMap<ActionPermissionDTO, ActionPermission>();
             Mapper.CreateMap<SUser, SUserDTO>();
 			Mapper.CreateMap<SUserDTO, SUser>();
             Mapper.CreateMap<PersonInfo, PersonInfoDTO>();
@@ -42,6 +42,8 @@ namespace EPRS.Service
 			Mapper.CreateMap<SexDTO, Sex>();
             Mapper.CreateMap<Education, EducationDTO>();
 			Mapper.CreateMap<EducationDTO, Education>();
+            Mapper.CreateMap<ActionSign, ActionSignDTO>();
+			Mapper.CreateMap<ActionSignDTO, ActionSign>();
         }
     }
 }

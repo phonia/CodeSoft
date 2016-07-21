@@ -160,6 +160,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MSUserController.cs" />
     <Compile Include="Controllers\UnityControllerFactory.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1675,8 +1676,8 @@
     <Content Include="Views\MSUser\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\MSUser\AddUser.cshtml" />
-    <Content Include="Views\MSUser\GetMSUSerInfo.cshtml" />
     <Content Include="Views\MSUser\Login.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

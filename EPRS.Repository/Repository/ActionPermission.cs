@@ -12,11 +12,11 @@ using System.Text;
 namespace EPRS.Repository
 {
     ///<summary>
-    ///PagePowerSign 仓储类
+    ///ActionPermission 仓储类
     ///</summary>
-    public partial class PagePowerSignRepository:EFRepository<PagePowerSign,int>,IPagePowerSignRepository
+    public partial class ActionPermissionRepository:EFRepository<ActionPermission,int>,IActionPermissionRepository
     {
-        public override void RemoveCascaded(PagePowerSign entity)
+        public override void RemoveCascaded(ActionPermission entity)
         {
             
         }

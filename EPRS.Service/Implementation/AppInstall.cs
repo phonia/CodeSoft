@@ -10,26 +10,23 @@ namespace EPRS.Service
     public class AppInstall:IAppInstallService
     {
         IUnitOfWork _unitOfWork = null;
-        IPagePowerSignRepository _PagePowerSignRepository = null;
         IMenuInfoRepository _menuInfoRepository = null;
         IWebConfigRepository _webConfigRepository = null;
         ISUserRepository _suserRepository = null;
         IPositionRepository _positoryRepository = null;
         IDepartmentRepository _departmentRepository = null;
 
-        public AppInstall(IUnitOfWork unitOfWork,IPagePowerSignRepository pagePowerSignRepository,
+        public AppInstall(IUnitOfWork unitOfWork,
             IMenuInfoRepository menuInfoRepositry,IWebConfigRepository webConfigRepository,
             ISUserRepository suserRepository,IPositionRepository positoryRepository,IDepartmentRepository departmentRepository)
         {
             _unitOfWork = unitOfWork;
-            _PagePowerSignRepository = pagePowerSignRepository;
             _menuInfoRepository = menuInfoRepositry;
             _webConfigRepository = webConfigRepository;
             _suserRepository = suserRepository;
             _positoryRepository = positoryRepository;
             _departmentRepository = departmentRepository;
 
-            _PagePowerSignRepository.UnitOfWork = unitOfWork;
             _positoryRepository.UnitOfWork = unitOfWork;
             _menuInfoRepository.UnitOfWork = unitOfWork;
             _webConfigRepository.UnitOfWork = unitOfWork;
@@ -40,58 +37,84 @@ namespace EPRS.Service
 
         public void Install()
         {
-            if (_PagePowerSignRepository.GetAll().Count() <= 0)
-            {
-                var pagePowers = new List<PagePowerSign>() { 
-                    new PagePowerSign(){CName="查看",EName="LookOver"},
-                    new PagePowerSign(){CName="查询",EName="LookFor"},
-                    new PagePowerSign(){CName="编辑",EName="Edit"},
-                    new PagePowerSign(){CName="报表",EName="Report"},
-                    new PagePowerSign(){CName="删除",EName="Remove"},
-                    new PagePowerSign(){CName="审核",EName="Adulting"},
-                    new PagePowerSign(){CName="反审核",EName="UnAdulting"}
-                };
+            //if (_PagePowerSignRepository.GetAll().Count() <= 0)
+            //{
+            //    var pagePowers = new List<PagePowerSign>() { 
+            //        new PagePowerSign(){CName="查看",EName="LookOver"},
+            //        new PagePowerSign(){CName="查询",EName="LookFor"},
+            //        new PagePowerSign(){CName="编辑",EName="Edit"},
+            //        new PagePowerSign(){CName="报表",EName="Report"},
+            //        new PagePowerSign(){CName="删除",EName="Remove"},
+            //        new PagePowerSign(){CName="审核",EName="Adulting"},
+            //        new PagePowerSign(){CName="反审核",EName="UnAdulting"}
+            //    };
 
-                foreach (var node in pagePowers)
-                {
-                    _PagePowerSignRepository.Add(node);
-                }
-            }
+            //    foreach (var node in pagePowers)
+            //    {
+            //        _PagePowerSignRepository.Add(node);
+            //    }
+            //}
 
             if (_menuInfoRepository.GetAll().Count() <= 0)
             {
+                //var menus = new List<MenuInfo>() { 
+                //    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="个人事务",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="个人设置",Url="\\User\\GetUserSetting",Sort=0},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="部门通讯录",Url="\\User\\GetUserWithDepartment",Sort=0},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="公司通讯录",Url="\\User\\GetAllUser",Sort=0}
+                //    }},
+                //    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="信息管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="信息分类管理",Url="",Sort=0},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="信息内容管理",Url="",Sort=0},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="邮件信息管理",Url="",Sort=0}
+                //    }},
+                //    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="员工管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="在职人员",Url="\\User\\GetUserPayroll",Sort=0},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="离职人员",Url="\\User\\GetUserDismission",Sort=0},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="员工注册",Url="\\User\\RegisterUser",Sort=0}
+                //    }},
+                //    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="基本设置",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="基本参数设置",Url="",Sort=0},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="重新生成图片",Url="",Sort=0}  
+                //    }},
+                //    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="权限管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="菜单管理",Url="\\MenuInfo\\GetMenuInfos",Sort=0,MenuInfos=new List<MenuInfo>(){
+                //            new MenuInfo(){Depth=3,IsDisplay=false,IsMenu=false,Name="菜单添加",Url="\\MenuInfo\\AddMenuInfo",Sort=0},
+                //            new MenuInfo(){Depth=3,IsDisplay=false,IsMenu=false,Name="菜单修改",Url="\\MenuInfo\\SaveMenuInfo",Sort=0},
+                //            new MenuInfo(){Depth=3,IsDisplay=false,IsMenu=false,Name="菜单删除",Url="\\MenuInfo\\DeleteMenuInfo",Sort=0}
+                //        }},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="页面权限",Url="\\MenuInfo\\GetPagePowerSigns",Sort=0},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="部门管理",Url="\\User\\GetDepartments",Sort=0},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="职位管理",Url="\\User\\GetPositions",Sort=0}
+                //    }},
+                //    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="安全管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="操作日志",Url="",Sort=0},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="错误日志",Url="",Sort=0},
+                //        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="在线用户",Url="",Sort=0}
+                //    }}
+                //};
+
                 var menus = new List<MenuInfo>() { 
-                    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="个人事务",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="个人设置",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="部门通讯录",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="公司通讯录",Url="",Sort=0}
-                    }},
-                    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="信息管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="信息分类管理",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="信息内容管理",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="邮件信息管理",Url="",Sort=0}
-                    }},
-                    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="员工管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="在职人员",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="离职人员",Url="",Sort=0}
-                    }},
-                    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="基本设置",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="基本参数设置",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="重新生成图片",Url="",Sort=0}  
+                    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="用户管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户列表",Url="\\User\\GetAllUser",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户注册",Url="\\User\\RegisterUser",Sort=0},
                     }},
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="权限管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="菜单管理",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="页面按键名称设置",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="页面权限设置",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="部门管理",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="职位管理",Url="",Sort=0}
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="页面权限",Url="\\User\\GetActionPermissions",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="部门管理",Url="\\User\\GetDepartments",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="职位管理",Url="\\User\\GetPositions",Sort=0},
+                    }},
+                    new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="基本设置",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="基本信息",Url="\\WebConfig\\GetSettings",Sort=0},
                     }},
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="安全管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="操作日志",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="错误日志",Url="",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=true,Name="在线用户",Url="",Sort=0}
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="在线用户",Url="\\User\\RegisterUser",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户日志",Url="\\User\\RegisterUser",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="错误日志",Url="\\User\\RegisterUser",Sort=0},
                     }}
                 };
+
+                
 
                 foreach (var node in menus)
                 {

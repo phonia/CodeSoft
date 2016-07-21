@@ -57,7 +57,8 @@ namespace ERPS.WebUI.Controllers
             UnityContainer.RegisterType<IDepartmentRepository, DepartmentRepository>();
             UnityContainer.RegisterType<IErrorLogRepository, ErrorLogRepository>();
             UnityContainer.RegisterType<IMenuInfoRepository, MenuInfoRepository>();
-            UnityContainer.RegisterType<IPagePowerSignRepository, PagePowerSignRepository>();
+            //UnityContainer.RegisterType<IPagePowerSignRepository, PagePowerSignRepository>();
+            UnityContainer.RegisterType<IActionPermissionRepository, ActionPermissionRepository>();
             UnityContainer.RegisterType<IPositionRepository, PositionRepository>();
             UnityContainer.RegisterType<ISUserRepository, SUserRepository>();
             UnityContainer.RegisterType<IWebConfigRepository, WebConfigRepository>();

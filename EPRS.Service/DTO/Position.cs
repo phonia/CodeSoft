@@ -34,7 +34,7 @@ namespace EPRS.Service
         public String PagePower {get;set;}
 
         /// <summary>
-        /// 页面功能操作权限，各个页面有操作权限的菜单ID和页面权限标志ID列表：|1,1|2,1|2,2|2,4|
+        /// 页面功能操作权限，各个页面有操作权限的菜单ID和页面权限标志ID列表：1|2|3|4
         /// </summary>
         public String ControlPower {get;set;}
 

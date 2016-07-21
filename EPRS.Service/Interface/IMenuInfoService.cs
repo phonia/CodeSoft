@@ -7,6 +7,6 @@ namespace EPRS.Service
 {
     public interface IMenuInfoService
     {
-        List<MenuInfoDTO> GetMenu(int id);
+        List<MenuInfoDTO> GetMenu(int id,int userId);
     }
 }
