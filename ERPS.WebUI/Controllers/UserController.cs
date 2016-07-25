@@ -44,5 +44,24 @@ namespace ERPS.WebUI.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult GetAllUserView()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult GetAllUserAction()
+        {
+            List<SUserDTO> users = _userService.GetUsers();
+            return Json(users, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult GetRegisterUserView()
+        {
+            return View();
+        }
+
     }
 }

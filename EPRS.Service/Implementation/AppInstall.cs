@@ -96,16 +96,16 @@ namespace EPRS.Service
 
                 var menus = new List<MenuInfo>() { 
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="用户管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户列表",Url="\\User\\GetAllUser",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户注册",Url="\\User\\RegisterUser",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户列表",Url="\\User\\GetAllUserView",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户注册",Url="\\User\\GetRegisterUserView",Sort=0},
                     }},
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="权限管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="页面权限",Url="\\User\\GetActionPermissions",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="部门管理",Url="\\User\\GetDepartments",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="职位管理",Url="\\User\\GetPositions",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="页面权限",Url="\\User\\GetActionPermissionView",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="部门管理",Url="\\User\\GetDepartmentsView",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="职位管理",Url="\\User\\GetPositionsView",Sort=0},
                     }},
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="基本设置",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="基本信息",Url="\\WebConfig\\GetSettings",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="基本信息",Url="\\WebConfig\\GetSettingsView",Sort=0},
                     }},
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="安全管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
                         new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="在线用户",Url="\\User\\RegisterUser",Sort=0},

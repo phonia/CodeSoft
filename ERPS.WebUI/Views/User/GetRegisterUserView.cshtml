@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "GetRegisterUserView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div region="center" style=" padding: 1px;overflow-y:scroll">
+    <form id="RegisterUserForm" method="post" style="padding:5px 5px 5px 5px;" enctype="multipart/form-data"><!--上传附件必须加上enctype="multipart/form-data"-->
+    <div class="easyui-panel">
+        <div class="fitem">
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">登录名：</label>
+            <input class="easyui-validatebox" name="LoginName" data-options="required:true,validType:'name'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">密码：</label>
+            <input class="easyui-validatebox" name="LoginPwd" data-options="required:true,type:'password'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">用户名：</label>
+            <input class="easyui-validatebox" name="NName" data-options="required:true,validType:'name'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">性别：</label>
+            <select class="easyui-combobox" name="sex" data-options="editable:false,panelHeight:'auto'">
+                <option value="1">男</option>
+                <option value="2">女</option>
+                <option value="3">未知</option>
+            </select>
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">出生日期：</label>
+            <input name="birthday" class="easyui-databox" data-options="required:true" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">籍贯：</label>
+            <input class="easyui-validatebox" name="nativePlace" data-options="required:true,validType:'name'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">民族：</label>
+            <input class="easyui-validatebox" name="nativeName" data-options="required:true,validType:'name'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">学历：</label>
+            <select class="easyui-combobox" name="education" data-options="editable:false,panelHeight:'auto'">
+                <option value="0">高校</option>
+            </select>
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">毕业学校：</label>
+            <input class="easyui-validatebox" name="graduateCollege" data-options="required:true,validType:'name'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">毕业专业：</label>
+            <input class="easyui-validatebox" name="graduateSpecialty" data-options="required:true,validType:'name'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">联系电话：</label>
+            <input class="easyui-validatebox" name="tel" data-options="required:true,validType:'phone'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">移动电话：</label>
+            <input class="easyui-validatebox" name="mobile" data-options="required:true,validType:'mobile'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">邮箱：</label>
+            <input class="easyui-validatebox" name="email" data-options="required:true,validType:'email'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">QQ：</label>
+            <input class="easyui-validatebox" name="qq" data-options="required:true,validType:'qq'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">MSN：</label>
+            <input class="easyui-validatebox" name="msn" data-options="required:true,validType:'msn'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">通讯地址：</label>
+            <input class="easyui-validatebox" name="address" data-options="required:true,validType:'name'" />
+            <div style="height:20px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">备注：</label>
+            <input class="easyui-validatebox" name="content" data-options="required:true,validType:'name'" />
+            <div style="height:20px"></div>
+        </div>
+    </div>
+</form>
+</div>

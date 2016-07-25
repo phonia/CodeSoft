@@ -30,6 +30,7 @@ namespace EPRS.Service
         public List<SUserDTO> GetUsers()
         {
             return this._userRepository.GetAllWithNavigationalProperty("Position", "Position.Department")
+                .Where(it=>!it.Position.Department.Code.Equals("1"))
                 .ConvertToUserDTO()
                 .ToList();
         }
@@ -52,7 +53,7 @@ namespace EPRS.Service
 
         public List<DepartmentDTO> GetDepartments()
         {
-            return this._departmentRepository.GetAll()
+            return this._departmentRepository.GetAll().Where(it=>!it.Code.Equals("1"))
                 .MapperTo<Department, DepartmentDTO>()
                 .ToList();
         }
@@ -73,6 +74,7 @@ namespace EPRS.Service
         public List<PositionDTO> GetPositions()
         {
             return this._positionRepository.GetAllWithNavigationalProperty("Department")
+                .Where(it=>!it.Department.Code.Equals("1"))
                 .ConverToPositionDTO()
                 .ToList();
         }
