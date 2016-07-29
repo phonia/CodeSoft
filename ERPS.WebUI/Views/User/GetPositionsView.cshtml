@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "GetPositionsView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head{
+    <script type="text/javascript">
+        $(function () { })
+
+        function OnLoadSuccess() { }
+
+        function OnLoadError() { }
+
+        function RegisterPosition() {
+            parent.$('#FloatWin').window({
+                title: '职位注册'
+            }).window('open');
+            //使用refresh成功加载PartialView，而使用load加载则会出现样式问题
+            //parent.$('#FloatWin').load("/MSUser/AddUser").window('open');
+            parent.$('#FloatWin').window('refresh', '/User/GetRegisterPositionView');//.window('open');若在此处open则会导致两次加载，故而必须在refresh之前open
+        }
+
+        function RemovePosition() {
+            var node = $('#PositionGrid').datagrid('getChecked');
+            if (node != null)
+            {
+                var list = "";
+                for (var i = 0; i < node.length; i++)
+                {
+                    list += node[i].Id;
+                    list += ",";
+                }
+                if (list.length > 0) {
+                    list = list.substring(0, list.length - 1);
+                    $.ajax({
+                        url: '/User/RemovePositionAction',
+                        type: 'POST',
+                        data: { 'del': list },
+                        dataType: 'json',
+                        success: function (msg) {
+                            alert(msg.Message);
+                            if (msg.Success) {
+                                $('#PositionGrid').datagrid('reload');
+                            }
+                        }
+                    });
+                }
+                else {
+                    alert("没有选中行");
+                }
+            }
+        }
+
+    </script>
+    }
+
+<div region="center" class="easyui-layout">
+    <table class="easyui-datagrid" id="PositionGrid" title="职位列表" 
+        data-options="url:'/User/GetPositionsAction',fitColumns:true,rownumbers:true,striped:true,
+        loadMsg:'正在加载。。。。',
+        fit:true,checkOnSelect:true,ctrSelect:true,
+        pagination:true,pageSize:10,toolbar:'#toolbar',
+        onLoadSuccess:OnLoadSuccess,onLoadError:OnLoadError,
+        idField:'Id'
+        ">
+        <thead>
+            <tr>
+                <th data-options="field:'ck',checkbox:true"></th>
+                <th data-options="field:'Id'">职位Id</th>
+                <th data-options="field:'DepartmentName'">部门名称</th>
+                <th data-options="field:'Name'">职位名称</th>
+                <th data-options="field:'PagePower'">菜单操作权限</th>
+                <th data-options="field:'ControlPower'">页面功能操作权限</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div id="toolbar">
+    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="RegisterPosition()">添加</a>
+    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true" onclick="EditPosition()">编辑</a>
+    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="RemovePosition()">删除</a>
+</div>

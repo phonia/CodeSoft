@@ -45,6 +45,7 @@
     <Compile Include="Domain\IAggregateRoot.cs" />
     <Compile Include="Domain\IReadOnlyRepository.cs" />
     <Compile Include="Domain\IRepository.cs" />
+    <Compile Include="Enum\EnumHelper.cs" />
     <Compile Include="Exception\DomainServiceException.cs" />
     <Compile Include="Exception\DomianValidateException.cs" />
     <Compile Include="ICacheStorage.cs" />

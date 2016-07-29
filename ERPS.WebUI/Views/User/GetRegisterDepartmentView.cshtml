@@ -1,0 +1,85 @@
+﻿<script type="text/javascript">
+    $(function () {
+        GetAllDepartment();
+    })
+
+    function GetAllDepartment()
+    {
+        $('#code').combobox({
+            url: '/User/GetDepartmentsAction',
+            method: 'GET',
+            valueField: 'Code',
+            textField: 'Name'
+        });
+    }
+
+    function RegisterDepartment()
+    {
+        $('#RegisterDepartment').form('submit', {
+            url: '/User/GetRegisterDepartmentAction',
+            dataType: 'json',
+            success: function (msg) {
+                msg = eval('(' + msg + ')');
+                alert(msg.Message);
+                if (msg.Success) {
+                    Cancel();
+                    //在父页面刷新iframe子页面的datagrid,目前只能通过刷新真个iframe来实现,无法将
+                    //获取的datagrid控件调用reload方法
+                    var tabs = $('#Maintabs').tabs('getSelected');
+                    var url = $(tabs.panel('options').content).attr('src');
+                    var id = url.substring(url.lastIndexOf("\\") + 1);
+                    //可以刷新子页面
+                    //document.getElementById(id).contentWindow.location.reload(true);
+
+                    //alert($('#DepartmentGrid', document.frames(id).document).html());
+                    //alert($("#DepartmentGrid", document.frames(id).document).html());
+                    //var talbe = $('#' + id).contents().find('#DepartmentGrid');
+                    //$('#DepartmentGrid', document.getElementById(id).contentWindow).datagrid('reload');
+                    //$('#DepartmentGrid', window.frames[id].document).datagrid('reload');
+                    //var table = window.frames[id].document.getElementById("DepartmentGrid")
+                    //var iframe = document.getElementById(id).contentWindow;
+
+
+                    //可以刷新子页面
+                    $('#Maintabs').tabs('update', {
+                        tab: tabs,
+                        options: {
+                            content: '<iframe Id="' + id + '"  scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:99.5%;overflow:hidden"></iframe>',
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    function Cancel()
+    {
+        var pp = $('#FloatWin');
+        pp.empty();
+        pp.window('close');
+    }
+</script>
+
+<form id="RegisterDepartment" method="post" style="padding:5px 5px 5px 5px">
+    <div class="easyui-panel">
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">部门名称：</label>
+            <input class="easyui-validatebox" name="name" data-options="required:true,validType:['chinese','length[2,5]']" />
+            <div style="height:10px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">部门备注：</label>
+            <input class="easyui-validatebox" name="note" data-options="required:true,validType:'chinese'" />
+            <div style="height:10px"></div>
+        </div>
+        <div class="fitem">
+            <label style="display:inline-block;width:80px;text-align:right">上级部门：</label>
+            <input id="code" name="code" data-options="editable:false,panelHeight:'auto'" />
+        </div>
+        <div class="clear"></div>
+        <div class="fitem" style="float:none;text-align:center;padding:5px;margin-top:20px">
+            <a href="javascript:" class="easyui-linkbutton" onclick="RegisterDepartment()">注册</a>
+            <a href="javascript:" class="easyui-linkbutton" onclick="Cancel()">取消</a>
+        </div>
+    </div>
+</form>

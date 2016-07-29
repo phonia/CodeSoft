@@ -3,102 +3,288 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div region="center" style=" padding: 1px;overflow-y:scroll">
-    <form id="RegisterUserForm" method="post" style="padding:5px 5px 5px 5px;" enctype="multipart/form-data"><!--上传附件必须加上enctype="multipart/form-data"-->
-    <div class="easyui-panel">
-        <div class="fitem">
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">登录名：</label>
-            <input class="easyui-validatebox" name="LoginName" data-options="required:true,validType:'name'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">密码：</label>
-            <input class="easyui-validatebox" name="LoginPwd" data-options="required:true,type:'password'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">用户名：</label>
-            <input class="easyui-validatebox" name="NName" data-options="required:true,validType:'name'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">性别：</label>
-            <select class="easyui-combobox" name="sex" data-options="editable:false,panelHeight:'auto'">
-                <option value="1">男</option>
-                <option value="2">女</option>
-                <option value="3">未知</option>
-            </select>
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">出生日期：</label>
-            <input name="birthday" class="easyui-databox" data-options="required:true" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">籍贯：</label>
-            <input class="easyui-validatebox" name="nativePlace" data-options="required:true,validType:'name'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">民族：</label>
-            <input class="easyui-validatebox" name="nativeName" data-options="required:true,validType:'name'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">学历：</label>
-            <select class="easyui-combobox" name="education" data-options="editable:false,panelHeight:'auto'">
-                <option value="0">高校</option>
-            </select>
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">毕业学校：</label>
-            <input class="easyui-validatebox" name="graduateCollege" data-options="required:true,validType:'name'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">毕业专业：</label>
-            <input class="easyui-validatebox" name="graduateSpecialty" data-options="required:true,validType:'name'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">联系电话：</label>
-            <input class="easyui-validatebox" name="tel" data-options="required:true,validType:'phone'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">移动电话：</label>
-            <input class="easyui-validatebox" name="mobile" data-options="required:true,validType:'mobile'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">邮箱：</label>
-            <input class="easyui-validatebox" name="email" data-options="required:true,validType:'email'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">QQ：</label>
-            <input class="easyui-validatebox" name="qq" data-options="required:true,validType:'qq'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">MSN：</label>
-            <input class="easyui-validatebox" name="msn" data-options="required:true,validType:'msn'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">通讯地址：</label>
-            <input class="easyui-validatebox" name="address" data-options="required:true,validType:'name'" />
-            <div style="height:20px"></div>
-        </div>
-        <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">备注：</label>
-            <input class="easyui-validatebox" name="content" data-options="required:true,validType:'name'" />
-            <div style="height:20px"></div>
+@section Head{
+    <script type="text/ecmascript">
+        $(function () {
+            GetSex();
+            GetEducation();
+            GetAllDepartment();
+            var height = 0;
+            var width=$('#Right').width();
+            var left = $('#Left').height();
+            var right = $('#Right').height();
+            height = left > right ? left : right;
+            height = height > 100 ? height : 100;
+            $("#Left").css("height", height);
+            $("#Right").css("height", height);
+            $("#ImagePreview").css("height", height * 4 / 5);
+            $("#ImagePreview").css("width", 300);
+        })
+
+        function GetAllDepartment() {
+            $('#department').combobox({
+                url: '/User/GetDepartmentsAction',
+                method: 'GET',
+                valueField: 'Id',
+                textField: 'Name',
+                onSelect: function (data) {
+                    $('#position').combobox({
+                        url: '/User/GetPositionsAction?departmentId=' + data.Id,
+                        method: 'GET',
+                        valueField: 'Id',
+                        textField: 'Name',
+                        editable: false,
+                        panelHeight:'auto'
+                    });
+                }
+            });
+        }
+
+        function GetPosition(id)
+        {
+            alert(id);
+        }
+
+        function GetSex()
+        {
+            $('#sex').combobox({
+                url: '/User/GetSex',
+                method:'GET',
+                valueField: 'Value',
+                textField: 'Text'
+            });
+        }
+
+        function GetEducation()
+        {
+            $('#education').combobox({
+                url: '/User/GetEducation',
+                method: 'GET',
+                valueField: 'Value',
+                textField: 'Text'
+            });
+        }
+
+        function PreviewImage(fileObj) {
+            var allowExtention = ".jpg,.bmp,.gif,.png";//允许上传文件的后缀名document.getElementById("hfAllowPicSuffix").value;  
+            var extention = fileObj.value.substring(fileObj.value.lastIndexOf(".") + 1).toLowerCase();
+            var browserVersion = window.navigator.userAgent.toUpperCase();
+            var imgPreviewId = "ImagePreview";
+            var divPreviewId = "ImageDiv";
+            if (allowExtention.indexOf(extention) > -1) {
+                if (fileObj.files) {//HTML5实现预览，兼容chrome、火狐7+等  
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            document.getElementById(imgPreviewId).setAttribute("src", e.target.result);
+                        }
+                        reader.readAsDataURL(fileObj.files[0]);
+                    } else if (browserVersion.indexOf("SAFARI") > -1) {
+                        alert("不支持Safari6.0以下浏览器的图片预览!");
+                    }
+                } else if (browserVersion.indexOf("MSIE") > -1) {
+                    if (browserVersion.indexOf("MSIE 6") > -1) {//ie6  
+                        document.getElementById(imgPreviewId).setAttribute("src", fileObj.value);
+                    } else {//ie[7-9]  
+                        fileObj.select();
+                        if (browserVersion.indexOf("MSIE 9") > -1)
+                            fileObj.blur();//不加上document.selection.createRange().text在ie9会拒绝访问  
+                        var newPreview = document.getElementById(divPreviewId + "New");
+                        if (newPreview == null) {
+                            newPreview = document.createElement("div");
+                            newPreview.setAttribute("id", divPreviewId + "New");
+                            newPreview.style.width = document.getElementById(imgPreviewId).width + "px";
+                            newPreview.style.height = document.getElementById(imgPreviewId).height + "px";
+                            newPreview.style.border = "solid 1px #d2e2e2";
+                        }
+                        newPreview.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale',src='" + document.selection.createRange().text + "')";
+                        var tempDivPreview = document.getElementById(divPreviewId);
+                        tempDivPreview.parentNode.insertBefore(newPreview, tempDivPreview);
+                        tempDivPreview.style.display = "none";
+                    }
+                } else if (browserVersion.indexOf("FIREFOX") > -1) {//firefox  
+                    var firefoxVersion = parseFloat(browserVersion.toLowerCase().match(/firefox\/([\d.]+)/)[1]);
+                    if (firefoxVersion < 7) {//firefox7以下版本  
+                        document.getElementById(imgPreviewId).setAttribute("src", fileObj.files[0].getAsDataURL());
+                    } else {//firefox7.0+                      
+                        document.getElementById(imgPreviewId).setAttribute("src", window.URL.createObjectURL(fileObj.files[0]));
+                    }
+                } else {
+                    document.getElementById(imgPreviewId).setAttribute("src", fileObj.value);
+                }
+            } else {
+                alert("仅支持" + allowExtention + "为后缀名的文件!");
+                fileObj.value = "";//清空选中文件  
+                if (browserVersion.indexOf("MSIE") > -1) {
+                    fileObj.select();
+                    document.selection.clear();
+                }
+                fileObj.outerHTML = fileObj.outerHTML;
+            }
+        }
+
+        function LoadImg()
+        {
+            PreviewImage($("input[name='userPhoto']")[0]);
+        }
+
+        function RegisterUser() {
+            //var f = document.getElementById('imageInput').files[0];
+            $('#RegisterUserForm').form('submit', {
+                url: '/User/GetRegisterUserAction',
+                //onSubmit: function (data) {
+                //    data["userPhoto"] = f;
+                //},
+                success: function (data) { }
+            });
+        }
+
+        function Cancel() { }
+
+    </script>
+
+    <style type="text/css">
+    #imagePreview {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
+    }
+     .clear {
+            clear:both;
+        }
+    </style> 
+    }
+
+<div region="center" style=" padding: 0px;overflow-y:scroll;border:none">
+    <form id="RegisterUserForm" method="post" style="padding:5px 5px 5px 5px;border:none" enctype="multipart/form-data"><!--上传附件必须加上enctype="multipart/form-data"-->
+    <div class="easyui-panel" style="border:none">
+
+        <fieldset style="border-color:blue;">
+            <legend>登录信息</legend>
+            <div style="height:10px"></div>
+            <div id="Left" style="float:left;width:30%;text-align:left;vertical-align:central">
+                <div class="fitem">
+                    <label style="display:inline-block;width:80px;text-align:right">登录名：</label>
+                    <input class="easyui-validatebox" name="LoginName" data-options="required:true,validType:'username'" />
+                    <div style="height:10px"></div>
+                </div>
+                <div class="fitem">
+                    <label style="display:inline-block;width:80px;text-align:right">密码：</label>
+                    <input class="easyui-validatebox" name="LoginPwd" data-options="required:true,validType:'password'" />
+                    <div style="height:10px"></div>
+                </div>
+                <div class="fitem">
+                    <label style="display:inline-block;width:80px;text-align:right">部门：</label>
+                    <input id="department" name="departmentId" data-options="required:true,editable:false,panelHeight:'auto'" />
+                    <div style="height:10px"></div>
+                </div>
+                <div class="fitem">
+                    <label style="display:inline-block;width:80px;text-align:right">职位：</label>
+                    <input id="position" name="positionId" data-options="required:true" />
+                    <div style="height:10px"></div>
+                </div>
+            </div>
+
+            <div id="Right" class="fitem" style="float:right;text-align:center;vertical-align:bottom;border:none;width:70%">
+                <div id="ImageDiv">
+                    <img id="ImagePreview"/>
+                </div>
+                <input id="imageInput" class="easyui-filebox" name="userPhoto" data-options="prompt:'Choose a file...',onChange:LoadImg" style="vertical-align:bottom;text-align:center">
+            </div>
+        </fieldset>
+
+        <fieldset style="border-color:blue">
+            <legend>个人信息</legend>
+            <div style="height:10px"></div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">用户名：</label>
+                <input class="easyui-validatebox" name="NName" data-options="required:true,validType:'name'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">性别：</label>
+    @*            <select class="easyui-combobox" name="sex" data-options="editable:false,panelHeight:'auto'">
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                    <option value="3">未知</option>
+                </select>*@
+                <input id="sex" name="sex" data-options="editable:false,panelHeight:'auto'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">出生日期：</label>
+    @*            <input name="birthday" class="easyui-databox" data-options="required:true" />*@
+                <input name="birthday" type="text" class="easyui-datebox" data-options="required:true" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">籍贯：</label>
+                <input class="easyui-validatebox" name="nativePlace" data-options="required:true,validType:'unnormal'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">民族：</label>
+                <input class="easyui-validatebox" name="nativeName" data-options="required:true,validType:'unnormal'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">学历：</label>
+    @*            <select class="easyui-combobox" name="education" data-options="editable:false,panelHeight:'auto'">
+                    <option value="0">高校</option>
+                </select>*@
+                <input id="education" name="education" data-options="editable:false,panelHeight:'auto'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">毕业学校：</label>
+                <input class="easyui-validatebox" name="graduateCollege" data-options="required:true,validType:'unnormal'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">毕业专业：</label>
+                <input class="easyui-validatebox" name="graduateSpecialty" data-options="required:true,validType:'unnormal'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">联系电话：</label>
+                <input class="easyui-validatebox" name="tel" data-options="required:true,validType:'phone'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">移动电话：</label>
+                <input class="easyui-validatebox" name="mobile" data-options="required:true,validType:'mobile'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">邮箱：</label>
+                <input class="easyui-validatebox" name="email" data-options="required:true,validType:'email'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">QQ：</label>
+                <input class="easyui-validatebox" name="qq" data-options="required:true,validType:'qq'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">MSN：</label>
+                <input class="easyui-validatebox" name="msn" data-options="required:true,validType:'msn'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">通讯地址：</label>
+                <input class="easyui-validatebox" name="address" data-options="required:true,validType:'unnormal'" />
+                <div style="height:10px"></div>
+            </div>
+            <div class="fitem">
+                <label style="display:inline-block;width:80px;text-align:right">备注：</label>
+                <input class="easyui-validatebox" name="content" data-options="required:true,validType:'unnormal'" />
+                <div style="height:10px"></div>
+            </div>
+        </fieldset>
+
+        <div class="fitem" style="float:none;text-align:center;padding:5px;margin-top:20px">
+            <a href="javascript:" class="easyui-linkbutton" onclick="RegisterUser()">注册</a>
+            <a href="javascript:" class="easyui-linkbutton" onclick="Cancel()">取消</a>
         </div>
     </div>
 </form>
 </div>
+

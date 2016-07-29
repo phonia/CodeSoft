@@ -96,21 +96,61 @@ namespace EPRS.Service
 
                 var menus = new List<MenuInfo>() { 
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="用户管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户列表",Url="\\User\\GetAllUserView",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户注册",Url="\\User\\GetRegisterUserView",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户列表",Url="\\User\\GetAllUserView",Sort=0,ActionPermissions=new List<ActionPermission>(){
+                            new ActionPermission(){ActionSign=ActionSign.Abandon,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Create,Sort=0,Url="\\User\\GetRegisterUserAction"},
+                            new ActionPermission(){ActionSign=ActionSign.Delete,Sort=0,Url="\\User\\RemoveUserAction"},
+                            new ActionPermission(){ActionSign=ActionSign.Recovery,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Review,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Search,Sort=0,Url="\\User\\GetAllUserAction"},
+                            new ActionPermission(){ActionSign=ActionSign.UnReview,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Update,Sort=0,Url="\\User\\UpdateUserAction"},
+                            new ActionPermission(){ActionSign=ActionSign.LookOver,Sort=0,Url="\\GetUserAction"}
+                        }},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户注册",Url="\\User\\GetRegisterUserView",Sort=0}
                     }},
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="权限管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="页面权限",Url="\\User\\GetActionPermissionView",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="部门管理",Url="\\User\\GetDepartmentsView",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="职位管理",Url="\\User\\GetPositionsView",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="页面权限",Url="\\User\\GetActionPermissionView",Sort=0,ActionPermissions=new List<ActionPermission>(){
+                            new ActionPermission(){ActionSign=ActionSign.Abandon,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Create,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Delete,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Recovery,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Review,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Search,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.UnReview,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Update,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.LookOver,Sort=0,Url=""}
+                        }},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="部门管理",Url="\\User\\GetDepartmentsView",Sort=0,ActionPermissions=new List<ActionPermission>(){
+                            new ActionPermission(){ActionSign=ActionSign.Abandon,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Create,Sort=0,Url="\\User\\GetRegisterDepartmentAction"},
+                            new ActionPermission(){ActionSign=ActionSign.Delete,Sort=0,Url="\\User\\RemoveDepartmentAction"},
+                            new ActionPermission(){ActionSign=ActionSign.Recovery,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Review,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Search,Sort=0,Url="\\User\\GetDepartmentsAction"},
+                            new ActionPermission(){ActionSign=ActionSign.UnReview,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Update,Sort=0,Url="\\User\\UpdateDepartmentAction"},
+                            new ActionPermission(){ActionSign=ActionSign.LookOver,Sort=0,Url="\\User\\GetDepartmentAction"}
+                        }},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="职位管理",Url="\\User\\GetPositionsView",Sort=0,ActionPermissions=new List<ActionPermission>(){
+                            new ActionPermission(){ActionSign=ActionSign.Abandon,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Create,Sort=0,Url="\\User\\GetRegisterPositionAction"},
+                            new ActionPermission(){ActionSign=ActionSign.Delete,Sort=0,Url="\\User\\RemovePositionAction"},
+                            new ActionPermission(){ActionSign=ActionSign.Recovery,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Review,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Search,Sort=0,Url="\\User\\GetPositionsAction"},
+                            new ActionPermission(){ActionSign=ActionSign.UnReview,Sort=0,Url=""},
+                            new ActionPermission(){ActionSign=ActionSign.Update,Sort=0,Url="\\User\\UpdatePositionsAction"},
+                            new ActionPermission(){ActionSign=ActionSign.LookOver,Sort=0,Url="\\User\\GetPositionAction"}
+                        }},
                     }},
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="基本设置",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="基本信息",Url="\\WebConfig\\GetSettingsView",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="基本信息",Url="\\WebConfig\\GetSettingsView",Sort=0}
                     }},
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="安全管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
                         new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="在线用户",Url="\\User\\RegisterUser",Sort=0},
                         new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户日志",Url="\\User\\RegisterUser",Sort=0},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="错误日志",Url="\\User\\RegisterUser",Sort=0},
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="错误日志",Url="\\User\\RegisterUser",Sort=0}
                     }}
                 };
 

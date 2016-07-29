@@ -27,8 +27,9 @@ namespace ERPS.WebUI.Interceptor
             {
                 if (parms[index].ParameterType == typeof(System.String))
                 {
-                    if (input.Inputs[index] == null) throw new DomianValidateException(className+"-"+parms[index].Name+"不能为空");
-                    if (String.IsNullOrWhiteSpace(input.Inputs[index].ToString())) throw new DomianValidateException(className + "-" + parms[index].Name + "不能为空");
+                    //String类型中""==String.Empty
+                    if (input.Inputs[index] == null) throw new DomianValidateException(className + "-" + parms[index].Name + "不能为空");
+                    //if (String.IsNullOrEmpty(input.Inputs[index].ToString())) throw new DomianValidateException(className + "-" + parms[index].Name + "不能为空");
                 }
                 if (!parms[index].ParameterType.IsValueType && input.Inputs[index] == null)
                 {

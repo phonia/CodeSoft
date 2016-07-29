@@ -88,7 +88,13 @@ $.extend($.fn.validatebox.defaults.rules, {
         validator: function (value) {
             return /^[a-zA-Z][a-zA-Z0-9_]{5,15}$/i.test(value);
         },
-        message: '用户名不合法（字母开头，允许6-16字节，允许字母数字下划线）'
+        message: '用户名不正确（字母开头，允许6-16字节，允许字母数字下划线）'
+    },
+    password: {// 验证用户名
+        validator: function (value) {
+            return /^[a-zA-Z0-9]{6,8}$/i.test(value);
+        },
+        message: '密码格式错误（6-8位字母数字）'
     },
     faxno: {// 验证传真
         validator: function (value) {

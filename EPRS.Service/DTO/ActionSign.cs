@@ -32,6 +32,8 @@ namespace EPRS.Service
         [Description("废弃")]
         Abandon,
         [Description("恢复")]
-        Recovery
+        Recovery,
+        [Description("查看")]
+        LookOver
     }
 }

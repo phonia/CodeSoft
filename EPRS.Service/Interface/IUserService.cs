@@ -19,7 +19,7 @@ namespace EPRS.Service
 
         SUserDTO RegisterUser(SUserDTO userDTO);
         PositionDTO RegisterPosition(PositionDTO positionDTO);
-        DepartmentDTO RegisterDepartment(DepartmentDTO departmentDTO);
+        DepartmentDTO RegisterDepartment(DepartmentDTO departmentDTO,String parentCode);
 
         SUserDTO UpdateUser(SUserDTO userDTO);
         PositionDTO UpdatePosition(PositionDTO positionDTO);

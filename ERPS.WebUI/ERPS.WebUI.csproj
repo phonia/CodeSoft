@@ -1680,6 +1680,10 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\GetAllUserView.cshtml" />
     <Content Include="Views\User\GetRegisterUserView.cshtml" />
+    <Content Include="Views\User\GetDepartmentsView.cshtml" />
+    <Content Include="Views\User\GetRegisterDepartmentView.cshtml" />
+    <Content Include="Views\User\GetPositionsView.cshtml" />
+    <Content Include="Views\User\GetRegisterPositionView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

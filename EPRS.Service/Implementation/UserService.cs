@@ -13,6 +13,7 @@ namespace EPRS.Service
         IPositionRepository _positionRepository = null;
         IDepartmentRepository _departmentRepository = null;
         IUnitOfWork _unitOfWork = null;
+        private static object _lockObject = new object();
 
         public UserService(ISUserRepository userRepository,IPositionRepository positonRepository,
             IDepartmentRepository departmentRepository,IUnitOfWork unitOfWork )
@@ -66,7 +67,7 @@ namespace EPRS.Service
 
         public DepartmentDTO GetDepartmentByName(string name)
         {
-            return this._departmentRepository.GetAll()
+            return this._departmentRepository.GetAll().Where(it=>it.Name.Equals(name))
                 .MapperTo<Department, DepartmentDTO>()
                 .First();
         }
@@ -115,13 +116,34 @@ namespace EPRS.Service
             return GetPositionByName(positionDTO.Name);
         }
 
-        public DepartmentDTO RegisterDepartment(DepartmentDTO departmentDTO)
+        public DepartmentDTO RegisterDepartment(DepartmentDTO departmentDTO,String parentCode)
         {
             Department department = departmentDTO.MapperTo<DepartmentDTO, Department>();
-            //
-            _departmentRepository.Add(department);
-            _unitOfWork.Commit();
+            lock (_lockObject)
+            {
+                //var sumCode = _departmentRepository.GetAll().Where(it => it.Code.Length >= 3).Select(it => new { code = it.Code.Substring(0, 3) }).Distinct();
+                //department.Code = parentCode + GenerateCode(sumCode.Count());
+                var sumCode = _departmentRepository.GetAll().Where(it => it.Code.Length >= 3).Select(it => new
+                {
+                    code = it.Code.Substring(parentCode.Length % 3 == 0 ? parentCode.Length : parentCode.Length - parentCode.Length % 3, 3)
+                }).Distinct();
+                department.Code = parentCode + GenerateCode(sumCode.Count());
+                department.Sort = 0;
+                department.Depth = (parentCode.Length - (parentCode.Length % 3)) / 3 + 1;
+                department.UpdateDate = DateTime.Now;
+                //
+                _departmentRepository.Add(department);
+                _unitOfWork.Commit();
+            }
             return GetDepartmentByName(departmentDTO.Name);
+        }
+
+        String GenerateCode(Int32 code)
+        {
+            if (code < 0) return "";
+            if (code < 9) return "00" + code;
+            if (code < 99) return "0" + code;
+            return code.ToString();
         }
 
         public SUserDTO UpdateUser(SUserDTO userDTO)
@@ -165,7 +187,12 @@ namespace EPRS.Service
 
         public bool RemovePosition(List<int> positions)
         {
-            throw new NotImplementedException();
+            foreach (var node in positions)
+            {
+                _positionRepository.RemoveNonCascaded(node);
+            }
+            _unitOfWork.Commit();
+            return true;
         }
 
         public bool RemoveDepartment(int id)
@@ -177,7 +204,12 @@ namespace EPRS.Service
 
         public bool RemoveDepartment(List<int> departments)
         {
-            throw new NotImplementedException();
+            foreach (var node in departments)
+            {
+                _departmentRepository.RemoveNonCascaded(node);
+            }
+            _unitOfWork.Commit();
+            return true;
         }
 
         /// <summary>
