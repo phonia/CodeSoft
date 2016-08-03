@@ -31,7 +31,7 @@ namespace EPRS.Service
         /// <summary>
         /// 性别（0=未知，1=男，2=女）
         /// </summary>
-        public Sex Sex {get;set;}
+        public SexDTO Sex {get;set;}
 
         /// <summary>
         /// 出生日期
@@ -51,7 +51,7 @@ namespace EPRS.Service
         /// <summary>
         /// 个人--学历
         /// </summary>
-        public Education Education {get;set;}
+        public EducationDTO Education {get;set;}
 
         /// <summary>
         /// 毕业学校

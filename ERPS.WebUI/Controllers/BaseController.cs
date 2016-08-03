@@ -49,5 +49,14 @@ namespace ERPS.WebUI.Controllers
             //    )
             //    , "text/html;charset=UTF-8");
         }
+
+        public JsonResult CustomCheckedResult(String message,bool success)
+        {
+            return Json(new
+            {
+                Success = success,
+                Message = message
+            }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ERPS.Infrastructure;
+using System.IO;
+using System.Text;
 
 namespace ERPS.WebUI.Controllers
 {
@@ -19,6 +21,9 @@ namespace ERPS.WebUI.Controllers
 
         [Dependency]
         public IAppInstallService _IntallService { get; set; }
+
+        [Dependency]
+        public IMenuInfoService _menuInfoService { get; set; }
 
         public ActionResult Index()
         {
@@ -68,7 +73,99 @@ namespace ERPS.WebUI.Controllers
         public ActionResult GetRegisterUserAction()
         {
 
-            return null;
+            String loginName = Request.Form["LoginName"] ?? "";
+            String loginPwd = Request.Form["LoginPwd"] ?? "";
+            Int32 departmentId = Convert.ToInt32(Request["departmentId"]);
+            Int32 positionId = Convert.ToInt32(Request["positionId"]);
+            //userPhoto
+            //var upPhoto=HttpContext.Request.Files.Count
+            byte[] data;
+            if (HttpContext.Request.Files.Count > 0)
+            {
+                var upPhoto = HttpContext.Request.Files[0];
+                data = new byte[upPhoto.ContentLength];
+                using (BinaryReader br = new BinaryReader(upPhoto.InputStream, Encoding.UTF8))
+                {
+                    data = br.ReadBytes(upPhoto.ContentLength);
+                }
+            }
+            else
+            {
+                //默认图片
+                data = new byte[10];
+            }
+
+            String nName = Request.Form["NName"] ?? "";
+            int sex = Convert.ToInt32(Request.Form["sex"]);
+            //birthday
+            DateTime birthday = Convert.ToDateTime(Request.Form["birthday"]??"");
+            String nativePlace = Request.Form["nativePlace"] ?? "";
+            String nativeName = Request.Form["nativeName"] ?? "";
+            String education = Request.Form["education"] ?? "";
+            String graduateCollege = Request.Form["graduateCollege"] ?? "";
+            String graduateSpecially = Request.Form["graduateSpecially"] ?? "";
+            String tel = Request.Form["tel"] ?? "";
+            String mobile = Request.Form["mobile"] ?? "";
+            String email = Request.Form["email"] ?? "";
+            String qq = Request.Form["qq"] ?? "";
+            String msn = Request.Form["msn"] ?? "";
+            String address = Request.Form["address"] ?? "";
+            String ip = "0.0.0.0";
+            String content = Request.Form["content"] ?? "";
+
+            if (_userService.RegisterUser(new SUserDTO()
+            {
+                CreateTime = DateTime.Now,
+                DepartmentId = departmentId,
+                DepartmentName = "",
+                IsEnable = true,
+                IsMultiUser = false,
+                IsWork = true,
+                LoginCount = 0,
+                LoginIp = ip,
+                LoginName = loginName,
+                LoginPass = loginPwd,
+                LoginTime = DateTime.Now,
+                OnLineInfo = new OnLineInfoDTO() { 
+                    BrowserName=Request.Browser.ToString(),
+                    BrowserVersion=Request.Browser.Version,
+                    CurrentPage=Request.Url.ToString(),
+                    CurrentPageTitle="",
+                    IsOnLine=false,
+                    OperatingSystem="",
+                    SessionId="",
+                    TerminalType="0",
+                    UserAgent=Request.UserAgent
+                },
+                PersonInfo = new PersonInfoDTO() {
+                    Address=address,
+                    Birthday=DateTime.Now,
+                    Content=content,
+                    Education=(EducationDTO)(Convert.ToInt32(education)),
+                    Email=email,
+                    GraduateCollege=graduateCollege,
+                    GraduateSpecialty=graduateSpecially,
+                    Mobile=mobile,
+                    Msn=msn,
+                    NationalName=nativeName,
+                    NativePlace=nativePlace,
+                    NName=nName,
+                    PhotoImg=data,
+                    Qq=qq,
+                    Sex=(SexDTO)(Convert.ToInt32(sex)),
+                    Tel=tel
+                },
+                PositionId=positionId,
+                PositionName="",
+                UpdateTime=DateTime.Now
+            }) != null)
+            {
+                return CustomCheckedResult("用户注册成功", true);
+            }
+            else
+            {
+                return CustomCheckedResult("用户注册失败", false);
+            }
         }
 
         [HttpGet]
@@ -232,6 +329,62 @@ namespace ERPS.WebUI.Controllers
         public JsonResult UpdatePositionsAction()
         {
             return null;
+        }
+
+        public JsonResult GetPermission()
+        {
+            Int32 id = Convert.ToInt32(Request.QueryString["id"]??"-1");
+            bool isMenu = Convert.ToInt32(Request.QueryString["isMenu"]??"1")>0;
+            bool isMenuPower = Convert.ToInt32(Request.QueryString["isMenuPower"] ?? "1") > 0;
+            if (id == -1 && isMenu)
+            {
+                var list = _menuInfoService.GetMenu(-1, ((SUserDTO)Session["User"]).Id).Select(it => new
+                {
+                    id = it.Id,
+                    text = it.Name,
+                    state = "closed",
+                    iconCls = "icon-mianmenu",
+                    attributes = new { isMenu =1 }
+                }).ToList();
+                return Json(list, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                if (isMenu&&!isMenuPower)
+                {
+                    var list = _menuInfoService.GetMenu(id, ((SUserDTO)Session["User"]).Id).Select(it => new PermissionDTO()
+                    {
+                        id = it.Id,
+                        text = it.Name,
+                        state = "closed",
+                        iconCls = "icon-mianmenu",
+                        attributes = new attributes() { isMenu = 1 }
+                    }).ToList();
+                    var node = _userService.GetActionPersionsByMenuId(id).Select(it => new PermissionDTO()
+                    {
+                        id = it.Id,
+                        text = it.ActionSign.GetDescriptionOrNull(),
+                        state = "open",
+                        iconCls = "icon-leaf",
+                        attributes = new attributes() { isMenu = 0 }
+                    }).ToList();
+                    list.AddRange(node);
+                    return Json(list, JsonRequestBehavior.AllowGet);
+                }
+                if (isMenuPower)
+                {
+                    var list = _menuInfoService.GetMenu(id, ((SUserDTO)Session["User"]).Id).Select(it => new PermissionDTO()
+                    {
+                        id = it.Id,
+                        text = it.Name,
+                        state = "closed",
+                        iconCls = "icon-mianmenu",
+                        attributes = new attributes() { isMenu = 1 }
+                    }).ToList();
+                    return Json(list, JsonRequestBehavior.AllowGet);
+                }
+                return null;
+            }
         }
     }
 }

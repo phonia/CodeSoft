@@ -1,6 +1,7 @@
 ﻿<script type="text/javascript">
     $(function () {
         GetAllDepartment();
+        comboboxtree();
     });
 
     function GetAllDepartment() {
@@ -12,8 +13,45 @@
         });
     }
 
-    function RegisterPosition()
+    function comboboxtree()
     {
+        $('#combotree').combotree({
+            url: "/User/GetPermission?id=-1&isMenu=1&isMenuPower=0",
+            multiple: true,//加载checkbox 原因不明
+            animate: true,
+            onlyLeafCheck:true,
+            onBeforeExpand: function (node, parm) {
+                $('#combotree').combotree("tree").tree("options").url = '/User/GetPermission?id=' + node.id + '&isMenu=' + node.attributes.isMenu + '&isMenuPower=0';
+            },
+            onLoadSuccess: function (node, data) {
+                //for (var i = 0; i < data.length; i++)
+                //{
+                //    if (data[i].attributes.isMenu)
+                //    {
+                //        data[i].iconCls = "icon-mianmenu";
+                //    }
+                //    else
+                //    {
+                //        data[i].iconCls = "icon-leaf";
+                //    }
+                //}
+            },
+            onSelect: function (node) {
+            },
+            onCheck: function (node, checked) {
+                //alert(node.children.length);
+            }
+        });
+        $('#combotreecontrol').combotree({
+            url: "/User/GetPermission?id=-1&isMenu=1&isMenuPower=1",
+            multiple: true,
+            onBeforeExpand: function (node, parm) {
+                $('#combotreecontrol').combotree("tree").tree("options").url = '/User/GetPermission?id=' + node.id + '&isMenu=' + node.attributes.isMenu + '&isMenuPower=1';
+            },
+        });
+    }
+
+    function RegisterPosition() {
         $('#RegisterPosition').form('submit', {
             url: '/User/GetRegisterPositionAction',
             dataType: 'josn',
@@ -43,29 +81,38 @@
     }
 </script>
 
-<form id="RegisterPosition" method="post" style="padding:5px 5px 5px 5px">
+<form id="RegisterPosition" method="post" style="padding: 5px 5px 5px 5px">
     <div class="easyui-panel">
         <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">部门</label>
+            <label style="display: inline-block; width: 80px; text-align: right">部门</label>
             <input id="departmentId" name="departmentId" data-options="editable:false,panelHeight:'auto',required:true" />
-            <div style="height:10px"></div>
+            <div style="height: 10px"></div>
         </div>
         <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">职位名称</label>
+            <label style="display: inline-block; width: 80px; text-align: right">职位名称</label>
             <input class="easyui-validatebox" name="name" data-options="required:true,valiType:['chinese','length[2,10]']" />
-            <div style="height:10px"></div>
+            <div style="height: 10px"></div>
         </div>
         <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">菜单权限</label>
-            <input class="easyui-validatebox" name="pagePower" data-options="required:true,valiType:['chinese','length[2,10]']" />
-            <div style="height:10px"></div>
+            <label style="display: inline-block; width: 80px; text-align: right">页面权限</label>
+@*            <select class="easyui-combotree" data-options="url:/User/GetPermission" style="width: 100px"></select>*@
+@*            <input id="combotree" style="width:100px;height:auto" />*@
+@*            <input class="easyui-combotree" id="combotree" style="width:100px;height:auto" data-options="url: '/User/GetPermission?id=-10&isMenu=0'" />*@
+            <input id = "combotree" name="controlPower" style="min-width:100px;height:auto" />
+            <div style="height: 10px"></div>
         </div>
         <div class="fitem">
-            <label style="display:inline-block;width:80px;text-align:right">页面权限</label>
-            <input class="easyui-validatebox" name="controlPower" data-options="required:true,valiType:['chinese','length[2,10]']" />
-            <div style="height:10px"></div>
+            <label style="display: inline-block; width: 80px; text-align: right">菜单权限</label>
+@*            <input class="easyui-validatebox" name="pagePower" data-options="required:true,valiType:['chinese','length[2,10]']" readonly="true" />*@
+            <input id="combotreecontrol" name="pagePower" style="min-width:100px;height:auto" />
+            <div style="height: 10px"></div>
         </div>
-        <div class="fitem" style="float:none;text-align:center;padding:5px;margin-top:20px">
+@*        <div class="fitem">
+            <label style="display: inline-block; width: 80px; text-align: right">页面权限</label>
+            <input class="easyui-validatebox" name="controlPower" data-options="required:true,valiType:['chinese','length[2,10]']" readonly="true" />
+            <div style="height: 10px"></div>
+        </div>*@
+        <div class="fitem" style="float: none; text-align: center; padding: 5px; margin-top: 20px">
             <a href="javascript:" class="easyui-linkbutton" onclick="RegisterPosition()">注册</a>
             <a href="javascript:" class="easyui-linkbutton" onclick="Cancel()">取消</a>
         </div>

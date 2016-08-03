@@ -98,7 +98,6 @@ namespace EPRS.Service
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="用户管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
                         new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户列表",Url="\\User\\GetAllUserView",Sort=0,ActionPermissions=new List<ActionPermission>(){
                             new ActionPermission(){ActionSign=ActionSign.Abandon,Sort=0,Url=""},
-                            new ActionPermission(){ActionSign=ActionSign.Create,Sort=0,Url="\\User\\GetRegisterUserAction"},
                             new ActionPermission(){ActionSign=ActionSign.Delete,Sort=0,Url="\\User\\RemoveUserAction"},
                             new ActionPermission(){ActionSign=ActionSign.Recovery,Sort=0,Url=""},
                             new ActionPermission(){ActionSign=ActionSign.Review,Sort=0,Url=""},
@@ -107,7 +106,9 @@ namespace EPRS.Service
                             new ActionPermission(){ActionSign=ActionSign.Update,Sort=0,Url="\\User\\UpdateUserAction"},
                             new ActionPermission(){ActionSign=ActionSign.LookOver,Sort=0,Url="\\GetUserAction"}
                         }},
-                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户注册",Url="\\User\\GetRegisterUserView",Sort=0}
+                        new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="用户注册",Url="\\User\\GetRegisterUserView",Sort=0,ActionPermissions=new List<ActionPermission>(){
+                            new ActionPermission(){ActionSign=ActionSign.Create,Sort=0,Url="\\User\\GetRegisterUserAction"},
+                        }}
                     }},
                     new MenuInfo(){Depth=1,IsDisplay=true,IsMenu=true,Name="权限管理",Url="",Sort=0,MenuInfos=new List<MenuInfo>(){
                         new MenuInfo(){Depth=2,IsDisplay=true,IsMenu=false,Name="页面权限",Url="\\User\\GetActionPermissionView",Sort=0,ActionPermissions=new List<ActionPermission>(){

@@ -16,6 +16,7 @@ namespace EPRS.Service
         List<PositionDTO> GetPositions();
         PositionDTO GetPositionByKey(int id);
         PositionDTO GetPositionByName(String name);
+        List<ActionPermissionDTO> GetActionPersionsByMenuId(int id);
 
         SUserDTO RegisterUser(SUserDTO userDTO);
         PositionDTO RegisterPosition(PositionDTO positionDTO);

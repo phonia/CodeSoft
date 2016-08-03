@@ -29,7 +29,6 @@ namespace ERPS.WebUI.Interceptor
             //{
             //    //
             //}
-
             //if (MSUserDTO == null) return getNext()(input, getNext); 
 
             //if ((MSUserDTO!=null&&!String.IsNullOrWhiteSpace(MSUserDTO.Name)&&MSUserDTO.Name.Equals(Constant.DefautlUserName))

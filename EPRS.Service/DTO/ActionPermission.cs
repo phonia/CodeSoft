@@ -26,7 +26,7 @@ namespace EPRS.Service
         /// <summary>
         /// 名称
         /// </summary>
-        public ActionSign ActionSign {get;set;}
+        public ActionSignDTO ActionSign {get;set;}
 
         /// <summary>
         /// url

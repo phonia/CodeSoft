@@ -12,20 +12,23 @@ namespace EPRS.Service
         ISUserRepository _userRepository = null;
         IPositionRepository _positionRepository = null;
         IDepartmentRepository _departmentRepository = null;
+        IActionPermissionRepository _actionPermissionRepository = null;
         IUnitOfWork _unitOfWork = null;
         private static object _lockObject = new object();
 
-        public UserService(ISUserRepository userRepository,IPositionRepository positonRepository,
+        public UserService(ISUserRepository userRepository,IPositionRepository positonRepository,IActionPermissionRepository actionPermissionRepository,
             IDepartmentRepository departmentRepository,IUnitOfWork unitOfWork )
         {
             this._userRepository = userRepository;
             this._positionRepository = positonRepository;
             this._departmentRepository = departmentRepository;
+            this._actionPermissionRepository = actionPermissionRepository;
             this._unitOfWork = unitOfWork;
 
             this._userRepository.UnitOfWork = unitOfWork;
             this._positionRepository.UnitOfWork = unitOfWork;
             this._departmentRepository.UnitOfWork = unitOfWork;
+            this._actionPermissionRepository.UnitOfWork = unitOfWork;
         }
 
         public List<SUserDTO> GetUsers()
@@ -94,6 +97,11 @@ namespace EPRS.Service
                 .Where(it => it.Name.Equals(name))
                 .First()
                 .ConverToPositionDTO();
+        }
+
+        public List<ActionPermissionDTO> GetActionPersionsByMenuId(int id)
+        {
+            return _actionPermissionRepository.GetAll().Where(it=>it.MenuInfo.Id==id).MapperTo<ActionPermission,ActionPermissionDTO>().ToList();
         }
 
         public SUserDTO RegisterUser(SUserDTO userDTO)
