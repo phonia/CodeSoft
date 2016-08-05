@@ -4,6 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GeneralAuthorityManagement", "GeneralAuthorityManagement", "{96F54072-3185-4306-95A6-667C8B91F26D}"
 	ProjectSection(SolutionItems) = preProject
 		Note.doc = Note.doc
+		Test.txt = Test.txt
 	EndProjectSection
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "GAM", "GAM\GAM.modelproj", "{4F33FAC7-8BD1-4316-9780-FA238D68476E}"
