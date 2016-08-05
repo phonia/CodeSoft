@@ -36,5 +36,6 @@ namespace EPRS.Service
         SUserDTO Login(String loginName, String loginPwd);
 
         bool Logout(String loginName);
+        bool Authority(SUserDTO user, String url);
     }
 }

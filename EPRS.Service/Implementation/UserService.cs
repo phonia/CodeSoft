@@ -238,5 +238,16 @@ namespace EPRS.Service
         {
             throw new NotImplementedException();
         }
+
+        public bool Authority(SUserDTO user, String url)
+        {
+            SUser suser = user.MapperTo<SUserDTO, SUser>();
+            suser.Position = _positionRepository.GetAll().Where(it => it.Id == user.PositionId).First();
+            ActionPermission ap = _actionPermissionRepository.GetAll().Where(it => it.Url.Equals(url)).First();
+            if (suser.Position.ControlPower.Split(',').ToList().Contains(ap.Id.ToString()))
+                return true;
+            else
+                return false;
+        }
     }
 }

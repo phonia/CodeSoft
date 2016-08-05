@@ -30,6 +30,7 @@ namespace EPRS.Service
                 .Where(it => it.Users.Where(u => u.Id == userId)
                     .FirstOrDefault() != null)
                     .First();
+            List<String> power = position.PagePower.Split(',').ToList();
             if (id <= 0)
             {
                 return _menuInfoRepository.GetAll()
@@ -37,14 +38,14 @@ namespace EPRS.Service
                     .ToList()
                     .MapperTo<MenuInfo, MenuInfoDTO>()
                     .Where(it => position.PagePower.Contains(it.Id.ToString()) || position.Department.Code.Equals("1") 
-                        && ( position.PagePower.Contains(it.Id.ToString()) || position.Department.Code.Equals("1")))
+                        && ( power.Contains(it.Id.ToString()) || position.Department.Code.Equals("1")))
                     .ToList();
             }
             else
             {
                 return _menuInfoRepository.GetAll()
-                    .Where(it => it.Parent.Id == id && it.IsDisplay == true 
-                        && (position.PagePower.Contains(it.Id.ToString()) || position.Department.Code.Equals("1")))
+                    .Where(it => it.Parent.Id == id && it.IsDisplay == true
+                        && (power.Contains(it.Id.ToString()) || position.Department.Code.Equals("1")))
                     .ToList()
                     .MapperTo<MenuInfo, MenuInfoDTO>()
                     .ToList();
