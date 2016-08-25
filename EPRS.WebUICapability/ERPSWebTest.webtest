@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="ERPSWebTest" Id="89a12df8-7a11-413c-803c-99774ec5d2b5" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="" StopOnError="False" RecordedResultFile="ERPSWebTest.7e65022e-2cbf-45bf-921f-806b4088c1fe.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="8367fdc3-d3ed-49bf-a6b2-e8b63d9561af" Version="1.1" Url="http://localhost:48468/User/Login" ThinkTime="9" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False" />
+    <Request Method="POST" Guid="d099bbb7-09ff-4b9a-ada4-2f60454f19bc" Version="1.1" Url="http://localhost:48468/User/Login" ThinkTime="11" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:48468/User/Login" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="userName" Value="Admin" RecordedValue="Admin" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="userPwd" Value="Admin" RecordedValue="Admin" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="46dd140d-24c0-4ffa-9f56-6a9838ec0fb3" Version="1.1" Url="http://localhost:48468/Home/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="516221b9-d496-4c98-9032-f07bbe6982d0" Version="1.1" Url="http://localhost:48468/Home/GetMenu" ThinkTime="9" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+            <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+            <Header Name="Referer" Value="http://localhost:48468/Home/Index" />
+          </Headers>
+          <QueryStringParameters>
+            <QueryStringParameter Name="id" Value="0" RecordedValue="0" CorrelationBinding="{{QueryStringParam1.id}}" UrlEncode="False" UseToGroupResults="False" />
+          </QueryStringParameters>
+        </Request>
+      </DependentRequests>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam1.id" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?id=" />
+            <RuleParameter Name="EndsWith" Value="'" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="bc0d3984-5071-4eb2-8a21-69f512fbc15b" Version="1.1" Url="http://localhost:48468/Home/GetMenu" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://localhost:48468/Home/Index" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="id" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="8d3b7c49-23db-4053-8664-2958d41b5e12" Version="1.1" Url="http://localhost:48468/Home/GetMenu" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://localhost:48468/Home/Index" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="id" Value="4" RecordedValue="4" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="177e32bf-458f-4eda-acbb-cadeb014552e" Version="1.1" Url="http://localhost:48468/Home/GetMenu" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://localhost:48468/Home/Index" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="id" Value="8" RecordedValue="8" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="57390f9c-88bb-4916-bac5-5e75e57d174c" Version="1.1" Url="http://localhost:48468/Home/GetMenu" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://localhost:48468/Home/Index" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="id" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="d6b095b6-60e3-4eb4-9e6d-5d17da7e721c" Version="1.1" Url="http://localhost:48468/Home/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:48468/Home/Index#" ReportingName="" IgnoreHttpStatusCode="False" />
+    <Request Method="GET" Guid="b996cff2-ee2c-4bf2-8ae2-ef191e737462" Version="1.1" Url="http://localhost:48468/User/GetAllUserView" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="POST" Guid="f91cffdd-68f7-458f-89c9-66e152dd0fef" Version="1.1" Url="http://localhost:48468/User/GetAllUserAction" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+            <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+            <Header Name="Referer" Value="http://localhost:48468/User/GetAllUserView" />
+          </Headers>
+          <FormPostHttpBody>
+            <FormPostParameter Name="page" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+            <FormPostParameter Name="rows" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+          </FormPostHttpBody>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:48468/Home/Index" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="c1bbc525-2d6a-44d4-bcaa-841ccc29f58c" Version="1.1" Url="http://localhost:48468/User/GetRegisterUserView" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="d81e8ab5-2778-48e4-b098-aa1add57195a" Version="1.1" Url="http://localhost:48468/User/GetSex" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+            <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+            <Header Name="Referer" Value="http://localhost:48468/User/GetRegisterUserView" />
+          </Headers>
+        </Request>
+        <Request Method="GET" Guid="5a52cdcf-0077-465a-86d6-a560c8aedc33" Version="1.1" Url="http://localhost:48468/User/GetEducation" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+            <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+            <Header Name="Referer" Value="http://localhost:48468/User/GetRegisterUserView" />
+          </Headers>
+        </Request>
+        <Request Method="GET" Guid="d3626576-fd65-43f8-826c-941f085928e5" Version="1.1" Url="http://localhost:48468/User/GetDepartmentsAction" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+            <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+            <Header Name="Referer" Value="http://localhost:48468/User/GetRegisterUserView" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:48468/Home/Index" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="ecc85421-af8f-428a-9f3f-aa6555c37e34" Version="1.1" Url="http://localhost:48468/Home/Index" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://localhost:48468/Home/Index#" ReportingName="" IgnoreHttpStatusCode="False" />
+    <Request Method="GET" Guid="96fb4c48-fbf0-4932-9347-afe372063427" Version="1.1" Url="http://localhost:48468/User/GetDepartmentsView" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="POST" Guid="937c090f-498b-41ed-9b0d-dbe668965ab6" Version="1.1" Url="http://localhost:48468/User/GetDepartmentsAction" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+            <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+            <Header Name="Referer" Value="http://localhost:48468/User/GetDepartmentsView" />
+          </Headers>
+          <FormPostHttpBody>
+            <FormPostParameter Name="page" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+            <FormPostParameter Name="rows" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+          </FormPostHttpBody>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:48468/Home/Index" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="58b07024-29ca-4638-a9e5-d73b08ec5e16" Version="1.1" Url="http://localhost:48468/User/GetPositionsView" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="POST" Guid="7fc87240-e531-4764-ac3d-77c8785c1ba6" Version="1.1" Url="http://localhost:48468/User/GetPositionsAction" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+            <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+            <Header Name="Referer" Value="http://localhost:48468/User/GetPositionsView" />
+          </Headers>
+          <FormPostHttpBody>
+            <FormPostParameter Name="page" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="True" />
+            <FormPostParameter Name="rows" Value="10" RecordedValue="10" CorrelationBinding="" UrlEncode="True" />
+          </FormPostHttpBody>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:48468/Home/Index" />
+      </Headers>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="响应 URL" Description="验证在执行重定向之后响应 URL 是否与所记录的响应 URL 相同。QueryString 参数将被忽略。" Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="响应时间目标" Description="确认请求的响应时间小于或等于对请求指定的响应时间目标。将忽略响应时间目标零。" Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

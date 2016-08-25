@@ -161,9 +161,12 @@
     <Compile Include="Controllers\MSUserController.cs" />
     <Compile Include="Controllers\UnityControllerFactory.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Filters\CustomAuthoritionAttribute.cs" />
+    <Compile Include="Filters\CustomExceptionAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\CustomHtmlHelper.cs" />
     <Compile Include="Interceptor\ArgumentValidateInterceptor.cs" />
     <Compile Include="Interceptor\CacheInterceptor.cs" />
     <Compile Include="Interceptor\UserPermissonException.cs" />
@@ -1684,6 +1687,8 @@
     <Content Include="Views\User\GetRegisterDepartmentView.cshtml" />
     <Content Include="Views\User\GetPositionsView.cshtml" />
     <Content Include="Views\User\GetRegisterPositionView.cshtml" />
+    <Content Include="Views\MSUser\View1.cshtml" />
+    <Content Include="Views\User\GetUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

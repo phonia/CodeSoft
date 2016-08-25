@@ -1,0 +1,2534 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ERPS.Models.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:ERPS.Models.Fakes.ShimActionPermission">
+            <summary>ERPS.Models.ActionPermission 的填充码类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimActionPermission.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimActionPermission.#ctor(ERPS.Models.ActionPermission)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimActionPermission.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimActionPermission.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimActionPermission.Bind(Infrastructure.IAggregateRoot)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.ActionSignGet">
+            <summary>设置 ActionPermission.get_ActionSign() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.ActionSignSetActionSign">
+            <summary>设置 ActionPermission.set_ActionSign(ActionSign value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.Constructor">
+            <summary>设置 ActionPermission.ActionPermission() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.IdGet">
+            <summary>设置 ActionPermission.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.IdSetInt32">
+            <summary>设置 ActionPermission.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.MenuInfoGet">
+            <summary>设置 ActionPermission.get_MenuInfo() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.MenuInfoSetMenuInfo">
+            <summary>设置 ActionPermission.set_MenuInfo(MenuInfo value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.SortGet">
+            <summary>设置 ActionPermission.get_Sort() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.SortSetInt32">
+            <summary>设置 ActionPermission.set_Sort(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.UrlGet">
+            <summary>设置 ActionPermission.get_Url() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.UrlSetString">
+            <summary>设置 ActionPermission.set_Url(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.Validate">
+            <summary>设置 ActionPermission.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimActionPermission.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.AllInstances.ActionSignGet">
+            <summary>设置 ActionPermission.get_ActionSign() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.AllInstances.ActionSignSetActionSign">
+            <summary>设置 ActionPermission.set_ActionSign(ActionSign value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.AllInstances.IdGet">
+            <summary>设置 ActionPermission.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.AllInstances.IdSetInt32">
+            <summary>设置 ActionPermission.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.AllInstances.MenuInfoGet">
+            <summary>设置 ActionPermission.get_MenuInfo() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.AllInstances.MenuInfoSetMenuInfo">
+            <summary>设置 ActionPermission.set_MenuInfo(MenuInfo value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.AllInstances.SortGet">
+            <summary>设置 ActionPermission.get_Sort() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.AllInstances.SortSetInt32">
+            <summary>设置 ActionPermission.set_Sort(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.AllInstances.UrlGet">
+            <summary>设置 ActionPermission.get_Url() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.AllInstances.UrlSetString">
+            <summary>设置 ActionPermission.set_Url(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimActionPermission.AllInstances.Validate">
+            <summary>设置 ActionPermission.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimDepartment">
+            <summary>ERPS.Models.Department 的填充码类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimDepartment.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimDepartment.#ctor(ERPS.Models.Department)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimDepartment.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimDepartment.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimDepartment.Bind(Infrastructure.IAggregateRoot)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.CodeGet">
+            <summary>设置 Department.get_Code() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.CodeSetString">
+            <summary>设置 Department.set_Code(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.Constructor">
+            <summary>设置 Department.Department() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.DepthGet">
+            <summary>设置 Department.get_Depth() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.DepthSetInt32">
+            <summary>设置 Department.set_Depth(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.IdGet">
+            <summary>设置 Department.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.IdSetInt32">
+            <summary>设置 Department.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.NameGet">
+            <summary>设置 Department.get_Name() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.NameSetString">
+            <summary>设置 Department.set_Name(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.NotesGet">
+            <summary>设置 Department.get_Notes() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.NotesSetString">
+            <summary>设置 Department.set_Notes(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.PositionsGet">
+            <summary>设置 Department.get_Positions() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.PositionsSetIListOfPosition">
+            <summary>设置 Department.set_Positions(IList`1&lt;Position&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.SortGet">
+            <summary>设置 Department.get_Sort() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.SortSetInt32">
+            <summary>设置 Department.set_Sort(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.UpdateDateGet">
+            <summary>设置 Department.get_UpdateDate() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.UpdateDateSetDateTime">
+            <summary>设置 Department.set_UpdateDate(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.Validate">
+            <summary>设置 Department.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimDepartment.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.CodeGet">
+            <summary>设置 Department.get_Code() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.CodeSetString">
+            <summary>设置 Department.set_Code(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.DepthGet">
+            <summary>设置 Department.get_Depth() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.DepthSetInt32">
+            <summary>设置 Department.set_Depth(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.IdGet">
+            <summary>设置 Department.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.IdSetInt32">
+            <summary>设置 Department.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.NameGet">
+            <summary>设置 Department.get_Name() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.NameSetString">
+            <summary>设置 Department.set_Name(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.NotesGet">
+            <summary>设置 Department.get_Notes() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.NotesSetString">
+            <summary>设置 Department.set_Notes(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.PositionsGet">
+            <summary>设置 Department.get_Positions() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.PositionsSetIListOfPosition">
+            <summary>设置 Department.set_Positions(IList`1&lt;Position&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.SortGet">
+            <summary>设置 Department.get_Sort() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.SortSetInt32">
+            <summary>设置 Department.set_Sort(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.UpdateDateGet">
+            <summary>设置 Department.get_UpdateDate() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.UpdateDateSetDateTime">
+            <summary>设置 Department.set_UpdateDate(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimDepartment.AllInstances.Validate">
+            <summary>设置 Department.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimErrorLog">
+            <summary>ERPS.Models.ErrorLog 的填充码类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimErrorLog.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimErrorLog.#ctor(ERPS.Models.ErrorLog)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimErrorLog.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimErrorLog.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimErrorLog.Bind(Infrastructure.IAggregateRoot)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.BrowserTypeGet">
+            <summary>设置 ErrorLog.get_BrowserType() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.BrowserTypeSetString">
+            <summary>设置 ErrorLog.set_BrowserType(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.BrowserVersionGet">
+            <summary>设置 ErrorLog.get_BrowserVersion() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.BrowserVersionSetString">
+            <summary>设置 ErrorLog.set_BrowserVersion(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.Constructor">
+            <summary>设置 ErrorLog.ErrorLog() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.ErrMessageGet">
+            <summary>设置 ErrorLog.get_ErrMessage() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.ErrMessageSetString">
+            <summary>设置 ErrorLog.set_ErrMessage(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.ErrSourceGet">
+            <summary>设置 ErrorLog.get_ErrSource() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.ErrSourceSetString">
+            <summary>设置 ErrorLog.set_ErrSource(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.ErrTimeGet">
+            <summary>设置 ErrorLog.get_ErrTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.ErrTimeSetDateTime">
+            <summary>设置 ErrorLog.set_ErrTime(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.HelpLinkGet">
+            <summary>设置 ErrorLog.get_HelpLink() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.HelpLinkSetString">
+            <summary>设置 ErrorLog.set_HelpLink(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.IdGet">
+            <summary>设置 ErrorLog.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.IdSetInt32">
+            <summary>设置 ErrorLog.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.IpGet">
+            <summary>设置 ErrorLog.get_Ip() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.IpSetString">
+            <summary>设置 ErrorLog.set_Ip(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.PageUrlGet">
+            <summary>设置 ErrorLog.get_PageUrl() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.PageUrlSetString">
+            <summary>设置 ErrorLog.set_PageUrl(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.StackTraceGet">
+            <summary>设置 ErrorLog.get_StackTrace() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.StackTraceSetString">
+            <summary>设置 ErrorLog.set_StackTrace(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.TypeGet">
+            <summary>设置 ErrorLog.get_Type() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.TypeSetBoolean">
+            <summary>设置 ErrorLog.set_Type(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.Validate">
+            <summary>设置 ErrorLog.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimErrorLog.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.BrowserTypeGet">
+            <summary>设置 ErrorLog.get_BrowserType() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.BrowserTypeSetString">
+            <summary>设置 ErrorLog.set_BrowserType(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.BrowserVersionGet">
+            <summary>设置 ErrorLog.get_BrowserVersion() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.BrowserVersionSetString">
+            <summary>设置 ErrorLog.set_BrowserVersion(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.ErrMessageGet">
+            <summary>设置 ErrorLog.get_ErrMessage() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.ErrMessageSetString">
+            <summary>设置 ErrorLog.set_ErrMessage(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.ErrSourceGet">
+            <summary>设置 ErrorLog.get_ErrSource() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.ErrSourceSetString">
+            <summary>设置 ErrorLog.set_ErrSource(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.ErrTimeGet">
+            <summary>设置 ErrorLog.get_ErrTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.ErrTimeSetDateTime">
+            <summary>设置 ErrorLog.set_ErrTime(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.HelpLinkGet">
+            <summary>设置 ErrorLog.get_HelpLink() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.HelpLinkSetString">
+            <summary>设置 ErrorLog.set_HelpLink(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.IdGet">
+            <summary>设置 ErrorLog.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.IdSetInt32">
+            <summary>设置 ErrorLog.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.IpGet">
+            <summary>设置 ErrorLog.get_Ip() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.IpSetString">
+            <summary>设置 ErrorLog.set_Ip(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.PageUrlGet">
+            <summary>设置 ErrorLog.get_PageUrl() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.PageUrlSetString">
+            <summary>设置 ErrorLog.set_PageUrl(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.StackTraceGet">
+            <summary>设置 ErrorLog.get_StackTrace() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.StackTraceSetString">
+            <summary>设置 ErrorLog.set_StackTrace(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.TypeGet">
+            <summary>设置 ErrorLog.get_Type() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.TypeSetBoolean">
+            <summary>设置 ErrorLog.set_Type(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimErrorLog.AllInstances.Validate">
+            <summary>设置 ErrorLog.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimMenuInfo">
+            <summary>ERPS.Models.MenuInfo 的填充码类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimMenuInfo.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimMenuInfo.#ctor(ERPS.Models.MenuInfo)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimMenuInfo.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimMenuInfo.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimMenuInfo.Bind(Infrastructure.IAggregateRoot)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.ActionPermissionsGet">
+            <summary>设置 MenuInfo.get_ActionPermissions() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.ActionPermissionsSetIListOfActionPermission">
+            <summary>设置 MenuInfo.set_ActionPermissions(IList`1&lt;ActionPermission&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.Constructor">
+            <summary>设置 MenuInfo.MenuInfo() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.DepthGet">
+            <summary>设置 MenuInfo.get_Depth() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.DepthSetInt32">
+            <summary>设置 MenuInfo.set_Depth(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.IdGet">
+            <summary>设置 MenuInfo.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.IdSetInt32">
+            <summary>设置 MenuInfo.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.IsDisplayGet">
+            <summary>设置 MenuInfo.get_IsDisplay() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.IsDisplaySetBoolean">
+            <summary>设置 MenuInfo.set_IsDisplay(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.IsMenuGet">
+            <summary>设置 MenuInfo.get_IsMenu() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.IsMenuSetBoolean">
+            <summary>设置 MenuInfo.set_IsMenu(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.MenuInfosGet">
+            <summary>设置 MenuInfo.get_MenuInfos() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.MenuInfosSetIListOfMenuInfo">
+            <summary>设置 MenuInfo.set_MenuInfos(IList`1&lt;MenuInfo&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.NameGet">
+            <summary>设置 MenuInfo.get_Name() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.NameSetString">
+            <summary>设置 MenuInfo.set_Name(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.ParentGet">
+            <summary>设置 MenuInfo.get_Parent() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.ParentSetMenuInfo">
+            <summary>设置 MenuInfo.set_Parent(MenuInfo value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.SortGet">
+            <summary>设置 MenuInfo.get_Sort() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.SortSetInt32">
+            <summary>设置 MenuInfo.set_Sort(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.UrlGet">
+            <summary>设置 MenuInfo.get_Url() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.UrlSetString">
+            <summary>设置 MenuInfo.set_Url(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.UserLogsGet">
+            <summary>设置 MenuInfo.get_UserLogs() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.UserLogsSetIListOfUserLog">
+            <summary>设置 MenuInfo.set_UserLogs(IList`1&lt;UserLog&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.Validate">
+            <summary>设置 MenuInfo.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimMenuInfo.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.ActionPermissionsGet">
+            <summary>设置 MenuInfo.get_ActionPermissions() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.ActionPermissionsSetIListOfActionPermission">
+            <summary>设置 MenuInfo.set_ActionPermissions(IList`1&lt;ActionPermission&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.DepthGet">
+            <summary>设置 MenuInfo.get_Depth() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.DepthSetInt32">
+            <summary>设置 MenuInfo.set_Depth(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.IdGet">
+            <summary>设置 MenuInfo.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.IdSetInt32">
+            <summary>设置 MenuInfo.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.IsDisplayGet">
+            <summary>设置 MenuInfo.get_IsDisplay() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.IsDisplaySetBoolean">
+            <summary>设置 MenuInfo.set_IsDisplay(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.IsMenuGet">
+            <summary>设置 MenuInfo.get_IsMenu() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.IsMenuSetBoolean">
+            <summary>设置 MenuInfo.set_IsMenu(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.MenuInfosGet">
+            <summary>设置 MenuInfo.get_MenuInfos() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.MenuInfosSetIListOfMenuInfo">
+            <summary>设置 MenuInfo.set_MenuInfos(IList`1&lt;MenuInfo&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.NameGet">
+            <summary>设置 MenuInfo.get_Name() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.NameSetString">
+            <summary>设置 MenuInfo.set_Name(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.ParentGet">
+            <summary>设置 MenuInfo.get_Parent() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.ParentSetMenuInfo">
+            <summary>设置 MenuInfo.set_Parent(MenuInfo value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.SortGet">
+            <summary>设置 MenuInfo.get_Sort() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.SortSetInt32">
+            <summary>设置 MenuInfo.set_Sort(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.UrlGet">
+            <summary>设置 MenuInfo.get_Url() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.UrlSetString">
+            <summary>设置 MenuInfo.set_Url(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.UserLogsGet">
+            <summary>设置 MenuInfo.get_UserLogs() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.UserLogsSetIListOfUserLog">
+            <summary>设置 MenuInfo.set_UserLogs(IList`1&lt;UserLog&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimMenuInfo.AllInstances.Validate">
+            <summary>设置 MenuInfo.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimOnLineInfo">
+            <summary>ERPS.Models.OnLineInfo 的填充码类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimOnLineInfo.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimOnLineInfo.#ctor(ERPS.Models.OnLineInfo)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimOnLineInfo.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimOnLineInfo.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimOnLineInfo.Bind(Infrastructure.IAggregateRoot)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.BrowserNameGet">
+            <summary>设置 OnLineInfo.get_BrowserName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.BrowserNameSetString">
+            <summary>设置 OnLineInfo.set_BrowserName(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.BrowserVersionGet">
+            <summary>设置 OnLineInfo.get_BrowserVersion() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.BrowserVersionSetString">
+            <summary>设置 OnLineInfo.set_BrowserVersion(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.Constructor">
+            <summary>设置 OnLineInfo.OnLineInfo() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.CurrentPageGet">
+            <summary>设置 OnLineInfo.get_CurrentPage() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.CurrentPageSetString">
+            <summary>设置 OnLineInfo.set_CurrentPage(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.CurrentPageTitleGet">
+            <summary>设置 OnLineInfo.get_CurrentPageTitle() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.CurrentPageTitleSetString">
+            <summary>设置 OnLineInfo.set_CurrentPageTitle(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.IsOnLineGet">
+            <summary>设置 OnLineInfo.get_IsOnLine() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.IsOnLineSetBoolean">
+            <summary>设置 OnLineInfo.set_IsOnLine(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.OperatingSystemGet">
+            <summary>设置 OnLineInfo.get_OperatingSystem() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.OperatingSystemSetString">
+            <summary>设置 OnLineInfo.set_OperatingSystem(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.SessionIdGet">
+            <summary>设置 OnLineInfo.get_SessionId() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.SessionIdSetString">
+            <summary>设置 OnLineInfo.set_SessionId(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.TerminalTypeGet">
+            <summary>设置 OnLineInfo.get_TerminalType() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.TerminalTypeSetString">
+            <summary>设置 OnLineInfo.set_TerminalType(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.UserAgentGet">
+            <summary>设置 OnLineInfo.get_UserAgent() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.UserAgentSetString">
+            <summary>设置 OnLineInfo.set_UserAgent(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.Validate">
+            <summary>设置 OnLineInfo.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.BrowserNameGet">
+            <summary>设置 OnLineInfo.get_BrowserName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.BrowserNameSetString">
+            <summary>设置 OnLineInfo.set_BrowserName(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.BrowserVersionGet">
+            <summary>设置 OnLineInfo.get_BrowserVersion() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.BrowserVersionSetString">
+            <summary>设置 OnLineInfo.set_BrowserVersion(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.CurrentPageGet">
+            <summary>设置 OnLineInfo.get_CurrentPage() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.CurrentPageSetString">
+            <summary>设置 OnLineInfo.set_CurrentPage(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.CurrentPageTitleGet">
+            <summary>设置 OnLineInfo.get_CurrentPageTitle() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.CurrentPageTitleSetString">
+            <summary>设置 OnLineInfo.set_CurrentPageTitle(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.IsOnLineGet">
+            <summary>设置 OnLineInfo.get_IsOnLine() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.IsOnLineSetBoolean">
+            <summary>设置 OnLineInfo.set_IsOnLine(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.OperatingSystemGet">
+            <summary>设置 OnLineInfo.get_OperatingSystem() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.OperatingSystemSetString">
+            <summary>设置 OnLineInfo.set_OperatingSystem(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.SessionIdGet">
+            <summary>设置 OnLineInfo.get_SessionId() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.SessionIdSetString">
+            <summary>设置 OnLineInfo.set_SessionId(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.TerminalTypeGet">
+            <summary>设置 OnLineInfo.get_TerminalType() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.TerminalTypeSetString">
+            <summary>设置 OnLineInfo.set_TerminalType(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.UserAgentGet">
+            <summary>设置 OnLineInfo.get_UserAgent() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.UserAgentSetString">
+            <summary>设置 OnLineInfo.set_UserAgent(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimOnLineInfo.AllInstances.Validate">
+            <summary>设置 OnLineInfo.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimPersonInfo">
+            <summary>ERPS.Models.PersonInfo 的填充码类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimPersonInfo.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimPersonInfo.#ctor(ERPS.Models.PersonInfo)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimPersonInfo.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimPersonInfo.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimPersonInfo.Bind(Infrastructure.IAggregateRoot)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AddressGet">
+            <summary>设置 PersonInfo.get_Address() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AddressSetString">
+            <summary>设置 PersonInfo.set_Address(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.BirthdayGet">
+            <summary>设置 PersonInfo.get_Birthday() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.BirthdaySetDateTime">
+            <summary>设置 PersonInfo.set_Birthday(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.Constructor">
+            <summary>设置 PersonInfo.PersonInfo() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.ContentGet">
+            <summary>设置 PersonInfo.get_Content() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.ContentSetString">
+            <summary>设置 PersonInfo.set_Content(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.EducationGet">
+            <summary>设置 PersonInfo.get_Education() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.EducationSetEducation">
+            <summary>设置 PersonInfo.set_Education(Education value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.EmailGet">
+            <summary>设置 PersonInfo.get_Email() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.EmailSetString">
+            <summary>设置 PersonInfo.set_Email(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.GraduateCollegeGet">
+            <summary>设置 PersonInfo.get_GraduateCollege() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.GraduateCollegeSetString">
+            <summary>设置 PersonInfo.set_GraduateCollege(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.GraduateSpecialtyGet">
+            <summary>设置 PersonInfo.get_GraduateSpecialty() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.GraduateSpecialtySetString">
+            <summary>设置 PersonInfo.set_GraduateSpecialty(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.MobileGet">
+            <summary>设置 PersonInfo.get_Mobile() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.MobileSetString">
+            <summary>设置 PersonInfo.set_Mobile(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.MsnGet">
+            <summary>设置 PersonInfo.get_Msn() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.MsnSetString">
+            <summary>设置 PersonInfo.set_Msn(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.NNameGet">
+            <summary>设置 PersonInfo.get_NName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.NNameSetString">
+            <summary>设置 PersonInfo.set_NName(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.NationalNameGet">
+            <summary>设置 PersonInfo.get_NationalName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.NationalNameSetString">
+            <summary>设置 PersonInfo.set_NationalName(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.NativePlaceGet">
+            <summary>设置 PersonInfo.get_NativePlace() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.NativePlaceSetString">
+            <summary>设置 PersonInfo.set_NativePlace(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.PhotoImgGet">
+            <summary>设置 PersonInfo.get_PhotoImg() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.PhotoImgSetByteArray">
+            <summary>设置 PersonInfo.set_PhotoImg(Byte[] value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.QqGet">
+            <summary>设置 PersonInfo.get_Qq() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.QqSetString">
+            <summary>设置 PersonInfo.set_Qq(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.SexGet">
+            <summary>设置 PersonInfo.get_Sex() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.SexSetSex">
+            <summary>设置 PersonInfo.set_Sex(Sex value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.TelGet">
+            <summary>设置 PersonInfo.get_Tel() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.TelSetString">
+            <summary>设置 PersonInfo.set_Tel(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.Validate">
+            <summary>设置 PersonInfo.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimPersonInfo.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.AddressGet">
+            <summary>设置 PersonInfo.get_Address() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.AddressSetString">
+            <summary>设置 PersonInfo.set_Address(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.BirthdayGet">
+            <summary>设置 PersonInfo.get_Birthday() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.BirthdaySetDateTime">
+            <summary>设置 PersonInfo.set_Birthday(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.ContentGet">
+            <summary>设置 PersonInfo.get_Content() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.ContentSetString">
+            <summary>设置 PersonInfo.set_Content(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.EducationGet">
+            <summary>设置 PersonInfo.get_Education() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.EducationSetEducation">
+            <summary>设置 PersonInfo.set_Education(Education value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.EmailGet">
+            <summary>设置 PersonInfo.get_Email() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.EmailSetString">
+            <summary>设置 PersonInfo.set_Email(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.GraduateCollegeGet">
+            <summary>设置 PersonInfo.get_GraduateCollege() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.GraduateCollegeSetString">
+            <summary>设置 PersonInfo.set_GraduateCollege(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.GraduateSpecialtyGet">
+            <summary>设置 PersonInfo.get_GraduateSpecialty() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.GraduateSpecialtySetString">
+            <summary>设置 PersonInfo.set_GraduateSpecialty(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.MobileGet">
+            <summary>设置 PersonInfo.get_Mobile() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.MobileSetString">
+            <summary>设置 PersonInfo.set_Mobile(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.MsnGet">
+            <summary>设置 PersonInfo.get_Msn() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.MsnSetString">
+            <summary>设置 PersonInfo.set_Msn(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.NNameGet">
+            <summary>设置 PersonInfo.get_NName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.NNameSetString">
+            <summary>设置 PersonInfo.set_NName(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.NationalNameGet">
+            <summary>设置 PersonInfo.get_NationalName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.NationalNameSetString">
+            <summary>设置 PersonInfo.set_NationalName(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.NativePlaceGet">
+            <summary>设置 PersonInfo.get_NativePlace() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.NativePlaceSetString">
+            <summary>设置 PersonInfo.set_NativePlace(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.PhotoImgGet">
+            <summary>设置 PersonInfo.get_PhotoImg() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.PhotoImgSetByteArray">
+            <summary>设置 PersonInfo.set_PhotoImg(Byte[] value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.QqGet">
+            <summary>设置 PersonInfo.get_Qq() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.QqSetString">
+            <summary>设置 PersonInfo.set_Qq(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.SexGet">
+            <summary>设置 PersonInfo.get_Sex() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.SexSetSex">
+            <summary>设置 PersonInfo.set_Sex(Sex value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.TelGet">
+            <summary>设置 PersonInfo.get_Tel() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.TelSetString">
+            <summary>设置 PersonInfo.set_Tel(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPersonInfo.AllInstances.Validate">
+            <summary>设置 PersonInfo.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimPosition">
+            <summary>ERPS.Models.Position 的填充码类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimPosition.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimPosition.#ctor(ERPS.Models.Position)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimPosition.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimPosition.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimPosition.Bind(Infrastructure.IAggregateRoot)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.Constructor">
+            <summary>设置 Position.Position() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.ControlPowerGet">
+            <summary>设置 Position.get_ControlPower() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.ControlPowerSetString">
+            <summary>设置 Position.set_ControlPower(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.DepartmentGet">
+            <summary>设置 Position.get_Department() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.DepartmentSetDepartment">
+            <summary>设置 Position.set_Department(Department value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.IdGet">
+            <summary>设置 Position.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.IdSetInt32">
+            <summary>设置 Position.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.NameGet">
+            <summary>设置 Position.get_Name() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.NameSetString">
+            <summary>设置 Position.set_Name(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.PagePowerGet">
+            <summary>设置 Position.get_PagePower() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.PagePowerSetString">
+            <summary>设置 Position.set_PagePower(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.UpdateDateGet">
+            <summary>设置 Position.get_UpdateDate() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.UpdateDateSetDateTime">
+            <summary>设置 Position.set_UpdateDate(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.UsersGet">
+            <summary>设置 Position.get_Users() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.UsersSetIListOfSUser">
+            <summary>设置 Position.set_Users(IList`1&lt;SUser&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.Validate">
+            <summary>设置 Position.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimPosition.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.ControlPowerGet">
+            <summary>设置 Position.get_ControlPower() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.ControlPowerSetString">
+            <summary>设置 Position.set_ControlPower(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.DepartmentGet">
+            <summary>设置 Position.get_Department() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.DepartmentSetDepartment">
+            <summary>设置 Position.set_Department(Department value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.IdGet">
+            <summary>设置 Position.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.IdSetInt32">
+            <summary>设置 Position.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.NameGet">
+            <summary>设置 Position.get_Name() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.NameSetString">
+            <summary>设置 Position.set_Name(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.PagePowerGet">
+            <summary>设置 Position.get_PagePower() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.PagePowerSetString">
+            <summary>设置 Position.set_PagePower(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.UpdateDateGet">
+            <summary>设置 Position.get_UpdateDate() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.UpdateDateSetDateTime">
+            <summary>设置 Position.set_UpdateDate(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.UsersGet">
+            <summary>设置 Position.get_Users() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.UsersSetIListOfSUser">
+            <summary>设置 Position.set_Users(IList`1&lt;SUser&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimPosition.AllInstances.Validate">
+            <summary>设置 Position.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimSUser">
+            <summary>ERPS.Models.SUser 的填充码类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimSUser.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimSUser.#ctor(ERPS.Models.SUser)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimSUser.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimSUser.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimSUser.Bind(Infrastructure.IAggregateRoot)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.Constructor">
+            <summary>设置 SUser.SUser() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.CreateTimeGet">
+            <summary>设置 SUser.get_CreateTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.CreateTimeSetDateTime">
+            <summary>设置 SUser.set_CreateTime(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.IdGet">
+            <summary>设置 SUser.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.IdSetInt32">
+            <summary>设置 SUser.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.IsEnableGet">
+            <summary>设置 SUser.get_IsEnable() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.IsEnableSetBoolean">
+            <summary>设置 SUser.set_IsEnable(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.IsMultiUserGet">
+            <summary>设置 SUser.get_IsMultiUser() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.IsMultiUserSetBoolean">
+            <summary>设置 SUser.set_IsMultiUser(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.IsWorkGet">
+            <summary>设置 SUser.get_IsWork() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.IsWorkSetBoolean">
+            <summary>设置 SUser.set_IsWork(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.LoginCountGet">
+            <summary>设置 SUser.get_LoginCount() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.LoginCountSetInt32">
+            <summary>设置 SUser.set_LoginCount(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.LoginIpGet">
+            <summary>设置 SUser.get_LoginIp() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.LoginIpSetString">
+            <summary>设置 SUser.set_LoginIp(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.LoginNameGet">
+            <summary>设置 SUser.get_LoginName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.LoginNameSetString">
+            <summary>设置 SUser.set_LoginName(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.LoginPassGet">
+            <summary>设置 SUser.get_LoginPass() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.LoginPassSetString">
+            <summary>设置 SUser.set_LoginPass(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.LoginTimeGet">
+            <summary>设置 SUser.get_LoginTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.LoginTimeSetDateTime">
+            <summary>设置 SUser.set_LoginTime(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.OnLineInfoGet">
+            <summary>设置 SUser.get_OnLineInfo() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.OnLineInfoSetOnLineInfo">
+            <summary>设置 SUser.set_OnLineInfo(OnLineInfo value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.PersonInfoGet">
+            <summary>设置 SUser.get_PersonInfo() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.PersonInfoSetPersonInfo">
+            <summary>设置 SUser.set_PersonInfo(PersonInfo value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.PositionGet">
+            <summary>设置 SUser.get_Position() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.PositionSetPosition">
+            <summary>设置 SUser.set_Position(Position value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.UpdateTimeGet">
+            <summary>设置 SUser.get_UpdateTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.UpdateTimeSetDateTime">
+            <summary>设置 SUser.set_UpdateTime(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.UserLogsGet">
+            <summary>设置 SUser.get_UserLogs() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.UserLogsSetIListOfUserLog">
+            <summary>设置 SUser.set_UserLogs(IList`1&lt;UserLog&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.Validate">
+            <summary>设置 SUser.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimSUser.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.CreateTimeGet">
+            <summary>设置 SUser.get_CreateTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.CreateTimeSetDateTime">
+            <summary>设置 SUser.set_CreateTime(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.IdGet">
+            <summary>设置 SUser.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.IdSetInt32">
+            <summary>设置 SUser.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.IsEnableGet">
+            <summary>设置 SUser.get_IsEnable() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.IsEnableSetBoolean">
+            <summary>设置 SUser.set_IsEnable(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.IsMultiUserGet">
+            <summary>设置 SUser.get_IsMultiUser() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.IsMultiUserSetBoolean">
+            <summary>设置 SUser.set_IsMultiUser(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.IsWorkGet">
+            <summary>设置 SUser.get_IsWork() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.IsWorkSetBoolean">
+            <summary>设置 SUser.set_IsWork(Boolean value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.LoginCountGet">
+            <summary>设置 SUser.get_LoginCount() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.LoginCountSetInt32">
+            <summary>设置 SUser.set_LoginCount(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.LoginIpGet">
+            <summary>设置 SUser.get_LoginIp() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.LoginIpSetString">
+            <summary>设置 SUser.set_LoginIp(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.LoginNameGet">
+            <summary>设置 SUser.get_LoginName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.LoginNameSetString">
+            <summary>设置 SUser.set_LoginName(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.LoginPassGet">
+            <summary>设置 SUser.get_LoginPass() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.LoginPassSetString">
+            <summary>设置 SUser.set_LoginPass(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.LoginTimeGet">
+            <summary>设置 SUser.get_LoginTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.LoginTimeSetDateTime">
+            <summary>设置 SUser.set_LoginTime(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.OnLineInfoGet">
+            <summary>设置 SUser.get_OnLineInfo() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.OnLineInfoSetOnLineInfo">
+            <summary>设置 SUser.set_OnLineInfo(OnLineInfo value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.PersonInfoGet">
+            <summary>设置 SUser.get_PersonInfo() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.PersonInfoSetPersonInfo">
+            <summary>设置 SUser.set_PersonInfo(PersonInfo value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.PositionGet">
+            <summary>设置 SUser.get_Position() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.PositionSetPosition">
+            <summary>设置 SUser.set_Position(Position value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.UpdateTimeGet">
+            <summary>设置 SUser.get_UpdateTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.UpdateTimeSetDateTime">
+            <summary>设置 SUser.set_UpdateTime(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.UserLogsGet">
+            <summary>设置 SUser.get_UserLogs() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.UserLogsSetIListOfUserLog">
+            <summary>设置 SUser.set_UserLogs(IList`1&lt;UserLog&gt; value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimSUser.AllInstances.Validate">
+            <summary>设置 SUser.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimUserLog">
+            <summary>ERPS.Models.UserLog 的填充码类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimUserLog.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimUserLog.#ctor(ERPS.Models.UserLog)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimUserLog.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimUserLog.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimUserLog.Bind(Infrastructure.IAggregateRoot)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AddDateGet">
+            <summary>设置 UserLog.get_AddDate() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AddDateSetDateTime">
+            <summary>设置 UserLog.set_AddDate(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.Constructor">
+            <summary>设置 UserLog.UserLog() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.IdGet">
+            <summary>设置 UserLog.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.IdSetInt32">
+            <summary>设置 UserLog.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.IpGet">
+            <summary>设置 UserLog.get_Ip() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.IpSetString">
+            <summary>设置 UserLog.set_Ip(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.MenuInfoGet">
+            <summary>设置 UserLog.get_MenuInfo() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.MenuInfoSetMenuInfo">
+            <summary>设置 UserLog.set_MenuInfo(MenuInfo value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.NotesGet">
+            <summary>设置 UserLog.get_Notes() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.NotesSetString">
+            <summary>设置 UserLog.set_Notes(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.UserGet">
+            <summary>设置 UserLog.get_User() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.UserSetSUser">
+            <summary>设置 UserLog.set_User(SUser value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.Validate">
+            <summary>设置 UserLog.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimUserLog.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.AddDateGet">
+            <summary>设置 UserLog.get_AddDate() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.AddDateSetDateTime">
+            <summary>设置 UserLog.set_AddDate(DateTime value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.IdGet">
+            <summary>设置 UserLog.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.IdSetInt32">
+            <summary>设置 UserLog.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.IpGet">
+            <summary>设置 UserLog.get_Ip() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.IpSetString">
+            <summary>设置 UserLog.set_Ip(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.MenuInfoGet">
+            <summary>设置 UserLog.get_MenuInfo() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.MenuInfoSetMenuInfo">
+            <summary>设置 UserLog.set_MenuInfo(MenuInfo value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.NotesGet">
+            <summary>设置 UserLog.get_Notes() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.NotesSetString">
+            <summary>设置 UserLog.set_Notes(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.UserGet">
+            <summary>设置 UserLog.get_User() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.UserSetSUser">
+            <summary>设置 UserLog.set_User(SUser value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimUserLog.AllInstances.Validate">
+            <summary>设置 UserLog.Validate() 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimWebConfig">
+            <summary>ERPS.Models.WebConfig 的填充码类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimWebConfig.#ctor">
+            <summary>初始化新的填充码实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimWebConfig.#ctor(ERPS.Models.WebConfig)">
+            <summary>初始化给定实例的新填充码</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimWebConfig.BehaveAsCurrent">
+            <summary>为已填充的类型的所有方法分配“Current”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimWebConfig.BehaveAsNotImplemented">
+            <summary>为已填充的类型的所有方法分配“NotImplemented”行为</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.ShimWebConfig.Bind(Infrastructure.IAggregateRoot)">
+            <summary>将接口的成员绑定到此填充码。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.Behavior">
+            <summary>为已填充的类型的所有方法分配行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.Constructor">
+            <summary>设置 WebConfig.WebConfig() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.EmailDomainGet">
+            <summary>设置 WebConfig.get_EmailDomain() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.EmailDomainSetString">
+            <summary>设置 WebConfig.set_EmailDomain(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.EmailPassWordGet">
+            <summary>设置 WebConfig.get_EmailPassWord() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.EmailPassWordSetString">
+            <summary>设置 WebConfig.set_EmailPassWord(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.EmailSmtpGet">
+            <summary>设置 WebConfig.get_EmailSmtp() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.EmailSmtpSetString">
+            <summary>设置 WebConfig.set_EmailSmtp(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.EmailUserNameGet">
+            <summary>设置 WebConfig.get_EmailUserName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.EmailUserNameSetString">
+            <summary>设置 WebConfig.set_EmailUserName(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.IdGet">
+            <summary>设置 WebConfig.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.IdSetInt32">
+            <summary>设置 WebConfig.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.LoginLogReserveTimeGet">
+            <summary>设置 WebConfig.get_LoginLogReserveTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.LoginLogReserveTimeSetInt32">
+            <summary>设置 WebConfig.set_LoginLogReserveTime(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.UseLogReserveTimeGet">
+            <summary>设置 WebConfig.get_UseLogReserveTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.UseLogReserveTimeSetInt32">
+            <summary>设置 WebConfig.set_UseLogReserveTime(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.Validate">
+            <summary>设置 WebConfig.Validate() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.WebDomainGet">
+            <summary>设置 WebConfig.get_WebDomain() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.WebDomainSetString">
+            <summary>设置 WebConfig.set_WebDomain(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.WebEmailGet">
+            <summary>设置 WebConfig.get_WebEmail() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.WebEmailSetString">
+            <summary>设置 WebConfig.set_WebEmail(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.WebNameGet">
+            <summary>设置 WebConfig.get_WebName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.WebNameSetString">
+            <summary>设置 WebConfig.set_WebName(String value) 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.ShimWebConfig.AllInstances">
+            <summary>为所有实例成员定义填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.EmailDomainGet">
+            <summary>设置 WebConfig.get_EmailDomain() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.EmailDomainSetString">
+            <summary>设置 WebConfig.set_EmailDomain(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.EmailPassWordGet">
+            <summary>设置 WebConfig.get_EmailPassWord() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.EmailPassWordSetString">
+            <summary>设置 WebConfig.set_EmailPassWord(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.EmailSmtpGet">
+            <summary>设置 WebConfig.get_EmailSmtp() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.EmailSmtpSetString">
+            <summary>设置 WebConfig.set_EmailSmtp(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.EmailUserNameGet">
+            <summary>设置 WebConfig.get_EmailUserName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.EmailUserNameSetString">
+            <summary>设置 WebConfig.set_EmailUserName(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.IdGet">
+            <summary>设置 WebConfig.get_Id() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.IdSetInt32">
+            <summary>设置 WebConfig.set_Id(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.LoginLogReserveTimeGet">
+            <summary>设置 WebConfig.get_LoginLogReserveTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.LoginLogReserveTimeSetInt32">
+            <summary>设置 WebConfig.set_LoginLogReserveTime(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.UseLogReserveTimeGet">
+            <summary>设置 WebConfig.get_UseLogReserveTime() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.UseLogReserveTimeSetInt32">
+            <summary>设置 WebConfig.set_UseLogReserveTime(Int32 value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.Validate">
+            <summary>设置 WebConfig.Validate() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.WebDomainGet">
+            <summary>设置 WebConfig.get_WebDomain() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.WebDomainSetString">
+            <summary>设置 WebConfig.set_WebDomain(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.WebEmailGet">
+            <summary>设置 WebConfig.get_WebEmail() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.WebEmailSetString">
+            <summary>设置 WebConfig.set_WebEmail(String value) 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.WebNameGet">
+            <summary>设置 WebConfig.get_WebName() 的 填充码</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.ShimWebConfig.AllInstances.WebNameSetString">
+            <summary>设置 WebConfig.set_WebName(String value) 的 填充码</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubActionPermission">
+            <summary>ERPS.Models.ActionPermission 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubActionPermission.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubActionPermission.AttachBackingFieldToMenuInfo">
+            <summary>附加委托以将 StubActionPermission.MenuInfo 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubActionPermission.Equals(System.Object)">
+            <summary>设置 EntityBase.Equals(Object obj) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubActionPermission.EqualsObject">
+            <summary>设置 EntityBase.Equals(Object obj) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubActionPermission.InitializeStub">
+            <summary>初始化 type StubActionPermission 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubActionPermission.MenuInfoGet">
+            <summary>设置 ActionPermission.get_MenuInfo() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubActionPermission.MenuInfoSetMenuInfo">
+            <summary>设置 ActionPermission.set_MenuInfo(MenuInfo value) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubActionPermission.Validate">
+            <summary>设置 ActionPermission.Validate() 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubActionPermission.Validate01">
+            <summary>设置 ActionPermission.Validate() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubActionPermission.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubActionPermission.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubActionPermission.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubActionPermission.MenuInfo">
+            <summary>设置 ActionPermission.get_MenuInfo() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubDepartment">
+            <summary>ERPS.Models.Department 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubDepartment.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubDepartment.AttachBackingFieldToPositions">
+            <summary>附加委托以将 StubDepartment.Positions 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubDepartment.Equals(System.Object)">
+            <summary>设置 EntityBase.Equals(Object obj) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubDepartment.EqualsObject">
+            <summary>设置 EntityBase.Equals(Object obj) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubDepartment.InitializeStub">
+            <summary>初始化 type StubDepartment 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubDepartment.PositionsGet">
+            <summary>设置 Department.get_Positions() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubDepartment.PositionsSetIListOfPosition">
+            <summary>设置 Department.set_Positions(IList`1&lt;Position&gt; value) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubDepartment.Validate">
+            <summary>设置 Department.Validate() 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubDepartment.Validate01">
+            <summary>设置 Department.Validate() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubDepartment.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubDepartment.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubDepartment.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubDepartment.Positions">
+            <summary>设置 Department.get_Positions() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubErrorLog">
+            <summary>ERPS.Models.ErrorLog 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubErrorLog.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubErrorLog.Equals(System.Object)">
+            <summary>设置 EntityBase.Equals(Object obj) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubErrorLog.EqualsObject">
+            <summary>设置 EntityBase.Equals(Object obj) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubErrorLog.InitializeStub">
+            <summary>初始化 type StubErrorLog 的新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubErrorLog.Validate">
+            <summary>设置 ErrorLog.Validate() 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubErrorLog.Validate01">
+            <summary>设置 ErrorLog.Validate() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubErrorLog.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubErrorLog.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubErrorLog.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubIActionPermissionRepository">
+            <summary>ERPS.Models.IActionPermissionRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIActionPermissionRepository.#ctor">
+            <summary>初始化 type StubIActionPermissionRepository 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIActionPermissionRepository.AddActionPermission">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIActionPermissionRepository.AttachBackingFieldToUnitOfWork">
+            <summary>附加委托以将 StubIActionPermissionRepository.UnitOfWork 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIActionPermissionRepository.GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIActionPermissionRepository.GetAllWithNavigationalPropertyStringArray">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIActionPermissionRepository.GetByKeyInt32">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIActionPermissionRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#ActionPermission@System#Int32}#GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIActionPermissionRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#ActionPermission@System#Int32}#GetByKey(System.Int32)">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIActionPermissionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ActionPermission@System#Int32}#Add(ERPS.Models.ActionPermission)">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIActionPermissionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ActionPermission@System#Int32}#GetAllWithNavigationalProperty(System.String[])">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIActionPermissionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ActionPermission@System#Int32}#RemoveCascaded(ERPS.Models.ActionPermission)">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIActionPermissionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ActionPermission@System#Int32}#RemoveCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIActionPermissionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ActionPermission@System#Int32}#RemoveNonCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIActionPermissionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ActionPermission@System#Int32}#RemoveNonCascaded(ERPS.Models.ActionPermission)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIActionPermissionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ActionPermission@System#Int32}#Save(ERPS.Models.ActionPermission)">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIActionPermissionRepository.RemoveCascadedActionPermission">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIActionPermissionRepository.RemoveCascadedInt32">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIActionPermissionRepository.RemoveNonCascadedActionPermission">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIActionPermissionRepository.RemoveNonCascadedInt32">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIActionPermissionRepository.SaveActionPermission">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIActionPermissionRepository.UnitOfWorkGet">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIActionPermissionRepository.UnitOfWorkSetIUnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.set_UnitOfWork(IUnitOfWork value) 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubIActionPermissionRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#ActionPermission@System#Int32}#UnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubIDepartmentRepository">
+            <summary>ERPS.Models.IDepartmentRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIDepartmentRepository.#ctor">
+            <summary>初始化 type StubIDepartmentRepository 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIDepartmentRepository.AddDepartment">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIDepartmentRepository.AttachBackingFieldToUnitOfWork">
+            <summary>附加委托以将 StubIDepartmentRepository.UnitOfWork 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIDepartmentRepository.GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIDepartmentRepository.GetAllWithNavigationalPropertyStringArray">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIDepartmentRepository.GetByKeyInt32">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIDepartmentRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#Department@System#Int32}#GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIDepartmentRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#Department@System#Int32}#GetByKey(System.Int32)">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIDepartmentRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Department@System#Int32}#Add(ERPS.Models.Department)">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIDepartmentRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Department@System#Int32}#GetAllWithNavigationalProperty(System.String[])">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIDepartmentRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Department@System#Int32}#RemoveCascaded(ERPS.Models.Department)">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIDepartmentRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Department@System#Int32}#RemoveCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIDepartmentRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Department@System#Int32}#RemoveNonCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIDepartmentRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Department@System#Int32}#RemoveNonCascaded(ERPS.Models.Department)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIDepartmentRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Department@System#Int32}#Save(ERPS.Models.Department)">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIDepartmentRepository.RemoveCascadedDepartment">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIDepartmentRepository.RemoveCascadedInt32">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIDepartmentRepository.RemoveNonCascadedDepartment">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIDepartmentRepository.RemoveNonCascadedInt32">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIDepartmentRepository.SaveDepartment">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIDepartmentRepository.UnitOfWorkGet">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIDepartmentRepository.UnitOfWorkSetIUnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.set_UnitOfWork(IUnitOfWork value) 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubIDepartmentRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#Department@System#Int32}#UnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubIErrorLogRepository">
+            <summary>ERPS.Models.IErrorLogRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIErrorLogRepository.#ctor">
+            <summary>初始化 type StubIErrorLogRepository 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIErrorLogRepository.AddErrorLog">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIErrorLogRepository.AttachBackingFieldToUnitOfWork">
+            <summary>附加委托以将 StubIErrorLogRepository.UnitOfWork 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIErrorLogRepository.GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIErrorLogRepository.GetAllWithNavigationalPropertyStringArray">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIErrorLogRepository.GetByKeyInt32">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIErrorLogRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#ErrorLog@System#Int32}#GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIErrorLogRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#ErrorLog@System#Int32}#GetByKey(System.Int32)">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIErrorLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ErrorLog@System#Int32}#Add(ERPS.Models.ErrorLog)">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIErrorLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ErrorLog@System#Int32}#GetAllWithNavigationalProperty(System.String[])">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIErrorLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ErrorLog@System#Int32}#RemoveCascaded(ERPS.Models.ErrorLog)">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIErrorLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ErrorLog@System#Int32}#RemoveCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIErrorLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ErrorLog@System#Int32}#RemoveNonCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIErrorLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ErrorLog@System#Int32}#RemoveNonCascaded(ERPS.Models.ErrorLog)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIErrorLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#ErrorLog@System#Int32}#Save(ERPS.Models.ErrorLog)">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIErrorLogRepository.RemoveCascadedErrorLog">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIErrorLogRepository.RemoveCascadedInt32">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIErrorLogRepository.RemoveNonCascadedErrorLog">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIErrorLogRepository.RemoveNonCascadedInt32">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIErrorLogRepository.SaveErrorLog">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIErrorLogRepository.UnitOfWorkGet">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIErrorLogRepository.UnitOfWorkSetIUnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.set_UnitOfWork(IUnitOfWork value) 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubIErrorLogRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#ErrorLog@System#Int32}#UnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubIMenuInfoRepository">
+            <summary>ERPS.Models.IMenuInfoRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIMenuInfoRepository.#ctor">
+            <summary>初始化 type StubIMenuInfoRepository 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIMenuInfoRepository.AddMenuInfo">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIMenuInfoRepository.AttachBackingFieldToUnitOfWork">
+            <summary>附加委托以将 StubIMenuInfoRepository.UnitOfWork 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIMenuInfoRepository.GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIMenuInfoRepository.GetAllWithNavigationalPropertyStringArray">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIMenuInfoRepository.GetByKeyInt32">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIMenuInfoRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#MenuInfo@System#Int32}#GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIMenuInfoRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#MenuInfo@System#Int32}#GetByKey(System.Int32)">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIMenuInfoRepository.erpsi::Infrastructure#IRepository{ERPS#Models#MenuInfo@System#Int32}#Add(ERPS.Models.MenuInfo)">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIMenuInfoRepository.erpsi::Infrastructure#IRepository{ERPS#Models#MenuInfo@System#Int32}#GetAllWithNavigationalProperty(System.String[])">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIMenuInfoRepository.erpsi::Infrastructure#IRepository{ERPS#Models#MenuInfo@System#Int32}#RemoveCascaded(ERPS.Models.MenuInfo)">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIMenuInfoRepository.erpsi::Infrastructure#IRepository{ERPS#Models#MenuInfo@System#Int32}#RemoveCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIMenuInfoRepository.erpsi::Infrastructure#IRepository{ERPS#Models#MenuInfo@System#Int32}#RemoveNonCascaded(ERPS.Models.MenuInfo)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIMenuInfoRepository.erpsi::Infrastructure#IRepository{ERPS#Models#MenuInfo@System#Int32}#RemoveNonCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIMenuInfoRepository.erpsi::Infrastructure#IRepository{ERPS#Models#MenuInfo@System#Int32}#Save(ERPS.Models.MenuInfo)">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIMenuInfoRepository.RemoveCascadedInt32">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIMenuInfoRepository.RemoveCascadedMenuInfo">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIMenuInfoRepository.RemoveNonCascadedInt32">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIMenuInfoRepository.RemoveNonCascadedMenuInfo">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIMenuInfoRepository.SaveMenuInfo">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIMenuInfoRepository.UnitOfWorkGet">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIMenuInfoRepository.UnitOfWorkSetIUnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.set_UnitOfWork(IUnitOfWork value) 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubIMenuInfoRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#MenuInfo@System#Int32}#UnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubIPositionRepository">
+            <summary>ERPS.Models.IPositionRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIPositionRepository.#ctor">
+            <summary>初始化 type StubIPositionRepository 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIPositionRepository.AddPosition">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIPositionRepository.AttachBackingFieldToUnitOfWork">
+            <summary>附加委托以将 StubIPositionRepository.UnitOfWork 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIPositionRepository.GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIPositionRepository.GetAllWithNavigationalPropertyStringArray">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIPositionRepository.GetByKeyInt32">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIPositionRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#Position@System#Int32}#GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIPositionRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#Position@System#Int32}#GetByKey(System.Int32)">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIPositionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Position@System#Int32}#Add(ERPS.Models.Position)">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIPositionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Position@System#Int32}#GetAllWithNavigationalProperty(System.String[])">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIPositionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Position@System#Int32}#RemoveCascaded(ERPS.Models.Position)">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIPositionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Position@System#Int32}#RemoveCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIPositionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Position@System#Int32}#RemoveNonCascaded(ERPS.Models.Position)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIPositionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Position@System#Int32}#RemoveNonCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIPositionRepository.erpsi::Infrastructure#IRepository{ERPS#Models#Position@System#Int32}#Save(ERPS.Models.Position)">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIPositionRepository.RemoveCascadedInt32">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIPositionRepository.RemoveCascadedPosition">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIPositionRepository.RemoveNonCascadedInt32">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIPositionRepository.RemoveNonCascadedPosition">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIPositionRepository.SavePosition">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIPositionRepository.UnitOfWorkGet">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIPositionRepository.UnitOfWorkSetIUnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.set_UnitOfWork(IUnitOfWork value) 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubIPositionRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#Position@System#Int32}#UnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubISUserRepository">
+            <summary>ERPS.Models.ISUserRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubISUserRepository.#ctor">
+            <summary>初始化 type StubISUserRepository 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubISUserRepository.AddSUser">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubISUserRepository.AttachBackingFieldToUnitOfWork">
+            <summary>附加委托以将 StubISUserRepository.UnitOfWork 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubISUserRepository.GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubISUserRepository.GetAllWithNavigationalPropertyStringArray">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubISUserRepository.GetByKeyInt32">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubISUserRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#SUser@System#Int32}#GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubISUserRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#SUser@System#Int32}#GetByKey(System.Int32)">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubISUserRepository.erpsi::Infrastructure#IRepository{ERPS#Models#SUser@System#Int32}#Add(ERPS.Models.SUser)">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubISUserRepository.erpsi::Infrastructure#IRepository{ERPS#Models#SUser@System#Int32}#GetAllWithNavigationalProperty(System.String[])">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubISUserRepository.erpsi::Infrastructure#IRepository{ERPS#Models#SUser@System#Int32}#RemoveCascaded(ERPS.Models.SUser)">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubISUserRepository.erpsi::Infrastructure#IRepository{ERPS#Models#SUser@System#Int32}#RemoveCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubISUserRepository.erpsi::Infrastructure#IRepository{ERPS#Models#SUser@System#Int32}#RemoveNonCascaded(ERPS.Models.SUser)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubISUserRepository.erpsi::Infrastructure#IRepository{ERPS#Models#SUser@System#Int32}#RemoveNonCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubISUserRepository.erpsi::Infrastructure#IRepository{ERPS#Models#SUser@System#Int32}#Save(ERPS.Models.SUser)">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubISUserRepository.RemoveCascadedInt32">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubISUserRepository.RemoveCascadedSUser">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubISUserRepository.RemoveNonCascadedInt32">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubISUserRepository.RemoveNonCascadedSUser">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubISUserRepository.SaveSUser">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubISUserRepository.UnitOfWorkGet">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubISUserRepository.UnitOfWorkSetIUnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.set_UnitOfWork(IUnitOfWork value) 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubISUserRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#SUser@System#Int32}#UnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubIUserLogRepository">
+            <summary>ERPS.Models.IUserLogRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIUserLogRepository.#ctor">
+            <summary>初始化 type StubIUserLogRepository 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIUserLogRepository.AddUserLog">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIUserLogRepository.AttachBackingFieldToUnitOfWork">
+            <summary>附加委托以将 StubIUserLogRepository.UnitOfWork 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIUserLogRepository.GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIUserLogRepository.GetAllWithNavigationalPropertyStringArray">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIUserLogRepository.GetByKeyInt32">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIUserLogRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#UserLog@System#Int32}#GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIUserLogRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#UserLog@System#Int32}#GetByKey(System.Int32)">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIUserLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#UserLog@System#Int32}#Add(ERPS.Models.UserLog)">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIUserLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#UserLog@System#Int32}#GetAllWithNavigationalProperty(System.String[])">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIUserLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#UserLog@System#Int32}#RemoveCascaded(ERPS.Models.UserLog)">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIUserLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#UserLog@System#Int32}#RemoveCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIUserLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#UserLog@System#Int32}#RemoveNonCascaded(ERPS.Models.UserLog)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIUserLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#UserLog@System#Int32}#RemoveNonCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIUserLogRepository.erpsi::Infrastructure#IRepository{ERPS#Models#UserLog@System#Int32}#Save(ERPS.Models.UserLog)">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIUserLogRepository.RemoveCascadedInt32">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIUserLogRepository.RemoveCascadedUserLog">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIUserLogRepository.RemoveNonCascadedInt32">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIUserLogRepository.RemoveNonCascadedUserLog">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIUserLogRepository.SaveUserLog">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIUserLogRepository.UnitOfWorkGet">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIUserLogRepository.UnitOfWorkSetIUnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.set_UnitOfWork(IUnitOfWork value) 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubIUserLogRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#UserLog@System#Int32}#UnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubIWebConfigRepository">
+            <summary>ERPS.Models.IWebConfigRepository 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIWebConfigRepository.#ctor">
+            <summary>初始化 type StubIWebConfigRepository 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIWebConfigRepository.AddWebConfig">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIWebConfigRepository.AttachBackingFieldToUnitOfWork">
+            <summary>附加委托以将 StubIWebConfigRepository.UnitOfWork 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIWebConfigRepository.GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIWebConfigRepository.GetAllWithNavigationalPropertyStringArray">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIWebConfigRepository.GetByKeyInt32">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIWebConfigRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#WebConfig@System#Int32}#GetAll">
+            <summary>设置 IReadOnlyRepository`2.GetAll() 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIWebConfigRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#WebConfig@System#Int32}#GetByKey(System.Int32)">
+            <summary>设置 IReadOnlyRepository`2.GetByKey(!1 key) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIWebConfigRepository.erpsi::Infrastructure#IRepository{ERPS#Models#WebConfig@System#Int32}#Add(ERPS.Models.WebConfig)">
+            <summary>设置 IRepository`2.Add(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIWebConfigRepository.erpsi::Infrastructure#IRepository{ERPS#Models#WebConfig@System#Int32}#GetAllWithNavigationalProperty(System.String[])">
+            <summary>设置 IRepository`2.GetAllWithNavigationalProperty(String[] includes) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIWebConfigRepository.erpsi::Infrastructure#IRepository{ERPS#Models#WebConfig@System#Int32}#RemoveCascaded(ERPS.Models.WebConfig)">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIWebConfigRepository.erpsi::Infrastructure#IRepository{ERPS#Models#WebConfig@System#Int32}#RemoveCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIWebConfigRepository.erpsi::Infrastructure#IRepository{ERPS#Models#WebConfig@System#Int32}#RemoveNonCascaded(ERPS.Models.WebConfig)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIWebConfigRepository.erpsi::Infrastructure#IRepository{ERPS#Models#WebConfig@System#Int32}#RemoveNonCascaded(System.Int32)">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 存根</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubIWebConfigRepository.erpsi::Infrastructure#IRepository{ERPS#Models#WebConfig@System#Int32}#Save(ERPS.Models.WebConfig)">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIWebConfigRepository.RemoveCascadedInt32">
+            <summary>设置 IRepository`2.RemoveCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIWebConfigRepository.RemoveCascadedWebConfig">
+            <summary>设置 IRepository`2.RemoveCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIWebConfigRepository.RemoveNonCascadedInt32">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!1 t) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIWebConfigRepository.RemoveNonCascadedWebConfig">
+            <summary>设置 IRepository`2.RemoveNonCascaded(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIWebConfigRepository.SaveWebConfig">
+            <summary>设置 IRepository`2.Save(!0 entity) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIWebConfigRepository.UnitOfWorkGet">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubIWebConfigRepository.UnitOfWorkSetIUnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.set_UnitOfWork(IUnitOfWork value) 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubIWebConfigRepository.erpsi::Infrastructure#IReadOnlyRepository{ERPS#Models#WebConfig@System#Int32}#UnitOfWork">
+            <summary>设置 IReadOnlyRepository`2.get_UnitOfWork() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubMenuInfo">
+            <summary>ERPS.Models.MenuInfo 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubMenuInfo.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubMenuInfo.ActionPermissionsGet">
+            <summary>设置 MenuInfo.get_ActionPermissions() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubMenuInfo.ActionPermissionsSetIListOfActionPermission">
+            <summary>设置 MenuInfo.set_ActionPermissions(IList`1&lt;ActionPermission&gt; value) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubMenuInfo.AttachBackingFieldToActionPermissions">
+            <summary>附加委托以将 StubMenuInfo.ActionPermissions 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubMenuInfo.AttachBackingFieldToMenuInfos">
+            <summary>附加委托以将 StubMenuInfo.MenuInfos 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubMenuInfo.AttachBackingFieldToParent">
+            <summary>附加委托以将 StubMenuInfo.Parent 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubMenuInfo.AttachBackingFieldToUserLogs">
+            <summary>附加委托以将 StubMenuInfo.UserLogs 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubMenuInfo.Equals(System.Object)">
+            <summary>设置 EntityBase.Equals(Object obj) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubMenuInfo.EqualsObject">
+            <summary>设置 EntityBase.Equals(Object obj) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubMenuInfo.InitializeStub">
+            <summary>初始化 type StubMenuInfo 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubMenuInfo.MenuInfosGet">
+            <summary>设置 MenuInfo.get_MenuInfos() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubMenuInfo.MenuInfosSetIListOfMenuInfo">
+            <summary>设置 MenuInfo.set_MenuInfos(IList`1&lt;MenuInfo&gt; value) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubMenuInfo.ParentGet">
+            <summary>设置 MenuInfo.get_Parent() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubMenuInfo.ParentSetMenuInfo">
+            <summary>设置 MenuInfo.set_Parent(MenuInfo value) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubMenuInfo.UserLogsGet">
+            <summary>设置 MenuInfo.get_UserLogs() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubMenuInfo.UserLogsSetIListOfUserLog">
+            <summary>设置 MenuInfo.set_UserLogs(IList`1&lt;UserLog&gt; value) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubMenuInfo.Validate">
+            <summary>设置 MenuInfo.Validate() 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubMenuInfo.Validate01">
+            <summary>设置 MenuInfo.Validate() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubMenuInfo.ActionPermissions">
+            <summary>设置 MenuInfo.get_ActionPermissions() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubMenuInfo.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubMenuInfo.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubMenuInfo.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubMenuInfo.MenuInfos">
+            <summary>设置 MenuInfo.get_MenuInfos() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubMenuInfo.Parent">
+            <summary>设置 MenuInfo.get_Parent() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubMenuInfo.UserLogs">
+            <summary>设置 MenuInfo.get_UserLogs() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubOnLineInfo">
+            <summary>ERPS.Models.OnLineInfo 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubOnLineInfo.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubOnLineInfo.Equals(System.Object)">
+            <summary>设置 EntityBase.Equals(Object obj) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubOnLineInfo.EqualsObject">
+            <summary>设置 EntityBase.Equals(Object obj) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubOnLineInfo.InitializeStub">
+            <summary>初始化 type StubOnLineInfo 的新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubOnLineInfo.Validate">
+            <summary>设置 OnLineInfo.Validate() 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubOnLineInfo.Validate01">
+            <summary>设置 OnLineInfo.Validate() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubOnLineInfo.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubOnLineInfo.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubOnLineInfo.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubPersonInfo">
+            <summary>ERPS.Models.PersonInfo 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubPersonInfo.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubPersonInfo.Equals(System.Object)">
+            <summary>设置 EntityBase.Equals(Object obj) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubPersonInfo.EqualsObject">
+            <summary>设置 EntityBase.Equals(Object obj) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubPersonInfo.InitializeStub">
+            <summary>初始化 type StubPersonInfo 的新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubPersonInfo.Validate">
+            <summary>设置 PersonInfo.Validate() 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubPersonInfo.Validate01">
+            <summary>设置 PersonInfo.Validate() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubPersonInfo.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubPersonInfo.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubPersonInfo.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubPosition">
+            <summary>ERPS.Models.Position 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubPosition.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubPosition.AttachBackingFieldToDepartment">
+            <summary>附加委托以将 StubPosition.Department 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubPosition.AttachBackingFieldToUsers">
+            <summary>附加委托以将 StubPosition.Users 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubPosition.DepartmentGet">
+            <summary>设置 Position.get_Department() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubPosition.DepartmentSetDepartment">
+            <summary>设置 Position.set_Department(Department value) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubPosition.Equals(System.Object)">
+            <summary>设置 EntityBase.Equals(Object obj) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubPosition.EqualsObject">
+            <summary>设置 EntityBase.Equals(Object obj) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubPosition.InitializeStub">
+            <summary>初始化 type StubPosition 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubPosition.UsersGet">
+            <summary>设置 Position.get_Users() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubPosition.UsersSetIListOfSUser">
+            <summary>设置 Position.set_Users(IList`1&lt;SUser&gt; value) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubPosition.Validate">
+            <summary>设置 Position.Validate() 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubPosition.Validate01">
+            <summary>设置 Position.Validate() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubPosition.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubPosition.Department">
+            <summary>设置 Position.get_Department() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubPosition.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubPosition.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubPosition.Users">
+            <summary>设置 Position.get_Users() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubSUser">
+            <summary>ERPS.Models.SUser 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubSUser.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubSUser.AttachBackingFieldToPosition">
+            <summary>附加委托以将 StubSUser.Position 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubSUser.AttachBackingFieldToUserLogs">
+            <summary>附加委托以将 StubSUser.UserLogs 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubSUser.Equals(System.Object)">
+            <summary>设置 EntityBase.Equals(Object obj) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubSUser.EqualsObject">
+            <summary>设置 EntityBase.Equals(Object obj) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubSUser.InitializeStub">
+            <summary>初始化 type StubSUser 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubSUser.PositionGet">
+            <summary>设置 SUser.get_Position() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubSUser.PositionSetPosition">
+            <summary>设置 SUser.set_Position(Position value) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubSUser.UserLogsGet">
+            <summary>设置 SUser.get_UserLogs() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubSUser.UserLogsSetIListOfUserLog">
+            <summary>设置 SUser.set_UserLogs(IList`1&lt;UserLog&gt; value) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubSUser.Validate">
+            <summary>设置 SUser.Validate() 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubSUser.Validate01">
+            <summary>设置 SUser.Validate() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubSUser.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubSUser.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubSUser.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubSUser.Position">
+            <summary>设置 SUser.get_Position() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubSUser.UserLogs">
+            <summary>设置 SUser.get_UserLogs() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubUserLog">
+            <summary>ERPS.Models.UserLog 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubUserLog.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubUserLog.AttachBackingFieldToMenuInfo">
+            <summary>附加委托以将 StubUserLog.MenuInfo 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubUserLog.AttachBackingFieldToUser">
+            <summary>附加委托以将 StubUserLog.User 作为具有支持字段的属性进行模拟。</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubUserLog.Equals(System.Object)">
+            <summary>设置 EntityBase.Equals(Object obj) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubUserLog.EqualsObject">
+            <summary>设置 EntityBase.Equals(Object obj) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubUserLog.InitializeStub">
+            <summary>初始化 type StubUserLog 的新实例</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubUserLog.MenuInfoGet">
+            <summary>设置 UserLog.get_MenuInfo() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubUserLog.MenuInfoSetMenuInfo">
+            <summary>设置 UserLog.set_MenuInfo(MenuInfo value) 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubUserLog.UserGet">
+            <summary>设置 UserLog.get_User() 的 stub</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubUserLog.UserSetSUser">
+            <summary>设置 UserLog.set_User(SUser value) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubUserLog.Validate">
+            <summary>设置 UserLog.Validate() 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubUserLog.Validate01">
+            <summary>设置 UserLog.Validate() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubUserLog.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubUserLog.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubUserLog.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubUserLog.MenuInfo">
+            <summary>设置 UserLog.get_MenuInfo() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubUserLog.User">
+            <summary>设置 UserLog.get_User() 的 stub</summary>
+        </member>
+        <member name="T:ERPS.Models.Fakes.StubWebConfig">
+            <summary>ERPS.Models.WebConfig 的存根类型</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubWebConfig.#ctor">
+            <summary>初始化新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubWebConfig.Equals(System.Object)">
+            <summary>设置 EntityBase.Equals(Object obj) 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubWebConfig.EqualsObject">
+            <summary>设置 EntityBase.Equals(Object obj) 的 stub</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubWebConfig.InitializeStub">
+            <summary>初始化 type StubWebConfig 的新实例</summary>
+        </member>
+        <member name="M:ERPS.Models.Fakes.StubWebConfig.Validate">
+            <summary>设置 WebConfig.Validate() 的 存根</summary>
+        </member>
+        <member name="F:ERPS.Models.Fakes.StubWebConfig.Validate01">
+            <summary>设置 WebConfig.Validate() 的 stub</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubWebConfig.CallBase">
+            <summary>获取或设置一个值，该值指示是否应调用基方法而不调用回退行为</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubWebConfig.InstanceBehavior">
+            <summary>获取或设置实例行为。</summary>
+        </member>
+        <member name="P:ERPS.Models.Fakes.StubWebConfig.InstanceObserver">
+            <summary>获取或设置实例观察者。</summary>
+        </member>
+    </members>
+</doc>

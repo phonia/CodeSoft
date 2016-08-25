@@ -3,6 +3,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using ERPS.WebUI.Helper;
+@model EPRS.Service.SUserDTO
+
 @section Head{
     <script type="text/ecmascript">
         $(function () {
@@ -22,13 +25,13 @@
         })
 
         function GetAllDepartment() {
-            $('#department').combobox({
+            $('#DepartmentId').combobox({
                 url: '/User/GetDepartmentsAction',
                 method: 'GET',
                 valueField: 'Id',
                 textField: 'Name',
                 onSelect: function (data) {
-                    $('#position').combobox({
+                    $('#PositionId').combobox({
                         url: '/User/GetPositionsAction?departmentId=' + data.Id,
                         method: 'GET',
                         valueField: 'Id',
@@ -47,7 +50,7 @@
 
         function GetSex()
         {
-            $('#sex').combobox({
+            $('#Sex').combobox({
                 url: '/User/GetSex',
                 method:'GET',
                 valueField: 'Value',
@@ -57,7 +60,7 @@
 
         function GetEducation()
         {
-            $('#education').combobox({
+            $('#Education').combobox({
                 url: '/User/GetEducation',
                 method: 'GET',
                 valueField: 'Value',
@@ -162,24 +165,28 @@
             <div style="height:10px"></div>
             <div id="Left" style="float:left;width:30%;text-align:left;vertical-align:central">
                 <div class="fitem">
-                    <label style="display:inline-block;width:80px;text-align:right">登录名：</label>
+@*                    <label style="display:inline-block;width:80px;text-align:right">登录名：</label>
                     <input class="easyui-validatebox" name="LoginName" data-options="required:true,validType:'username'" />
-                    <div style="height:10px"></div>
+                    <div style="height:10px"></div>*@
+                    @Html.CSInputField(it=>it.LoginName,"username")
                 </div>
                 <div class="fitem">
-                    <label style="display:inline-block;width:80px;text-align:right">密码：</label>
+@*                    <label style="display:inline-block;width:80px;text-align:right">密码：</label>
                     <input class="easyui-validatebox" name="LoginPwd" data-options="required:true,validType:'password'" />
-                    <div style="height:10px"></div>
+                    <div style="height:10px"></div>*@
+                    @Html.CSInputField(it=>it.LoginPass,"password")
                 </div>
                 <div class="fitem">
-                    <label style="display:inline-block;width:80px;text-align:right">部门：</label>
+@*                    <label style="display:inline-block;width:80px;text-align:right">部门：</label>
                     <input id="department" name="departmentId" data-options="required:true,editable:false,panelHeight:'auto'" />
-                    <div style="height:10px"></div>
+                    <div style="height:10px"></div>*@
+                    @Html.CSInputComboBox(m=>m.DepartmentId)
                 </div>
                 <div class="fitem">
-                    <label style="display:inline-block;width:80px;text-align:right">职位：</label>
+@*                    <label style="display:inline-block;width:80px;text-align:right">职位：</label>
                     <input id="position" name="positionId" data-options="required:true" />
-                    <div style="height:10px"></div>
+                    <div style="height:10px"></div>*@
+                    @Html.CSInputComboBox(m=>m.PositionId)
                 </div>
             </div>
 
@@ -195,88 +202,94 @@
             <legend>个人信息</legend>
             <div style="height:10px"></div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">用户名：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">用户名：</label>
                 <input class="easyui-validatebox" name="NName" data-options="required:true,validType:'name'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.NName,"name")
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">性别：</label>
-    @*            <select class="easyui-combobox" name="sex" data-options="editable:false,panelHeight:'auto'">
-                    <option value="1">男</option>
-                    <option value="2">女</option>
-                    <option value="3">未知</option>
-                </select>*@
+@*                <label style="display:inline-block;width:80px;text-align:right">性别：</label>
                 <input id="sex" name="sex" data-options="editable:false,panelHeight:'auto'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputComboBox(m=>m.PersonInfo.Sex)
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">出生日期：</label>
-    @*            <input name="birthday" class="easyui-databox" data-options="required:true" />*@
+@*                <label style="display:inline-block;width:80px;text-align:right">出生日期：</label>
                 <input name="birthday" type="text" class="easyui-datebox" data-options="required:true" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputDateBox(m=>m.PersonInfo.Birthday)
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">籍贯：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">籍贯：</label>
                 <input class="easyui-validatebox" name="nativePlace" data-options="required:true,validType:'unnormal'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.NativePlace)
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">民族：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">民族：</label>
                 <input class="easyui-validatebox" name="nativeName" data-options="required:true,validType:'unnormal'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.NationalName)
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">学历：</label>
-    @*            <select class="easyui-combobox" name="education" data-options="editable:false,panelHeight:'auto'">
-                    <option value="0">高校</option>
-                </select>*@
+@*                <label style="display:inline-block;width:80px;text-align:right">学历：</label>
                 <input id="education" name="education" data-options="editable:false,panelHeight:'auto'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputComboBox(m=>m.PersonInfo.Education)
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">毕业学校：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">毕业学校：</label>
                 <input class="easyui-validatebox" name="graduateCollege" data-options="required:true,validType:'unnormal'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.GraduateCollege)
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">毕业专业：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">毕业专业：</label>
                 <input class="easyui-validatebox" name="graduateSpecialty" data-options="required:true,validType:'unnormal'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.GraduateSpecialty)
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">联系电话：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">联系电话：</label>
                 <input class="easyui-validatebox" name="tel" data-options="required:true,validType:'phone'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.Tel,"phone")
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">移动电话：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">移动电话：</label>
                 <input class="easyui-validatebox" name="mobile" data-options="required:true,validType:'mobile'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.Mobile,"mobile")
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">邮箱：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">邮箱：</label>
                 <input class="easyui-validatebox" name="email" data-options="required:true,validType:'email'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.Email,"email")
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">QQ：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">QQ：</label>
                 <input class="easyui-validatebox" name="qq" data-options="required:true,validType:'qq'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.Qq,"qq")
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">MSN：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">MSN：</label>
                 <input class="easyui-validatebox" name="msn" data-options="required:true,validType:'msn'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.Msn,"msn")
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">通讯地址：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">通讯地址：</label>
                 <input class="easyui-validatebox" name="address" data-options="required:true,validType:'unnormal'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.Address)
             </div>
             <div class="fitem">
-                <label style="display:inline-block;width:80px;text-align:right">备注：</label>
+@*                <label style="display:inline-block;width:80px;text-align:right">备注：</label>
                 <input class="easyui-validatebox" name="content" data-options="required:true,validType:'unnormal'" />
-                <div style="height:10px"></div>
+                <div style="height:10px"></div>*@
+                @Html.CSInputField(m=>m.PersonInfo.Content)
             </div>
         </fieldset>
 

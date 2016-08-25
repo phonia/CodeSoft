@@ -41,6 +41,9 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ERPS.Models.Fakes">
+      <HintPath>FakesAssemblies\ERPS.Models.Fakes.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
@@ -62,6 +65,7 @@
       <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -130,14 +134,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Fakes Include="Fakes\ERPS.Models.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EPRS.Service\EPRS.Service.csproj">
+      <Project>{bd5c14b4-d142-4eca-b031-c8d5fda375bd}</Project>
+      <Name>EPRS.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERPS.Infrastructure\ERPS.Infrastructure.csproj">
+      <Project>{62e276db-f797-4f4e-9de6-8b78b2eaa3e8}</Project>
+      <Name>ERPS.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERPS.Models\ERPS.Models.csproj">
+      <Project>{c0e341dc-caec-44b1-8c09-3cc801767942}</Project>
+      <Name>ERPS.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ERPS.WebUI\ERPS.WebUI.csproj">
       <Project>{41313A38-45A0-417A-80AD-D5AFE80951F7}</Project>
       <Name>ERPS.WebUI</Name>

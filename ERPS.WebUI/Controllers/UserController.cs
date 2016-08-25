@@ -64,6 +64,14 @@ namespace ERPS.WebUI.Controllers
         }
 
         [HttpGet]
+        public ActionResult GetUser()
+        {
+            int  id = Convert.ToInt32(Request.QueryString["userId"]);
+            SUserDTO user = _userService.GetUserByKey(id);
+            return View(user);
+        }
+
+        [HttpGet]
         public ActionResult GetRegisterUserView()
         {
             return View();

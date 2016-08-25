@@ -108,6 +108,7 @@ namespace EPRS.Service
         /// <summary>
         /// <#=String.IsNullOrWhiteSpace(record.Description)?"":record.Description #>
         /// </summary>
+		[Description("<#=String.IsNullOrWhiteSpace(record.Description)?"":record.Description #>")]
         public <#=String.IsNullOrWhiteSpace(record.FieldType)?record.PropertyType+"DTO":record.PropertyType #> <#=record.PropertyName #> {get;set;}
 
 <#

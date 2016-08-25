@@ -1,0 +1,14 @@
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.ActionSign 生成存根: 类型是一个值类型。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.Education 生成存根: 类型是一个值类型。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.Sex 生成存根: 类型是一个值类型。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.IActionPermissionRepository 生成填充码: 类型是一个接口。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.IDepartmentRepository 生成填充码: 类型是一个接口。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.IErrorLogRepository 生成填充码: 类型是一个接口。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.IMenuInfoRepository 生成填充码: 类型是一个接口。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.IPositionRepository 生成填充码: 类型是一个接口。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.ISUserRepository 生成填充码: 类型是一个接口。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.IUserLogRepository 生成填充码: 类型是一个接口。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.IWebConfigRepository 生成填充码: 类型是一个接口。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.ActionSign 生成填充码: 类型是一个枚举。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.Education 生成填充码: 类型是一个枚举。
+E:\Code\CodeSoft\ERPS.WebUI.Tests\Fakes\ERPS.Models.fakes : warning : 无法为 ERPS.Models.Sex 生成填充码: 类型是一个枚举。
