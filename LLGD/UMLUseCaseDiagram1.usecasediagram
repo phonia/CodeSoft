@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c829d259-6360-46ba-a74c-b07c9f6896fb" name="UMLUseCaseDiagram1" linkedPackageId="d5614333-d350-4664-8537-ffbd548782e7" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c829d259-6360-46ba-a74c-b07c9f6896fb" name="UMLUseCaseDiagram1" linkedPackageId="d5614333-d350-4664-8537-ffbd548782e7" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="dff3a58c-3602-49a7-b708-f78e1e818633" name="游客" isAbstract="false" isLeaf="false">
@@ -514,6 +514,41 @@
     <useCaseModelRootHasTypes>
       <useCase Id="7e7ecc20-2331-4b54-be72-57cb7e84b689" name="每日签到" isAbstract="false" isLeaf="false">
         <elementDefinition Id="f4dc21ca-7c3d-479e-a1a1-075d0dfedd03" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a3991b71-57d5-40e7-9049-3226bccbfdcc" name="短消息" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7c4a0ded-94ef-405b-ba2c-e705f599560e" />
+        <suppliersInternal>
+          <dependency Id="34298bd4-ff64-48d2-9702-0ec9b4baa2b1">
+            <useCaseMoniker Id="953c1a9a-80f7-42d6-afc5-2d0344b4676f" LastKnownName="删除回复" />
+            <elementDefinition Id="5c4f90a3-a718-4cfa-b92d-41671eb01665" />
+          </dependency>
+          <dependency Id="412dd2af-98f8-4407-bdc0-988302360de0">
+            <useCaseMoniker Id="8a319fa8-71f4-407d-8ad6-1f5d5409838f" LastKnownName="用户失效" />
+            <elementDefinition Id="ab87c9fe-d282-49e4-912a-2e2585d2f073" />
+          </dependency>
+          <dependency Id="5ca8aba9-fb00-48f2-877a-cacea5c9c5f2">
+            <useCaseMoniker Id="cb9b4bfb-98b3-4e8c-8146-c1dde4b26c8b" LastKnownName="帖子禁言" />
+            <elementDefinition Id="886cfadd-55d4-42e0-b924-b5731fe7ff6d" />
+          </dependency>
+          <dependency Id="c6baa543-66e8-41b0-bc28-babef1efab88">
+            <useCaseMoniker Id="b080df0e-007d-423b-a8f6-1b540a497ec6" LastKnownName="版块禁言" />
+            <elementDefinition Id="eb09a3cb-cda4-4bef-8b3d-2f3c0ec4ee51" />
+          </dependency>
+          <dependency Id="82e1c5ca-e220-42ad-ab8e-e482b34e7f76">
+            <useCaseMoniker Id="9342da82-a3dc-44ac-bb1b-6f1b87e4b15b" LastKnownName="用户组升级" />
+            <elementDefinition Id="e3554d6a-d3ad-42cf-932a-951b1b7cd6db" />
+          </dependency>
+          <dependency Id="50764565-4a53-414e-8174-bb96eae6d0c2">
+            <useCaseMoniker Id="47b9f2e0-2ad5-4ae0-8d1e-2149f304b763" LastKnownName="下载附件" />
+            <elementDefinition Id="d146273c-4bd3-4dc3-bbdc-5c17a92a9db5" />
+          </dependency>
+          <dependency Id="ffcfc42e-ba0b-4cdd-8484-52738da4d45f">
+            <useCaseMoniker Id="6114ba69-7496-41f0-8c37-07bd0025ab0d" LastKnownName="回帖" />
+            <elementDefinition Id="2c528693-7c20-4374-8a5d-e3bed9f23d18" />
+          </dependency>
+        </suppliersInternal>
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>

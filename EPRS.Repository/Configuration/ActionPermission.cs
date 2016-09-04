@@ -28,7 +28,6 @@ namespace EPRS.Repository
             Property(e =>e.Url).HasColumnName("Url").HasColumnType("nvarchar").IsRequired();
             Property(e =>e.Sort).HasColumnName("Sort").HasColumnType("int").IsRequired();
             HasRequired(e=>e.MenuInfo).WithMany(e=>e.ActionPermissions).Map(e=>e.MapKey("MenuInfoId"));
-
         }
     }
 }

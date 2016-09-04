@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="61107150-c054-4a6b-9f8f-2cd7cec45b4c"
   name="LLGD" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -4164,7 +4164,7 @@
             isAbstract="false">
             <classMoniker
               Id="449ccffd-dda0-44d8-aff2-68dbb288f610"
-              LastKnownName="用户组"
+              LastKnownName="普通用户组"
               LastKnownLocation="LLGD.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -4178,7 +4178,20 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false"
-                  isNavigableOwned="false" />
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="20046e41-38dc-4068-8d4e-413238b7393f"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f4edb2bf-2626-4591-8012-74da1d84b3cb"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -4195,6 +4208,19 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="93b1a88e-ff78-4116-94b0-e6822f7b1d98"
+            name="用户等级"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -4214,6 +4240,60 @@
               LastKnownLocation="LLGD.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="57d06a17-d868-4396-a2d6-5905c5dd7802"
+            isDerived="false"
+            sourceEndRoleName="管理员"
+            targetEndRoleName="管理员用户组"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ad502603-aa1d-41ce-bb6a-e7980fbcff8f"
+              LastKnownName="管理员用户组"
+              LastKnownLocation="LLGD.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="25ffb48f-76fe-4db5-aa19-e3ba863635eb"
+                  name="管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d719f146-f930-4a1f-86da-e9db8d330ddc"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="430f719e-06d3-410a-8c28-55f1f76b72f5"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a163b728-3aad-49f7-b63c-c4255016fa5d"
+                  name="管理员用户组"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -4225,7 +4305,7 @@
         isActiveClass="false">
         <generalsInternal>
           <generalization
-            Id="4b4fe562-0b25-42c3-8318-701f5dacab44"
+            Id="da5a6bae-5eba-4262-92e6-3748f14baf8c"
             isSubstitutable="false">
             <classMoniker
               Id="6d136f7e-e82b-45c9-b377-0b54976cc25d"
@@ -4473,7 +4553,135 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false" />
+          <property
+            Id="36b88831-b8c5-43eb-940f-2ceb90a6ef33"
+            name="注册时间"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="6edee09f-a5e6-4a17-a8b2-59942367b2b6"
+            name="注册IP"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="2946c3e9-0eb6-45cf-b6fd-5e1f1782bab8"
+            name="登录次数"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="bb0f3357-79c7-4ed6-8ed0-4292316e47d1"
+            name="是否在线"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c9efda7d-d2f7-4da9-8dfd-e16eb1a4fda8"
+            name="注册设备"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="cfc4145c-e056-4c74-b886-6ef3b00ec91d"
+            name="最后登录IP"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a2b25d0d-d511-42d0-ad02-bafbe1954a5a"
+            name="最后登录时间"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="3546a636-9f56-4b37-b298-b3c66fef3dc3"
+            name="最后登录设备"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="7cd0c3cb-27a6-40f1-aa16-f0c0afd6d726"
+            name="最后修改时间"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="2f37ff2d-e8c2-4bb0-9abb-9c3da807f534"
+            name="用户等级"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="38580039-0bfb-4100-91ff-879738fb2df9"
+            name="登录"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ff70bc5d-8e29-4934-a332-1400b433d5f2"
+            name="注册"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -4498,6 +4706,94 @@
           <property
             Id="570a1fc5-e595-4c4c-a895-8dec85f9aba2"
             name="头像"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="508bf091-ba2d-4c83-9ceb-68ac186e6225"
+            name="性别"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="f3df0c0c-2460-42b6-8dfa-a3d9ee47abc5"
+            name="通讯地址"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="7b743743-4695-49dc-81c4-f09bc8941c49"
+            name="邮编"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="71856f7f-a80c-48c4-b799-7ba19254d9ac"
+            name="邮箱"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="84fc4a76-755e-4a10-8732-c2a1451006cf"
+            name="个人主页"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="42c33d20-b4d0-4d31-bca4-92b9f21fdb50"
+            name="固定电话"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="d2b9f2af-4234-48fd-aad7-3cf7b9966f19"
+            name="移动电话"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="f891ac1b-14d1-4951-9944-12ed615ac0df"
+            name="留言"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -5242,10 +5538,10 @@
         isActiveClass="false">
         <suppliersInternal>
           <dependency
-            Id="4b553b01-7393-445f-a1ec-0ab605cf721a">
+            Id="61a7a188-b021-43de-9a63-841e729ab83b">
             <classMoniker
-              Id="6d136f7e-e82b-45c9-b377-0b54976cc25d"
-              LastKnownName="管理员"
+              Id="3a21f76d-a021-4336-a3eb-d230033bc206"
+              LastKnownName="后台管理员"
               LastKnownLocation="LLGD.uml" />
           </dependency>
         </suppliersInternal>
@@ -5639,7 +5935,7 @@
     <packageHasNamedElement>
       <class
         Id="9ed6f41f-fc23-4fac-bab7-8b09851a8529"
-        name="图片选项"
+        name="投票选项"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -5843,20 +6139,10 @@
     <packageHasNamedElement>
       <class
         Id="19147d74-5ca9-432c-a5ce-eb3ddae5e1d4"
-        name="版主"
+        name="版块版主"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <generalsInternal>
-          <generalization
-            Id="85a48448-acf2-412f-b63c-799e206f77c6"
-            isSubstitutable="false">
-            <classMoniker
-              Id="6d136f7e-e82b-45c9-b377-0b54976cc25d"
-              LastKnownName="管理员"
-              LastKnownLocation="LLGD.uml" />
-          </generalization>
-        </generalsInternal>
         <targetEnds>
           <association
             Id="9a65ac69-bd48-4ffe-b0cb-dd437f68963d"
@@ -5910,6 +6196,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="304cc36a-b728-4307-bc4a-db43b771471c"
+            isDerived="false"
+            sourceEndRoleName="版块版主"
+            targetEndRoleName="管理员"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6d136f7e-e82b-45c9-b377-0b54976cc25d"
+              LastKnownName="管理员"
+              LastKnownLocation="LLGD.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="69ac450c-eb91-4d6b-b915-57d636e7cb93"
+                  name="版块版主"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8ba2bc75-492e-4876-83ce-304512898985"
+                  name="管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </class>
     </packageHasNamedElement>
@@ -5952,7 +6277,7 @@
             Id="bcc50315-85ca-4c13-b141-5a0a79f4fa3d">
             <classMoniker
               Id="19147d74-5ca9-432c-a5ce-eb3ddae5e1d4"
-              LastKnownName="版主"
+              LastKnownName="版块版主"
               LastKnownLocation="LLGD.uml" />
           </dependency>
         </suppliersInternal>
@@ -6165,10 +6490,177 @@
     <packageHasNamedElement>
       <class
         Id="449ccffd-dda0-44d8-aff2-68dbb288f610"
-        name="用户组"
+        name="普通用户组"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="862e9115-01d2-44c5-8f74-643ef633b7f8"
+            name="用户组名称"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="33588c9c-71e3-4379-bb27-a9a016ae794c"
+            name="阅读权限"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="eece2ca9-a8fc-4c91-880e-64dacc9978f4"
+            name="允许发帖"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="66c0402a-1331-402a-9729-0c9124d9dcaa"
+            name="允许回复"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="7a2095bd-30a5-46b2-a6b1-01fd5dfc1359"
+            name="允许隐身"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="b19f2d76-c429-4f62-88df-780fc865cff7"
+            name="允许搜索"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="e43835b3-d966-400d-b9ce-4eaccc2aeae8"
+            name="允许发送短消息"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5e911210-b0a4-49c0-ad80-bb3d4798651b"
+            name="允许投票"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="9e4d96cc-8a56-4d7f-aaf4-ab03d00dcb74"
+            name="允许发起投票"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c92cee17-f157-4bec-b467-1c209ee6a216"
+            name="允许发布附件"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="d32732be-b905-473b-a280-429353ac1c5e"
+            name="允许下载附件"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="3456ca38-f33c-4251-a3d0-a8839a345c6a"
+            name="允许发布悬赏"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="68b1bfa5-60c8-41e4-ba38-b5ab05b3c946"
+            name="允许@"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="39bcdab7-5ca6-48b6-b0ac-5431c2ea8998"
+            name="允许设置阅读权限"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ae7e4950-e014-4b4b-8556-d1865d7847da"
+            name="升级"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -6224,6 +6716,432 @@
             concurrency="Sequential"
             isQuery="false" />
         </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="64eef1e7-48da-4c62-b135-2d394f147f80"
+        name="用户日志"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="ca92278d-2523-46fa-ac73-a534e7b72a72"
+            isDerived="false"
+            sourceEndRoleName="用户日志"
+            targetEndRoleName="用户"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a9bd1d4d-098b-4db6-b6c3-7e43517bc99f"
+              LastKnownName="用户"
+              LastKnownLocation="LLGD.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c8b65035-ffc7-4149-af6d-d4f9ed87ec51"
+                  name="用户日志"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f6073b6e-8d97-4252-8c66-8897c02aca97"
+                  name="用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="f0a5eb7b-f492-46d1-b30b-3498127f8107"
+            name="操作时间"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="feccdeff-4f36-4b7c-a364-f95fff145b78"
+            name="操作名称"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="2ee5edff-9e96-49f7-ba41-b19c04730d6d"
+            name="备注"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="6a0a9f6f-d346-4529-90cd-d80674b57ce9"
+            name="操作是否成功"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7c4a0ded-94ef-405b-ba2c-e705f599560e"
+        name="短消息"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="5c4f90a3-a718-4cfa-b92d-41671eb01665">
+            <useCaseMoniker
+              Id="5d92a42b-5464-42cc-9aa3-e23effa3b2ae"
+              LastKnownName="删除回复"
+              LastKnownLocation="LLGD.uml" />
+          </dependency>
+          <dependency
+            Id="ab87c9fe-d282-49e4-912a-2e2585d2f073">
+            <useCaseMoniker
+              Id="b535c848-87cc-4ea9-8113-041681605a81"
+              LastKnownName="用户失效"
+              LastKnownLocation="LLGD.uml" />
+          </dependency>
+          <dependency
+            Id="886cfadd-55d4-42e0-b924-b5731fe7ff6d">
+            <useCaseMoniker
+              Id="8e309c19-ba8d-436a-8958-b923e51ae474"
+              LastKnownName="帖子禁言"
+              LastKnownLocation="LLGD.uml" />
+          </dependency>
+          <dependency
+            Id="eb09a3cb-cda4-4bef-8b3d-2f3c0ec4ee51">
+            <useCaseMoniker
+              Id="68bf460a-07bb-41ad-a722-e237b401b8dc"
+              LastKnownName="版块禁言"
+              LastKnownLocation="LLGD.uml" />
+          </dependency>
+          <dependency
+            Id="e3554d6a-d3ad-42cf-932a-951b1b7cd6db">
+            <useCaseMoniker
+              Id="dc84012d-0b9c-409c-985a-c18be305713a"
+              LastKnownName="用户组升级"
+              LastKnownLocation="LLGD.uml" />
+          </dependency>
+          <dependency
+            Id="d146273c-4bd3-4dc3-bbdc-5c17a92a9db5">
+            <useCaseMoniker
+              Id="5936e48a-0f4c-417a-a08d-ba862541737e"
+              LastKnownName="下载附件"
+              LastKnownLocation="LLGD.uml" />
+          </dependency>
+          <dependency
+            Id="2c528693-7c20-4374-8a5d-e3bed9f23d18">
+            <useCaseMoniker
+              Id="57bdabcc-f588-40fd-888c-c2e0bbd76886"
+              LastKnownName="回帖"
+              LastKnownLocation="LLGD.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a35f9444-1710-4b68-ab92-2a260667bb3f"
+        name="短消息"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="8454239a-e455-4bb8-9d27-1d98db12be1f"
+            isDerived="false"
+            sourceEndRoleName="短消息"
+            targetEndRoleName="用户"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a9bd1d4d-098b-4db6-b6c3-7e43517bc99f"
+              LastKnownName="用户"
+              LastKnownLocation="LLGD.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c168aa8b-d4cd-4c85-bada-792246f4f158"
+                  name="短消息"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a376df2d-6fb6-4d75-aacc-4517b2ee253c"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f44e5177-40c5-4a4b-b0e4-9d33b31b5ee4"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="07a2eeb6-d3d7-437b-9996-06bd586a926c"
+                  name="用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="08318c13-b49e-455c-8339-6b643ec23b04"
+            isDerived="false"
+            sourceEndRoleName="短消息"
+            targetEndRoleName="短消息类型"
+            isLeaf="false"
+            isAbstract="false">
+            <enumerationMoniker
+              Id="fc0955a6-9a68-48b5-91a2-5b07c554acb3"
+              LastKnownName="短消息类型"
+              LastKnownLocation="LLGD.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="880595cf-0cc6-4b73-b99d-750710faae71"
+                  name="短消息"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fd6a78c7-aefc-463e-a346-d08f03483864"
+                  name="短消息类型"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="cb133e1a-5b9a-49c9-a1bf-90a1f00b808f"
+            name="发送人"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="1b844956-d9ff-4f6a-b618-10b96fea199e"
+            name="内容"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f88343df-8c66-4133-bf84-04558eb15cdc"
+        name="Class6"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="fc0955a6-9a68-48b5-91a2-5b07c554acb3"
+        name="短消息类型"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="ac00033b-91e1-4083-8d22-07346a51866c"
+            name="系统信息" />
+          <enumerationLiteral
+            Id="05e93af1-4098-470b-81e5-4aafa5060522"
+            name="私信" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ad502603-aa1d-41ce-bb6a-e7980fbcff8f"
+        name="管理员用户组"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="710fde82-ba59-4a52-90e1-b7e30a99287f"
+            name="允许帖子禁言"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="43cfd843-3395-4b48-a34f-6e62ec529a1c"
+            name="允许置顶"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="0268bffc-d33e-43d3-839b-af76be87e034"
+            name="允许删帖"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="da3287ce-2298-427d-bcad-8c59d915d6ad"
+            name="允许版块禁言"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="1feb5f46-cb84-46d3-a72a-43b9d3c589a7"
+            name="允许修改用户组"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="114dec68-91a4-4ca5-96b4-eb1fd8b9f805"
+            name="允许删除回复"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="8d9579bb-697d-4795-96ab-15c2e6f042ca"
+            name="设置版块参数"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a2bab0b5-510a-4420-be8d-fb3b313abfbb"
+            name="允许发版块帖"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="41252c12-b61f-47fe-99cd-3a0129d1e90c"
+            name="允许推荐"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="6ed92a0e-71b4-4be0-99c2-2607577168e6"
+            name="允许精华"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
   </packagedElements>
